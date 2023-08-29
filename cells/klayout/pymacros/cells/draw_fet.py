@@ -1880,7 +1880,9 @@ def draw_pfet(
 
     con_size: float = 0.22
     con_sp: float = 0.27
-    con_comp_enc: float = 0.08
+
+    con_comp_enc: float = 0.11 if bulk == "Bulk Tie" else 0.08
+
     con_pp_sp: float = 0.12 - con_comp_enc
     if volt == "3.3V":
         pl_cmp_spacing: float = 0.19
