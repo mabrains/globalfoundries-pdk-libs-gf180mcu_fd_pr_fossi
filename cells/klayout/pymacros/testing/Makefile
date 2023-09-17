@@ -143,7 +143,7 @@ test-cap_mos: DRC-PV
 	@echo "===== test cap_mos pcells ====="
 	@pytest --device=mos_caps pcell_reg_Pytest.py
 	@rm -rf $(Testing_DIR)/../../../../globalfoundries-pdk-libs-gf180mcu_fd_pv/
-	@mv -f drc_run_* lvs_run_* testcases $(run_folder)/pfet_06v0
+	@mv -f drc_run_* lvs_run_* testcases $(run_folder)/cap_mos
 
 #=================================
 # --------- test-RES ---------
