@@ -164,3 +164,4 @@ cython_debug/
 .vscode/
 *.lyrdb
 run_*_regr/
+pcells_run_*/
