@@ -552,6 +552,7 @@ Xr2 s s1 b nplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b nfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
 
 .MODEL nfet_03v3.0 NMOS
@@ -1257,7 +1258,9 @@ Xr2 s s1 b nplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b nfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL nfet_03v3.0 NMOS
 + A0=0.11226647 A1=0 A2=1 ACDE=0.6 ACNQSMOD=0 AGIDL=1.3268e-010 AGS=0.31756239
 + ALPHA0=2.6143989e-006 ALPHA1=0 AT=23000 B0=0 B1=0 BETA0=19.904932
@@ -1970,7 +1973,9 @@ Xr2 s s1 b nplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b nfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL nfet_03v3.0 NMOS
 + A0=0.11164211 A1=0 A2=1 ACDE=0.6 ACNQSMOD=0 AGIDL=1.3268e-010 AGS=0.33078713
 + ALPHA0=2.689932e-006 ALPHA1=0 AT=23000 B0=0 B1=0 BETA0=19.906217
@@ -2687,7 +2692,9 @@ Xr2 s s1 b nplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b nfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL nfet_03v3.0 NMOS
 + A0=0.11206719 A1=0 A2=1 ACDE=0.6 ACNQSMOD=0 AGIDL=1.3268e-010 AGS=0.32050776
 + ALPHA0=2.627733e-006 ALPHA1=0 AT=23000 B0=0 B1=0 BETA0=19.907557
@@ -3400,7 +3407,9 @@ Xr2 s s1 b nplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b nfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL nfet_03v3.0 NMOS
 + A0=0.11186736 A1=0 A2=1 ACDE=0.6 ACNQSMOD=0 AGIDL=1.3268e-010 AGS=0.32766
 + ALPHA0=2.6763946e-006 ALPHA1=0 AT=23000 B0=0 B1=0 BETA0=19.903605
@@ -4116,7 +4125,9 @@ Xr2 s s1 b pplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b pfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL pfet_03v3.0 PMOS
 + A0=1.0272635 A1=0 A2=0.99 ACDE=1 ACNQSMOD=0 AGIDL=1.5908e-011 AGS=0.19081247
 + ALPHA0=1.1485698e-005 ALPHA1=0 AT=12000 B0=0 B1=0 BETA0=39.773597
@@ -4836,7 +4847,9 @@ Xr2 s s1 b pplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b pfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL pfet_03v3.0 PMOS
 + A0=1.0088763 A1=0 A2=0.99 ACDE=1 ACNQSMOD=0 AGIDL=1.5908e-011 AGS=0.20174918
 + ALPHA0=1.1235927e-005 ALPHA1=0 AT=12000 B0=0 B1=0 BETA0=39.445349
@@ -5559,7 +5572,9 @@ Xr2 s s1 b pplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b pfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL pfet_03v3.0 PMOS
 + A0=1.0456883 A1=0 A2=0.99 ACDE=1 ACNQSMOD=0 AGIDL=1.5908e-011 AGS=0.1800417
 + ALPHA0=1.1734592e-005 ALPHA1=0 AT=12000 B0=0 B1=0 BETA0=40.100221
@@ -6283,7 +6298,9 @@ Xr2 s s1 b pplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b pfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL pfet_03v3.0 PMOS
 + A0=1.039392 A1=0 A2=0.99 ACDE=1 ACNQSMOD=0 AGIDL=1.5908e-011 AGS=0.18391438
 + ALPHA0=1.1653153e-005 ALPHA1=0 AT=12000 B0=0 B1=0 BETA0=39.988812
@@ -7006,7 +7023,9 @@ Xr2 s s1 b pplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b pfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL pfet_03v3.0 PMOS
 + A0=1.0151475 A1=0 A2=0.99 ACDE=1 ACNQSMOD=0 AGIDL=1.5908e-011 AGS=0.19776586
 + ALPHA0=1.1317951e-005 ALPHA1=0 AT=12000 B0=0 B1=0 BETA0=39.557841
@@ -7732,7 +7751,9 @@ Xr2 s s1 b nplus_u_m2
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b nfet_06v0
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL nfet_06v0.0 NMOS
 + A0=0.72499969 A1=0 A2=0.96 ACDE=0.3 ACNQSMOD=0 AGIDL=0 AGS=0.13699995
 + AIGBACC=0.43 AIGBINV=0.35 AIGC=0.43 AIGSD=0.43 ALPHA0=-1.88e-007 ALPHA1=19
@@ -7986,7 +8007,9 @@ Xr2 s s1 b pplus_u_m2
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b pfet_06v0
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL pfet_06v0.0 PMOS
 + A0=0.84 A1=0 A2=1 ACDE=0.7 ACNQSMOD=0 AGIDL=1.1E-15 AGS=0.059 ALPHA0=9.6E-7
 + ALPHA1=51.5 AT=-2.18E4 B0=2.625E-8 B1=0 BETA0=50.8 BGIDL=1.578E5 BINUNIT=1
@@ -8893,7 +8916,9 @@ Xr2 s s1 b nplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b nfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w'
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL nfet_03v3.0 NMOS
 + A0=0.11197377 A1=0 A2=1 ACDE=0.6 ACNQSMOD=0 AGIDL=1.3268e-010 AGS=0.32403844
 + ALPHA0=2.652013e-006 ALPHA1=0 AT=23000 B0=0 B1=0 BETA0=19.905584
@@ -9613,7 +9638,9 @@ Xr2 s s1 b pplus_u_m1
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b pfet_03v3
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL pfet_03v3.0 PMOS
 + A0=1.0272635 A1=0 A2=0.99 ACDE=1 ACNQSMOD=0 AGIDL=1.5908e-011 AGS=0.19081247
 + ALPHA0=1.1485698e-005 ALPHA1=0 AT=12000 B0=0 B1=0 BETA0=39.773597
@@ -10451,7 +10478,9 @@ Xr2 s s1 b pplus_u_m2
 + PARAMS: WR='w' LR='(s_sab==0) ? 1e-15 : s_sab' DTEMP={dtemp}
 M0 d1 g s1 b pfet_06v0
 + AD={ad} AS={as} L='l' NRD={nrd} NRS={nrs} PD={pd} PS={ps} W='w' M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 .ENDS
+
 .MODEL pfet_06v0.0 PMOS
 + A0=0.84 A1=0 A2=1 ACDE=0.7 ACNQSMOD=0 AGS=0.059 ALPHA0=9.6E-7 ALPHA1=51.5
 + AT=-2.18E4 B0=2.625E-8 B1=0 BETA0=50.8 BINUNIT=1 BVD=10.5 BVS=10.5 CAPMOD=2
@@ -10577,6 +10606,7 @@ Rfuse in out R='200*(1-pblow) + 900*pblow'
 
 M0 d g s b nfet_03v3
 + AD={ad} AS={as} L={l} NRD={nrd} NRS={nrs} PD={pd} PS={ps} W={w} M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 
 .ENDS nfet_03v3
 
@@ -10594,6 +10624,7 @@ M0 d g s b nfet_03v3
 
 M0 d g s b pfet_03v3
 + AD={ad} AS={as} L={l} NRD={nrd} NRS={nrs} PD={pd} PS={ps} W={w} M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 
 .ENDS pfet_03v3
 
@@ -10611,6 +10642,7 @@ M0 d g s b pfet_03v3
 
 M0 d g s b nfet_06v0
 + AD={ad} AS={as} L={l} NRD={nrd} NRS={nrs} PD={pd} PS={ps} W={w} M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 
 .ENDS nfet_06v0
 
@@ -10628,6 +10660,7 @@ M0 d g s b nfet_06v0
 
 M0 d g s b pfet_06v0
 + AD={ad} AS={as} L={l} NRD={nrd} NRS={nrs} PD={pd} PS={ps} W={w} M={m}
++DELVTO='mis_vth*sw_stat_mismatch'
 
 .ENDS pfet_06v0
 
