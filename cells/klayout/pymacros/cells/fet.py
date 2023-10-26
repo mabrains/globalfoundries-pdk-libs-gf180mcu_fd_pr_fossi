@@ -164,7 +164,7 @@ class nfet(pya.PCellDeclarationHelper):
         return pya.Trans(self.shape.bbox().center())
 
     def produce_impl(self):
-        instance = draw_nfet(
+        nfet_instance = draw_nfet(
             layout=self.layout,
             l_gate=self.l_gate,
             w_gate=self.w_gate,
@@ -187,7 +187,7 @@ class nfet(pya.PCellDeclarationHelper):
             patt_lbl=self.patt_lbl,
         )
         write_cells = pya.CellInstArray(
-            instance.cell_index(),
+            nfet_instance.cell_index(),
             pya.Trans(pya.Point(0, 0)),
             pya.Vector(0, 0),
             pya.Vector(0, 0),
