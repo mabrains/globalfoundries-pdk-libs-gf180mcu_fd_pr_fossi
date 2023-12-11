@@ -1208,7 +1208,6 @@ def bulk_m1_check(bulk_con_area, m1_area, c_inst, bulk_con):
         bulk_m1.ymin = bulk_con.ymin - (bulk_m1.size[1] - bulk_con.size[1]) / 2
 
 
-# @gf.cell
 def draw_nfet(
     layout,
     l_gate: float = 0.28,
@@ -1289,7 +1288,7 @@ def draw_nfet(
     sd_l = sd_l_con
 
     # gds components to store a single instance and the generated device
-    c = gf.Component("sky_nfet_dev")
+    c = gf.Component("nfet_dev")
 
     c_inst = gf.Component("dev_temp")
 
@@ -1425,7 +1424,6 @@ def draw_nfet(
         y_range=(rect_pc.ymin, rect_pc.ymax),
         base_layer=layer["poly2"],
         metal_level=1,
-        li_enc_dir="H",
     )
     c_pl_con = c_pc.add_ref(poly_con)
 
@@ -1712,11 +1710,9 @@ def draw_nfet(
     # creating layout and cell in klayout
     c.write_gds("nfet_temp.gds")
     layout.read("nfet_temp.gds")
-    cell_name = "sky_nfet_dev"
     os.remove("nfet_temp.gds")
 
-    return layout.cell(cell_name)
-    # return c
+    return layout.cell(c.name)
 
 
 @gf.cell
@@ -1823,7 +1819,6 @@ def pfet_deep_nwell(
     return c
 
 
-# @gf.cell
 def draw_pfet(
     layout,
     l_gate: float = 0.28,
@@ -1880,7 +1875,9 @@ def draw_pfet(
 
     con_size: float = 0.22
     con_sp: float = 0.27
-    con_comp_enc: float = 0.08
+
+    con_comp_enc: float = 0.11 if bulk == "Bulk Tie" else 0.08
+
     con_pp_sp: float = 0.12 - con_comp_enc
     if volt == "3.3V":
         pl_cmp_spacing: float = 0.19
@@ -1905,7 +1902,7 @@ def draw_pfet(
     sd_l = sd_l_con
 
     # gds components to store a single instance and the generated device
-    c = gf.Component("sky_pfet_dev")
+    c = gf.Component("pfet_dev")
 
     c_inst = gf.Component("dev_temp")
 
@@ -2041,7 +2038,6 @@ def draw_pfet(
         y_range=(rect_pc.ymin, rect_pc.ymax),
         base_layer=layer["poly2"],
         metal_level=1,
-        li_enc_dir="H",
     )
     c_pl_con = c_pc.add_ref(poly_con)
 
@@ -2340,12 +2336,12 @@ def draw_pfet(
         # bulk guardring
 
     # creating layout and cell in klayout
+
     c.write_gds("pfet_temp.gds")
     layout.read("pfet_temp.gds")
-    cell_name = "sky_pfet_dev"
     os.remove("pfet_temp.gds")
 
-    return layout.cell(cell_name)
+    return layout.cell(c.name)
 
 
 def draw_nfet_06v0_nvt(
@@ -2414,7 +2410,7 @@ def draw_nfet_06v0_nvt(
     sd_l = sd_l_con
 
     # gds components to store a single instance and the generated device
-    c = gf.Component("sky_nfet_nvt_dev")
+    c = gf.Component("nfet_nvt_dev")
 
     c_inst = gf.Component("dev_temp")
 
@@ -2552,7 +2548,6 @@ def draw_nfet_06v0_nvt(
         y_range=(rect_pc.ymin, rect_pc.ymax),
         base_layer=layer["poly2"],
         metal_level=1,
-        li_enc_dir="H",
     )
     c_pc.add_ref(poly_con)
 
@@ -2975,11 +2970,6 @@ def draw_nfet_06v0_nvt(
 
     c.write_gds("nfet_nvt_temp.gds")
     layout.read("nfet_nvt_temp.gds")
-    cell_name = "sky_nfet_nvt_dev"
     os.remove("nfet_nvt_temp.gds")
 
-    return layout.cell(cell_name)
-
-
-if __name__ == "__main__":
-    pass
+    return layout.cell(c.name)

@@ -1,4 +1,4 @@
-# Copyright 2022 Mabrains
+# Copyright 2023 GlobalFoundries PDK Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,14 +13,35 @@
 # limitations under the License.
 
 ########################################################################################################################
-# via Generator for skywater130
+# via Generator for GF180MCU
 ########################################################################################################################
-
 
 from math import ceil, floor
 import gdsfactory as gf
 from gdsfactory.typings import Float2, LayerSpec
 from .layers_def import layer
+import os
+
+
+def get_level_num(base_layer, base_layers, metal_level, metal_layers):
+    level_1 = -1
+    level_2 = -1
+
+    if base_layer in base_layers:
+        level_1 = -1
+    else:
+        for i in range(len(metal_layers)):
+            if base_layer == metal_layers[i]:
+                level_1 = i
+
+    if metal_level in base_layers:
+        level_2 = -1
+    else:
+        for i in range(len(metal_layers)):
+            if metal_level == metal_layers[i]:
+                level_2 = i
+
+    return level_1, level_2
 
 
 @gf.cell
@@ -78,10 +99,8 @@ def via_generator(
 def via_stack(
     x_range: Float2 = (0, 1),
     y_range: Float2 = (0, 1),
-    base_layer: LayerSpec = layer["comp"],
-    slotted_licon: int = 0,
     metal_level: int = 1,
-    li_enc_dir="V",
+    base_layer: LayerSpec = layer["comp"],
 ) -> gf.Component:
 
     """
@@ -207,33 +226,12 @@ def via_stack(
     return c
 
 
-def get_level_num(base_layer, base_layers, metal_level, metal_layers):
-    level_1 = -1
-    level_2 = -1
-
-    if base_layer in base_layers:
-        level_1 = -1
-    else:
-        for i in range(len(metal_layers)):
-            if base_layer == metal_layers[i]:
-                level_1 = i
-
-    if metal_level in base_layers:
-        level_2 = -1
-    else:
-        for i in range(len(metal_layers)):
-            if metal_level == metal_layers[i]:
-                level_2 = i
-
-    return level_1, level_2
-
-
 def draw_via_dev(
     layout,
     x_min: float = 0,
-    y_min: float = 1,
-    x_max: float = 0,
-    y_max: float = 1,
+    y_min: float = 0,
+    x_max: float = 2,
+    y_max: float = 2,
     metal_level: str = "M1",
     base_layer: str = "comp",
 ):
@@ -260,7 +258,6 @@ def draw_via_dev(
     c = gf.Component("via_stack_dev")
 
     # vias dimensions
-
     x_range = x_max - x_min
     y_range = y_max - y_min
 
@@ -399,15 +396,6 @@ def draw_via_dev(
 
     c.write_gds("via_stack_temp.gds")
     layout.read("via_stack_temp.gds")
-    cell_name = "via_stack_dev"
-    print(type(layout.cell(cell_name)))
+    os.remove("via_stack_temp.gds")
 
-    return layout.cell(cell_name)
-
-
-# testing the generated methods
-if __name__ == "__main__":
-    c = via_stack()
-    c.show()
-    # c = vias_gen_draw(base_layer="li",end_layer="poly")
-    # c.show()
+    return layout.cell(c.name)

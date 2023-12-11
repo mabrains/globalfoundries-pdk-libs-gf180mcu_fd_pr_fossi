@@ -17,7 +17,6 @@
 ########################################################################################################################
 
 import pya
-import os
 from .via_generator import draw_via_dev
 
 via_size = 0.26
@@ -56,10 +55,8 @@ class via_dev(pya.PCellDeclarationHelper):
         self.Type_handle.add_choice("M5", "M5")
         self.Type_handle.add_choice("Mtop", "Mtop")
 
-        self.param("x_min", self.TypeDouble, "X_min", default=0, unit="um")
-        self.param("y_min", self.TypeDouble, "Y_min", default=0, unit="um")
-        self.param("x_max", self.TypeDouble, "X_max", default=1, unit="um")
-        self.param("y_max", self.TypeDouble, "Y_max", default=1, unit="um")
+        self.param("x_max", self.TypeDouble, "width", default=1, unit="um")
+        self.param("y_max", self.TypeDouble, "length", default=1, unit="um")
 
     def display_text_impl(self):
         # Provide a descriptive text for the cell
@@ -70,18 +67,18 @@ class via_dev(pya.PCellDeclarationHelper):
         #  We also update the numerical value or the shape, depending on which on has not changed.
 
         if self.metal_level == "Mtop":
-            if (self.x_max - self.x_min) < mt_min:
-                self.x_max = self.x_min + mt_min
+            if self.x_max < mt_min:
+                self.x_max = mt_min
 
-            if (self.y_max - self.y_min) < mt_min:
-                self.y_max = self.y_min + mt_min
+            if self.y_max < mt_min:
+                self.y_max = mt_min
 
         else:
-            if (self.x_max - self.x_min) < (via_size + (2 * via_enc)):
-                self.x_max = self.x_min + (via_size + (2 * via_enc))
+            if self.x_max < (via_size + (2 * via_enc)):
+                self.x_max = (via_size + (2 * via_enc))
 
-            if (self.y_max - self.y_min) < (via_size + (2 * via_enc)):
-                self.y_max = self.y_min + (via_size + (2 * via_enc))
+            if self.y_max < (via_size + (2 * via_enc)):
+                self.y_max = (via_size + (2 * via_enc))
 
     def can_create_from_shape_impl(self):
         # Implement the "Create PCell from shape" protocol: we can use any shape which
@@ -90,8 +87,8 @@ class via_dev(pya.PCellDeclarationHelper):
 
     def parameters_from_shape_impl(self):
         # Implement the "Create PCell from shape" protocol: we set r and l from the shape's
-        # bounding box width and layer
-        self.r = self.shape.bbox().width() * self.layout.dbu / 2
+        # bounding box x_max and layer
+        self.r = self.shape.bbox().x_max() * self.layout.dbu / 2
         self.lc = self.layout.get_info(self.layer)
 
     def transformation_from_shape_impl(self):
@@ -100,18 +97,17 @@ class via_dev(pya.PCellDeclarationHelper):
         return pya.Trans(self.shape.bbox().center())
 
     def produce_impl(self):
-        np_instance = draw_via_dev(
+
+        via_instance = draw_via_dev(
             self.layout,
-            x_min=self.x_min,
-            y_min=self.y_min,
             x_max=self.x_max,
             y_max=self.y_max,
             metal_level=self.metal_level,
             base_layer=self.base_layer,
         )
-        print(type(np_instance))
+
         write_cells = pya.CellInstArray(
-            np_instance.cell_index(),
+            via_instance.cell_index(),
             pya.Trans(pya.Point(0, 0)),
             pya.Vector(0, 0),
             pya.Vector(0, 0),

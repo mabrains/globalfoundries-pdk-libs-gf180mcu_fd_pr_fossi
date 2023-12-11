@@ -434,7 +434,6 @@ def draw_cap_mos(
         # generating contacts
 
         if deepnwell == 0 and gr_imp == layer["nplus"]:
-            print("here")
 
             nwell_rect = c.add_ref(
                 gf.components.rectangle(
@@ -524,7 +523,6 @@ def draw_cap_mos(
 
     c.write_gds("cap_mos_temp.gds")
     layout.read("cap_mos_temp.gds")
-    cell_name = "cap_mos_dev"
     os.remove("cap_mos_temp.gds")
 
-    return layout.cell(cell_name)
+    return layout.cell(c.name)
