@@ -21,7 +21,7 @@ V {}
 S {}
 E {}
 B 2 580 -540 1170 -80 {flags=graph
-y1=-0.0067
+y1=-0.0028
 y2=0
 ypos1=0
 ypos2=2
@@ -39,7 +39,7 @@ unitx=1
 dataset=-1}
 B 2 580 -1000 1170 -540 {flags=graph
 y1=-0
-y2=500
+y2=1300
 ypos1=0
 ypos2=2
 divy=5
@@ -82,7 +82,7 @@ vb b 0 3.3
 .control
 save all
 dc vp 0 3.3 0.01
-write test_ppolyf_u.raw
+write test_ppolyf_u_1k.raw
 .endc
 "}
 C {devices/title.sym} 160 -30 0 0 {name=l5 author="GlobalFoundries PDK Authors"}
@@ -93,9 +93,9 @@ tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw
 "
 }
-C {symbols/ppolyf_u.sym} 130 -410 0 0 {name=R1
+C {symbols/ppolyf_u_1k.sym} 130 -410 0 0 {name=R1
 W=1e-6
 L=1e-6
-model=ppolyf_u
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
