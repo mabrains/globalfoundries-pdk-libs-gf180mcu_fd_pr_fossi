@@ -47088,6 +47088,39 @@ m0 d g s b nfet_03v3 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs
 m0 d g s b pfet_03v3 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs 
 +delvto='mis_vth*sw_stat_mismatch' mulu0='1-mis_k*sw_stat_mismatch' sa=sa sb=sb nf=nf sd=sd m=m
 .ends pfet_03v3
+
+*------------------------------------------------------------------------
+* Added by Tim Edwards, May 16, 2025
+* An nfet_05v0 device is defined as a regular nFET device allowing a
+* slightly shorter gate length than required at 6V.  Otherwise, the
+* model is exactly the same as nfet_06v0.  Note that the model bin
+* nfet_06v0.1 covers the nfet_05v0 case specifically.
+*------------------------------------------------------------------------
+.subckt nfet_05v0 d g s b w=1e-6 l=6e-7
++ as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
++ sa=0 sb=0 nf=1 sd=0 m=1
+
+.param
++ par_vth=0.01155  
++ par_k=0.0000  
++ par_l=4e-7
++ par_w=-5e-7
++ par_leff='l-par_l'
++ par_weff='par*(w-par_w)'
++ p_sqrtarea='sqrt((par_leff)*(par_weff))'
+
+.param
++ var_k='0.7071*par_k* 1e-06 / p_sqrtarea'
++ mis_k=agauss(0,var_k,1)
+
+.param
++ var_vth='0.7071*par_vth* 1e-06 / p_sqrtarea'
++ mis_vth=agauss(0,var_vth,1)
+
+m0 d g s b nfet_06v0 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs 
++delvto='mis_vth*sw_stat_mismatch' mulu0='1-mis_k*sw_stat_mismatch' sa=sa sb=sb nf=nf sd=sd m=m
+.ends nfet_05v0
+
 *------------------------------------------------------------------------
 .subckt nfet_06v0 d g s b w=1e-5 l=7e-7
 + as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
@@ -47113,8 +47146,46 @@ m0 d g s b pfet_03v3 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs
 m0 d g s b nfet_06v0 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs 
 +delvto='mis_vth*sw_stat_mismatch' mulu0='1-mis_k*sw_stat_mismatch' sa=sa sb=sb nf=nf sd=sd m=m
 .ends nfet_06v0
+
 *------------------------------------------------------------------------
-.subckt pfet_06v0 d g s b w=1e-5 l=5e-7
+* Added by Tim Edwards, May 16, 2025
+* A pfet_05v0 device is defined as a regular pFET device allowing a
+* slightly shorter gate length than required at 6V.  Otherwise, the
+* model is exactly the same as pfet_06v0.  Note that unlike the nFET,
+* there is no specific model bin for the short gate device.
+*------------------------------------------------------------------------
+.subckt pfet_05v0 d g s b w=1e-5 l=5e-7
++ as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
++ sa=0 sb=0 nf=1 sd=0 m=1
+
+.param
++ par_vth=0.01051 
++ par_k=0.00517 
++ par_l=3e-7
++ par_w=-4e-7
++ par_leff='l-par_l'
++ par_weff='par*(w-par_w)'
++ p_sqrtarea='sqrt((par_leff)*(par_weff))'
+
+.param
++ var_k='0.7071*par_k* 1e-06 / p_sqrtarea'
++ mis_k=agauss(0,var_k,1)
+
+.param
++ var_vth='0.7071*par_vth* 1e-06 / p_sqrtarea'
++ mis_vth=agauss(0,var_vth,1)
+
+m0 d g s b pfet_06v0 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs 
++delvto='mis_vth*sw_stat_mismatch' mulu0='1-mis_k*sw_stat_mismatch' sa=sa sb=sb nf=nf sd=sd m=m
+.ends pfet_05v0
+
+*--------------------------------------------------------------------------
+* Corrected by Tim Edwards, May 16, 2025.  The default length of 5e-7
+* is incompatible with the pfet_06v0 device and has been changed to 5.5e-7,
+* although in practice FET devices are never instantiated without an
+* explicit length and width.
+*--------------------------------------------------------------------------
+.subckt pfet_06v0 d g s b w=1e-5 l=5.5e-7
 + as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
 + sa=0 sb=0 nf=1 sd=0 m=1
 
