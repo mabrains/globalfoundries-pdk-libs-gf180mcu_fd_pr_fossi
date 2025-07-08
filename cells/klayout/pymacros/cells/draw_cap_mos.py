@@ -19,9 +19,9 @@
 import gdsfactory as gf
 from gdsfactory.typings import Float2, LayerSpec
 
-from .via_generator import via_generator, via_stack, snap_to_grid
+from .via_generator import via_generator, via_stack
+from .pcell_utilities import snap_to_grid
 from .layers_def import layer
-
 import numpy as np
 import os
 
@@ -152,8 +152,8 @@ def cap_mos_inst(
     return c_inst
 
 
+@gf.cell
 def draw_cap_mos(
-    layout,
     type: str = "cap_nmos",
     lc: float = 0.1,
     wc: float = 0.1,
@@ -173,7 +173,7 @@ def draw_cap_mos(
      w      : Float of diff width
     """
 
-    c = gf.Component("cap_mos_dev")
+    c = gf.Component()
 
     con_size = 0.22
     con_sp = 0.28
@@ -522,15 +522,7 @@ def draw_cap_mos(
         )  # guardring metal1
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final

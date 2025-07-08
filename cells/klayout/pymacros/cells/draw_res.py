@@ -19,12 +19,12 @@
 import gdsfactory as gf
 from gdsfactory.typings import LayerSpec, Float2
 from .layers_def import layer
-from .via_generator import via_generator, via_stack, snap_to_grid
-import os
+from .via_generator import via_generator, via_stack
+from .pcell_utilities import snap_to_grid
 
 
+@gf.cell
 def draw_metal_res(
-    layout,
     l_res: float = 0.1,
     w_res: float = 0.1,
     res_type: str = "rm1",
@@ -42,7 +42,7 @@ def draw_metal_res(
      w      : Float of diff width
     """
 
-    c = gf.Component("res_dev")
+    c = gf.Component()
 
     m_ext = 0.28
 
@@ -105,18 +105,10 @@ def draw_metal_res(
         )
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
 
 
 @gf.cell
@@ -257,7 +249,7 @@ def pcmpgr_gen(dn_rect, grw: float = 0.36) -> gf.Component:
         gf.geometry.boolean(
             A=rect_pcmpgr_out, B=rect_pcmpgr_in, operation="A-B", layer=layer["metal1"],
         )
-    )  # metal1 guardring
+    )  # metal1 guard ring
 
     return c
 
@@ -407,8 +399,8 @@ def plus_res_inst(
     return c
 
 
+@gf.cell
 def draw_nplus_res(
-    layout,
     l_res: float = 0.1,
     w_res: float = 0.1,
     res_type: str = "nplus_s",
@@ -421,7 +413,7 @@ def draw_nplus_res(
     sub_lbl: str = "",
 ) -> gf.Component:
 
-    c = gf.Component("res_dev")
+    c = gf.Component()
 
     lvpwell_enc_cmp = 0.43
     dn_enc_lvpwell = 2.5
@@ -481,22 +473,14 @@ def draw_nplus_res(
             c.add_ref(pcmpgr_gen(dn_rect=dn_rect, grw=sub_w))
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
 
 
+@gf.cell
 def draw_pplus_res(
-    layout,
     l_res: float = 0.1,
     w_res: float = 0.1,
     res_type: str = "pplus_s",
@@ -509,7 +493,7 @@ def draw_pplus_res(
     sub_lbl: str = "",
 ) -> gf.Component:
 
-    c = gf.Component("res_dev")
+    c = gf.Component()
 
     nw_enc_pcmp = 0.6
     dn_enc_ncmp = 0.66
@@ -573,18 +557,10 @@ def draw_pplus_res(
         nw_rect.ymin = r_inst.ymin - nw_enc_pcmp
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
 
 
 @gf.cell
@@ -725,8 +701,8 @@ def polyf_res_inst(
     return c
 
 
+@gf.cell
 def draw_npolyf_res(
-    layout,
     l_res: float = 0.1,
     w_res: float = 0.1,
     res_type: str = "npolyf_s",
@@ -738,7 +714,7 @@ def draw_npolyf_res(
     sub_lbl: str = "",
 ) -> gf.Component:
 
-    c = gf.Component("res_dev")
+    c = gf.Component()
 
     sub_w = 0.36
     sub_sp = 0.26 if deepnwell == 0 else 0.4
@@ -789,22 +765,14 @@ def draw_npolyf_res(
             c.add_ref(pcmpgr_gen(dn_rect=dn_rect, grw=sub_w))
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
 
 
+@gf.cell
 def draw_ppolyf_res(
-    layout,
     l_res: float = 0.1,
     w_res: float = 0.1,
     res_type: str = "ppolyf_s",
@@ -816,7 +784,7 @@ def draw_ppolyf_res(
     sub_lbl: str = "",
 ) -> gf.Component:
 
-    c = gf.Component("res_dev")
+    c = gf.Component()
 
     sub_w = 0.36
     dn_enc_ncmp = 0.66
@@ -872,22 +840,14 @@ def draw_ppolyf_res(
             c.add_ref(pcmpgr_gen(dn_rect=dn_rect, grw=sub_w))
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
 
 
+@gf.cell
 def draw_ppolyf_u_high_Rs_res(
-    layout,
     l_res: float = 0.42,
     w_res: float = 0.42,
     volt: str = "3.3V",
@@ -899,7 +859,7 @@ def draw_ppolyf_u_high_Rs_res(
     sub_lbl: str = "",
 ) -> gf.Component:
 
-    c = gf.Component("res_dev")
+    c = gf.Component()
 
     dn_enc_ncmp = 0.62 if volt == "3.3V" else 0.66
     dn_enc_poly2 = 1.34
@@ -1093,22 +1053,14 @@ def draw_ppolyf_u_high_Rs_res(
             dg.ymin = resis_mk.ymin
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
 
 
+@gf.cell
 def draw_well_res(
-    layout,
     l_res: float = 0.42,
     w_res: float = 0.42,
     res_type: str = "nwell",
@@ -1119,7 +1071,7 @@ def draw_well_res(
     sub_lbl: str = "",
 ) -> gf.Component:
 
-    c = gf.Component("res_dev")
+    c = gf.Component()
 
     nw_res_ext = 0.48
     nw_res_enc = 0.5
@@ -1277,15 +1229,7 @@ def draw_well_res(
         )
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final

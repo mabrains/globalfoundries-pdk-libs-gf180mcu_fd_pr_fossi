@@ -19,14 +19,14 @@
 import gdsfactory as gf
 from .layers_def import layer
 from gdsfactory.typings import Float2
-from .via_generator import via_generator, via_stack, snap_to_grid
-
+from .via_generator import via_generator, via_stack
+from .pcell_utilities import snap_to_grid
 import numpy as np
 import os
 
 
+@gf.cell
 def draw_diode_nd2ps(
-    layout,
     la: float = 0.1,
     wa: float = 0.1,
     cw: float = 0.1,
@@ -51,7 +51,7 @@ def draw_diode_nd2ps(
      pcmpgr     : Boolean of using P+ Guard Ring for Deep NWELL devices only
     """
 
-    c = gf.Component("diode_nd2ps_dev")
+    c = gf.Component()
 
     comp_spacing: float = 0.48
     np_enc_comp: float = 0.16
@@ -360,22 +360,14 @@ def draw_diode_nd2ps(
         lvpwell.center = diode_mk.center
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
 
 
+@gf.cell
 def draw_diode_pd2nw(
-    layout,
     la: float = 0.1,
     wa: float = 0.1,
     cw: float = 0.1,
@@ -398,7 +390,7 @@ def draw_diode_pd2nw(
      pcmpgr     : Boolean of using P+ Guard Ring for Deep NWELL devices only
     """
 
-    c = gf.Component("diode_pd2nw_dev")
+    c = gf.Component()
 
     comp_spacing: float = 0.48
     np_enc_comp: float = 0.16
@@ -699,22 +691,14 @@ def draw_diode_pd2nw(
             dg.ymin = ncmp.ymin - dg_enc_cmp
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
 
 
+@gf.cell
 def draw_diode_nw2ps(
-    layout,
     la: float = 0.1,
     wa: float = 0.1,
     cw: float = 0.1,
@@ -734,7 +718,7 @@ def draw_diode_nw2ps(
      volt       : String of operating voltage of the diode [3.3V, 5V/6V]
     """
 
-    c = gf.Component("diode_nw2ps_dev")
+    c = gf.Component()
 
     comp_spacing: float = 0.48
     np_enc_comp: float = 0.16
@@ -845,22 +829,14 @@ def draw_diode_nw2ps(
         dg.ymin = pcmp.ymin - dg_enc_cmp
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
 
 
+@gf.cell
 def draw_diode_pw2dw(
-    layout,
     la: float = 0.1,
     wa: float = 0.1,
     cw: float = 0.1,
@@ -881,7 +857,7 @@ def draw_diode_pw2dw(
      volt       : String of operating voltage of the diode [3.3V, 5V/6V]
     """
 
-    c = gf.Component("diode_pw2dw_dev")
+    c = gf.Component()
 
     comp_spacing: float = 0.92
     np_enc_comp: float = 0.16
@@ -1287,22 +1263,14 @@ def draw_diode_pw2dw(
         dg.ymin = dn_rect.ymin - dg_enc_dn
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
 
 
+@gf.cell
 def draw_diode_dw2ps(
-    layout,
     la: float = 0.1,
     wa: float = 0.1,
     cw: float = 0.1,
@@ -1322,7 +1290,7 @@ def draw_diode_dw2ps(
      volt       : String of operating voltage of the diode [3.3V, 5V/6V]
     """
 
-    c = gf.Component("diode_dw2ps_dev")
+    c = gf.Component()
 
     if volt == "5/6V":
         dn_enc_ncmp = 0.66
@@ -1696,22 +1664,14 @@ def draw_diode_dw2ps(
     # creating layout and cell in klayout
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
 
 
+@gf.cell
 def draw_sc_diode(
-    layout,
     la: float = 0.1,
     wa: float = 0.1,
     cw: float = 0.1,
@@ -1732,7 +1692,7 @@ def draw_sc_diode(
      pcmpgr     : Boolean of using P+ Guard Ring for Deep NWELL devices only
     """
 
-    c = gf.Component("sc_diode_dev")
+    c = gf.Component()
 
     sc_enc_comp = 0.16
     sc_comp_spacing = 0.28
@@ -2097,15 +2057,8 @@ def draw_sc_diode(
         )  # guardring metal1
 
     # Flatten and snap to 5nm grid
-    c_clean = snap_to_grid(c, dbu=0.005)
-
-    # Write cleaned GDS
-    tmp_gds = f"{c_clean.name}_cleaned.gds"
-    c_clean.write_gds(tmp_gds)
-
-    # Read into KLayout layout
-    layout.read(tmp_gds)
-    os.remove(tmp_gds)
+    c_final = snap_to_grid(c, dbu=0.005)
 
     # Return top cell
-    return layout.cell(c_clean.name)
+    return c_final
+
