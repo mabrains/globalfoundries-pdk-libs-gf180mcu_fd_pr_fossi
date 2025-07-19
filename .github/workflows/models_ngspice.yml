@@ -14,8 +14,6 @@
 
 name: ngspice regression
 
-# Prevent keeping resources busy when a branch/PR is updated
-# https://docs.github.com/en/actions/using-jobs/using-concurrency
 concurrency:
   group: ${{ github.repository }}-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -32,28 +30,46 @@ jobs:
       ngspice_devices: ${{ steps.set-matrix.outputs.ngspice_devices }}
     steps:
       - uses: actions/checkout@v3
+
       - id: set-matrix
         run: |
           cd models/ngspice/testing/regression
-          ngspice_devices=`echo '[' ; ls -d * | tr '\n' ','|sed -e 's/^/\"/'| sed -e 's/,$/\"]/'|sed -e 's/,/\", \"/g'`
-          ngspice_devices=`echo $ngspice_devices | jq -c .`
-          echo $ngspice_devices
-          echo "ngspice_devices=$ngspice_devices" >>$GITHUB_OUTPUT
+          ngspice_devices=$(printf '[\"%s\"]' "$(ls -1 | paste -sd '","' -)")
+          echo "ngspice_devices=$ngspice_devices" >> $GITHUB_OUTPUT
 
   models-ngspice:
-    needs: build_ngspice-matrix  
+    needs: build_ngspice-matrix
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         device: ${{ fromJson(needs.build_ngspice-matrix.outputs.ngspice_devices) }}
-
     name: ngspice-models | ${{ matrix.device }}
 
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: 'recursive'
-      - name: Testing ngspice-models for ${{ matrix.device }}
+          submodules: recursive
+
+      - name: Install uv with caching
+        id: setup_uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          cache-dependency-glob: "**/requirements*.txt"
+      # Caching will be triggered when requirements.txt changes, speeding up pip installs :contentReference[oaicite:1]{index=1}
+
+      - name: Install Python
+        run: uv python install 3
+
+      - name: Install Python dependencies
+        run: uv pip install -r requirements.txt
+
+      - name: Install latest ngspice
         run: |
-          make test-ngspice-${{ matrix.device }}
+          sudo apt-get update
+          sudo apt-get install -y ngspice
+
+      - name: Run ngspice regression
+        working-directory: models/ngspice/testing/regression/${{ matrix.device }}
+        run: make test-ngspice-${{ matrix.device }}

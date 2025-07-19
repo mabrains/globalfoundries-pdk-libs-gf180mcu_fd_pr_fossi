@@ -15,14 +15,6 @@
 # The top directory where environment will be created.
 TOP_DIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 
-# A pip `requirements.txt` file.
-# https://pip.pypa.io/en/stable/reference/pip_install/#requirements-file-format
-REQUIREMENTS_FILE := requirements.txt
-
-
-# Lint python code
-lint:
-	flake8 .
 
 ################################################################################
 ##  CLONING PV REPO

@@ -1,4 +1,4 @@
-flake8
+gdsfactory==7.9.4
 pandas
 numpy
 docopt
@@ -6,6 +6,5 @@ jinja2
 openpyxl
 sympy
 klayout
-gdsfactory==7.9.4
 pytest
 pytest-dependency
