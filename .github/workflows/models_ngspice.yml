@@ -30,12 +30,13 @@ jobs:
       ngspice_devices: ${{ steps.set-matrix.outputs.ngspice_devices }}
     steps:
       - uses: actions/checkout@v3
-
       - id: set-matrix
         run: |
           cd models/ngspice/testing/regression
-          ngspice_devices=$(printf '[\"%s\"]' "$(ls -1 | paste -sd '","' -)")
-          echo "ngspice_devices=$ngspice_devices" >> $GITHUB_OUTPUT
+          ngspice_devices=`echo '[' ; ls -d * | tr '\n' ','|sed -e 's/^/\"/'| sed -e 's/,$/\"]/'|sed -e 's/,/\", \"/g'`
+          ngspice_devices=`echo $ngspice_devices | jq -c .`
+          echo $ngspice_devices
+          echo "ngspice_devices=$ngspice_devices" >>$GITHUB_OUTPUT
 
   models-ngspice:
     needs: build_ngspice-matrix
@@ -57,7 +58,6 @@ jobs:
         with:
           enable-cache: true
           cache-dependency-glob: "**/requirements*.txt"
-      # Caching will be triggered when requirements.txt changes, speeding up pip installs :contentReference[oaicite:1]{index=1}
 
       - name: Install Python
         run: uv python install 3
