@@ -52,26 +52,5 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install uv with caching
-        id: setup_uv
-        uses: astral-sh/setup-uv@v6
-        with:
-          enable-cache: true
-          cache-dependency-glob: "**/requirements*.txt"
-
-      - name: Install Python
-        run: uv python install 3
-      
-      - name: Create virtual environment
-        run: uv venv
-
-      - name: Install Python dependencies
-        run: uv pip sync requirements.txt
-
-      - name: Install latest ngspice
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ngspice
-
       - name: Run ngspice regression
         run: make test-ngspice-${{ matrix.device }}

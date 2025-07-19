@@ -25,13 +25,17 @@ DRC-PV:
 	@pip install --break-system-packages -r requirements.txt
 	@wget https://www.klayout.org/downloads/Ubuntu-24/klayout_0.30.2-1_amd64.deb
 	@sudo apt install -f ./klayout_0.30.2-1_amd64.deb
-	
+
+NG_ENV:
+	@pip install --break-system-packages -r requirements.txt
+	@sudo apt update
+	@sudo apt install -y ngspice
 
 ################################################################################
 ## ngspice Regression section
 ################################################################################
 # ngspice models regression
-test-ngspice-%:
+test-ngspice-%: NG_ENV
 	cd models/ngspice/testing/regression/$*/ && python3 models_regression.py
 
 ################################################################################
