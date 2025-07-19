@@ -21,12 +21,10 @@ TOP_DIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 ################################################################################
 
 DRC-PV:
-	rm -rf globalfoundries-pdk-libs-gf180mcu_fd_pv/ && git clone https://github.com/efabless/globalfoundries-pdk-libs-gf180mcu_fd_pv.git
-	python3 -m venv ./.venv
-	source ./.venv/bin/activate
-	pip install -r requirements.txt
-	wget https://www.klayout.org/downloads/Ubuntu-24/klayout_0.30.2-1_amd64.deb
-	sudo apt install -f ./klayout_0.30.2-1_amd64.deb
+	@rm -rf globalfoundries-pdk-libs-gf180mcu_fd_pv/ && git clone https://github.com/efabless/globalfoundries-pdk-libs-gf180mcu_fd_pv.git
+	@pip install -break-system-packages -r requirements.txt
+	@wget https://www.klayout.org/downloads/Ubuntu-24/klayout_0.30.2-1_amd64.deb
+	@sudo apt install -f ./klayout_0.30.2-1_amd64.deb
 	
 
 ################################################################################
