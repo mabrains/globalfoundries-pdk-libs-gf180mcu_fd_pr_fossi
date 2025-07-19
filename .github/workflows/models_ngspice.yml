@@ -63,7 +63,7 @@ jobs:
         run: uv python install 3
 
       - name: Install Python dependencies
-        run: uv run pip install -r requirements.txt
+        run: uv pip sync requirements.txt
 
       - name: Install latest ngspice
         run: |
