@@ -76,10 +76,10 @@ class via_dev(pya.PCellDeclarationHelper):
 
         else:
             if self.x_max < (via_size + (2 * via_enc)):
-                self.x_max = (via_size + (2 * via_enc))
+                self.x_max = via_size + (2 * via_enc)
 
             if self.y_max < (via_size + (2 * via_enc)):
-                self.y_max = (via_size + (2 * via_enc))
+                self.y_max = via_size + (2 * via_enc)
 
     def can_create_from_shape_impl(self):
         # Implement the "Create PCell from shape" protocol: we can use any shape which

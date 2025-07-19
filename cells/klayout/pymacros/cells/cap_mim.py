@@ -23,7 +23,7 @@ from .pcell_utilities import gf_to_pya
 
 mim_min_l = 5
 mim_min_w = 5
-mim_cap_area: float = (100 * 100)
+mim_cap_area: float = 100 * 100
 
 
 class cap_mim(pya.PCellDeclarationHelper):

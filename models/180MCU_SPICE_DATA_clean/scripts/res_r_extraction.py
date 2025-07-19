@@ -65,7 +65,9 @@ def ext_const_temp_corners(df: pd.DataFrame, dev_name: str) -> pd.DataFrame:
     # Writing final dataframe that holds all clean data
     df.drop_duplicates(inplace=True)
     df.to_csv(f"{dev_name}_res_wl_meas.csv", index=False)
-    logging.info(f"Full extracted measurement data for {dev_name}-r with W&L variation:\n {df}")
+    logging.info(
+        f"Full extracted measurement data for {dev_name}-r with W&L variation:\n {df}"
+    )
     logging.info(
         f"Full extracted measurement data for {dev_name}-r with W&L variation at: {dev_name}_res_wl_meas.csv"
     )
@@ -116,7 +118,9 @@ def ext_temp_corners(df: pd.DataFrame, dev_name: str) -> pd.DataFrame:
     # Writing final dataframe that holds all clean data
     df.drop_duplicates(inplace=True)
     df.to_csv(f"{dev_name}_res_temp_meas.csv", index=False)
-    logging.info(f"Full extracted measurement data for {dev_name}-r with temp variation:\n {df}")
+    logging.info(
+        f"Full extracted measurement data for {dev_name}-r with temp variation:\n {df}"
+    )
     logging.info(
         f"Full extracted measurement data for {dev_name}-r with temp variation at: {dev_name}_res_temp_meas.csv"
     )

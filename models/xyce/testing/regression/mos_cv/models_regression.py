@@ -200,20 +200,20 @@ def ext_measured(dev_data_path: str, device: str) -> pd.DataFrame:
             idf3 = df[
                 [
                     vds,
-                    f"Vgs={mos1[0]}.{i+1}",
-                    f"Vgs={mos1[1]}.{i+1}",
-                    f"Vgs={mos1[2]}.{i+1}",
-                    f"Vgs={mos1[3]}.{i+1}",
+                    f"Vgs={mos1[0]}.{i + 1}",
+                    f"Vgs={mos1[1]}.{i + 1}",
+                    f"Vgs={mos1[2]}.{i + 1}",
+                    f"Vgs={mos1[3]}.{i + 1}",
                 ]
             ].copy()
 
             idf3.rename(
                 columns={
                     vds: "vds",
-                    f"Vgs={mos1[0]}.{i+1}": f"measured_vgs{i}={mos1[0]}",
-                    f"Vgs={mos1[1]}.{i+1}": f"measured_vgs{i}={mos1[1]}",
-                    f"Vgs={mos1[2]}.{i+1}": f"measured_vgs{i}={mos1[2]}",
-                    f"Vgs={mos1[3]}.{i+1}": f"measured_vgs{i}={mos1[3]}",
+                    f"Vgs={mos1[0]}.{i + 1}": f"measured_vgs{i}={mos1[0]}",
+                    f"Vgs={mos1[1]}.{i + 1}": f"measured_vgs{i}={mos1[1]}",
+                    f"Vgs={mos1[2]}.{i + 1}": f"measured_vgs{i}={mos1[2]}",
+                    f"Vgs={mos1[3]}.{i + 1}": f"measured_vgs{i}={mos1[3]}",
                 },
                 inplace=True,
             )
@@ -266,40 +266,40 @@ def ext_measured(dev_data_path: str, device: str) -> pd.DataFrame:
             idf2 = df[
                 [
                     vds,
-                    f"Vgs={mos1[0]}.{2*i}",
-                    f"Vgs={mos1[1]}.{2*i}",
-                    f"Vgs={mos1[2]}.{2*i}",
-                    f"Vgs={mos1[3]}.{2*i}",
+                    f"Vgs={mos1[0]}.{2 * i}",
+                    f"Vgs={mos1[1]}.{2 * i}",
+                    f"Vgs={mos1[2]}.{2 * i}",
+                    f"Vgs={mos1[3]}.{2 * i}",
                 ]
             ].copy()
 
             idf2.rename(
                 columns={
                     vds: "vds",
-                    f"Vgs={mos1[0]}.{2*i}": f"measured_vgs{i}={mos1[0]}",
-                    f"Vgs={mos1[1]}.{2*i}": f"measured_vgs{i}={mos1[1]}",
-                    f"Vgs={mos1[2]}.{2*i}": f"measured_vgs{i}={mos1[2]}",
-                    f"Vgs={mos1[3]}.{2*i}": f"measured_vgs{i}={mos1[3]}",
+                    f"Vgs={mos1[0]}.{2 * i}": f"measured_vgs{i}={mos1[0]}",
+                    f"Vgs={mos1[1]}.{2 * i}": f"measured_vgs{i}={mos1[1]}",
+                    f"Vgs={mos1[2]}.{2 * i}": f"measured_vgs{i}={mos1[2]}",
+                    f"Vgs={mos1[3]}.{2 * i}": f"measured_vgs{i}={mos1[3]}",
                 },
                 inplace=True,
             )
             idf3 = df[
                 [
                     vds,
-                    f"Vgs={mos1[0]}.{2*i + 1}",
-                    f"Vgs={mos1[1]}.{2*i + 1}",
-                    f"Vgs={mos1[2]}.{2*i + 1}",
-                    f"Vgs={mos1[3]}.{2*i + 1}",
+                    f"Vgs={mos1[0]}.{2 * i + 1}",
+                    f"Vgs={mos1[1]}.{2 * i + 1}",
+                    f"Vgs={mos1[2]}.{2 * i + 1}",
+                    f"Vgs={mos1[3]}.{2 * i + 1}",
                 ]
             ].copy()
 
             idf3.rename(
                 columns={
                     vds: "vds",
-                    f"Vgs={mos1[0]}.{2*i + 1}": f"measured_vgs{i}={mos1[0]}",
-                    f"Vgs={mos1[1]}.{2*i + 1}": f"measured_vgs{i}={mos1[1]}",
-                    f"Vgs={mos1[2]}.{2*i + 1}": f"measured_vgs{i}={mos1[2]}",
-                    f"Vgs={mos1[3]}.{2*i + 1}": f"measured_vgs{i}={mos1[3]}",
+                    f"Vgs={mos1[0]}.{2 * i + 1}": f"measured_vgs{i}={mos1[0]}",
+                    f"Vgs={mos1[1]}.{2 * i + 1}": f"measured_vgs{i}={mos1[1]}",
+                    f"Vgs={mos1[2]}.{2 * i + 1}": f"measured_vgs{i}={mos1[2]}",
+                    f"Vgs={mos1[3]}.{2 * i + 1}": f"measured_vgs{i}={mos1[3]}",
                 },
                 inplace=True,
             )
@@ -844,7 +844,7 @@ def main():
         logging.info(f"# Checking Device {dev}")
 
         data_files = glob.glob(
-            f"../../180MCU_SPICE_DATA/MOS/{measured_data[int(i*0.5)]}.nl_out.xlsx"
+            f"../../180MCU_SPICE_DATA/MOS/{measured_data[int(i * 0.5)]}.nl_out.xlsx"
         )
         if len(data_files) < 1:
             logging.erorr(f"# Can't find file for device: {dev}")
@@ -871,7 +871,7 @@ def main():
             f"# Device {dev} number of measured_datapoints for cv : {len(sim_df_id) * (len(meas_df1) + len(meas_df2) + len(meas_df3))}",
         )
         logging.info(
-            f"# Device {dev} number of simulated datapoints for cv : { len(sim_df_id) * (len(meas_df1) + len(meas_df2) + len(meas_df3))}",
+            f"# Device {dev} number of simulated datapoints for cv : {len(sim_df_id) * (len(meas_df1) + len(meas_df2) + len(meas_df3))}",
         )
 
         # passing dataframe to the error_calculation function

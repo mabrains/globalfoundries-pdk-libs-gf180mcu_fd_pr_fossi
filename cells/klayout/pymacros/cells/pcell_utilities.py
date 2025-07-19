@@ -43,10 +43,7 @@ def snap_to_grid(component: gf.Component, dbu: float = 0.005) -> gf.Component:
         for points in polygons:
             if len(points) == 0:
                 continue
-            snapped = [
-                (round(x / dbu) * dbu, round(y / dbu) * dbu)
-                for x, y in points
-            ]
+            snapped = [(round(x / dbu) * dbu, round(y / dbu) * dbu) for x, y in points]
             c_clean.add_polygon(snapped, layer=layer)
 
     return c_clean
