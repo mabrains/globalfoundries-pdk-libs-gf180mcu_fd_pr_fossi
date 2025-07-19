@@ -43,7 +43,7 @@ def cap_meas_extraction(df: pd.DataFrame, dev_name: str):
     # Drop any unwanted columns
     dummy_cols = [c for c in df.columns if "dummy_" in c]
     cj_cols = [c for c in df.columns if "Cj (fF)" in c]
-    unwanted_cols = ['w', 'l', 'CV (fF)'] + dummy_cols + cj_cols
+    unwanted_cols = ["w", "l", "CV (fF)"] + dummy_cols + cj_cols
 
     # Cleanup dataframe from unwanted columns we don't use
     df = dataframe_cleanup(df, unwanted_cols)
@@ -59,25 +59,33 @@ def cap_meas_extraction(df: pd.DataFrame, dev_name: str):
     ## We have 4 W&L combination [(100, 100), (5, 5), (100, 5), (5, 100) um]
     ## We have 3 corners [ss, typical, ff]
     ## We have 3 temperature [25, -40, 175]
-    NUM_DP_PER_TEMP_CAP = NUM_DP_PER_TEMP_MIMCAP if 'mim' in dev_name else NUM_DP_PER_TEMP_MOSCAP
+    NUM_DP_PER_TEMP_CAP = (
+        NUM_DP_PER_TEMP_MIMCAP if "mim" in dev_name else NUM_DP_PER_TEMP_MOSCAP
+    )
 
     all_temp = (
-        [25] * NUM_DP_PER_TEMP_CAP + [-40] * NUM_DP_PER_TEMP_CAP + [175] * NUM_DP_PER_TEMP_CAP
+        [25] * NUM_DP_PER_TEMP_CAP
+        + [-40] * NUM_DP_PER_TEMP_CAP
+        + [175] * NUM_DP_PER_TEMP_CAP
     )
 
     # Define new data frame that holds all variations
-    dp_df = pd.DataFrame({'temp': all_temp})
+    dp_df = pd.DataFrame({"temp": all_temp})
 
     # "Unnamed: 2" cols: This column holds some info related to each device [name, W&L]
     ## Example nmoscap_3p3 (50u x50u )
     dp_df["device_name"] = df["Unnamed: 2"].apply(lambda x: x.split("\n")[0])
-    dp_df["W (um)"] = df["Unnamed: 2"].apply(lambda x: x.split("\n")[1].split("x")[0].replace("(", "").replace("u", ""))
-    dp_df["L (um)"] = df["Unnamed: 2"].apply(lambda x: x.split("\n")[1].split("x")[1].replace(")", "").replace("u", ""))
+    dp_df["W (um)"] = df["Unnamed: 2"].apply(
+        lambda x: x.split("\n")[1].split("x")[0].replace("(", "").replace("u", "")
+    )
+    dp_df["L (um)"] = df["Unnamed: 2"].apply(
+        lambda x: x.split("\n")[1].split("x")[1].replace(")", "").replace("u", "")
+    )
     dp_df["W (um)"] = dp_df["W (um)"].astype(float)
     dp_df["L (um)"] = dp_df["L (um)"].astype(float)
 
     # Cleanup dataframe from unwanted columns we don't use
-    unwanted_cols = ['Unnamed: 2', 'corners']
+    unwanted_cols = ["Unnamed: 2", "corners"]
     df = dataframe_cleanup(df, unwanted_cols)
 
     # Get number of columns that holds measurement data for each variation
@@ -88,15 +96,19 @@ def cap_meas_extraction(df: pd.DataFrame, dev_name: str):
 
     # Generating all data points per each variation and combining all data in one DF
     all_dfs = []
-    col_untouched = 'Vj'           # Name of column we don't need to touch it while stacking other columns
-    stacked_col_name = 'corner'    # Name of new column in which we stacked other columns
-    stacked_col_index = 'Cj'       # Name of column that holds all values of stacked columns
+    col_untouched = (
+        "Vj"  # Name of column we don't need to touch it while stacking other columns
+    )
+    stacked_col_name = "corner"  # Name of new column in which we stacked other columns
+    stacked_col_index = "Cj"  # Name of column that holds all values of stacked columns
 
     for i in range(0, len(df.columns), num_data_col_per_dp):
         sub_df = df[df.columns[i : i + num_data_col_per_dp]].copy()
         sub_df.columns = orig_col_names
-        stacked_corner_df = stack_df_cols(sub_df, col_untouched, stacked_col_name, stacked_col_index)
-        stacked_corner_df['cj_max'] = stacked_corner_df['Cj'].max()
+        stacked_corner_df = stack_df_cols(
+            sub_df, col_untouched, stacked_col_name, stacked_col_index
+        )
+        stacked_corner_df["cj_max"] = stacked_corner_df["Cj"].max()
         for c in dp_df.columns:
             stacked_corner_df[c] = dp_df.loc[len(all_dfs), c]
         all_dfs.append(stacked_corner_df)
@@ -105,15 +117,23 @@ def cap_meas_extraction(df: pd.DataFrame, dev_name: str):
     all_dfs.drop_duplicates(inplace=True)
 
     # Cleaning some columns and values to match latest version of GF180MCU models
-    if 'mim' in dev_name:
-        all_dfs["device_name"] = all_dfs["device_name"].apply(lambda x: x.replace("mim", "cap_mim").replace("1p5fF", "1f5"))
-        all_dfs["device_name"] = all_dfs["device_name"].apply(lambda x: x.replace("1p0fF", "1f0").replace("2p0fF", "2f0"))
+    if "mim" in dev_name:
+        all_dfs["device_name"] = all_dfs["device_name"].apply(
+            lambda x: x.replace("mim", "cap_mim").replace("1p5fF", "1f5")
+        )
+        all_dfs["device_name"] = all_dfs["device_name"].apply(
+            lambda x: x.replace("1p0fF", "1f0").replace("2p0fF", "2f0")
+        )
     else:
-        all_dfs["device_name"] = all_dfs["device_name"].apply(lambda x: x.replace("nmoscap", "cap_nmos").replace("pmoscap", "cap_pmos"))
-        all_dfs["device_name"] = all_dfs["device_name"].apply(lambda x: x.replace("3p3", "03v3").replace("6p0", "06v0"))
+        all_dfs["device_name"] = all_dfs["device_name"].apply(
+            lambda x: x.replace("nmoscap", "cap_nmos").replace("pmoscap", "cap_pmos")
+        )
+        all_dfs["device_name"] = all_dfs["device_name"].apply(
+            lambda x: x.replace("3p3", "03v3").replace("6p0", "06v0")
+        )
 
     # Generiting sweep file for MOSCAP devices
-    if 'cap_mos' in dev_name:
+    if "cap_mos" in dev_name:
         gen_moscap_sweeps(all_dfs, dev_name)
 
     ## Re-arranging columns of final data file
@@ -153,12 +173,12 @@ def gen_moscap_sweeps(df: pd.DataFrame, dev_name: str):
     """
 
     sweeps_df = df.copy()
-    min_volt_val = sweeps_df['Vj'].min()
-    max_volt_val = sweeps_df['Vj'].max()
-    step_volt_val = round(sweeps_df['Vj'].diff().max(), 2)
-    sweeps_df.drop(['Vj', 'Cj'], axis=1, inplace=True)
+    min_volt_val = sweeps_df["Vj"].min()
+    max_volt_val = sweeps_df["Vj"].max()
+    step_volt_val = round(sweeps_df["Vj"].diff().max(), 2)
+    sweeps_df.drop(["Vj", "Cj"], axis=1, inplace=True)
     sweeps_df.drop_duplicates(inplace=True)
-    sweeps_df['sweep'] = f'Vj {min_volt_val} {max_volt_val} {step_volt_val}'
+    sweeps_df["sweep"] = f"Vj {min_volt_val} {max_volt_val} {step_volt_val}"
 
     ## Re-arranging columns of final data file
     sweeps_df_cols = [
@@ -176,4 +196,6 @@ def gen_moscap_sweeps(df: pd.DataFrame, dev_name: str):
     sweeps_df.to_csv(f"{dev_name}_sweeps_cv.csv", index=False)
     logging.info(f"Sweep data points for {dev_name}:\n {sweeps_df}")
     logging.info(f"Number of sweep points for {dev_name}: {len(sweeps_df)}")
-    logging.info(f"Extracted sweep measurement data for {dev_name} at : {dev_name}_sweeps.csv")
+    logging.info(
+        f"Extracted sweep measurement data for {dev_name} at : {dev_name}_sweeps.csv"
+    )

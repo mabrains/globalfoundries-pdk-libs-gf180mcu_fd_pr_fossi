@@ -70,13 +70,24 @@ def simulate_device(netlist_path: str):
         int: Return code of the simulation. 0 if success.  Non-zero if failed.
     """
 
-    return check_call(f"Xyce {netlist_path} -hspice-ext all -l {netlist_path}.log  > {netlist_path}.log 2>&1", shell=True)
+    return check_call(
+        f"Xyce {netlist_path} -hspice-ext all -l {netlist_path}.log  > {netlist_path}.log 2>&1",
+        shell=True,
+    )
 
 
-def run_sim(dirpath: str, device: str, meas_out_result: str,
-            width: str, length: float, corner: float,
-            temp: float, const_var: str, const_var_val: float,
-            sweeps: str) -> dict:
+def run_sim(
+    dirpath: str,
+    device: str,
+    meas_out_result: str,
+    width: str,
+    length: float,
+    corner: float,
+    temp: float,
+    const_var: str,
+    const_var_val: float,
+    sweeps: str,
+) -> dict:
     """
     Function to run simulation for all data points per each variation.
 
@@ -123,7 +134,9 @@ def run_sim(dirpath: str, device: str, meas_out_result: str,
         else:
             device_group_netlist = "nfet_06v0" if "nfet" in device else "pfet_06v0"
 
-    netlist_tmp = os.path.join(f"device_netlists_{meas_out_result}", f"{device_group_netlist}.spice")
+    netlist_tmp = os.path.join(
+        f"device_netlists_{meas_out_result}", f"{device_group_netlist}.spice"
+    )
 
     # Preparing output directory at which results will be added
     dev_netlists_path = os.path.join(dirpath, f"{device}_netlists")
@@ -167,7 +180,9 @@ def run_sim(dirpath: str, device: str, meas_out_result: str,
             )
 
     # Running xyce for each netlist
-    logging.info(f"Running simulation for {device} at w={width}, l={length}, temp={temp}, sweeps={sweeps}, out={meas_out_result}")
+    logging.info(
+        f"Running simulation for {device} at w={width}, l={length}, temp={temp}, sweeps={sweeps}, out={meas_out_result}"
+    )
 
     # calling simulator to run netlist and write its results
     try:
@@ -217,7 +232,10 @@ def run_sim(dirpath: str, device: str, meas_out_result: str,
 
 
 def run_sims(
-    df: pd.DataFrame, dirpath: str, device: str, meas_out_result: str,
+    df: pd.DataFrame,
+    dirpath: str,
+    device: str,
+    meas_out_result: str,
 ) -> pd.DataFrame:
     """
     Function to run all simulations for all data points and generating results in proper format.
@@ -324,7 +342,9 @@ def main(meas_out_result):
         sweeps_file = f"../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/MOS_iv/{dev}_sweeps_{meas_out_result}.csv"
 
         if not os.path.exists(sweeps_file) or not os.path.isfile(sweeps_file):
-            logging.error("There is no measured data to be used in simulation, please recheck")
+            logging.error(
+                "There is no measured data to be used in simulation, please recheck"
+            )
             logging.error(f"{sweeps_file} file doesn't exist, please recheck")
             exit(1)
 
@@ -334,65 +354,90 @@ def main(meas_out_result):
         sim_df = run_sims(df_sweeps, dev_path, dev, meas_out_result)
         # Round all voltages to elimniate using long digits that could cause mismatch with meas df
         ## Simulator uses small values instead of 0 [10e-16 for example]
-        sim_df = sim_df.round({'vbs': 2, 'vgs': 2, 'vds': 2})
+        sim_df = sim_df.round({"vbs": 2, "vgs": 2, "vds": 2})
         sim_df.drop_duplicates(inplace=True)
 
-        logging.info(f"# Device {dev} number of simulated datapoints for {meas_out_result} : {len(sim_df)} ")
+        logging.info(
+            f"# Device {dev} number of simulated datapoints for {meas_out_result} : {len(sim_df)} "
+        )
 
         # Loading measured data to be compared
         meas_data_path = f"../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/MOS_iv/{dev}_meas_{meas_out_result}.csv"
 
         if not os.path.exists(meas_data_path) or not os.path.isfile(meas_data_path):
-            logging.error("There is no measured data to be used in simulation, please recheck")
+            logging.error(
+                "There is no measured data to be used in simulation, please recheck"
+            )
             logging.error(f"{meas_data_path} file doesn't exist, please recheck")
             exit(1)
 
         meas_df = pd.read_csv(meas_data_path)
-        meas_df = meas_df.round({'vbs': 2, 'vgs': 2, 'vds': 2})
+        meas_df = meas_df.round({"vbs": 2, "vgs": 2, "vds": 2})
         meas_df.drop_duplicates(inplace=True)
 
-        logging.info(f"# Device {dev} number of measured datapoints for {meas_out_result} : {len(meas_df)} ")
+        logging.info(
+            f"# Device {dev} number of measured datapoints for {meas_out_result} : {len(meas_df)} "
+        )
 
         # Merging meas and sim dataframe in one
-        full_df = meas_df.merge(sim_df,
-                                on=['W (um)', 'L (um)', 'corner', 'temp', 'vds', 'vgs', 'vbs'],
-                                how='left',
-                                suffixes=('_meas', '_sim'))
+        full_df = meas_df.merge(
+            sim_df,
+            on=["W (um)", "L (um)", "corner", "temp", "vds", "vgs", "vbs"],
+            how="left",
+            suffixes=("_meas", "_sim"),
+        )
 
         # Clipping current values to lowest curr
         if meas_out_result == "id":
-            full_df['id_meas'] = full_df['id_meas'].clip(lower=CLIP_CURR)
-            full_df['id_sim'] = full_df['id_sim'].clip(lower=CLIP_CURR)
+            full_df["id_meas"] = full_df["id_meas"].clip(lower=CLIP_CURR)
+            full_df["id_sim"] = full_df["id_sim"].clip(lower=CLIP_CURR)
 
         # Droping first/last row for Rds measurement [first/last simulation point]
         ## as we have measured Rds as a partial derivative of vds to ids.
         ## As each point is related to next point, so last point have no next point so its calculated value isn't correct.
-        if meas_out_result == 'rds':
-            full_df = full_df[~full_df['vds'].isin([0.0, -0.0])]  # Either nfet or pfet
-            if '03v3' in dev:
+        if meas_out_result == "rds":
+            full_df = full_df[~full_df["vds"].isin([0.0, -0.0])]  # Either nfet or pfet
+            if "03v3" in dev:
                 # Last simlulation points for 03v3 devices for Rds measurements at Vds = 3.3V
-                full_df = full_df[~full_df['vds'].isin([3.3, -3.3])]  # Either nfet or pfet
+                full_df = full_df[
+                    ~full_df["vds"].isin([3.3, -3.3])
+                ]  # Either nfet or pfet
             else:
                 # Last simlulation points for 03v3 devices for Rds measurements at Vds = 6.6V
-                full_df = full_df[~full_df['vds'].isin([6.6, -6.6])]  # Either nfet or pfet
+                full_df = full_df[
+                    ~full_df["vds"].isin([6.6, -6.6])
+                ]  # Either nfet or pfet
 
         # Error calculation and report
         ## Relative error calculation for FETs
-        full_df[f"{meas_out_result}_err"] = np.abs((full_df[f"{meas_out_result}_meas"] - full_df[f"{meas_out_result}_sim"]) * 100.0 / full_df[f"{meas_out_result}_meas"])
+        full_df[f"{meas_out_result}_err"] = np.abs(
+            (full_df[f"{meas_out_result}_meas"] - full_df[f"{meas_out_result}_sim"])
+            * 100.0
+            / full_df[f"{meas_out_result}_meas"]
+        )
         full_df.to_csv(f"{dev_path}/{dev}_full_merged_data.csv", index=False)
 
         # Calculate Q [quantile] to verify matching between measured and simulated data
         ## Refer to https://builtin.com/data-science/boxplot for more details.
-        quantile_val = QUANTILE_ID if meas_out_result == 'id' else QUANTILE_RDS
-        max_val_detect = MAX_VAL_DETECT_ID if meas_out_result == 'id' else MAX_VAL_DETECT_RDS
+        quantile_val = QUANTILE_ID if meas_out_result == "id" else QUANTILE_RDS
+        max_val_detect = (
+            MAX_VAL_DETECT_ID if meas_out_result == "id" else MAX_VAL_DETECT_RDS
+        )
 
         q_target = full_df[f"{meas_out_result}_err"].quantile(quantile_val)
         logging.info(f"Quantile target for {dev} device is: {q_target} %")
 
         bad_err_full_df_loc = full_df[full_df[f"{meas_out_result}_err"] > PASS_THRESH]
-        bad_err_full_df = bad_err_full_df_loc[(bad_err_full_df_loc[f"{meas_out_result}_sim"] >= max_val_detect) | (bad_err_full_df_loc[f"{meas_out_result}_meas"] >= max_val_detect)]
-        bad_err_full_df.to_csv(f"{dev_path}/{dev}_bad_err_{meas_out_result}.csv", index=False)
-        logging.info(f"Bad relative errors between measured and simulated data at {dev}_bad_err_{meas_out_result}.csv")
+        bad_err_full_df = bad_err_full_df_loc[
+            (bad_err_full_df_loc[f"{meas_out_result}_sim"] >= max_val_detect)
+            | (bad_err_full_df_loc[f"{meas_out_result}_meas"] >= max_val_detect)
+        ]
+        bad_err_full_df.to_csv(
+            f"{dev_path}/{dev}_bad_err_{meas_out_result}.csv", index=False
+        )
+        logging.info(
+            f"Bad relative errors between measured and simulated data at {dev}_bad_err_{meas_out_result}.csv"
+        )
 
         # calculating the relative error of each device and reporting it
         min_error_total = float(full_df[f"{meas_out_result}_err"].min())
@@ -411,15 +456,16 @@ def main(meas_out_result):
 
         # Verify regression results
         if q_target <= PASS_THRESH:
-            logging.info(f"# Device {dev} for {meas_out_result} simulation has passed regression.")
+            logging.info(
+                f"# Device {dev} for {meas_out_result} simulation has passed regression."
+            )
         else:
             logging.error(
                 f"# Device {dev} {meas_out_result} simulation has failed regression. Needs more analysis."
             )
-            logging.error(
-                f"#Failed regression for {dev}-{meas_out_result} analysis."
-            )
+            logging.error(f"#Failed regression for {dev}-{meas_out_result} analysis.")
             exit(1)
+
 
 # ================================================================
 # -------------------------- MAIN --------------------------------
@@ -448,7 +494,9 @@ if __name__ == "__main__":
     )
 
     if meas_out_result not in ["id", "rds"]:
-        logging.error(f"{meas_out_result} is not supported, allowed measurements for Fets are [id, rds], please recheck")
+        logging.error(
+            f"{meas_out_result} is not supported, allowed measurements for Fets are [id, rds], please recheck"
+        )
         exit(1)
 
     # Calling main function

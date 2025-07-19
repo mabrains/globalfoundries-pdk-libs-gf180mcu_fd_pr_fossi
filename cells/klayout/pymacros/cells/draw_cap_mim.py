@@ -16,7 +16,6 @@ def draw_cap_mim(
     top_lbl: str = "",
     bot_lbl: str = "",
 ):
-
     """
     Draw the MIM CAP device for GF180MCU PDK
 
@@ -73,7 +72,12 @@ def draw_cap_mim(
 
     # drawing cap identifier and bottom , upper layers
 
-    m_up = c.add_ref(gf.components.rectangle(size=(wc, lc), layer=upper_layer,))
+    m_up = c.add_ref(
+        gf.components.rectangle(
+            size=(wc, lc),
+            layer=upper_layer,
+        )
+    )
 
     fusetop = c.add_ref(
         gf.components.rectangle(

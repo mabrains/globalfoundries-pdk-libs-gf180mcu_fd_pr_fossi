@@ -54,7 +54,6 @@ def via_generator(
     via_enclosure: Float2 = (0.06, 0.06),
     via_spacing: Float2 = (0.17, 0.17),
 ) -> gf.Component():
-
     """
     return only vias withen the range xrange and yrange while enclosing by via_enclosure
     and set number of rows and number of coloumns according to ranges and via size and spacing
@@ -103,7 +102,6 @@ def via_stack(
     metal_level: int = 1,
     base_layer: LayerSpec = layer["comp"],
 ) -> gf.Component:
-
     """
     return via stack till the metal level indicated where :
     metal_level 1 : till m1
@@ -226,6 +224,7 @@ def via_stack(
 
     return c
 
+
 @gf.cell
 def draw_via_dev(
     layout,
@@ -235,7 +234,7 @@ def draw_via_dev(
     y_max: float = 2,
     metal_level: str = "M1",
     base_layer: str = "comp",
-)-> gf.Component:
+) -> gf.Component:
     """
     Return via stack till the metal level indicated where :
     metal_level 1 : till m1

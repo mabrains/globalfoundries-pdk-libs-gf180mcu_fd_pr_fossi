@@ -1284,7 +1284,6 @@ def draw_nfet(
     sub_lbl: str = "",
     patt_lbl: bool = 0,
 ) -> gf.Component:
-
     """
     Retern nfet
 
@@ -1873,7 +1872,6 @@ def draw_pfet(
     sub_lbl: str = "",
     patt_lbl: bool = 0,
 ) -> gf.Component:
-
     """
     Retern pfet
 
@@ -2398,7 +2396,6 @@ def draw_nfet_06v0_nvt(
     sub_lbl: str = "",
     patt_lbl: bool = 0,
 ) -> gf.Component:
-
     """
     Usage:-
      used to draw Native NFET 6V transistor by specifying parameters

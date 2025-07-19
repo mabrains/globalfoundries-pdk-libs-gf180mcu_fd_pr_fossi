@@ -59,14 +59,23 @@ def simulate_device(netlist_path: str):
         int: Return code of the simulation. 0 if success.  Non-zero if failed.
     """
 
-    return check_call(f"Xyce {netlist_path} -hspice-ext all  > {netlist_path}.log 2>&1",
-                      shell=True)
+    return check_call(
+        f"Xyce {netlist_path} -hspice-ext all  > {netlist_path}.log 2>&1", shell=True
+    )
 
 
-def run_sim(dirpath: str, device: str, meas_out_result: str,
-            width: str, length: float, corner: float,
-            temp: float, const_var: str, const_var_val: float,
-            sweeps: str) -> dict:
+def run_sim(
+    dirpath: str,
+    device: str,
+    meas_out_result: str,
+    width: str,
+    length: float,
+    corner: float,
+    temp: float,
+    const_var: str,
+    const_var_val: float,
+    sweeps: str,
+) -> dict:
     """
     Function to run simulation for all data points per each variation.
 
@@ -105,7 +114,9 @@ def run_sim(dirpath: str, device: str, meas_out_result: str,
     # Select desired nelist templete to be used in the current run
     device_group_netlist = "nfet" if "nfet" in device else "pfet"
 
-    netlist_tmp = os.path.join(f"device_netlists_{meas_out_result}", f"{device_group_netlist}.spice")
+    netlist_tmp = os.path.join(
+        f"device_netlists_{meas_out_result}", f"{device_group_netlist}.spice"
+    )
 
     # Preparing output directory at which results will be added
     dev_netlists_path = os.path.join(dirpath, f"{device}_netlists")
@@ -149,7 +160,9 @@ def run_sim(dirpath: str, device: str, meas_out_result: str,
             )
 
     # Running xyce for each netlist
-    logging.info(f"Running simulation for {device} at w={width}, l={length}, temp={temp}, sweeps={sweeps}, out={meas_out_result}")
+    logging.info(
+        f"Running simulation for {device} at w={width}, l={length}, temp={temp}, sweeps={sweeps}, out={meas_out_result}"
+    )
 
     # calling simulator to run netlist and write its results
     try:
@@ -201,7 +214,10 @@ def run_sim(dirpath: str, device: str, meas_out_result: str,
 
 
 def run_sims(
-    df: pd.DataFrame, dirpath: str, device: str, meas_out_result: str,
+    df: pd.DataFrame,
+    dirpath: str,
+    device: str,
+    meas_out_result: str,
 ) -> pd.DataFrame:
     """
     Function to run all simulations for all data points and generating results in proper format.
@@ -301,7 +317,9 @@ def main(meas_out_result):
         sweeps_file = f"../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/MOS_iv/{dev}_sweeps_{meas_out_result}.csv"
 
         if not os.path.exists(sweeps_file) or not os.path.isfile(sweeps_file):
-            logging.error("There is no measured data to be used in simulation, please recheck")
+            logging.error(
+                "There is no measured data to be used in simulation, please recheck"
+            )
             logging.error(f"{sweeps_file} file doesn't exist, please recheck")
             exit(1)
 
@@ -311,12 +329,23 @@ def main(meas_out_result):
         sim_df = run_sims(df_sweeps, dev_path, dev, meas_out_result)
         sim_df.drop_duplicates(inplace=True)
 
-        sim_df_columns = ["W (um)", "L (um)", "corner", "temp", "vds", "vgs", "vbs", f"{meas_out_result}"]
+        sim_df_columns = [
+            "W (um)",
+            "L (um)",
+            "corner",
+            "temp",
+            "vds",
+            "vgs",
+            "vbs",
+            f"{meas_out_result}",
+        ]
         sim_df = sim_df.reindex(columns=sim_df_columns)
 
         sim_df.to_csv(f"{dev_path}/sim_results_{dev}.csv", index=False)
 
-        logging.info(f"# Device {dev} number of simulated datapoints for {meas_out_result} : {len(sim_df)} ")
+        logging.info(
+            f"# Device {dev} number of simulated datapoints for {meas_out_result} : {len(sim_df)} "
+        )
 
         # Verify regression results
         if not sim_df[f"{meas_out_result}"].isnull().values.any():
@@ -325,10 +354,9 @@ def main(meas_out_result):
             logging.error(
                 f"# Device {dev} {meas_out_result} simulation has failed regression."
             )
-            logging.error(
-                f"#Failed regression for {dev}-{meas_out_result} analysis."
-            )
+            logging.error(f"#Failed regression for {dev}-{meas_out_result} analysis.")
             exit(1)
+
 
 # ================================================================
 # -------------------------- MAIN --------------------------------
@@ -357,7 +385,9 @@ if __name__ == "__main__":
     )
 
     if meas_out_result not in ["id", "rds"]:
-        logging.error(f"{meas_out_result} is not supported, allowed measurements for Fets are [id, rds], please recheck")
+        logging.error(
+            f"{meas_out_result} is not supported, allowed measurements for Fets are [id, rds], please recheck"
+        )
         exit(1)
 
     # Calling main function
