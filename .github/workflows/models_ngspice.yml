@@ -61,6 +61,9 @@ jobs:
 
       - name: Install Python
         run: uv python install 3
+      
+      - name: Create virtual environment
+        run: uv venv
 
       - name: Install Python dependencies
         run: uv pip sync requirements.txt
