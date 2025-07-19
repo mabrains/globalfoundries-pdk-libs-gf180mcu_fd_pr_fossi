@@ -24,33 +24,11 @@ DRC-PV:
 	rm -rf globalfoundries-pdk-libs-gf180mcu_fd_pv/ && git clone https://github.com/efabless/globalfoundries-pdk-libs-gf180mcu_fd_pv.git
 
 ################################################################################
-## DRC Regression section
-################################################################################
-# DRC main testing
-test-DRC-main:
-	klayout -v
-
-# DRC main testing
-test-DRC-switch:
-	klayout -v
-
-################################################################################
-## LVS Regression section
-################################################################################
-# LVS main testing
-test-LVS-main:
-	klayout -v
-
-# LVS main testing
-test-LVS-switch:
-	klayout -v
-
-################################################################################
 ## ngspice Regression section
 ################################################################################
 # ngspice models regression
 test-ngspice-%:
-	cd models/ngspice/testing/regression/$*/ && python3 models_regression.py
+	cd models/ngspice/testing/regression/$*/ && uv run python3 models_regression.py
 
 ################################################################################
 ## PCells Regression section
