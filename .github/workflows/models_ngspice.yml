@@ -74,5 +74,4 @@ jobs:
           sudo apt-get install -y ngspice
 
       - name: Run ngspice regression
-        working-directory: models/ngspice/testing/regression/${{ matrix.device }}
         run: make test-ngspice-${{ matrix.device }}
