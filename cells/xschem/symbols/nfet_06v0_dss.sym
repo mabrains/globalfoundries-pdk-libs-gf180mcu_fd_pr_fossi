@@ -21,12 +21,15 @@ format="@spiceprefix@name @pinlist @model L=@L W=@W
 + nf=@nf ad=@ad as=@as pd=@pd ps=@ps
 + nrd=@nrd nrs=@nrs sa=@sa sb=@sb sd=@sd
 + m=@m"
++ d_sab=@d_sab s_sab=@s_sab
 lvs_format="@name @pinlist @model L=@L W=@W nf=@nf m=@m"
 template="name=M1
 L=0.70u
 W=0.30u
 nf=1
 m=1
+d_sab=3.78u
+s_sab=0.28u
 ad=\\"'int((nf+1)/2) * W/nf * 0.18u'\\"
 pd=\\"'2*int((nf+1)/2) * (W/nf + 0.18u)'\\"
 as=\\"'int((nf+2)/2) * W/nf * 0.18u'\\"

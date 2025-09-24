@@ -20,6 +20,7 @@ K {type=pmos
 format="@spiceprefix@name @pinlist @model L=@L W=@W
 + nf=@nf ad=@ad as=@as pd=@pd ps=@ps
 + nrd=@nrd nrs=@nrs sa=@sa sb=@sb sd=@sd
++ d_sab=@d_sab s_sab=@s_sab
 + m=@m"
 lvs_format="@name @pinlist @model L=@L W=@W nf=@nf m=@m"
 template="name=M1
@@ -32,6 +33,8 @@ pd=\\"'2*int((nf+1)/2) * (W/nf + 0.18u)'\\"
 as=\\"'int((nf+2)/2) * W/nf * 0.18u'\\"
 ps=\\"'2*int((nf+2)/2) * (W/nf + 0.18u)'\\"
 nrd=\\"'0.18u / W'\\" nrs=\\"'0.18u / W'\\"
+s_sab=0.28u 
+d_sab=2.78u 
 sa=0 sb=0 sd=0
 model=pfet_03v3_dss
 spiceprefix=X
