@@ -1,4 +1,4 @@
-gdsfactory==7.9.4
+gdsfactory~=7.9.4
 pandas
 numpy
 docopt

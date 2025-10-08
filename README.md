@@ -1,18 +1,19 @@
-GlobalFoundries 180nm MCU primitive libraries
-=============================================
+# GlobalFoundries 180nm MCU primitive libraries
 
 This repository contains the "primitive cells" implementation as part of
 `Google's open source PDK for GlobalFoundries 180nm MCU process node <https://github.com/google/gf180mcu-pdk>`_.
 
-License
-=======
+To make sure the GDSFactory-based KLayout PCells work correctly, please use the exact GDSFactory version as specified in `requirements.txt`.
+
+There is also a PCell library that only uses the KLayout API and therefore doesn't have any dependencies.
+
+## License
 
 The GF180MCU PDK is released under the `Apache 2.0 license <https://github.com/google/skywater-pdk/blob/master/LICENSE>`_.
 
 The copyright details (which should also be found at the top of every file) are;
 
-::
-
+```
    Copyright 2022 GlobalFoundries PDK Authors
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,4 +27,4 @@ The copyright details (which should also be found at the top of every file) are;
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
+```
