@@ -48,7 +48,7 @@ def call_simulator(file_name):
 def get_sizes(models_path):
     with open(models_path, "r") as f:
         device_model = f.read()
-        find_str = '\.model  nfet_03v3.*\n.*\n\+lmin.*= (.*\S).*\n.*\n\+wmin.*= (.*\S)'  # noqa: W605
+        find_str = "\.model  nfet_03v3.*\n.*\n\+lmin.*= (.*\S).*\n.*\n\+wmin.*= (.*\S)"  # noqa: W605
         dimensions = re.findall(find_str, device_model)
     return dimensions[0:16]
 

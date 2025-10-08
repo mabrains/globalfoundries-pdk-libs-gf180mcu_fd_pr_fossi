@@ -20,6 +20,7 @@ from math import ceil, floor
 import gdsfactory as gf
 from gdsfactory.typings import Float2, LayerSpec
 from .layers_def import layer
+from .pcell_utilities import snap_to_grid
 import os
 
 
@@ -53,7 +54,6 @@ def via_generator(
     via_enclosure: Float2 = (0.06, 0.06),
     via_spacing: Float2 = (0.17, 0.17),
 ) -> gf.Component():
-
     """
     return only vias withen the range xrange and yrange while enclosing by via_enclosure
     and set number of rows and number of coloumns according to ranges and via size and spacing
@@ -102,7 +102,6 @@ def via_stack(
     metal_level: int = 1,
     base_layer: LayerSpec = layer["comp"],
 ) -> gf.Component:
-
     """
     return via stack till the metal level indicated where :
     metal_level 1 : till m1
@@ -226,6 +225,7 @@ def via_stack(
     return c
 
 
+@gf.cell
 def draw_via_dev(
     layout,
     x_min: float = 0,
@@ -234,17 +234,14 @@ def draw_via_dev(
     y_max: float = 2,
     metal_level: str = "M1",
     base_layer: str = "comp",
-):
-
+) -> gf.Component:
     """
-
-    return via stack till the metal level indicated where :
+    Return via stack till the metal level indicated where :
     metal_level 1 : till m1
     metal_level 2 : till m2
     metal_level 3 : till m3
     metal_level 4 : till m4
     metal_level 5 : till m5
-    withen the range xrange and yrange and expecting the base_layer to be drawen
 
     Args:
         layout : layout object
@@ -252,10 +249,9 @@ def draw_via_dev(
         x_max :  right x_point of vias generated
         y_min :  bottom y_point of vias generated
         y_max :  top y_point of vias generated
-
     """
 
-    c = gf.Component("via_stack_dev")
+    c = gf.Component()
 
     # vias dimensions
     x_range = x_max - x_min
@@ -394,8 +390,8 @@ def draw_via_dev(
         )
         c.add_ref(v5)
 
-    c.write_gds("via_stack_temp.gds")
-    layout.read("via_stack_temp.gds")
-    os.remove("via_stack_temp.gds")
+    # Flatten and snap to 5nm grid
+    c_final = snap_to_grid(c, dbu=0.005)
 
-    return layout.cell(c.name)
+    # Return top cell
+    return c_final

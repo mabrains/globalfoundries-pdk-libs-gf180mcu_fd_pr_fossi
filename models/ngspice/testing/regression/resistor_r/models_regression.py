@@ -69,7 +69,9 @@ def simulate_device(netlist_path: str):
     Returns:
         int: Return code of the simulation. 0 if success.  Non-zero if failed.
     """
-    return os.system(f"ngspice -b {netlist_path} -o {netlist_path}.log > {netlist_path}.log 2>&1")
+    return os.system(
+        f"ngspice -b {netlist_path} -o {netlist_path}.log > {netlist_path}.log 2>&1"
+    )
 
 
 def find_res(filename: str) -> float:
@@ -81,8 +83,15 @@ def find_res(filename: str) -> float:
     return float(process.communicate()[0][:-1].decode("utf-8").split(" ")[2])
 
 
-def run_sim(dirpath: str, device: str, width: str, length: float,
-            corner: float, temp: float, voltage: str) -> dict:
+def run_sim(
+    dirpath: str,
+    device: str,
+    width: str,
+    length: float,
+    corner: float,
+    temp: float,
+    voltage: str,
+) -> dict:
     """
     Function to run simulation for all data points per each variation.
 
@@ -157,7 +166,9 @@ def run_sim(dirpath: str, device: str, width: str, length: float,
             )
 
     # Running ngspice for each netlist
-    logging.info(f"Running simulation for {device}-R at w={width}, l={length}, temp={temp}, corner={corner}, voltage={voltage}")
+    logging.info(
+        f"Running simulation for {device}-R at w={width}, l={length}, temp={temp}, corner={corner}, voltage={voltage}"
+    )
 
     # calling simulator to run netlist and write its results
     try:
@@ -227,9 +238,7 @@ def run_sims(df: pd.DataFrame, dirpath: str, device: str) -> pd.DataFrame:
                 logging.info("Test case generated an exception: %s" % (exc))
 
     df = pd.DataFrame(results)
-    df = df[
-        ["device", "corner", "length", "width", "voltage", "temp", "res_unscaled"]
-    ]
+    df = df[["device", "corner", "length", "width", "voltage", "temp", "res_unscaled"]]
     df["res"] = df["res_unscaled"] * df["width"] / df["length"]
 
     return df
@@ -293,13 +302,21 @@ def main():
         meas_data_path_wl = f"../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/RES_r/{dev}_res_wl_meas.csv"
         meas_data_path_temp = f"../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/RES_r/{dev}_res_temp_meas.csv"
 
-        if not os.path.exists(meas_data_path_wl) or not os.path.isfile(meas_data_path_wl):
-            logging.error("There is no measured data to be used in simulation, please recheck")
+        if not os.path.exists(meas_data_path_wl) or not os.path.isfile(
+            meas_data_path_wl
+        ):
+            logging.error(
+                "There is no measured data to be used in simulation, please recheck"
+            )
             logging.error(f"{meas_data_path_wl} file doesn't exist, please recheck")
             exit(1)
 
-        if not os.path.exists(meas_data_path_temp) or not os.path.isfile(meas_data_path_temp):
-            logging.error("There is no measured data to be used in simulation, please recheck")
+        if not os.path.exists(meas_data_path_temp) or not os.path.isfile(
+            meas_data_path_temp
+        ):
+            logging.error(
+                "There is no measured data to be used in simulation, please recheck"
+            )
             logging.error(f"{meas_data_path_temp} file doesn't exist, please recheck")
             exit(1)
 
@@ -317,14 +334,18 @@ def main():
         logging.info(f"# Device {dev} number of simulated datapoints: {len(sim_df)} ")
 
         # Merging meas and sim dataframe in one
-        full_df = meas_df.merge(sim_df,
-                                on=['device', 'corner', 'length', 'width', 'voltage', 'temp'],
-                                how='left',
-                                suffixes=('_meas', '_sim'))
+        full_df = meas_df.merge(
+            sim_df,
+            on=["device", "corner", "length", "width", "voltage", "temp"],
+            how="left",
+            suffixes=("_meas", "_sim"),
+        )
 
         # Error calculation and report
         ## Relative error calculation for RES-r
-        full_df["res_err"] = np.abs((full_df["res_meas"] - full_df["res_sim"]) * 100.0 / (full_df["res_meas"]))
+        full_df["res_err"] = np.abs(
+            (full_df["res_meas"] - full_df["res_sim"]) * 100.0 / (full_df["res_meas"])
+        )
         full_df.to_csv(f"{dev_path}/{dev}_full_merged_data.csv", index=False)
 
         # Calculate Q [quantile] to verify matching between measured and simulated data
@@ -333,9 +354,14 @@ def main():
         logging.info(f"Quantile target for {dev} device is: {q_target} %")
 
         bad_err_full_df_loc = full_df[full_df["res_err"] > PASS_THRESH]
-        bad_err_full_df = bad_err_full_df_loc[(bad_err_full_df_loc["res_sim"] >= MAX_VAL_DETECT) | (bad_err_full_df_loc["res_err"] >= MAX_VAL_DETECT)]
+        bad_err_full_df = bad_err_full_df_loc[
+            (bad_err_full_df_loc["res_sim"] >= MAX_VAL_DETECT)
+            | (bad_err_full_df_loc["res_err"] >= MAX_VAL_DETECT)
+        ]
         bad_err_full_df.to_csv(f"{dev_path}/{dev}_r_bad_err.csv", index=False)
-        logging.info(f"Bad relative errors between measured and simulated data at {dev}_r_bad_err.csv")
+        logging.info(
+            f"Bad relative errors between measured and simulated data at {dev}_r_bad_err.csv"
+        )
 
         # calculating the relative error of each device and reporting it
         min_error_total = float(full_df["res_err"].min())
@@ -359,10 +385,9 @@ def main():
             logging.error(
                 f"# Device {dev}-R simulation has failed regression. Needs more analysis."
             )
-            logging.error(
-                f"#Failed regression for {dev}-R analysis."
-            )
+            logging.error(f"#Failed regression for {dev}-R analysis.")
             exit(1)
+
 
 # ================================================================
 # -------------------------- MAIN --------------------------------

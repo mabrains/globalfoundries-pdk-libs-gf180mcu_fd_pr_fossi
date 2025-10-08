@@ -63,9 +63,11 @@ def main(args):
     # Checking that selected device is supported.
     if "fet" in dev_type:
         df = pd.read_excel(excel_path)
-        logging.info(f"Starting data extraction from {excel_path} sheet for {dev_type} device")
+        logging.info(
+            f"Starting data extraction from {excel_path} sheet for {dev_type} device"
+        )
 
-        if 'iv' in excel_path:
+        if "iv" in excel_path:
             # Extracting data for FETs-IV measurement
             fet_iv_meas_extraction(df, dev_type)
         else:
@@ -74,23 +76,29 @@ def main(args):
 
     elif "cap_mos" in dev_type or "cap_mim" in dev_type:
         df = pd.read_excel(excel_path)
-        logging.info(f"Starting data extraction from {excel_path} sheet for {dev_type} device")
+        logging.info(
+            f"Starting data extraction from {excel_path} sheet for {dev_type} device"
+        )
         # Extracting data for MOSCAP/MIMCAP devices for CV measurement
         cap_meas_extraction(df, dev_type)
 
     elif "diode" in dev_type:
         df = pd.read_excel(excel_path)
-        logging.info(f"Starting data extraction from {excel_path} sheet for {dev_type} device")
+        logging.info(
+            f"Starting data extraction from {excel_path} sheet for {dev_type} device"
+        )
 
-        if 'iv' in excel_path:
+        if "iv" in excel_path:
             # Extracting data for FETs-IV measurement
             diode_iv_meas_extraction(df, dev_type)
 
     elif "RES" in excel_path:
         df = pd.read_excel(excel_path)
-        logging.info(f"Starting data extraction from {excel_path} sheet for {dev_type} device")
+        logging.info(
+            f"Starting data extraction from {excel_path} sheet for {dev_type} device"
+        )
 
-        if 'temp' in excel_path:
+        if "temp" in excel_path:
             # Extracting data for RES-R with temp variations measurement
             ext_temp_corners(df, dev_type)
         else:
@@ -99,13 +107,15 @@ def main(args):
 
     elif "bjt" in excel_path:
         df = pd.read_excel(excel_path)
-        logging.info(f"Starting data extraction from {excel_path} sheet for {dev_type} device")
+        logging.info(
+            f"Starting data extraction from {excel_path} sheet for {dev_type} device"
+        )
 
-        if 'icvc' in excel_path:
+        if "icvc" in excel_path:
             # Extracting data for RES-R with temp variations measurement
             bjt_iv_meas_extraction(df, dev_type)
 
-        elif 'beta' in excel_path:
+        elif "beta" in excel_path:
             # Extracting data for RES-R with temp variations measurement
             bjt_beta_meas_extraction(df, dev_type)
 
@@ -122,7 +132,9 @@ if __name__ == "__main__":
     # logging setup
     logging.basicConfig(
         level=logging.DEBUG,
-        handlers=[logging.StreamHandler(), ],
+        handlers=[
+            logging.StreamHandler(),
+        ],
         format="%(asctime)s | %(levelname)-7s | %(message)s",
         datefmt="%d-%b-%Y %H:%M:%S",
     )

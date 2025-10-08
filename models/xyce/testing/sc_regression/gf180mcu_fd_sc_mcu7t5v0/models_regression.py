@@ -45,18 +45,23 @@ def ext_simulated(device, processes, volts, temps, dev_netlists, dev_meas, dev_s
         for volt in volts:
             for temp in temps:
 
-                netlist_path = os.path.join(dev_netlists, f"{device}_{process}_{temp}c_{volt}v.spice")
-                dev_sim_path = os.path.join(dev_sim, f"{device}_{process}_{temp}c_{volt}v.csv")
+                netlist_path = os.path.join(
+                    dev_netlists, f"{device}_{process}_{temp}c_{volt}v.spice"
+                )
+                dev_sim_path = os.path.join(
+                    dev_sim, f"{device}_{process}_{temp}c_{volt}v.csv"
+                )
 
                 with open(
                     f"device_netlists/gf180mcu_fd_sc_mcu7t5v0__{device}_1.spice"
                 ) as f:
                     tmpl = Template(f.read())
                 with open(netlist_path, "w") as netlist:
-                    netlist.write(tmpl.render(process=process,
-                                              volt=volt,
-                                              temp=temp,
-                                              dev_sim=dev_sim))
+                    netlist.write(
+                        tmpl.render(
+                            process=process, volt=volt, temp=temp, dev_sim=dev_sim
+                        )
+                    )
 
                 # Running ngspice for each netlist
                 with concurrent.futures.ProcessPoolExecutor(
@@ -94,10 +99,10 @@ def error_cal(device, processes, volts, temps, dev_meas, dev_sim):
     for process in processes:
         for volt in volts:
             for temp in temps:
-                dev_sim_path = os.path.join(dev_sim, f"{device}_{process}_{temp}c_{volt}v.csv")
-                simulated = pd.read_csv(
-                    dev_sim_path
+                dev_sim_path = os.path.join(
+                    dev_sim, f"{device}_{process}_{temp}c_{volt}v.csv"
                 )
+                simulated = pd.read_csv(dev_sim_path)
 
                 res = (measured == simulated).all().all()
                 print(

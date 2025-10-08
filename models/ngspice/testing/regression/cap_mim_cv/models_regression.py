@@ -272,9 +272,7 @@ def main():
         logging.info(f"# Checking Device cap_mim {dev}")
 
         # Loading measured data to be compared
-        meas_data_path = (
-            "../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/MIMCAP_cv/cap_mim_meas_cv.csv"
-        )
+        meas_data_path = "../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/MIMCAP_cv/cap_mim_meas_cv.csv"
 
         if not os.path.exists(meas_data_path) or not os.path.isfile(meas_data_path):
             logging.error(
@@ -319,7 +317,9 @@ def main():
 
         # Error calculation and report
         ## Relative error calculation for fets
-        full_df["Cj_err"] = np.abs((full_df["Cj_meas"] - full_df["Cj_sim"]) * 100.0 / (full_df["Cj_meas"]))
+        full_df["Cj_err"] = np.abs(
+            (full_df["Cj_meas"] - full_df["Cj_sim"]) * 100.0 / (full_df["Cj_meas"])
+        )
         full_df.to_csv(f"{dev_path}/{dev}_full_merged_data.csv", index=False)
 
         # Calculate Q [quantile] to verify matching between measured and simulated data
@@ -380,7 +380,9 @@ if __name__ == "__main__":
 
     logging.basicConfig(
         level=logging.DEBUG,
-        handlers=[logging.StreamHandler(), ],
+        handlers=[
+            logging.StreamHandler(),
+        ],
         format="%(asctime)s | %(levelname)-7s | %(message)s",
         datefmt="%d-%b-%Y %H:%M:%S",
     )

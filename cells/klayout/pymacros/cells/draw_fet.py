@@ -17,11 +17,10 @@
 ########################################################################################################################
 
 from math import ceil, floor
-import numpy as np
-
 import gdsfactory as gf
 from gdsfactory.typings import Float2, LayerSpec
 from .via_generator import via_generator, via_stack
+from .pcell_utilities import snap_to_grid
 from .layers_def import layer
 import os
 
@@ -155,16 +154,23 @@ def alter_interdig(
 
     m2_y = via_size[1] + 2 * via_enc[1]
     m2 = gf.components.rectangle(
-        size=(sd_diff.xmax - sd_diff.xmin, m2_y), layer=layer["metal2"],
+        size=(sd_diff.xmax - sd_diff.xmin, m2_y),
+        layer=layer["metal2"],
     )
 
     m2_arrb = c_inst.add_array(
-        component=m2, columns=1, rows=nl_b, spacing=(0, -m2_y - m2_spacing),
+        component=m2,
+        columns=1,
+        rows=nl_b,
+        spacing=(0, -m2_y - m2_spacing),
     )
     m2_arrb.movey(pc1.ymin - m2_spacing - m2_y)
 
     m2_arru = c_inst.add_array(
-        component=m2, columns=1, rows=nl_u, spacing=(0, m2_y + m2_spacing),
+        component=m2,
+        columns=1,
+        rows=nl_u,
+        spacing=(0, m2_y + m2_spacing),
     )
     m2_arru.movey(pc2.ymax + m2_spacing)
 
@@ -295,7 +301,10 @@ def alter_interdig(
 
                 m2_join_b = c_inst.add_ref(
                     gf.components.rectangle(
-                        size=(m2_y + sd_l + (i + 1) * (m3_spacing + m3_x), m2_y,),
+                        size=(
+                            m2_y + sd_l + (i + 1) * (m3_spacing + m3_x),
+                            m2_y,
+                        ),
                         layer=layer["metal2"],
                     )
                 ).move(
@@ -307,7 +316,10 @@ def alter_interdig(
 
                 m2_join_u = c_inst.add_ref(
                     gf.components.rectangle(
-                        size=(m2_y + sd_l + (i + 1) * (m3_spacing + m3_x), m2_y,),
+                        size=(
+                            m2_y + sd_l + (i + 1) * (m3_spacing + m3_x),
+                            m2_y,
+                        ),
                         layer=layer["metal2"],
                     )
                 ).move(
@@ -318,7 +330,10 @@ def alter_interdig(
                 )
                 m3 = c_inst.add_ref(
                     gf.components.rectangle(
-                        size=(m3_x, m2_join_u.ymax - m2_join_b.ymin,),
+                        size=(
+                            m3_x,
+                            m2_join_u.ymax - m2_join_b.ymin,
+                        ),
                         layer=layer["metal1"],
                     )
                 )
@@ -335,7 +350,10 @@ def alter_interdig(
                     component=via2_dr,
                     columns=1,
                     rows=2,
-                    spacing=(0, m2_join_u.ymin - m2_join_b.ymin,),
+                    spacing=(
+                        0,
+                        m2_join_u.ymin - m2_join_b.ymin,
+                    ),
                 )  # via2_draw
     return c_inst
 
@@ -490,7 +508,10 @@ def interdigit(
         elif gate_con_pos == "bottom":
 
             m2_arr = c_inst.add_array(
-                component=m2, columns=1, rows=nl, spacing=(0, -m2_y - m2_spacing),
+                component=m2,
+                columns=1,
+                rows=nl,
+                spacing=(0, -m2_y - m2_spacing),
             )
             m2_arr.movey(pc2.ymin - m2_spacing - m2_y)
 
@@ -576,7 +597,10 @@ def hv_gen(c, c_inst, volt, dg_encx: float = 0.1, dg_ency: float = 0.1):
     if volt == "5V" or volt == "6V":
         dg = c.add_ref(
             gf.components.rectangle(
-                size=(c_inst.size[0] + (2 * dg_encx), c_inst.size[1] + (2 * dg_ency),),
+                size=(
+                    c_inst.size[0] + (2 * dg_encx),
+                    c_inst.size[1] + (2 * dg_ency),
+                ),
                 layer=layer["dualgate"],
             )
         )
@@ -656,7 +680,10 @@ def bulk_gr_gen(
     rect_bulk_out.move((rect_bulk_in.xmin - grw, rect_bulk_in.ymin - grw))
     B = c.add_ref(
         gf.geometry.boolean(
-            A=rect_bulk_out, B=rect_bulk_in, operation="A-B", layer=layer["comp"],
+            A=rect_bulk_out,
+            B=rect_bulk_in,
+            operation="A-B",
+            layer=layer["comp"],
         )
     )
 
@@ -679,7 +706,12 @@ def bulk_gr_gen(
             layer=layer["pplus"],
         )
     )
-    psdm_out.move((rect_bulk_out.xmin - comp_pp_enc, rect_bulk_out.ymin - comp_pp_enc,))
+    psdm_out.move(
+        (
+            rect_bulk_out.xmin - comp_pp_enc,
+            rect_bulk_out.ymin - comp_pp_enc,
+        )
+    )
     c.add_ref(
         gf.geometry.boolean(A=psdm_out, B=psdm_in, operation="A-B", layer=implant_layer)
     )  # implant_draw(pplus or nplus)
@@ -752,7 +784,10 @@ def bulk_gr_gen(
     comp_m1_out.move((rect_bulk_in.xmin - grw, rect_bulk_in.ymin - grw))
     c.add_ref(
         gf.geometry.boolean(
-            A=rect_bulk_out, B=rect_bulk_in, operation="A-B", layer=layer["metal1"],
+            A=rect_bulk_out,
+            B=rect_bulk_in,
+            operation="A-B",
+            layer=layer["metal1"],
         )
     )  # metal1_gaurdring
 
@@ -787,6 +822,7 @@ def bulk_gr_gen(
     else:
         c.add_ref(
             pfet_deep_nwell(
+                c_inst=B,
                 deepnwell=deepnwell,
                 pcmpgr=pcmpgr,
                 enc_size=(B.size[0], B.size[1]),
@@ -841,7 +877,10 @@ def pcmpgr_gen(dn_rect, grw: float = 0.36) -> gf.Component:
     rect_pcmpgr_out.move((rect_pcmpgr_in.xmin - grw, rect_pcmpgr_in.ymin - grw))
     c.add_ref(
         gf.geometry.boolean(
-            A=rect_pcmpgr_out, B=rect_pcmpgr_in, operation="A-B", layer=layer["comp"],
+            A=rect_pcmpgr_out,
+            B=rect_pcmpgr_in,
+            operation="A-B",
+            layer=layer["comp"],
         )
     )  # guardring bulk
 
@@ -855,7 +894,10 @@ def pcmpgr_gen(dn_rect, grw: float = 0.36) -> gf.Component:
         )
     )
     psdm_in.move(
-        (rect_pcmpgr_in.xmin + comp_pp_enc, rect_pcmpgr_in.ymin + comp_pp_enc,)
+        (
+            rect_pcmpgr_in.xmin + comp_pp_enc,
+            rect_pcmpgr_in.ymin + comp_pp_enc,
+        )
     )
     psdm_out = c_temp_gr.add_ref(
         gf.components.rectangle(
@@ -867,7 +909,10 @@ def pcmpgr_gen(dn_rect, grw: float = 0.36) -> gf.Component:
         )
     )
     psdm_out.move(
-        (rect_pcmpgr_out.xmin - comp_pp_enc, rect_pcmpgr_out.ymin - comp_pp_enc,)
+        (
+            rect_pcmpgr_out.xmin - comp_pp_enc,
+            rect_pcmpgr_out.ymin - comp_pp_enc,
+        )
     )
     c.add_ref(
         gf.geometry.boolean(
@@ -879,7 +924,10 @@ def pcmpgr_gen(dn_rect, grw: float = 0.36) -> gf.Component:
 
     c.add_ref(
         via_generator(
-            x_range=(rect_pcmpgr_in.xmin + con_size, rect_pcmpgr_in.xmax - con_size,),
+            x_range=(
+                rect_pcmpgr_in.xmin + con_size,
+                rect_pcmpgr_in.xmax - con_size,
+            ),
             y_range=(rect_pcmpgr_out.ymin, rect_pcmpgr_in.ymin),
             via_enclosure=(con_comp_enc, con_comp_enc),
             via_layer=layer["contact"],
@@ -930,14 +978,20 @@ def pcmpgr_gen(dn_rect, grw: float = 0.36) -> gf.Component:
 
     comp_m1_out = c_temp_gr.add_ref(
         gf.components.rectangle(
-            size=((comp_m1_in.size[0]) + 2 * grw, (comp_m1_in.size[1]) + 2 * grw,),
+            size=(
+                (comp_m1_in.size[0]) + 2 * grw,
+                (comp_m1_in.size[1]) + 2 * grw,
+            ),
             layer=layer["metal1"],
         )
     )
     comp_m1_out.move((rect_pcmpgr_in.xmin - grw, rect_pcmpgr_in.ymin - grw))
     c.add_ref(
         gf.geometry.boolean(
-            A=rect_pcmpgr_out, B=rect_pcmpgr_in, operation="A-B", layer=layer["metal1"],
+            A=rect_pcmpgr_out,
+            B=rect_pcmpgr_in,
+            operation="A-B",
+            layer=layer["metal1"],
         )
     )  # metal1 guardring
 
@@ -1208,8 +1262,8 @@ def bulk_m1_check(bulk_con_area, m1_area, c_inst, bulk_con):
         bulk_m1.ymin = bulk_con.ymin - (bulk_m1.size[1] - bulk_con.size[1]) / 2
 
 
+@gf.cell
 def draw_nfet(
-    layout,
     l_gate: float = 0.28,
     w_gate: float = 0.22,
     sd_con_col: int = 1,
@@ -1230,7 +1284,6 @@ def draw_nfet(
     sub_lbl: str = "",
     patt_lbl: bool = 0,
 ) -> gf.Component:
-
     """
     Retern nfet
 
@@ -1288,7 +1341,7 @@ def draw_nfet(
     sd_l = sd_l_con
 
     # gds components to store a single instance and the generated device
-    c = gf.Component("nfet_dev")
+    c = gf.Component()
 
     c_inst = gf.Component("dev_temp")
 
@@ -1333,7 +1386,10 @@ def draw_nfet(
         component=sd_con,
         columns=2,
         rows=1,
-        spacing=(sd_l + nf * l_gate + (nf - 1) * inter_sd_l + 2 * (pl_cmp_spacing), 0,),
+        spacing=(
+            sd_l + nf * l_gate + (nf - 1) * inter_sd_l + 2 * (pl_cmp_spacing),
+            0,
+        ),
     )
 
     sd_con_area = sd_con.size[0] * sd_con.size[1]
@@ -1401,7 +1457,7 @@ def draw_nfet(
             lbl=lbl,
             lbl_lst=sd_lbl,
             lbl_valid_len=nf + 1,
-            index=nf,
+            index=int(nf),
         )
     )
 
@@ -1707,16 +1763,16 @@ def draw_nfet(
             )
         )
 
-    # creating layout and cell in klayout
-    c.write_gds("nfet_temp.gds")
-    layout.read("nfet_temp.gds")
-    os.remove("nfet_temp.gds")
+    # Flatten and snap to 5nm grid
+    c_final = snap_to_grid(c, dbu=0.005)
 
-    return layout.cell(c.name)
+    # Return top cell
+    return c_final
 
 
 @gf.cell
 def pfet_deep_nwell(
+    c_inst,
     volt="3.3V",
     deepnwell: bool = 0,
     pcmpgr: bool = 0,
@@ -1740,87 +1796,62 @@ def pfet_deep_nwell(
 
     c = gf.Component()
 
-    dnwell_enc_pcmp: float = 1.1
     dg_enc_dn: float = 0.5
+    dn_enc_nw: float = 0.51
+
+    # nwell generation
+    nw = c.add_ref(
+        gf.components.rectangle(
+            size=(
+                c_inst.size[0] + (2 * nw_enc_pcmp),
+                c_inst.size[1] + (2 * nw_enc_pcmp),
+            ),
+            layer=layer["nwell"],
+        )
+    )
+    nw.xmin = c_inst.xmin - nw_enc_pcmp
+    nw.ymin = c_inst.ymin - nw_enc_pcmp
 
     if deepnwell == 1:
         dn_rect = c.add_ref(
             gf.components.rectangle(
                 size=(
-                    enc_size[0] + (2 * dnwell_enc_pcmp),
-                    enc_size[1] + (2 * dnwell_enc_pcmp),
+                    nw.size[0] + (2 * dn_enc_nw),
+                    nw.size[1] + (2 * dn_enc_nw),
                 ),
                 layer=layer["dnwell"],
             )
         )
 
-        dn_rect.xmin = enc_xmin - dnwell_enc_pcmp
-        dn_rect.ymin = enc_ymin - dnwell_enc_pcmp
+        dn_rect.xmin = nw.xmin - dn_enc_nw
+        dn_rect.ymin = nw.ymin - dn_enc_nw
 
         if pcmpgr == 1:
             c.add_ref(pcmpgr_gen(dn_rect=dn_rect, grw=grw))
 
-        if volt == "5V" or volt == "6V":
-            dg = c.add_ref(
-                gf.components.rectangle(
-                    size=(
-                        dn_rect.size[0] + (2 * dg_enc_dn),
-                        dn_rect.size[1] + (2 * dg_enc_dn),
-                    ),
-                    layer=layer["dualgate"],
-                )
-            )
-            dg.xmin = dn_rect.xmin - dg_enc_dn
-            dg.ymin = dn_rect.ymin - dg_enc_dn
-
-            if volt == "5V":
-                v5x = c.add_ref(
-                    gf.components.rectangle(
-                        size=(dg.size[0], dg.size[1]), layer=layer["v5_xtor"]
-                    )
-                )
-                v5x.xmin = dg.xmin
-                v5x.ymin = dg.ymin
+        hv_gen(
+            c=c,
+            c_inst=dn_rect,
+            volt=volt,
+            dg_encx=dg_enc_dn,
+            dg_ency=dg_enc_dn,
+        )
 
     else:
 
-        # nwell generation
-        nw = c.add_ref(
-            gf.components.rectangle(
-                size=(
-                    enc_size[0] + (2 * nw_enc_pcmp),
-                    enc_size[1] + (2 * nw_enc_pcmp),
-                ),
-                layer=layer["nwell"],
-            )
+        hv_gen(
+            c=c,
+            c_inst=nw,
+            volt=volt,
+            dg_encx=dg_enc_dn,
+            dg_ency=dg_enc_dn,
         )
-        nw.xmin = enc_xmin - nw_enc_pcmp
-        nw.ymin = enc_ymin - nw_enc_pcmp
-
-        if volt == "5V" or volt == "6V":
-            dg = c.add_ref(
-                gf.components.rectangle(
-                    size=(nw.size[0] + (2 * dg_enc_dn), nw.size[1] + (2 * dg_enc_dn),),
-                    layer=layer["dualgate"],
-                )
-            )
-            dg.xmin = nw.xmin - dg_enc_dn
-            dg.ymin = nw.ymin - dg_enc_dn
-
-            if volt == "5V":
-                v5x = c.add_ref(
-                    gf.components.rectangle(
-                        size=(dg.size[0], dg.size[1]), layer=layer["v5_xtor"]
-                    )
-                )
-                v5x.xmin = dg.xmin
-                v5x.ymin = dg.ymin
 
     return c
 
 
+@gf.cell
 def draw_pfet(
-    layout,
     l_gate: float = 0.28,
     w_gate: float = 0.22,
     sd_con_col: int = 1,
@@ -1841,7 +1872,6 @@ def draw_pfet(
     sub_lbl: str = "",
     patt_lbl: bool = 0,
 ) -> gf.Component:
-
     """
     Retern pfet
 
@@ -1902,7 +1932,7 @@ def draw_pfet(
     sd_l = sd_l_con
 
     # gds components to store a single instance and the generated device
-    c = gf.Component("pfet_dev")
+    c = gf.Component()
 
     c_inst = gf.Component("dev_temp")
 
@@ -1947,7 +1977,10 @@ def draw_pfet(
         component=sd_con,
         columns=2,
         rows=1,
-        spacing=(sd_l + nf * l_gate + (nf - 1) * inter_sd_l + 2 * (pl_cmp_spacing), 0,),
+        spacing=(
+            sd_l + nf * l_gate + (nf - 1) * inter_sd_l + 2 * (pl_cmp_spacing),
+            0,
+        ),
     )
 
     sd_con_area = sd_con.size[0] * sd_con.size[1]
@@ -2015,7 +2048,7 @@ def draw_pfet(
             lbl=lbl,
             lbl_lst=sd_lbl,
             lbl_valid_len=nf + 1,
-            index=nf,
+            index=int(nf),
         )
     )
 
@@ -2218,6 +2251,7 @@ def draw_pfet(
 
         c.add_ref(
             pfet_deep_nwell(
+                c_inst=c_inst,
                 deepnwell=deepnwell,
                 pcmpgr=pcmpgr,
                 enc_size=(sd_diff.size[0], sd_diff.size[1]),
@@ -2294,6 +2328,7 @@ def draw_pfet(
         nw_enc_pcmp: float = 0.45 + comp_np_enc + psdm.ymax - nsdm.ymax
         c.add_ref(
             pfet_deep_nwell(
+                c_inst=c_inst,
                 deepnwell=deepnwell,
                 pcmpgr=pcmpgr,
                 enc_size=(sd_diff.size[0] + rect_bulk.size[0], sd_diff.size[1]),
@@ -2335,17 +2370,15 @@ def draw_pfet(
         )
         # bulk guardring
 
-    # creating layout and cell in klayout
+    # Flatten and snap to 5nm grid
+    c_final = snap_to_grid(c, dbu=0.005)
 
-    c.write_gds("pfet_temp.gds")
-    layout.read("pfet_temp.gds")
-    os.remove("pfet_temp.gds")
-
-    return layout.cell(c.name)
+    # Return top cell
+    return c_final
 
 
+@gf.cell
 def draw_nfet_06v0_nvt(
-    layout,
     l_gate: float = 1.8,
     w_gate: float = 0.8,
     sd_con_col: int = 1,
@@ -2363,7 +2396,6 @@ def draw_nfet_06v0_nvt(
     sub_lbl: str = "",
     patt_lbl: bool = 0,
 ) -> gf.Component:
-
     """
     Usage:-
      used to draw Native NFET 6V transistor by specifying parameters
@@ -2410,7 +2442,7 @@ def draw_nfet_06v0_nvt(
     sd_l = sd_l_con
 
     # gds components to store a single instance and the generated device
-    c = gf.Component("nfet_nvt_dev")
+    c = gf.Component()
 
     c_inst = gf.Component("dev_temp")
 
@@ -2457,7 +2489,10 @@ def draw_nfet_06v0_nvt(
         component=sd_con,
         columns=2,
         rows=1,
-        spacing=(sd_l + nf * l_gate + (nf - 1) * inter_sd_l + 2 * (pl_cmp_spacing), 0,),
+        spacing=(
+            sd_l + nf * l_gate + (nf - 1) * inter_sd_l + 2 * (pl_cmp_spacing),
+            0,
+        ),
     )
 
     sd_con_area = sd_con.size[0] * sd_con.size[1]
@@ -2525,7 +2560,7 @@ def draw_nfet_06v0_nvt(
             lbl=lbl,
             lbl_lst=sd_lbl,
             lbl_valid_len=nf + 1,
-            index=nf,
+            index=int(nf),
         )
     )
 
@@ -2803,7 +2838,10 @@ def draw_nfet_06v0_nvt(
         rect_bulk_out.move((rect_bulk_in.xmin - grw, rect_bulk_in.ymin - grw))
         c.add_ref(
             gf.geometry.boolean(
-                A=rect_bulk_out, B=rect_bulk_in, operation="A-B", layer=layer["comp"],
+                A=rect_bulk_out,
+                B=rect_bulk_in,
+                operation="A-B",
+                layer=layer["comp"],
             )
         )
 
@@ -2827,7 +2865,10 @@ def draw_nfet_06v0_nvt(
             )
         )
         psdm_out.move(
-            (rect_bulk_out.xmin - comp_pp_enc, rect_bulk_out.ymin - comp_pp_enc,)
+            (
+                rect_bulk_out.xmin - comp_pp_enc,
+                rect_bulk_out.ymin - comp_pp_enc,
+            )
         )
         psdm = c.add_ref(
             gf.geometry.boolean(
@@ -2839,7 +2880,10 @@ def draw_nfet_06v0_nvt(
 
         c.add_ref(
             via_generator(
-                x_range=(rect_bulk_in.xmin + con_size, rect_bulk_in.xmax - con_size,),
+                x_range=(
+                    rect_bulk_in.xmin + con_size,
+                    rect_bulk_in.xmax - con_size,
+                ),
                 y_range=(rect_bulk_out.ymin, rect_bulk_in.ymin),
                 via_enclosure=(con_comp_enc, con_comp_enc),
                 via_layer=layer["contact"],
@@ -2903,7 +2947,10 @@ def draw_nfet_06v0_nvt(
         comp_m1_out.move((rect_bulk_in.xmin - grw, rect_bulk_in.ymin - grw))
         b_gr = c.add_ref(
             gf.geometry.boolean(
-                A=rect_bulk_out, B=rect_bulk_in, operation="A-B", layer=layer["metal1"],
+                A=rect_bulk_out,
+                B=rect_bulk_in,
+                operation="A-B",
+                layer=layer["metal1"],
             )
         )  # guardring metal1
 
@@ -2966,10 +3013,8 @@ def draw_nfet_06v0_nvt(
     nat.xmin = dg.xmin
     nat.ymin = dg.ymin
 
-    # creating layout and cell in klayout
+    # Flatten and snap to 5nm grid
+    c_final = snap_to_grid(c, dbu=0.005)
 
-    c.write_gds("nfet_nvt_temp.gds")
-    layout.read("nfet_nvt_temp.gds")
-    os.remove("nfet_nvt_temp.gds")
-
-    return layout.cell(c.name)
+    # Return top cell
+    return c_final

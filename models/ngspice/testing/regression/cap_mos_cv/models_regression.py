@@ -34,7 +34,7 @@ import warnings
 import re
 
 # CONSTANT VALUES
-RES_MOSCAP = 100   # We will use this res (kohm) in RC circuit for MOSCAP measurement
+RES_MOSCAP = 100  # We will use this res (kohm) in RC circuit for MOSCAP measurement
 PASS_THRESH = 5.0  # Threshold value that will be used to test our regression
 MAX_VAL_DETECT = 10.0e-15
 CLIP_CAP = 200e-15  # lowest curr to clip on
@@ -70,12 +70,21 @@ def simulate_device(netlist_path: str):
     Returns:
         int: Return code of the simulation. 0 if success.  Non-zero if failed.
     """
-    return os.system(f"ngspice -b {netlist_path} -o {netlist_path}.log > {netlist_path}.log 2>&1")
+    return os.system(
+        f"ngspice -b {netlist_path} -o {netlist_path}.log > {netlist_path}.log 2>&1"
+    )
 
 
-def run_sim(dirpath: str, device_name: str, width: str,
-            length: float, corner: float, temp: float,
-            cj_max: float, sweep: str) -> dict:
+def run_sim(
+    dirpath: str,
+    device_name: str,
+    width: str,
+    length: float,
+    corner: float,
+    temp: float,
+    cj_max: float,
+    sweep: str,
+) -> dict:
     """
     Function to run simulation for all data points per each variation.
 
@@ -159,47 +168,59 @@ def run_sim(dirpath: str, device_name: str, width: str,
             )
 
     # Running ngspice for each netlist
-    logging.info(f"Running simulation for {device_name}-cv at w={width}, l={length}, temp={temp}, corner={corner}")
+    logging.info(
+        f"Running simulation for {device_name}-cv at w={width}, l={length}, temp={temp}, corner={corner}"
+    )
 
     # calling simulator to run netlist and write its results
     simulate_device(netlist_path)
 
     # check if pos sim data is generated
     if not os.path.exists(result_path_pos) or not os.path.isfile(result_path_pos):
-        logging.error(f"Running simulation for {device_name}-cv at w={width}, l={length}, temp={temp}, corner={corner} got an exception")
+        logging.error(
+            f"Running simulation for {device_name}-cv at w={width}, l={length}, temp={temp}, corner={corner} got an exception"
+        )
         logging.error("Simulation is not completed for this run")
         exit(1)
 
     # check if neg sim data is generated
     if not os.path.exists(result_path_neg) or not os.path.isfile(result_path_neg):
-        logging.error(f"Running simulation for {device_name}-cv at w={width}, l={length}, temp={temp}, corner={corner} got an exception")
+        logging.error(
+            f"Running simulation for {device_name}-cv at w={width}, l={length}, temp={temp}, corner={corner} got an exception"
+        )
         logging.error("Simulation is not completed for this run")
         exit(1)
 
     # Cleaning simulated data and handling its format to be like measured one
-    pos_df = pd.read_table(result_path_pos, sep=r"\s+", names=["time", "Vj", "time_1", "q_t"])
-    neg_df = pd.read_table(result_path_neg, sep=r"\s+", names=["time", "Vj", "time_1", "q_t"])
+    pos_df = pd.read_table(
+        result_path_pos, sep=r"\s+", names=["time", "Vj", "time_1", "q_t"]
+    )
+    neg_df = pd.read_table(
+        result_path_neg, sep=r"\s+", names=["time", "Vj", "time_1", "q_t"]
+    )
     pos_df.drop(columns=["time_1"], inplace=True)
     neg_df.drop(columns=["time_1"], inplace=True)
     full_df = pd.concat([pos_df, neg_df])
 
     # Calc. cap value (fF) form given Q (charge) and V (voltage)
     full_df["Cj"] = np.abs(np.gradient(full_df["q_t"], full_df["Vj"]) / 1.0e-15)
-    full_df = full_df[full_df['Vj'] <= max_volt_sweep]
-    full_df = full_df[full_df['Vj'] >= min_volt_sweep]
-    full_df.sort_values(by='Vj', inplace=True)
-    full_df.drop(columns=['time', 'q_t'], inplace=True)
+    full_df = full_df[full_df["Vj"] <= max_volt_sweep]
+    full_df = full_df[full_df["Vj"] >= min_volt_sweep]
+    full_df.sort_values(by="Vj", inplace=True)
+    full_df.drop(columns=["time", "q_t"], inplace=True)
 
     # Construct final simulated data frame
     sim_df = pd.DataFrame()
-    sim_df['Vj'] = np.arange(min_volt_sweep, max_volt_sweep + step_volt_sweep, step_volt_sweep)
+    sim_df["Vj"] = np.arange(
+        min_volt_sweep, max_volt_sweep + step_volt_sweep, step_volt_sweep
+    )
     sim_df = pd.merge_asof(sim_df, full_df, on="Vj", direction="nearest")
     sim_df["device_name"] = device_name
     sim_df["W (um)"] = width
     sim_df["L (um)"] = length
     sim_df["corner"] = corner
     sim_df["temp"] = temp
-    sim_df = sim_df.round({'Vj': 2})
+    sim_df = sim_df.round({"Vj": 2})
 
     sim_df.to_csv(result_path, index=False)
 
@@ -296,42 +317,56 @@ def main():
         meas_data_path = f"../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/MOSCAP_cv/{dev}_meas_cv.csv"
 
         if not os.path.exists(meas_data_path) or not os.path.isfile(meas_data_path):
-            logging.error("There is no measured data to be used in simulation, please recheck")
+            logging.error(
+                "There is no measured data to be used in simulation, please recheck"
+            )
             logging.error(f"{meas_data_path} file doesn't exist, please recheck")
             exit(1)
 
         meas_df = pd.read_csv(meas_data_path)
         meas_df.drop_duplicates(inplace=True)
 
-        logging.info(f"# Device {dev} number of measured datapoints for cv : {len(meas_df)} ")
+        logging.info(
+            f"# Device {dev} number of measured datapoints for cv : {len(meas_df)} "
+        )
 
         # Loading sweep data that will be used in simulation to get all data points
         sweep_data_path = f"../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/MOSCAP_cv/{dev}_sweeps_cv.csv"
 
         if not os.path.exists(sweep_data_path) or not os.path.isfile(sweep_data_path):
-            logging.error("There is no sweep data to be used in simulation, please recheck")
+            logging.error(
+                "There is no sweep data to be used in simulation, please recheck"
+            )
             logging.error(f"{sweep_data_path} file doesn't exist, please recheck")
             exit(1)
 
         sweep_df = pd.read_csv(sweep_data_path)
         sweep_df.drop_duplicates(inplace=True)
 
-        logging.info(f"# Device {dev} number of sweep datapoints (runs) for cv : {len(sweep_df)} ")
+        logging.info(
+            f"# Device {dev} number of sweep datapoints (runs) for cv : {len(sweep_df)} "
+        )
 
         sim_df = run_sims(sweep_df, dev_path)
         sim_df.drop_duplicates(inplace=True)
 
-        logging.info(f"# Device {dev} number of simulated datapoints for cv : {len(sim_df)} ")
+        logging.info(
+            f"# Device {dev} number of simulated datapoints for cv : {len(sim_df)} "
+        )
 
         # Merging meas and sim dataframe in one
-        full_df = meas_df.merge(sim_df,
-                                on=['device_name', 'W (um)', 'L (um)', 'corner', 'temp', 'Vj'],
-                                how='left',
-                                suffixes=('_meas', '_sim'))
+        full_df = meas_df.merge(
+            sim_df,
+            on=["device_name", "W (um)", "L (um)", "corner", "temp", "Vj"],
+            how="left",
+            suffixes=("_meas", "_sim"),
+        )
 
         # Error calculation and report
         ## Relative error calculation for fets
-        full_df["Cj_err"] = np.abs((full_df["Cj_meas"] - full_df["Cj_sim"]) * 100.0 / (full_df["Cj_meas"]))
+        full_df["Cj_err"] = np.abs(
+            (full_df["Cj_meas"] - full_df["Cj_sim"]) * 100.0 / (full_df["Cj_meas"])
+        )
         full_df.to_csv(f"{dev_path}/{dev}_full_merged_data.csv", index=False)
 
         # Calculate Q [quantile] to verify matching between measured and simulated data
@@ -340,9 +375,14 @@ def main():
         logging.info(f"Quantile target for {dev} device is: {q_target}")
 
         bad_err_full_df_loc = full_df[full_df["Cj_err"] > PASS_THRESH]
-        bad_err_full_df = bad_err_full_df_loc[(bad_err_full_df_loc["Cj_sim"] >= MAX_VAL_DETECT) | (bad_err_full_df_loc["Cj_meas"] >= MAX_VAL_DETECT)]
+        bad_err_full_df = bad_err_full_df_loc[
+            (bad_err_full_df_loc["Cj_sim"] >= MAX_VAL_DETECT)
+            | (bad_err_full_df_loc["Cj_meas"] >= MAX_VAL_DETECT)
+        ]
         bad_err_full_df.to_csv(f"{dev_path}/{dev}_bad_err_cv.csv", index=False)
-        logging.info(f"Bad relative errors between measured and simulated data at {dev}_bad_err_cv.csv")
+        logging.info(
+            f"Bad relative errors between measured and simulated data at {dev}_bad_err_cv.csv"
+        )
 
         # calculating the relative error of each device and reporting it
         min_error_total = float(full_df["Cj_err"].min())
@@ -366,10 +406,9 @@ def main():
             logging.error(
                 f"# Device {dev} CV simulation has failed regression. Needs more analysis."
             )
-            logging.error(
-                f"#Failed regression for {dev}-CV analysis."
-            )
+            logging.error(f"#Failed regression for {dev}-CV analysis.")
             exit(1)
+
 
 # # ================================================================
 # -------------------------- MAIN --------------------------------
@@ -386,7 +425,7 @@ if __name__ == "__main__":
         else int(arguments["--num_cores"])
     )
 
-    warnings.simplefilter(action='ignore', category=RuntimeWarning)
+    warnings.simplefilter(action="ignore", category=RuntimeWarning)
 
     logging.basicConfig(
         level=logging.DEBUG,

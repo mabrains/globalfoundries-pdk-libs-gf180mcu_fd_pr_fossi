@@ -313,10 +313,10 @@
 
 .lib nfet_10v0_asym_t  
 
-.subckt nfet_10v0_asym d g s b w = 25E-6       l = 0.6E-6       ad = 'w*1.48e-6' pd = '2*(1.48e-6+w)' as = 'w*0.48e-6' ps = '(w+0.48e-6)*2' nrd = 0        
-+nrs = 0        nf = 1         dtemp = 0      
+.subckt nfet_10v0_asym d g s b w = 25E-6       l = 0.6E-6  nf = 1  m = 1   ad = 'w*1.48e-6' pd = '2*(1.48e-6+w)' as = 'w*0.48e-6' ps = '(w+0.48e-6)*2' nrd = 0        
++nrs = 0         dtemp = 0      
 +sa = 0         sb = 0         sd = 0         
-+par = 1        m = 1
++par = 1
 .param
 +rdrift1 = 1.5433E3            wa = -1.6705E-8               rd = 0.17322                  
 +ra = 4.631E-3                 rb = 1.1181                   lb = -1.0648E-6               
@@ -444,10 +444,10 @@ c3_gb g b '1.284e-9*w'
 
 .lib pfet_10v0_asym_t  
 
-.subckt pfet_10v0_asym d g s b w = 2.5E-5     l = 6E-7       dtemp = 0      nf = 1         ad = '(w*1.78e-6)' pd = '2*(w+1.78e-6)' as = 'w*0.48e-6' 
+.subckt pfet_10v0_asym d g s b w = 2.5E-5     l = 6E-7       dtemp = 0      nf = 1   m = 1     ad = '(w*1.78e-6)' pd = '2*(w+1.78e-6)' as = 'w*0.48e-6' 
 +ps = '(w+0.48e-6)*2' nrd = 0        nrs = 0        
 +sa = 0         sb = 0         sd = 0         
-+par = 1        m = 1
++par = 1
 .param
 +rdrift = 5.751E-3             rd = 0.94645                  ra = 1.1954E-3                
 +rb = 1.5957                   lb = 6.78E-6                  wa = -6.5504E-7               

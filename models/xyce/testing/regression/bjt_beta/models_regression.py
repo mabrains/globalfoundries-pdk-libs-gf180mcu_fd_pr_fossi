@@ -101,9 +101,9 @@ def ext_measured(
             # measured Id_sim 1
             col_list = [
                 f"{vb}",
-                f"{vc}{step[0]}.{2*i+1}",
-                f"{vc}{step[1]}.{2*i+1}",
-                f"{vc}{step[2]}.{2*i+1}",
+                f"{vc}{step[0]}.{2 * i + 1}",
+                f"{vc}{step[1]}.{2 * i + 1}",
+                f"{vc}{step[2]}.{2 * i + 1}",
             ]
             df_measured1 = pd.read_csv(f"{dirpath}/{device}.csv", usecols=col_list)
             df_measured1.columns = [
@@ -117,9 +117,9 @@ def ext_measured(
             # measured Id_sim 0
             col_list = [
                 f"{vb}",
-                f"{vc}{step[0]}.{2*i}",
-                f"{vc}{step[1]}.{2*i}",
-                f"{vc}{step[2]}.{2*i}",
+                f"{vc}{step[0]}.{2 * i}",
+                f"{vc}{step[1]}.{2 * i}",
+                f"{vc}{step[2]}.{2 * i}",
             ]
             df_measured = pd.read_csv(f"{dirpath}/{device}.csv", usecols=col_list)
             df_measured.columns = [
@@ -132,9 +132,9 @@ def ext_measured(
             # measured Id_sim 1
             col_list = [
                 f"{vb}",
-                f"{vc}{step[0]}.{2*i+1}",
-                f"{vc}{step[1]}.{2*i+1}",
-                f"{vc}{step[2]}.{2*i+1}",
+                f"{vc}{step[0]}.{2 * i + 1}",
+                f"{vc}{step[1]}.{2 * i + 1}",
+                f"{vc}{step[2]}.{2 * i + 1}",
             ]
             df_measured1 = pd.read_csv(f"{dirpath}/{device}.csv", usecols=col_list)
             df_measured1.columns = [

@@ -61,7 +61,9 @@ def simulate_device(netlist_path: str):
     Returns:
         int: Return code of the simulation. 0 if success.  Non-zero if failed.
     """
-    return os.system(f"Xyce -hspice-ext all {netlist_path} -l {netlist_path}.log > {netlist_path}.log 2>&1")
+    return os.system(
+        f"Xyce -hspice-ext all {netlist_path} -l {netlist_path}.log > {netlist_path}.log 2>&1"
+    )
 
 
 def run_sim(dirpath: str, device: str, corner: float, temp: float, sweep: str) -> dict:
@@ -146,7 +148,9 @@ def run_sim(dirpath: str, device: str, corner: float, temp: float, sweep: str) -
     if os.path.exists(result_path) and os.path.isfile(result_path):
         result_df = pd.read_csv(result_path)
         # Renaming df columns with proper names
-        result_df.rename(columns={'V(C)': 'vcp', 'I(VBB)': 'ibp', '{-I(VCP)}': 'ic'}, inplace=True)
+        result_df.rename(
+            columns={"V(C)": "vcp", "I(VBB)": "ibp", "{-I(VCP)}": "ic"}, inplace=True
+        )
 
         # Adding columns for all variations per each run
         result_df["device_name"] = device
@@ -250,20 +254,26 @@ def main():
         meas_data_path = f"../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/BJT_iv/bjt_{dev}_iv_meas.csv"
 
         if not os.path.exists(meas_data_path) or not os.path.isfile(meas_data_path):
-            logging.error("There is no measured data to be used in simulation, please recheck")
+            logging.error(
+                "There is no measured data to be used in simulation, please recheck"
+            )
             logging.error(f"{meas_data_path} file doesn't exist, please recheck")
             exit(1)
 
         meas_df = pd.read_csv(meas_data_path)
         meas_df.drop_duplicates(inplace=True)
 
-        logging.info(f"# Device BJT {dev}-iv number of measured datapoints : {len(meas_df)} ")
+        logging.info(
+            f"# Device BJT {dev}-iv number of measured datapoints : {len(meas_df)} "
+        )
 
         # Loading sweep file used in measurements to be used in simulation for regression
         sweeps_file = f"../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/BJT_iv/bjt_{dev}_iv_sweeps.csv"
 
         if not os.path.exists(sweeps_file) or not os.path.isfile(sweeps_file):
-            logging.error("There is no measured data to be used in simulation, please recheck")
+            logging.error(
+                "There is no measured data to be used in simulation, please recheck"
+            )
             logging.error(f"{sweeps_file} file doesn't exist, please recheck")
             exit(1)
 
@@ -277,14 +287,18 @@ def main():
         logging.info(f"# Device {dev} number of simulated datapoints: {len(sim_df)} ")
 
         # Merging meas and sim dataframe in one
-        full_df = meas_df.merge(sim_df,
-                                on=['device_name', 'corner', 'temp', 'ibp' , 'vcp'],
-                                how='left',
-                                suffixes=('_meas', '_sim'))
+        full_df = meas_df.merge(
+            sim_df,
+            on=["device_name", "corner", "temp", "ibp", "vcp"],
+            how="left",
+            suffixes=("_meas", "_sim"),
+        )
 
         # Error calculation and report
         ## Relative error calculation for BJT-iv
-        full_df["ic_err"] = np.abs((full_df["ic_meas"] - full_df["ic_sim"]) * 100.0 / (full_df["ic_meas"]))
+        full_df["ic_err"] = np.abs(
+            (full_df["ic_meas"] - full_df["ic_sim"]) * 100.0 / (full_df["ic_meas"])
+        )
         full_df.to_csv(f"{dev_path}/{dev}_full_merged_data.csv", index=False)
 
         # Calculate Q [quantile] to verify matching between measured and simulated data
@@ -293,9 +307,14 @@ def main():
         logging.info(f"Quantile target for {dev} device is: {q_target} %")
 
         bad_err_full_df_loc = full_df[full_df["ic_err"] > PASS_THRESH]
-        bad_err_full_df = bad_err_full_df_loc[(bad_err_full_df_loc["ic_sim"] >= MAX_VAL_DETECT) | (bad_err_full_df_loc["ic_err"] >= MAX_VAL_DETECT)]
+        bad_err_full_df = bad_err_full_df_loc[
+            (bad_err_full_df_loc["ic_sim"] >= MAX_VAL_DETECT)
+            | (bad_err_full_df_loc["ic_err"] >= MAX_VAL_DETECT)
+        ]
         bad_err_full_df.to_csv(f"{dev_path}/{dev}_ic_bad_err.csv", index=False)
-        logging.info(f"Bad relative errors between measured and simulated data at {dev}_ic_bad_err.csv")
+        logging.info(
+            f"Bad relative errors between measured and simulated data at {dev}_ic_bad_err.csv"
+        )
 
         # calculating the relative error of each device and reporting it
         min_error_total = float(full_df["ic_err"].min())
@@ -319,10 +338,9 @@ def main():
             logging.error(
                 f"# Device {dev}-iv simulation has failed regression. Needs more analysis."
             )
-            logging.error(
-                f"#Failed regression for {dev}-iv analysis."
-            )
+            logging.error(f"#Failed regression for {dev}-iv analysis.")
             # exit(1)
+
 
 # ================================================================
 # -------------------------- MAIN --------------------------------

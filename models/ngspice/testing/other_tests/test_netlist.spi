@@ -1,0 +1,24 @@
+* test case for finger parameterization
+.lib ./sm141064.ngspice typical
+.inc ./design.ngspice
+.param lx=0.28e-6 wx=120e-6 nfx=12
+
+*** THIS WORKS
+XM1 0 0 0 0 nfet_03v3 L={lx} W={wx} nf=12 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+
+*** THIS DOES NOT WORK
+XM2 0 0 0 0 nfet_03v3 L={lx} W={wx} nf={nfx} ad='int(({nfx}+1)/2) * W/{nfx} * 0.18u' as='int(({nfx}+2)/2) * W/{nfx} * 0.18u' pd='2*int(({nfx}+1)/2) * (W/{nfx} + 0.18u)'
++ ps='2*int(({nfx}+2)/2) * (W/{nfx} + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+
+*** THIS DOES NOT WORK
+XM3 0 0 0 0 nfet_03v3 L={lx} W={wx} nf={nfx} ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+
+.control
+  save @m.xM1.m0[id]
+  op
+  show
+.endc
+.end
+

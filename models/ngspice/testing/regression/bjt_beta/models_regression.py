@@ -69,7 +69,9 @@ def simulate_device(netlist_path: str):
     Returns:
         int: Return code of the simulation. 0 if success.  Non-zero if failed.
     """
-    return os.system(f"ngspice -b {netlist_path} -o {netlist_path}.log > {netlist_path}.log 2>&1")
+    return os.system(
+        f"ngspice -b {netlist_path} -o {netlist_path}.log > {netlist_path}.log 2>&1"
+    )
 
 
 def run_sim(dirpath: str, device: str, corner: float, temp: float, sweep: str) -> dict:
@@ -258,20 +260,26 @@ def main():
         meas_data_path = f"../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/BJT_beta/bjt_{dev}_beta_meas.csv"
 
         if not os.path.exists(meas_data_path) or not os.path.isfile(meas_data_path):
-            logging.error("There is no measured data to be used in simulation, please recheck")
+            logging.error(
+                "There is no measured data to be used in simulation, please recheck"
+            )
             logging.error(f"{meas_data_path} file doesn't exist, please recheck")
             exit(1)
 
         meas_df = pd.read_csv(meas_data_path)
         meas_df.drop_duplicates(inplace=True)
 
-        logging.info(f"# Device BJT {dev}-beta number of measured datapoints : {len(meas_df)} ")
+        logging.info(
+            f"# Device BJT {dev}-beta number of measured datapoints : {len(meas_df)} "
+        )
 
         # Loading sweep file used in measurements to be used in simulation for regression
         sweeps_file = f"../../../../180MCU_SPICE_DATA_clean/gf180mcu_data/BJT_beta/bjt_{dev}_beta_sweeps.csv"
 
         if not os.path.exists(sweeps_file) or not os.path.isfile(sweeps_file):
-            logging.error("There is no measured data to be used in simulation, please recheck")
+            logging.error(
+                "There is no measured data to be used in simulation, please recheck"
+            )
             logging.error(f"{sweeps_file} file doesn't exist, please recheck")
             exit(1)
 
@@ -285,28 +293,34 @@ def main():
         logging.info(f"# Device {dev} number of simulated datapoints: {len(sim_df)} ")
 
         # Merging meas and sim dataframe in one
-        full_df = meas_df.merge(sim_df,
-                                on=['device_name', 'corner', 'temp', 'vbp' , 'vcp'],
-                                how='left',
-                                suffixes=('_meas', '_sim'))
+        full_df = meas_df.merge(
+            sim_df,
+            on=["device_name", "corner", "temp", "vbp", "vcp"],
+            how="left",
+            suffixes=("_meas", "_sim"),
+        )
 
         # Clipping current values to lowest curr
         ## We found that most of the curr are in the range of milli-Amps and most of the
         ## error happens in the off mode of the BJT. And it causes large rmse for the values.
         ## We will clip at 10nA for all currents to make sure that for small signal it works as expected.
-        full_df['ic_meas'] = full_df['ic_meas'].clip(lower=CLIP_CURR)
-        full_df['ic_sim'] = full_df['ic_sim'].clip(lower=CLIP_CURR)
-        full_df['ib_meas'] = full_df['ib_meas'].clip(lower=CLIP_CURR)
-        full_df['ib_sim'] = full_df['ib_sim'].clip(lower=CLIP_CURR)
+        full_df["ic_meas"] = full_df["ic_meas"].clip(lower=CLIP_CURR)
+        full_df["ic_sim"] = full_df["ic_sim"].clip(lower=CLIP_CURR)
+        full_df["ib_meas"] = full_df["ib_meas"].clip(lower=CLIP_CURR)
+        full_df["ib_sim"] = full_df["ib_sim"].clip(lower=CLIP_CURR)
 
         # calc beta for both measured and simulated data
         ## Beta of BJT is defined as ic/ib
-        full_df['beta_meas'] = full_df['ic_meas'] / full_df['ib_meas']
-        full_df['beta_sim'] = full_df['ic_sim'] / full_df['ib_sim']
+        full_df["beta_meas"] = full_df["ic_meas"] / full_df["ib_meas"]
+        full_df["beta_sim"] = full_df["ic_sim"] / full_df["ib_sim"]
 
         # Error calculation and report
         ## Relative error calculation for BJT-iv
-        full_df["beta_err"] = np.abs((full_df["beta_meas"] - full_df["beta_sim"]) * 100.0 / (full_df["beta_meas"]))
+        full_df["beta_err"] = np.abs(
+            (full_df["beta_meas"] - full_df["beta_sim"])
+            * 100.0
+            / (full_df["beta_meas"])
+        )
         full_df.to_csv(f"{dev_path}/{dev}_full_merged_data.csv", index=False)
 
         # Calculate Q [quantile] to verify matching between measured and simulated data
@@ -315,9 +329,14 @@ def main():
         logging.info(f"Quantile target for {dev} device is: {q_target} %")
 
         bad_err_full_df_loc = full_df[full_df["beta_err"] > PASS_THRESH]
-        bad_err_full_df = bad_err_full_df_loc[(bad_err_full_df_loc["ic_sim"] >= MAX_VAL_DETECT) | (bad_err_full_df_loc["beta_err"] >= MAX_VAL_DETECT)]
+        bad_err_full_df = bad_err_full_df_loc[
+            (bad_err_full_df_loc["ic_sim"] >= MAX_VAL_DETECT)
+            | (bad_err_full_df_loc["beta_err"] >= MAX_VAL_DETECT)
+        ]
         bad_err_full_df.to_csv(f"{dev_path}/{dev}_ic_bad_err.csv", index=False)
-        logging.info(f"Bad relative errors between measured and simulated data at {dev}_ic_bad_err.csv")
+        logging.info(
+            f"Bad relative errors between measured and simulated data at {dev}_ic_bad_err.csv"
+        )
 
         # calculating the relative error of each device and reporting it
         min_error_total = float(full_df["beta_err"].min())
@@ -341,10 +360,9 @@ def main():
             logging.error(
                 f"# Device {dev}-beta simulation has failed regression. Needs more analysis."
             )
-            logging.error(
-                f"#Failed regression for {dev}-beta analysis."
-            )
+            logging.error(f"#Failed regression for {dev}-beta analysis.")
             # exit(1)
+
 
 # ================================================================
 # -------------------------- MAIN --------------------------------

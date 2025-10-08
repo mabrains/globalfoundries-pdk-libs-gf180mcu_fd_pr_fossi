@@ -1,12 +1,13 @@
 import gdsfactory as gf
 
-from .via_generator import via_generator, via_stack
+from .via_generator import via_generator
+from .pcell_utilities import snap_to_grid
 from .layers_def import layer
 import os
 
 
+@gf.cell
 def draw_cap_mim(
-    layout,
     mim_option: str = "A",
     metal_level: str = "M4",
     lc: float = 2,
@@ -15,19 +16,16 @@ def draw_cap_mim(
     top_lbl: str = "",
     bot_lbl: str = "",
 ):
-
     """
-    Retern mim cap
+    Draw the MIM CAP device for GF180MCU PDK
 
     Args:
         layout : layout object
         lc : float of cap length
         wc : float of cap width
-
-
     """
 
-    c = gf.Component("mim_cap_dev")
+    c = gf.Component()
 
     # used dimensions and layers
 
@@ -74,7 +72,12 @@ def draw_cap_mim(
 
     # drawing cap identifier and bottom , upper layers
 
-    m_up = c.add_ref(gf.components.rectangle(size=(wc, lc), layer=upper_layer,))
+    m_up = c.add_ref(
+        gf.components.rectangle(
+            size=(wc, lc),
+            layer=upper_layer,
+        )
+    )
 
     fusetop = c.add_ref(
         gf.components.rectangle(
@@ -137,8 +140,8 @@ def draw_cap_mim(
     )
     c.add_ref(via)
 
-    c.write_gds("mim_cap_temp.gds")
-    layout.read("mim_cap_temp.gds")
-    os.remove("mim_cap_temp.gds")
+    # Flatten and snap to 5nm grid
+    c_final = snap_to_grid(c, dbu=0.005)
 
-    return layout.cell(c.name)
+    # Return top cell
+    return c_final

@@ -64,7 +64,11 @@ def parse_dp_id_vgs_vbs(sub_df, dev_name):
     )
 
     # Multiplying vgs by -1 for pfet devices to match provided data
-    df_id_vgs_vbs["vgs"] = df_id_vgs_vbs["vgs"].apply(lambda x: x * -1) if "pfet" in dev_name else df_id_vgs_vbs["vgs"]
+    df_id_vgs_vbs["vgs"] = (
+        df_id_vgs_vbs["vgs"].apply(lambda x: x * -1)
+        if "pfet" in dev_name
+        else df_id_vgs_vbs["vgs"]
+    )
 
     # Get min/max values of vgs sweep
     vgs_min_val = df_id_vgs_vbs["vgs"].min()
@@ -85,9 +89,9 @@ def parse_dp_id_vgs_vbs(sub_df, dev_name):
     vbs_step_val = abs(df_id_vgs_vbs["vbs"][1] - df_id_vgs_vbs["vbs"][0])
 
     # Adding sweeps used per each variation
-    df_id_vgs_vbs[
-        "sweeps"
-    ] = f"vgs {vgs_min_val} {vgs_max_val} {vgs_step_val} vbs {vbs_min_val} {vbs_max_val} {vbs_step_val}"
+    df_id_vgs_vbs["sweeps"] = (
+        f"vgs {vgs_min_val} {vgs_max_val} {vgs_step_val} vbs {vbs_min_val} {vbs_max_val} {vbs_step_val}"
+    )
 
     return df_id_vgs_vbs
 
@@ -132,7 +136,11 @@ def parse_dp_id_vds_vgs(sub_df, dev_name):
     )
 
     # Multiplying vds by -1 for pfet devices to match provided data
-    df_id_vds_vgs["vds"] = df_id_vds_vgs["vds"].apply(lambda x: x * -1) if "pfet" in dev_name else df_id_vds_vgs["vds"]
+    df_id_vds_vgs["vds"] = (
+        df_id_vds_vgs["vds"].apply(lambda x: x * -1)
+        if "pfet" in dev_name
+        else df_id_vds_vgs["vds"]
+    )
 
     # Get vds min/max values used in sweep
     vds_min_val = df_id_vds_vgs["vds"].min()
@@ -153,9 +161,9 @@ def parse_dp_id_vds_vgs(sub_df, dev_name):
     vgs_step_val = abs(df_id_vds_vgs["vgs"][1] - df_id_vds_vgs["vgs"][0])
 
     # Adding sweeps used per each variation
-    df_id_vds_vgs[
-        "sweeps"
-    ] = f"vds {vds_min_val} {vds_max_val} {vds_step_val} vgs {vgs_min_val} {vgs_max_val} {vgs_step_val}"
+    df_id_vds_vgs["sweeps"] = (
+        f"vds {vds_min_val} {vds_max_val} {vds_step_val} vgs {vgs_min_val} {vgs_max_val} {vgs_step_val}"
+    )
 
     return df_id_vds_vgs
 
@@ -185,7 +193,9 @@ def parse_dp_rds_vds_vgs(sub_df, dev_name):
     # Get vds sweep values
     vgs_col_name = "vds (V).1" if "nfet" in dev_name else "-vds (V).1"
 
-    vds_step_val = abs(df_rds_vds_vgs[vgs_col_name][1] - df_rds_vds_vgs[vgs_col_name][0])
+    vds_step_val = abs(
+        df_rds_vds_vgs[vgs_col_name][1] - df_rds_vds_vgs[vgs_col_name][0]
+    )
 
     # Stacking all vgs sweeps in one column
     df_rds_vds_vgs = (
@@ -197,7 +207,11 @@ def parse_dp_rds_vds_vgs(sub_df, dev_name):
     )
 
     # Multiplying vds by -1 for pfet devices to match provided data
-    df_rds_vds_vgs["vds"] = df_rds_vds_vgs["vds"].apply(lambda x: x * -1) if "pfet" in dev_name else df_rds_vds_vgs["vds"]
+    df_rds_vds_vgs["vds"] = (
+        df_rds_vds_vgs["vds"].apply(lambda x: x * -1)
+        if "pfet" in dev_name
+        else df_rds_vds_vgs["vds"]
+    )
 
     # Get min/max values for vds sweeps
     vds_min_val = df_rds_vds_vgs["vds"].min()
@@ -219,9 +233,9 @@ def parse_dp_rds_vds_vgs(sub_df, dev_name):
     vgs_max_val = df_rds_vds_vgs["vgs"].max()
     vgs_step_val = abs(df_rds_vds_vgs["vgs"][1] - df_rds_vds_vgs["vgs"][0])
 
-    df_rds_vds_vgs[
-        "sweeps"
-    ] = f"vds {vds_min_val} {vds_max_val} {vds_step_val} vgs {vgs_min_val} {vgs_max_val} {vgs_step_val}"
+    df_rds_vds_vgs["sweeps"] = (
+        f"vds {vds_min_val} {vds_max_val} {vds_step_val} vgs {vgs_min_val} {vgs_max_val} {vgs_step_val}"
+    )
 
     return df_rds_vds_vgs
 
@@ -257,11 +271,11 @@ def generate_fets_sweeps(all_dfs, dev_name):
     sweeps_df.drop_duplicates(inplace=True)
 
     # Splitting sweeps depends one selected measured output
-    sweeps_df_id = sweeps_df[sweeps_df['out_col'] == 'id']
-    sweeps_df_rds = sweeps_df[sweeps_df['out_col'] == 'rds']
+    sweeps_df_id = sweeps_df[sweeps_df["out_col"] == "id"]
+    sweeps_df_rds = sweeps_df[sweeps_df["out_col"] == "rds"]
     # Drop out_col columns as it will be redundant
-    sweeps_df_id = sweeps_df_id.drop('out_col', axis=1)
-    sweeps_df_rds = sweeps_df_rds.drop('out_col', axis=1)
+    sweeps_df_id = sweeps_df_id.drop("out_col", axis=1)
+    sweeps_df_rds = sweeps_df_rds.drop("out_col", axis=1)
     # Saving sweep data files to csv
     sweeps_df_id.to_csv(f"{dev_name}_sweeps_id.csv", index=False)
     sweeps_df_rds.to_csv(f"{dev_name}_sweeps_rds.csv", index=False)
@@ -418,11 +432,11 @@ def fet_iv_meas_extraction(df: pd.DataFrame, dev_name: str):
     all_dfs.drop_duplicates(inplace=True)
 
     # Splitting final df depends on measured output
-    all_dfs_id = all_dfs.loc[all_dfs['id'].notnull()]
-    all_dfs_rds = all_dfs.loc[all_dfs['rds'].notnull()]
+    all_dfs_id = all_dfs.loc[all_dfs["id"].notnull()]
+    all_dfs_rds = all_dfs.loc[all_dfs["rds"].notnull()]
     # Drop rds/id columns as it will be redundant
-    all_dfs_id = all_dfs_id.drop('rds', axis=1)
-    all_dfs_rds = all_dfs_rds.drop('id', axis=1)
+    all_dfs_id = all_dfs_id.drop("rds", axis=1)
+    all_dfs_rds = all_dfs_rds.drop("id", axis=1)
     # Saving full extracted measured data to csv
     all_dfs_id.to_csv(f"{dev_name}_meas_id.csv", index=False)
     all_dfs_rds.to_csv(f"{dev_name}_meas_rds.csv", index=False)
