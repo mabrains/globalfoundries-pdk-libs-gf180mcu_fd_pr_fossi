@@ -52,15 +52,26 @@ if Dir.exist?out_dir
   `rm #{out_dir}/drc_run*.log`
 end
 
+if options["top_cell_name"] == ""
+  current_cell_name = RBA::CellView.active.cell.name
+  options["top_cell_name"] = current_cell_name
+end
+
 ## create options passed to run_drc.py
-options_str = "--variant=#{options["variant"]} --run_dir=#{run_dir}/macros/run_drc_main --macro_gen"
+options_str = "--variant=#{options["variant"]} --run_dir=#{run_dir}/macros/run_drc_main --macro_gen --topcell=#{options["top_cell_name"]}"
 
 ## run_drc command line
 cmd = "python3 #{run_dir}/drc/run_drc.py --path=#{layout_path} #{options_str}"
 
 ## start running drc
 puts "######### running #{cmd}"
-drc_res = `#{cmd}`
+`#{cmd}`
+status = $?
+
+if status.exitstatus != 0
+  STDERR.puts "Error: run_drc script generation failed with exit code #{status.exitstatus}"
+  exit status.exitstatus
+end
 
 ## pass options to main.drc
 $run_mode = options["run_mode"]
