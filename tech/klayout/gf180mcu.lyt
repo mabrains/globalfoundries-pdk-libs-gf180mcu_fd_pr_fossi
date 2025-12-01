@@ -19,6 +19,7 @@ limitations under the License.
  <description>GLOBALFOUNDRIES 0.18UM 3.3V/(5V)6V MCU TECHNOLOGY</description>
  <group/>
  <dbu>0.001</dbu>
+ <default-grids>0.005!,0.01,0.02</default-grids>
  <base-path/>
  <original-base-path>$PDK_ROOT/$PDK/libs.tech/klayout</original-base-path>
  <layer-properties_file>gf180mcu.lyp</layer-properties_file>
