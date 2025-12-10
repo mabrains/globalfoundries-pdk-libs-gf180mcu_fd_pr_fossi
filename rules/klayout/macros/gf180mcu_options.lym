@@ -441,42 +441,6 @@ require 'yaml'
   end
   mw.menu.insert_item("submenu.lvs_menu.end", "purge_nets", purge_nets_action)
 
-
-  #####################################################################################
-  # Return to defaults on closing
-  #####################################################################################
-
-  mw.on_view_closed do
-    ## write default options
-    drc_options = {
-             "run_mode"=&gt;"flat",
-             "variant"=&gt;"C" ,
-             "top_cell_name"=&gt;"",
-             "verbose"=&gt;"false",
-             "feol"=&gt;true,
-             "beol"=&gt;true,
-             "offgrid"=&gt; "true",
-             "connectivity"=&gt;"false" }
-    lvs_options = {"sub_name"=&gt;"gf180mcu_gnd",
-            "run_mode"=&gt;"flat",
-            "variant"=&gt;"C" ,
-            "netlist"=&gt;"" ,
-            "spice_net"=&gt;true,
-            "top_cell_name"=&gt;"",
-            "spice_comment"=&gt;false,
-            "scale"=&gt;false,
-            "verbose"=&gt;false,
-            "schematic_simple"=&gt;false,
-            "net_only"=&gt;false,
-            "top_lvl_pins"=&gt;false,
-            "combine"=&gt;false,
-            "purge"=&gt;false,
-            "purge_nets"=&gt;false
-              }
-    File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(drc_options.to_yaml) }
-    File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(lvs_options.to_yaml) }
-  end
-
 end
 
 
