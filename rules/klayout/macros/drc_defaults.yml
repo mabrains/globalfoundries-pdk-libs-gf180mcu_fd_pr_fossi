@@ -2,8 +2,8 @@
 run_mode: deep
 variant: D
 top_cell_name: ''
-verbose: 'false'
+verbose: false
 feol: true
 beol: true
-offgrid: 'true'
-connectivity: 'true'
+offgrid: true
+connectivity: false

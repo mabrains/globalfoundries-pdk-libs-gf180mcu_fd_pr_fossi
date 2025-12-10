@@ -38,7 +38,12 @@ layout_dir = layout_path.split()[0]
 
 ## read saved options from yaml file
 dir_path = File.dirname(File.expand_path(__FILE__))
-options = YAML.load(File.read(dir_path + "/drc_options.yml"))
+if File.exist?(__dir__ + "/drc_options.yml")
+  options = YAML.load(File.read(dir_path + "/drc_options.yml"))
+else
+  puts "drc_options.yml does not exist, using defaults"
+  options = YAML.load(File.read(dir_path + "/drc_defaults.yml"))
+end
 
 ## reading the parent directory of the current file
 run_dir = File.expand_path("..", dir_path)

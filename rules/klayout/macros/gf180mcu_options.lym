@@ -17,6 +17,7 @@
  <dsl-interpreter-name/>
  <text>module MyMacro
 require 'yaml'
+require 'fileutils'
 
   include RBA
 
@@ -35,21 +36,29 @@ require 'yaml'
   #####################################################################################
   # Adding DRC options
   #####################################################################################
+  unless File.exist?(__dir__ + "/drc_options.yml")
+    puts "drc_options.yml does not exist, creating it from defaults"
+    FileUtils.cp(__dir__ + "/drc_defaults.yml", __dir__ + "/drc_options.yml")
+  end
+  drc_initial_options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
 
   #1 Setting run mode
   run_mode_drc_action = RBA::Action::new
   run_mode_drc_action.title = "Run mode"
   run_mode_drc_action.on_triggered do
+    run_mode_array = [ "tiling", "deep", "flat" ]
+    options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
+    idx = run_mode_array.index(options["run_mode"])
+    if idx.nil?
+      warn "Error: '#{options["run_mode"]}' not found, initial selection will not match currently selected option for run mode."
+      idx = 1
+    end
 
-      run_mode_select = RBA::InputDialog::ask_item("Run mode", "Select run mode:", [ "tiling", "deep", "flat" ], 1)
-      options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
-      if run_mode_select
-          options["run_mode"]= run_mode_select
-          File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
-      else
-          options["run_mode"]= ""
-          File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
-      end
+    run_mode_select = RBA::InputDialog::ask_item("Run mode", "Select run mode:", run_mode_array, idx)
+    if run_mode_select
+        options["run_mode"]= run_mode_select
+        File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
+    end
 
   end
   mw.menu.insert_item("submenu.drc_menu.end", "run_mode", run_mode_drc_action)
@@ -58,13 +67,21 @@ require 'yaml'
   variant_drc_action = RBA::Action::new
   variant_drc_action.title = "Variant options"
   variant_drc_action.on_triggered do
+    options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
+    variant_array = [ "A", "B", "C", "D" ]
+    idx = variant_array.index(options["variant"])
+    if idx.nil?
+      warn "Error: '#{options["variant"]}' not found, initial selection will not match currently selected option for variant."
+      idx = 1
+    end
 
-    variant_select = RBA::InputDialog::ask_item("Variant options", "Select variant option:", [ "A", "B", "C" , "D"], 2)
-      options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
-      if variant_select
-        options["variant"] = variant_select
-        File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
-      end
+    variant_select = RBA::InputDialog::ask_item("Variant options", "Select variant option:", variant_array, idx)
+
+    options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
+    if variant_select
+      options["variant"] = variant_select
+      File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
+    end
 
   end
   mw.menu.insert_item("submenu.drc_menu.end", "variant", variant_drc_action)
@@ -73,12 +90,12 @@ require 'yaml'
   top_cell_action = RBA::Action::new
   top_cell_action.title = "Top_cell name"
   top_cell_action.on_triggered do
-    top_cell_name = RBA::InputDialog::ask_string("Top cell name", "Please enter Top_cell name", "TOP")
-      options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
-      if top_cell_name
-        options["top_cell_name"] = top_cell_name
-        File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
-      end
+    options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
+    top_cell_name = RBA::InputDialog::ask_string("Top cell name", "Please enter Top_cell name. Empty means run on current cell.", options["top_cell_name"])
+    if top_cell_name
+      options["top_cell_name"] = top_cell_name
+      File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
+    end
 
   end
   mw.menu.insert_item("submenu.drc_menu.end", "TOP_cell_name", top_cell_action)
@@ -87,15 +104,15 @@ require 'yaml'
   verbose_drc_action = RBA::Action::new
   verbose_drc_action.title = "Verbose mode"
   verbose_drc_action.checkable=(true)
-  verbose_drc_action.checked=(false)
+  verbose_drc_action.checked=drc_initial_options["verbose"]
   verbose_drc_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
       if verbose_drc_action.is_checked?
-        options["verbose"] = "true"
+        options["verbose"] = true
         File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
       else
-        options["verbose"] = "false"
+        options["verbose"] = false
         File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
       end
 
@@ -106,7 +123,7 @@ require 'yaml'
   feol_action = RBA::Action::new
   feol_action.title = "FEOL rules"
   feol_action.checkable=(true)
-  feol_action.checked=(true)
+  feol_action.checked=drc_initial_options["feol"]
   feol_action.on_triggered do
       options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
       if feol_action.is_checked?
@@ -124,7 +141,7 @@ require 'yaml'
   beol_action = RBA::Action::new
   beol_action.title = "BEOL rules"
   beol_action.checkable=(true)
-  beol_action.checked=(true)
+  beol_action.checked=drc_initial_options["beol"]
   beol_action.on_triggered do
     options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
       if beol_action.is_checked?
@@ -142,14 +159,14 @@ require 'yaml'
   offgrid_action = RBA::Action::new
   offgrid_action.title = "Offgrid rules"
   offgrid_action.checkable=(true)
-  offgrid_action.checked=(true)
+  offgrid_action.checked=drc_initial_options["offgrid"]
   offgrid_action.on_triggered do
     options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
       if offgrid_action.is_checked?
-        options["offgrid"] = "true"
+        options["offgrid"] = true
         File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
       else
-        options["offgrid"] = "false"
+        options["offgrid"] = false
         File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
       end
 
@@ -160,20 +177,20 @@ require 'yaml'
   connectivity_action = RBA::Action::new
   connectivity_action.title = "Connectivity rules"
   connectivity_action.checkable=(true)
-  connectivity_action.checked=(false)
+  connectivity_action.checked=drc_initial_options["connectivity"]
   connectivity_action.on_triggered do
     options = YAML.load(File.read(__dir__ + "/drc_options.yml"))
       if connectivity_action.is_checked?
-        options["connectivity"] = "true"
+        options["connectivity"] = true
         File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
       else
-        options["connectivity"] = "false"
+        options["connectivity"] = false
         File.open(__dir__ + "/drc_options.yml", "w") { |file| file.write(options.to_yaml) }
       end
 
   end
   mw.menu.insert_item("submenu.drc_menu.end", "connectivity", connectivity_action)
-
+  
   #####################################################################################
   # Adding LVS options
   #####################################################################################
