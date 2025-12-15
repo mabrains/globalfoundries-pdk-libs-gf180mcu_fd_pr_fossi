@@ -41,7 +41,12 @@ run_dir = File.expand_path("..", dir_path)
 layout_path = Pathname.new(RBA::CellView.active.filename)
 
 ## read saved options from yaml file
-options = YAML.load(File.read(dir_path + "/lvs_options.yml"))
+if File.exist?(__dir__ + "/lvs_options.yml")
+  options = YAML.load(File.read(dir_path + "/lvs_options.yml"))
+else
+  puts "lvs_options.yml does not exist, using defaults"
+  options = YAML.load(File.read(dir_path + "/lvs_defaults.yml"))
+end
 
 ## reading netlist option to get netlist_path
 if options["netlist"] == ""

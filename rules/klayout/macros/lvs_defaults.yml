@@ -1,16 +1,16 @@
 ---
 sub_name: gf180mcu_gnd
-run_mode: flat
-variant: C
+run_mode: deep
+variant: D
 netlist: ''
 spice_net: true
 top_cell_name: ''
 spice_comment: false
 scale: false
-verbose: false
-schematic_simple: false
+verbose: true
+schematic_simple: true
 net_only: false
-top_lvl_pins: false
-combine: false
-purge: false
+top_lvl_pins: true
+combine: true
+purge: true
 purge_nets: false

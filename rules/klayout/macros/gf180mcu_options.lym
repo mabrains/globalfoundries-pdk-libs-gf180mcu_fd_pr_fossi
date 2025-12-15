@@ -194,17 +194,22 @@ require 'fileutils'
   #####################################################################################
   # Adding LVS options
   #####################################################################################
+  unless File.exist?(__dir__ + "/lvs_options.yml")
+    puts "lvs_options.yml does not exist, creating it from defaults"
+    FileUtils.cp(__dir__ + "/lvs_defaults.yml", __dir__ + "/lvs_options.yml")
+  end
+  lvs_initial_options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
 
   #1 Adding substrate name
   run_action = RBA::Action::new
   run_action.title = "Substrate name"
   run_action.on_triggered do
-    sub_name = RBA::InputDialog::ask_string("Substrate name", "Please enter substrate name", "gf180mcu_gnd")
-      options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
-      if sub_name
-        options["sub_name"] = sub_name
-        File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
-      end
+    options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
+    sub_name = RBA::InputDialog::ask_string("Substrate name", "Please enter substrate name", options["sub_name"])
+    if sub_name
+      options["sub_name"] = sub_name
+      File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
+    end
 
   end
   mw.menu.insert_item("submenu.lvs_menu.end", "SUB_name", run_action)
@@ -213,13 +218,19 @@ require 'fileutils'
   run_mode_action = RBA::Action::new
   run_mode_action.title = "Run mode"
   run_mode_action.on_triggered do
+    options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
+    run_mode_array = [ "tiling", "deep", "flat" ]
+    idx = run_mode_array.index(options["run_mode"])
+    if idx.nil?
+      warn "Error: '#{options["run_mode"]}' not found, initial selection will not match currently selected option for run mode."
+      idx = 1
+    end
 
-      options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
-      run_mode_select = RBA::InputDialog::ask_item("Run mode", "Select run mode:", [ "tiling", "deep", "flat" ], 1)
-      if run_mode_select
-        options["run_mode"] = run_mode_select
-        File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
-      end
+    run_mode_select = RBA::InputDialog::ask_item("Run mode", "Select run mode:", run_mode_array, idx)
+    if run_mode_select
+      options["run_mode"] = run_mode_select
+      File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
+    end
 
   end
   mw.menu.insert_item("submenu.lvs_menu.end", "run_mode", run_mode_action)
@@ -228,13 +239,19 @@ require 'fileutils'
   variant_action = RBA::Action::new
   variant_action.title = "variant options"
   variant_action.on_triggered do
+    options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
+    variant_array = [ "A", "B", "C", "D" ]
+    idx = variant_array.index(options["variant"])
+    if idx.nil?
+      warn "Error: '#{options["variant"]}' not found, initial selection will not match currently selected option for variant."
+      idx = 1
+    end
 
-      options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
-      variant_select = RBA::InputDialog::ask_item("Variant options", "Select variant option:", [ "A", "B", "C", "D" ], 2)
-      if variant_select
-        options["variant"] = variant_select
-        File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
-      end
+    variant_select = RBA::InputDialog::ask_item("Variant options", "Select variant option:", variant_array, idx)
+    if variant_select
+      options["variant"] = variant_select
+      File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
+    end
 
   end
   mw.menu.insert_item("submenu.lvs_menu.end", "variant", variant_action)
@@ -243,12 +260,12 @@ require 'fileutils'
   netlist_action = RBA::Action::new
   netlist_action.title = "Netlist Path"
   netlist_action.on_triggered do
-    netlist_path = RBA::InputDialog::ask_string("Netlist Path", "Please enter Netlist Path", "")
-      options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
-      if netlist_path
-        options["netlist"] = netlist_path
-        File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
-      end
+    options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
+    netlist_path = RBA::InputDialog::ask_string("Netlist Path", "Please enter Netlist Path", options["netlist"])
+    if netlist_path
+      options["netlist"] = netlist_path
+      File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
+    end
 
   end
   mw.menu.insert_item("submenu.lvs_menu.end", "Netlist_path", netlist_action)
@@ -257,12 +274,12 @@ require 'fileutils'
   top_cell_action = RBA::Action::new
   top_cell_action.title = "Top_cell name"
   top_cell_action.on_triggered do
-    top_cell_name = RBA::InputDialog::ask_string("Top cell name", "Please enter Top_cell name", "TOP")
-      options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
-      if top_cell_name
-        options["top_cell_name"] = top_cell_name
-        File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
-      end
+    options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
+    top_cell_name = RBA::InputDialog::ask_string("Top cell name", "Please enter Top_cell name. Empty means run on current cell.", options["top_cell_name"])
+    if top_cell_name
+      options["top_cell_name"] = top_cell_name
+      File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
+    end
 
   end
   mw.menu.insert_item("submenu.lvs_menu.end", "TOP_cell_name", top_cell_action)
@@ -271,7 +288,7 @@ require 'fileutils'
   spice_net_action = RBA::Action::new
   spice_net_action.title = "SPICE net name"
   spice_net_action.checkable=(true)
-  spice_net_action.checked=(true)
+  spice_net_action.checked=lvs_initial_options["spice_net"]
   spice_net_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
@@ -290,7 +307,7 @@ require 'fileutils'
   spice_comment_action = RBA::Action::new
   spice_comment_action.title = "SPICE comments"
   spice_comment_action.checkable=(true)
-  spice_comment_action.checked=(false)
+  spice_comment_action.checked=lvs_initial_options["spice_comment"]
   spice_comment_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
@@ -309,7 +326,7 @@ require 'fileutils'
   scale_action = RBA::Action::new
   scale_action.title = "Scaling x10^6"
   scale_action.checkable=(true)
-  scale_action.checked=(false)
+  scale_action.checked=lvs_initial_options["scale"]
   scale_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
@@ -328,7 +345,7 @@ require 'fileutils'
   verbose_action = RBA::Action::new
   verbose_action.title = "Verbose mode"
   verbose_action.checkable=(true)
-  verbose_action.checked=(false)
+  verbose_action.checked=lvs_initial_options["verbose"]
   verbose_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
@@ -347,7 +364,7 @@ require 'fileutils'
   schematic_simple_action = RBA::Action::new
   schematic_simple_action.title = "Schematic simplify"
   schematic_simple_action.checkable=(true)
-  schematic_simple_action.checked=(false)
+  schematic_simple_action.checked=lvs_initial_options["schematic_simple"]
   schematic_simple_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
@@ -366,7 +383,7 @@ require 'fileutils'
   net_only_action = RBA::Action::new
   net_only_action.title = "Netlist only"
   net_only_action.checkable=(true)
-  net_only_action.checked=(false)
+  net_only_action.checked=lvs_initial_options["net_only"]
   net_only_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
@@ -385,7 +402,7 @@ require 'fileutils'
   top_lvl_pins_action = RBA::Action::new
   top_lvl_pins_action.title = "Top level pins"
   top_lvl_pins_action.checkable=(true)
-  top_lvl_pins_action.checked=(false)
+  top_lvl_pins_action.checked=lvs_initial_options["top_lvl_pins"]
   top_lvl_pins_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
@@ -404,7 +421,7 @@ require 'fileutils'
   combine_action = RBA::Action::new
   combine_action.title = "Devices combine"
   combine_action.checkable=(true)
-  combine_action.checked=(false)
+  combine_action.checked=lvs_initial_options["combine"]
   combine_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
@@ -423,7 +440,7 @@ require 'fileutils'
   purge_action = RBA::Action::new
   purge_action.title = "Purge"
   purge_action.checkable=(true)
-  purge_action.checked=(false)
+  purge_action.checked=lvs_initial_options["purge"]
   purge_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
@@ -443,7 +460,7 @@ require 'fileutils'
   purge_nets_action = RBA::Action::new
   purge_nets_action.title = "Purge nets"
   purge_nets_action.checkable=(true)
-  purge_nets_action.checked=(false)
+  purge_nets_action.checked=lvs_initial_options["purge_nets"]
   purge_nets_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
