@@ -475,6 +475,27 @@ require 'fileutils'
   end
   mw.menu.insert_item("submenu.lvs_menu.end", "purge_nets", purge_nets_action)
 
+  # Implicit connect net
+  # connects nets that have the same name. Useful for testing lvs extraction
+  # of multifinger devices, but can create short in actual designs. Interactions
+  # with flat lvs can also be spotty
+  implicit_connect_action = RBA::Action::new
+  implicit_connect_action.title = "Globally connect nets with identical name"
+  implicit_connect_action.checkable=(true)
+  implicit_connect_action.checked=lvs_initial_options["implicit_connect"]
+  implicit_connect_action.on_triggered do
+
+      options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
+      if implicit_connect_action.is_checked?
+        options["implicit_connect"] = true
+        File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
+      else
+        options["implicit_connect"] = false
+        File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
+      end
+
+  end
+  mw.menu.insert_item("submenu.lvs_menu.end", "implicit_connect", implicit_connect_action)
 end
 
 

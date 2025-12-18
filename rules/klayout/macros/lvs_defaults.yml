@@ -14,3 +14,4 @@ top_lvl_pins: true
 combine: true
 purge: true
 purge_nets: false
+implicit_connect: false
