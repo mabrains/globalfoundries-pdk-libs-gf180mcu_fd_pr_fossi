@@ -107,7 +107,7 @@ $scale = options["scale"]
 
 $verbose = options["verbose"]
 
-$schematic_simplify = options["schematic_simple"]
+$simplify = options["simplify"]
 
 $net_only = options["net_only"]
 

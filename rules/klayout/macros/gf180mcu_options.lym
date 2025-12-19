@@ -360,24 +360,24 @@ require 'fileutils'
   end
   mw.menu.insert_item("submenu.lvs_menu.end", "verbose", verbose_action)
 
-  #11 Setting schematic simplification
-  schematic_simple_action = RBA::Action::new
-  schematic_simple_action.title = "Schematic simplify"
-  schematic_simple_action.checkable=(true)
-  schematic_simple_action.checked=lvs_initial_options["schematic_simple"]
-  schematic_simple_action.on_triggered do
+  #11 Setting simplification
+  simplify_action = RBA::Action::new
+  simplify_action.title = "Simplify"
+  simplify_action.checkable=(true)
+  simplify_action.checked=lvs_initial_options["simplify"]
+  simplify_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
-      if schematic_simple_action.is_checked?
-        options["schematic_simple"] = true
+      if simplify_action.is_checked?
+        options["simplify"] = true
         File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
       else
-        options["schematic_simple"] = false
+        options["simplify"] = false
         File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
       end
 
   end
-  mw.menu.insert_item("submenu.lvs_menu.end", "schematic_simple", schematic_simple_action)
+  mw.menu.insert_item("submenu.lvs_menu.end", "simplify", simplify_action)
 
   #12 Setting netlist only
   net_only_action = RBA::Action::new
