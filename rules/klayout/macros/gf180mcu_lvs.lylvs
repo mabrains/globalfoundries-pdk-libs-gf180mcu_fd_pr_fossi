@@ -57,8 +57,8 @@ if options["netlist"] == ""
       net_dir = "#{layout_path.split()[0]}/#{net_name}.spice"
     end
 else
-    net_dir = options["netlist"]
-
+    # Interpret schematic relative to layout file
+    net_dir = File.expand_path(File.dirname(layout_path), options["netlist"])
 end
 
 unless File.exist?net_dir
