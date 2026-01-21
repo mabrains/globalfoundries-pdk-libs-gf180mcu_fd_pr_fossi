@@ -121,6 +121,8 @@ $purge_nets = options["purge_nets"]
 
 $implicit_connect = options["implicit_connect"]
 
+$schematic_translate = options["schematic_translate"]
+
 ## include lvs run file
 #%include ../lvs/gf180mcu.lvs
 

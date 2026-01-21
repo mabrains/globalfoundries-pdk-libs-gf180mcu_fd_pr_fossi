@@ -15,3 +15,4 @@ combine: true
 purge: true
 purge_nets: false
 implicit_connect: false
+schematic_translate: true

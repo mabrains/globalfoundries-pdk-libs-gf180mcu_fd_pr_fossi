@@ -496,6 +496,22 @@ require 'fileutils'
 
   end
   mw.menu.insert_item("submenu.lvs_menu.end", "implicit_connect", implicit_connect_action)
+
+
+  # Schematic translate
+  # Converts spice schematic netlist to a klayout compatible dialect (works on xschem)
+  schematic_translate_action = RBA::Action::new
+  schematic_translate_action.title = "Translate input spice schematic to klayout dialect"
+  schematic_translate_action.checkable=(true)
+  schematic_translate_action.checked=lvs_initial_options["schematic_translate"]
+  schematic_translate_action.on_triggered do
+
+      options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
+      options["schematic_translate"] = schematic_translate_action.is_checked?
+      File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
+
+  end
+  mw.menu.insert_item("submenu.lvs_menu.end", "schematic_translate", schematic_translate_action)
 end
 
 
