@@ -51,7 +51,7 @@ if options["netlist"] == ""
     unless File.exist?net_dir
       net_dir = "#{layout_path.split()[0]}/#{net_name}.spice"
     end
-else  
+else
     net_dir = options["netlist"]
 
 end
@@ -61,7 +61,7 @@ unless File.exist?net_dir
   exit
 end
 
-## read the log of lvs run to get output lydb file paths if run_dir option is disables 
+## read the log of lvs run to get output lydb file paths if run_dir option is disables
 gds_name = layout_path.split()[1].to_s.split(".")[0]
 
 
@@ -72,7 +72,7 @@ $lvs_sub = options["sub_name"]
 
 $run_mode = options["run_mode"]
 
-if options["variant"] == "A" 
+if options["variant"] == "A"
   $metal_top = "30K"
   $metal_level = "3LM"
   $mim_option = "A"
@@ -90,7 +90,7 @@ elsif options["variant"] == "D"
   $mim_option = "B"
 end
 
-unless options["top_cell_name"] == "" 
+unless options["top_cell_name"] == ""
   $topcell = options["top_cell_name"]
 end
 
