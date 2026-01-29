@@ -690,7 +690,7 @@
 .endl
 
 .lib nfet_03v3_t
-.subckt nfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.007148
 .param par_k=0.007008
 .param par_l=1.5e-7
@@ -7852,7 +7852,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib nfet_03v3_s
-.subckt nfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.007148
 .param par_k=0.007008
 .param par_l=1.5e-7
@@ -11433,7 +11433,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib nfet_03v3_fs
-.subckt nfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.007148
 .param par_k=0.007008
 .param par_l=1.5e-7
@@ -15014,7 +15014,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib nfet_03v3_sf
-.subckt nfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.007148
 .param par_k=0.007008
 .param par_l=1.5e-7
@@ -18595,7 +18595,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib pfet_03v3_t
-.subckt pfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.00666
 .param par_k=0.002833
 .param par_l=1.5e-7
@@ -22229,7 +22229,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib pfet_03v3_f
-.subckt pfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.00666
 .param par_k=0.002833
 .param par_l=1.5e-7
@@ -25863,7 +25863,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib pfet_03v3_s
-.subckt pfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.00666
 .param par_k=0.002833
 .param par_l=1.5e-7
@@ -29497,7 +29497,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib pfet_03v3_fs
-.subckt pfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.00666
 .param par_k=0.002833
 .param par_l=1.5e-7
@@ -33131,7 +33131,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib pfet_03v3_sf
-.subckt pfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.00666
 .param par_k=0.002833
 .param par_l=1.5e-7
@@ -36765,7 +36765,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib nfet_06v0_t
-.subckt nfet_06v0_dss d g s b params: w=10u l=0.6u par=1 s_sab=0.28u d_sab=3.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt nfet_06v0_dss d g s b w=10u l=0.6u nf=1 m=1 par=1 s_sab=0.28u d_sab=3.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.01155
 .param par_k=0.0000
 .param par_l=4e-7
@@ -37463,7 +37463,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib nfet_06v0_nvt_t
-.subckt nfet_06v0_nvt d g s b params: w=1e-5 l=1.8e-6 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 nf=1 sd=0 m=1
+.subckt nfet_06v0_nvt d g s b w=1e-5 l=1.8e-6 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
 m0 d g s b nfet_06v0_nvt ad='ad' as='as' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends nfet_06v0_nvt
 .model nfet_06v0_nvt.0 nmos 
@@ -37784,7 +37784,7 @@ m0 d g s b nfet_06v0_nvt ad='ad' as='as' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd'
 .endl
 
 .lib pfet_06v0_t
-.subckt pfet_06v0_dss d g s b params: w=10u l=0.5u par=1 s_sab=0.28u d_sab=2.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt pfet_06v0_dss d g s b w=10u l=0.5u nf=1 m=1 par=1 s_sab=0.28u d_sab=2.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.01051
 .param par_k=0.00517
 .param par_l=3e-7
