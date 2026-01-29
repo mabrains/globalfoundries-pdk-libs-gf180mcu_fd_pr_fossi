@@ -554,44 +554,44 @@
 .endl
 
 .lib statistical
-.param mc_sig_vth2=agauss(0,1,3)
-.param mc_toxe2=agauss(0,1,3)
-.param mc_xl2=agauss(0,1,3)
-.param mc_xw2=agauss(0,1,3)
-.param mc_xj2=agauss(0,1,3)
-.param mc_sig_vthn2=agauss(0,1,3)
-.param mc_toxen2=agauss(0,1,3)
-.param mc_xln2=agauss(0,1,3)
-.param mc_xwn2=agauss(0,1,3)
-.param mc_xjn2=agauss(0,1,3)
-.param mc_rdswn2=agauss(0,1,3)
-.param mc_sig_vthp2=agauss(0,1,3)
-.param mc_toxep2=agauss(0,1,3)
-.param mc_xlp2=agauss(0,1,3)
-.param mc_xwp2=agauss(0,1,3)
-.param mc_xjp2=agauss(0,1,3)
-.param mc_rdswp2=agauss(0,1,3)
-.param mc_rsh_nplus_u_temp=agauss(0,3.85,3)
-.param mc_rsh_pplus_u_temp=agauss(0,10,3)
-.param mc_sig_vth=mc_sig_vth2
-.param mc_toxe=mc_toxe2
-.param mc_xl=mc_xl2
-.param mc_xw=mc_xw2
-.param mc_xj=mc_xj2
-.param mc_sig_vthn=mc_sig_vthn2
-.param mc_toxen=mc_toxen2
-.param mc_xln=mc_xln2
-.param mc_xwn=mc_xwn2
-.param mc_xjn=mc_xjn2
-.param mc_rdswn=mc_rdswn2
-.param mc_sig_vthp=mc_sig_vthp2
-.param mc_toxep=mc_toxep2
-.param mc_xlp=mc_xlp2
-.param mc_xwp=mc_xwp2
-.param mc_xjp=mc_xjp2
-.param mc_rdswp=mc_rdswp2
-.param mc_rsh_nplus_u=mc_rsh_nplus_u_temp
-.param mc_rsh_pplus_u=mc_rsh_pplus_u_temp
+.param mc_sig_vth2='agauss(0,1,3)'
+.param mc_toxe2='agauss(0,1,3)'
+.param mc_xl2='agauss(0,1,3)'
+.param mc_xw2='agauss(0,1,3)'
+.param mc_xj2='agauss(0,1,3)'
+.param mc_sig_vthn2='agauss(0,1,3)'
+.param mc_toxen2='agauss(0,1,3)'
+.param mc_xln2='agauss(0,1,3)'
+.param mc_xwn2='agauss(0,1,3)'
+.param mc_xjn2='agauss(0,1,3)'
+.param mc_rdswn2='agauss(0,1,3)'
+.param mc_sig_vthp2='agauss(0,1,3)'
+.param mc_toxep2='agauss(0,1,3)'
+.param mc_xlp2='agauss(0,1,3)'
+.param mc_xwp2='agauss(0,1,3)'
+.param mc_xjp2='agauss(0,1,3)'
+.param mc_rdswp2='agauss(0,1,3)'
+.param mc_rsh_nplus_u_temp='agauss(0,3.85,3)'
+.param mc_rsh_pplus_u_temp='agauss(0,10,3)'
+.param mc_sig_vth='mc_sig_vth2'
+.param mc_toxe='mc_toxe2'
+.param mc_xl='mc_xl2'
+.param mc_xw='mc_xw2'
+.param mc_xj='mc_xj2'
+.param mc_sig_vthn='mc_sig_vthn2'
+.param mc_toxen='mc_toxen2'
+.param mc_xln='mc_xln2'
+.param mc_xwn='mc_xwn2'
+.param mc_xjn='mc_xjn2'
+.param mc_rdswn='mc_rdswn2'
+.param mc_sig_vthp='mc_sig_vthp2'
+.param mc_toxep='mc_toxep2'
+.param mc_xlp='mc_xlp2'
+.param mc_xwp='mc_xwp2'
+.param mc_xjp='mc_xjp2'
+.param mc_rdswp='mc_rdswp2'
+.param mc_rsh_nplus_u='mc_rsh_nplus_u_temp'
+.param mc_rsh_pplus_u='mc_rsh_pplus_u_temp'
 .param nfet_03v3_sig_vth1='(5e-3*mc_sig_vth+30e-3*mc_sig_vthn)*sw_stat_global*mc_skew'
 .param nfet_03v3_sig_vth2='(5e-3*mc_sig_vth+25e-3*mc_sig_vthn)*sw_stat_global*mc_skew'
 .param nfet_03v3_sig_vth3='(5e-3*mc_sig_vth+15e-3*mc_sig_vthn)*sw_stat_global*mc_skew'
@@ -700,9 +700,9 @@
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b nplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b nplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w='w'
@@ -832,9 +832,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.7450182e-015
@@ -1076,9 +1076,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.4627526e-014
@@ -1316,9 +1316,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-4.2919481e-014
@@ -1533,9 +1533,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -1753,9 +1753,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.0504145e-015
@@ -1994,9 +1994,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.4148441e-015
@@ -2237,9 +2237,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=6.3697932e-014
@@ -2454,9 +2454,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -2672,9 +2672,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.59809917
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=-6.6365124e-014
@@ -2916,9 +2916,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.3401007e-013
@@ -3156,9 +3156,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.128874
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.454613e-013
@@ -3377,9 +3377,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1134091
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -3596,9 +3596,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.29090909
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.4217547e-013
@@ -3804,9 +3804,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -4012,9 +4012,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1136364
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -4197,9 +4197,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -4308,9 +4308,9 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b nplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b nplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w='w'
@@ -4440,9 +4440,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.717132e-015
@@ -4684,9 +4684,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.528563e-014
@@ -4924,9 +4924,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-4.536112e-014
@@ -5141,9 +5141,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -5361,9 +5361,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=9.9275047e-016
@@ -5602,9 +5602,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.3952024e-015
@@ -5845,9 +5845,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=6.4659197e-014
@@ -6062,9 +6062,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -6280,9 +6280,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.46137913
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=-6.1503437e-014
@@ -6524,9 +6524,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.262785e-013
@@ -6764,9 +6764,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1288096
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.4432511e-013
@@ -6985,9 +6985,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1135227
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -7204,9 +7204,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.16818182
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.3066601e-013
@@ -7412,9 +7412,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -7620,9 +7620,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1134659
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -7805,9 +7805,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -7916,9 +7916,9 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b nplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b nplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w='w'
@@ -8048,9 +8048,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.7614949e-015
@@ -8292,9 +8292,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.3890942e-014
@@ -8532,9 +8532,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-4.0483744e-014
@@ -8749,9 +8749,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -8969,9 +8969,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.1066809e-015
@@ -9210,9 +9210,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.432522e-015
@@ -9453,9 +9453,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=6.2709277e-014
@@ -9670,9 +9670,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -9888,9 +9888,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.73454029
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=-7.1336137e-014
@@ -10132,9 +10132,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.4173263e-013
@@ -10372,9 +10372,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.128938
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.4654573e-013
@@ -10593,9 +10593,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1132954
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -10812,9 +10812,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.41363636
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.5411576e-013
@@ -11020,9 +11020,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -11228,9 +11228,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1138068
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -11413,9 +11413,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -11512,7 +11512,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m1
-.endl nfet_03v3_s
+.endl
 
 .lib nfet_03v3_fs
 .subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -11524,9 +11524,9 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b nplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b nplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w='w'
@@ -11656,9 +11656,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.7078752e-015
@@ -11900,9 +11900,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.4787741e-014
@@ -12140,9 +12140,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-4.4036219e-014
@@ -12357,9 +12357,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -12577,9 +12577,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.0072317e-015
@@ -12818,9 +12818,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.3952024e-015
@@ -13061,9 +13061,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=6.4031457e-014
@@ -13278,9 +13278,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -13496,9 +13496,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.50656508
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=-6.3012337e-014
@@ -13740,9 +13740,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.2849684e-013
@@ -13980,9 +13980,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1288096
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.4432511e-013
@@ -14201,9 +14201,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1134659
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -14420,9 +14420,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.20909091
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.3442985e-013
@@ -14628,9 +14628,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -14836,9 +14836,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1135227
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -15021,9 +15021,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -15120,7 +15120,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m1
-.endl nfet_03v3_fs
+.endl
 
 .lib nfet_03v3_sf
 .subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -15132,9 +15132,9 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b nplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b nplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w='w'
@@ -15264,9 +15264,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.778677e-015
@@ -15508,9 +15508,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.4438924e-014
@@ -15748,9 +15748,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-4.1797436e-014
@@ -15965,9 +15965,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -16185,9 +16185,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.0934756e-015
@@ -16426,9 +16426,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.4339074e-015
@@ -16669,9 +16669,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=6.3353669e-014
@@ -16886,9 +16886,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -17104,9 +17104,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.68954029
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=-6.977796e-014
@@ -17348,9 +17348,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.3953946e-013
@@ -17588,9 +17588,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1289382
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.4658091e-013
@@ -17809,9 +17809,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1133523
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -18028,9 +18028,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.37272727
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.5011547e-013
@@ -18236,9 +18236,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -18444,9 +18444,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.11375
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -18629,9 +18629,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -18728,7 +18728,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m1
-.endl nfet_03v3_sf
+.endl
 
 .lib pfet_03v3_t
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -18740,9 +18740,9 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w='w'
@@ -18875,9 +18875,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.7370909e-015
@@ -19121,9 +19121,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.6645518e-014
@@ -19365,9 +19365,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9454546
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=3.4170078e-014
@@ -19591,9 +19591,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -19815,9 +19815,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-5.5371585e-014
@@ -20057,9 +20057,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.4582136e-014
@@ -20300,9 +20300,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9454546
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-8.5520416e-014
@@ -20522,9 +20522,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -20745,9 +20745,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.5381528e-015
@@ -20990,9 +20990,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.0756678e-013
@@ -21237,9 +21237,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9454546
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.1205867e-014
@@ -21460,9 +21460,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -21678,9 +21678,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -21887,9 +21887,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -22097,9 +22097,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9454546
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -22289,9 +22289,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -22389,7 +22389,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl pfet_03v3_t
+.endl
 
 .lib pfet_03v3_f
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -22401,9 +22401,9 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w='w'
@@ -22536,9 +22536,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.7146703e-015
@@ -22782,9 +22782,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.7075901e-014
@@ -23026,9 +23026,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.946
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=3.5872446e-014
@@ -23252,9 +23252,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -23476,9 +23476,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-5.3153436e-014
@@ -23718,9 +23718,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.4052143e-014
@@ -23961,9 +23961,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.946
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-8.6896311e-014
@@ -24183,9 +24183,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -24406,9 +24406,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.4501221e-015
@@ -24651,9 +24651,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.0489184e-013
@@ -24898,9 +24898,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.946
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.1057185e-014
@@ -25121,9 +25121,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -25339,9 +25339,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -25548,9 +25548,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -25758,9 +25758,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.946
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -25950,9 +25950,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -26050,7 +26050,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl pfet_03v3_f
+.endl
 
 .lib pfet_03v3_s
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -26062,9 +26062,9 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w='w'
@@ -26197,9 +26197,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.7472452e-015
@@ -26443,9 +26443,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.6180878e-014
@@ -26687,9 +26687,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9449091
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=3.2476679e-014
@@ -26913,9 +26913,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -27137,9 +27137,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-5.7518044e-014
@@ -27379,9 +27379,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.5032345e-014
@@ -27622,9 +27622,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9449091
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-8.4120993e-014
@@ -27844,9 +27844,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -28067,9 +28067,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.6274819e-015
@@ -28312,9 +28312,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.1022787e-013
@@ -28559,9 +28559,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9449091
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.1342757e-014
@@ -28782,9 +28782,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -29000,9 +29000,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -29209,9 +29209,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -29419,9 +29419,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9449091
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -29611,9 +29611,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -29711,7 +29711,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl pfet_03v3_s
+.endl
 
 .lib pfet_03v3_fs
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -29723,9 +29723,9 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w='w'
@@ -29858,9 +29858,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.7738176e-015
@@ -30104,9 +30104,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.6509626e-014
@@ -30348,9 +30348,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9450909
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=3.3384084e-014
@@ -30574,9 +30574,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -30798,9 +30798,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-5.7073625e-014
@@ -31040,9 +31040,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.5237532e-014
@@ -31283,9 +31283,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9450909
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-8.4981251e-014
@@ -31505,9 +31505,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -31728,9 +31728,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.6000271e-015
@@ -31973,9 +31973,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.0951088e-013
@@ -32220,9 +32220,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9450909
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.1408259e-014
@@ -32443,9 +32443,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -32661,9 +32661,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -32870,9 +32870,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -33080,9 +33080,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9450909
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -33272,9 +33272,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -33372,7 +33372,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl pfet_03v3_fs
+.endl
 
 .lib pfet_03v3_sf
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -33384,9 +33384,9 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w='w'
@@ -33519,9 +33519,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.6965346e-015
@@ -33765,9 +33765,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.6768655e-014
@@ -34009,9 +34009,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9458182
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=3.495459e-014
@@ -34235,9 +34235,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -34459,9 +34459,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-5.3656847e-014
@@ -34701,9 +34701,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.3902161e-014
@@ -34944,9 +34944,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9458182
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-8.6049719e-014
@@ -35166,9 +35166,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -35389,9 +35389,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.4770608e-015
@@ -35634,9 +35634,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.0562366e-013
@@ -35881,9 +35881,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9458182
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.0999638e-014
@@ -36104,9 +36104,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -36322,9 +36322,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -36531,9 +36531,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -36741,9 +36741,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9458182
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -36933,9 +36933,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -37033,7 +37033,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl pfet_03v3_sf
+.endl
 
 .lib nfet_06v0_t
 .subckt nfet_06v0_dss d g s b w=10u l=0.6u nf=1 m=1 par=1 s_sab=0.28u d_sab=3.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -37045,9 +37045,9 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b nplus_u_m2 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b nplus_u_m2 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b nfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=0 sb=0 sd=0 w='w'
@@ -37746,7 +37746,7 @@ m0 d1 g s1 b nfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m2
-.endl nfet_06v0_t
+.endl
 
 .lib nfet_06v0_nvt_t
 .subckt nfet_06v0_nvt d g s b w=1e-5 l=1.8e-6 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
@@ -37783,10 +37783,10 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + cdscd=0
 + cgbo=1e-013
 + cgdl=1.5e-010
-+ cgdo=nfet_06v0_nvt_cgdo
++ cgdo='nfet_06v0_nvt_cgdo'
 + cgidl=0.5
 + cgsl=1.5e-010
-+ cgso=nfet_06v0_nvt_cgso
++ cgso='nfet_06v0_nvt_cgso'
 + cigbacc=0.075
 + cigbinv=0.006
 + cigc=0.075
@@ -37994,7 +37994,7 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + tnjtsswg=0
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_06v0_nvt_tox
++ toxe='nfet_06v0_nvt_tox'
 + toxm=1.52e-008
 + toxp=1.6e-008
 + toxref=1.52e-008
@@ -38004,7 +38004,7 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + trnqsmod=0
 + tvfbsdoff=0
 + tvoff=0
-+ u0=nfet_06v0_nvt_u0
++ u0='nfet_06v0_nvt_u0'
 + ua=2.278e-009
 + ua1=1e-009
 + ub=3.97e-019
@@ -38022,7 +38022,7 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + voffcv=0
 + voffl=0
 + vsat=106700
-+ vth0=nfet_06v0_nvt_vth0
++ vth0='nfet_06v0_nvt_vth0'
 + vtl=200000
 + vtsd=10
 + vtss=10
@@ -38056,7 +38056,7 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + xj=1.5e-007
 + xjbvd=1
 + xjbvs=1
-+ xl=nfet_06v0_nvt_xl
++ xl='nfet_06v0_nvt_xl'
 + xn=3
 + xpart=0
 + xrcrg1=12
@@ -38068,8 +38068,8 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + xtsswgd=0.02
 + xtsswgs=0.02
 + xtssws=0.02
-+ xw=nfet_06v0_nvt_xw
-.endl nfet_06v0_nvt_t
++ xw='nfet_06v0_nvt_xw'
+.endl
 
 .lib pfet_06v0_t
 .subckt pfet_06v0_dss d g s b w=10u l=0.5u nf=1 m=1 par=1 s_sab=0.28u d_sab=2.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -38081,9 +38081,9 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b pplus_u_m2 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b pplus_u_m2 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=0 sb=0 sd=0 w='w'
@@ -38315,7 +38315,7 @@ m0 d1 g s1 b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m2
-.endl pfet_06v0_t
+.endl
 
 .lib dio
 .model diode_nd2ps_03v3 d 
@@ -38566,7 +38566,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 + trs=0.0022143
 + xti=3
 + xtitun=-12.347
-.endl diode
+.endl
 
 .lib res
 .subckt nplus_u 1 2 3 r_length=l r_width=w dtemp=0 par=1 s=1 r_rsh0='rsh_nplus_u*(1+(mc_rsh_nplus_u/(rsh_nplus_u))*res_mc_skew*sw_stat_global)' r_dw='-5e-8*(1+mc_dw_nplus_u*res_mc_skew*sw_stat_global)' r_dl=2e-11 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)' mis_r=0
@@ -39026,7 +39026,7 @@ c_cap 1 2 cap_mim_1f0_model dtemp=dtemp
 c_cap 1 2 cap_mim_2f0_model dtemp=dtemp
 r_leak 1 2 r='1/(gleak*c_area)' dtemp=dtemp tc1=c_tc1 tc2=c_tc2
 .ends cap_mim_2f0
-.endl cap_mim
+.endl
 
 .lib moscap
 .subckt cap_nmos_03v3 1 2 c_length=l c_width=w dtemp=0
@@ -39085,7 +39085,7 @@ c_moscap 1 2 c='cap_nmos_06v0_b_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*
 .param cvar4=0.642857
 c_moscap 1 2 c='cap_pmos_06v0_b_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))' dtemp=dtemp
 .ends cap_pmos_06v0_b
-.endl moscap
+.endl
 
 .lib nfet_03v3_stat
 .subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -39229,9 +39229,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.7450182e-015
@@ -39275,7 +39275,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=4.3636364e-016
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -39288,9 +39288,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -39312,7 +39312,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.005
 + voffl=0
 + vsat=92454.546
-+ vth0=nfet_03v3_vth0_0
++ vth0='nfet_03v3_vth0_0'
 + w0=5e-007
 + wa0=-6.2322078e-009
 + wags=4.7930493e-008
@@ -39343,11 +39343,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.1 nmos 
 + a0=1.0861147
 + a1=0
@@ -39473,9 +39473,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.4627526e-014
@@ -39518,7 +39518,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=-5.642449e-016
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -39531,9 +39531,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -39555,7 +39555,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.005
 + voffl=0
 + vsat=83571.429
-+ vth0=nfet_03v3_vth0_1
++ vth0='nfet_03v3_vth0_1'
 + w0=5e-007
 + wa0=-5.1997224e-008
 + wags=4.3304327e-008
@@ -39586,11 +39586,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.2 nmos 
 + a0=1.224418
 + a1=0
@@ -39713,9 +39713,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-4.2919481e-014
@@ -39755,7 +39755,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=-3.6888312e-015
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -39768,9 +39768,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -39792,7 +39792,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.005
 + voffl=0
 + vsat=85000
-+ vth0=nfet_03v3_vth0_2
++ vth0='nfet_03v3_vth0_2'
 + w0=5e-007
 + wa0=4.291948e-009
 + wags=-2.606026e-009
@@ -39821,11 +39821,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.3 nmos 
 + a0=1.1588
 + a1=0
@@ -39930,9 +39930,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -39957,7 +39957,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -39970,9 +39970,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -39994,7 +39994,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.005
 + voffl=0
 + vsat=85000
-+ vth0=nfet_03v3_vth0_3
++ vth0='nfet_03v3_vth0_3'
 + w0=5e-007
 + wags=1.9131429e-009
 + walpha0=6.6315429e-012
@@ -40022,11 +40022,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.4 nmos 
 + a0=0.10680558
 + a1=0
@@ -40150,9 +40150,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.0504145e-015
@@ -40194,7 +40194,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=2.0029964e-015
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -40207,9 +40207,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -40231,7 +40231,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.005
 + voffl=0
 + vsat=71618.182
-+ vth0=nfet_03v3_vth0_4
++ vth0='nfet_03v3_vth0_4'
 + w0=5e-007
 + wa0=-3.7514805e-009
 + wags=3.3067462e-008
@@ -40261,11 +40261,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.5 nmos 
 + a0=0.97533082
 + a1=0
@@ -40391,9 +40391,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.4148441e-015
@@ -40436,7 +40436,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=-3.3082384e-015
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -40449,9 +40449,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -40473,7 +40473,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.005
 + voffl=0
 + vsat=88428.571
-+ vth0=nfet_03v3_vth0_5
++ vth0='nfet_03v3_vth0_5'
 + w0=5e-007
 + wa0=1.1790367e-009
 + wags=6.1365394e-008
@@ -40504,11 +40504,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.6 nmos 
 + a0=1.2333595
 + a1=0
@@ -40634,9 +40634,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=6.3697932e-014
@@ -40677,7 +40677,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=-1.1596488e-014
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -40690,9 +40690,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -40714,7 +40714,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.005
 + voffl=0
 + vsat=85000
-+ vth0=nfet_03v3_vth0_6
++ vth0='nfet_03v3_vth0_6'
 + w0=5e-007
 + wags=-1.501953e-008
 + walpha0=1.0548281e-014
@@ -40742,11 +40742,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.7 nmos 
 + a0=1.1588
 + a1=0
@@ -40851,9 +40851,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -40878,7 +40878,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -40891,9 +40891,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -40915,7 +40915,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.005
 + voffl=0
 + vsat=85000
-+ vth0=nfet_03v3_vth0_7
++ vth0='nfet_03v3_vth0_7'
 + w0=5e-007
 + wags=-8.6497371e-009
 + wbeta0=1.92576e-007
@@ -40939,11 +40939,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.8 nmos 
 + a0=0.10362636
 + a1=0
@@ -41069,9 +41069,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.59809917
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pags=-6.6365124e-014
@@ -41115,7 +41115,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=1.824977e-014
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -41128,9 +41128,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -41152,7 +41152,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.22872521
 + voffl=0
 + vsat=85682.645
-+ vth0=nfet_03v3_vth0_8
++ vth0='nfet_03v3_vth0_8'
 + w0=5e-007
 + wags=1.3273025e-007
 + walpha0=1.1428461e-013
@@ -41185,11 +41185,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.9 nmos 
 + a0=0.57970277
 + a1=0
@@ -41313,9 +41313,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.3401007e-013
@@ -41355,7 +41355,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=-1.2468455e-014
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -41368,9 +41368,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -41392,7 +41392,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.005
 + voffl=0
 + vsat=85000
-+ vth0=nfet_03v3_vth0_9
++ vth0='nfet_03v3_vth0_9'
 + w0=5e-007
 + wa0=4.6802014e-007
 + wags=-1.6558842e-007
@@ -41420,11 +41420,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.10 nmos 
 + a0=1.175342
 + a1=0
@@ -41553,9 +41553,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.128874
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=2.454613e-013
@@ -41598,7 +41598,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=-4.6716298e-015
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -41611,9 +41611,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -41635,7 +41635,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.065880682
 + voffl=0
 + vsat=85000
-+ vth0=nfet_03v3_vth0_10
++ vth0='nfet_03v3_vth0_10'
 + w0=5e-007
 + wa0=6.8460666e-008
 + wags=4.3516718e-009
@@ -41665,11 +41665,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.11 nmos 
 + a0=1.0799807
 + a1=0
@@ -41774,9 +41774,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1134091
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -41801,7 +41801,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -41814,9 +41814,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -41838,7 +41838,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.057375
 + voffl=0
 + vsat=85000
-+ vth0=nfet_03v3_vth0_11
++ vth0='nfet_03v3_vth0_11'
 + w0=5e-007
 + wa0=9.3006796e-008
 + wags=-7.7617182e-009
@@ -41865,11 +41865,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.12 nmos 
 + a0=0.13211844
 + a1=0
@@ -41993,9 +41993,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=-0.29090909
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=1.4217547e-013
@@ -42023,7 +42023,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -42036,9 +42036,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -42060,7 +42060,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.20227273
 + voffl=0
 + vsat=85000
-+ vth0=nfet_03v3_vth0_12
++ vth0='nfet_03v3_vth0_12'
 + w0=5e-007
 + wa0=-2.8435094e-007
 + wags=-1.7735247e-006
@@ -42075,11 +42075,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.13 nmos 
 + a0=0.62659857
 + a1=0
@@ -42201,9 +42201,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -42228,7 +42228,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -42241,9 +42241,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -42265,7 +42265,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.005
 + voffl=0
 + vsat=85000
-+ vth0=nfet_03v3_vth0_13
++ vth0='nfet_03v3_vth0_13'
 + w0=5e-007
 + wint=1e-008
 + wl=0
@@ -42277,11 +42277,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.14 nmos 
 + a0=1.1822018
 + a1=0
@@ -42409,9 +42409,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1136364
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -42436,7 +42436,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -42449,9 +42449,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -42473,7 +42473,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.0575
 + voffl=0
 + vsat=85000
-+ vth0=nfet_03v3_vth0_14
++ vth0='nfet_03v3_vth0_14'
 + w0=5e-007
 + wint=1e-008
 + wl=0
@@ -42485,11 +42485,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .model nfet_03v3.15 nmos 
 + a0=1.0893
 + a1=0
@@ -42594,9 +42594,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ngate=6e+019
 + njs=1.01
 + noff=2.1
-+ noia=nfet_03v3_noia
-+ noib=nfet_03v3_noib
-+ noic=nfet_03v3_noic
++ noia='nfet_03v3_noia'
++ noib='nfet_03v3_noib'
++ noic='nfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -42621,7 +42621,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=nfet_03v3_rdsw
++ rdsw='nfet_03v3_rdsw'
 + rdswmin=50
 + rdwmin=0
 + rgatemod=0
@@ -42634,9 +42634,9 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.001
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_03v3_tox
++ toxe='nfet_03v3_tox'
 + toxm=8e-009
-+ toxp=nfet_03v3_tox
++ toxp='nfet_03v3_tox'
 + toxref=8e-009
 + tpb=0.0018129
 + tpbsw=5e-005
@@ -42658,7 +42658,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.05
 + voffl=0
 + vsat=85000
-+ vth0=nfet_03v3_vth0_15
++ vth0='nfet_03v3_vth0_15'
 + w0=5e-007
 + wint=1e-008
 + wl=0
@@ -42670,11 +42670,11 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=nfet_03v3_xj
-+ xl=nfet_03v3_xl
++ xj='nfet_03v3_xj'
++ xl='nfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=nfet_03v3_xw
++ xw='nfet_03v3_xw'
 .subckt nplus_u_m1 1 2 3 lr=lr wr=wr dtemp=0 r_rsh0=rsh_nplus_u_m r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='lr-2*r_dl' r_w='wr-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
 .model np_junction d 
 + cj=0.00096797
@@ -42693,7 +42693,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m1
-.endl nfet_03v3_stat
+.endl
 
 .lib pfet_03v3_stat
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -42705,9 +42705,9 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w='w'
@@ -42840,9 +42840,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-2.7370909e-015
@@ -42885,7 +42885,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=2.3570182e-015
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -42896,9 +42896,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -42921,7 +42921,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.16
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_0
++ vth0='pfet_03v3_vth0_0'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -42953,11 +42953,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.1 pmos 
 + a0=1.1510659
 + a1=0
@@ -43086,9 +43086,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.6645518e-014
@@ -43129,7 +43129,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=1.5205225e-015
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -43140,9 +43140,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -43165,7 +43165,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.16
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_1
++ vth0='pfet_03v3_vth0_1'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -43195,11 +43195,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.2 pmos 
 + a0=1.2626103
 + a1=0
@@ -43330,9 +43330,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9454546
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=3.4170078e-014
@@ -43374,7 +43374,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=4.2667013e-015
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -43385,9 +43385,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -43410,7 +43410,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.021818182
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_2
++ vth0='pfet_03v3_vth0_2'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -43441,11 +43441,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.3 pmos 
 + a0=1.2226
 + a1=0
@@ -43556,9 +43556,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -43583,7 +43583,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -43594,9 +43594,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -43619,7 +43619,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_3
++ vth0='pfet_03v3_vth0_3'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -43648,11 +43648,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.4 pmos 
 + a0=0.66833429
 + a1=0
@@ -43780,9 +43780,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-5.5371585e-014
@@ -43823,7 +43823,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=-5.2482182e-016
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -43834,9 +43834,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -43859,7 +43859,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.16
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_4
++ vth0='pfet_03v3_vth0_4'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -43889,11 +43889,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.5 pmos 
 + a0=1.3454526
 + a1=0
@@ -44022,9 +44022,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.4582136e-014
@@ -44064,7 +44064,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=5.8960359e-015
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -44075,9 +44075,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -44100,7 +44100,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.16
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_5
++ vth0='pfet_03v3_vth0_5'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -44129,11 +44129,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.6 pmos 
 + a0=1.1189871
 + a1=0
@@ -44265,9 +44265,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9454546
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-8.5520416e-014
@@ -44307,7 +44307,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=1.2358442e-017
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -44318,9 +44318,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -44343,7 +44343,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.021818182
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_6
++ vth0='pfet_03v3_vth0_6'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -44372,11 +44372,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.7 pmos 
 + a0=1.1019943
 + a1=0
@@ -44487,9 +44487,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -44514,7 +44514,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -44525,9 +44525,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -44550,7 +44550,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_7
++ vth0='pfet_03v3_vth0_7'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -44577,11 +44577,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.8 pmos 
 + a0=0.8879706
 + a1=0
@@ -44710,9 +44710,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.5381528e-015
@@ -44754,7 +44754,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=7.5670046e-015
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -44765,9 +44765,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -44790,7 +44790,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.16
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_8
++ vth0='pfet_03v3_vth0_8'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -44821,11 +44821,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.9 pmos 
 + a0=1.1782327
 + a1=0
@@ -44955,9 +44955,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=-1.0756678e-013
@@ -44999,7 +44999,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=1.4216818e-014
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -45010,9 +45010,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -45035,7 +45035,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.16
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_9
++ vth0='pfet_03v3_vth0_9'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -45066,11 +45066,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.10 pmos 
 + a0=1.1832393
 + a1=0
@@ -45202,9 +45202,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9454546
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + pa0=7.1205867e-014
@@ -45244,7 +45244,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=3.7885537e-015
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -45255,9 +45255,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -45280,7 +45280,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.021818182
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_10
++ vth0='pfet_03v3_vth0_10'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -45310,11 +45310,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.11 pmos 
 + a0=1.1534
 + a1=0
@@ -45425,9 +45425,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -45452,7 +45452,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -45463,9 +45463,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -45488,7 +45488,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_11
++ vth0='pfet_03v3_vth0_11'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -45512,11 +45512,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.12 pmos 
 + a0=0.88096455
 + a1=0
@@ -45643,9 +45643,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -45670,7 +45670,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -45681,9 +45681,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -45706,7 +45706,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.16
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_12
++ vth0='pfet_03v3_vth0_12'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -45720,11 +45720,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.13 pmos 
 + a0=1.19239
 + a1=0
@@ -45852,9 +45852,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2.4
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -45879,7 +45879,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -45890,9 +45890,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -45915,7 +45915,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=-0.16
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_13
++ vth0='pfet_03v3_vth0_13'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -45929,11 +45929,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.14 pmos 
 + a0=1.1825286
 + a1=0
@@ -46062,9 +46062,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=1.9454546
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -46089,7 +46089,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -46100,9 +46100,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -46125,7 +46125,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0.021818182
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_14
++ vth0='pfet_03v3_vth0_14'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -46139,11 +46139,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .model pfet_03v3.15 pmos 
 + a0=1.1534
 + a1=0
@@ -46254,9 +46254,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njtssw=20
 + njtsswg=20
 + noff=2
-+ noia=pfet_03v3_noia
-+ noib=pfet_03v3_noib
-+ noic=pfet_03v3_noic
++ noia='pfet_03v3_noia'
++ noib='pfet_03v3_noib'
++ noic='pfet_03v3_noic'
 + nsd=1e+020
 + ntnoi=1
 + paramchk=1
@@ -46281,7 +46281,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvag=0
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_03v3_rdsw
++ rdsw='pfet_03v3_rdsw'
 + rdswmin=20
 + rgatemod=0
 + rsh=7
@@ -46292,9 +46292,9 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tcjswg=0.000932
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_03v3_tox
++ toxe='pfet_03v3_tox'
 + toxm=7.9e-009
-+ toxp=pfet_03v3_tox
++ toxp='pfet_03v3_tox'
 + toxref=7.9e-009
 + tpb=0.0016906
 + tpbsw=0.0052
@@ -46317,7 +46317,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0
 + voffl=0
 + vsat=94000
-+ vth0=pfet_03v3_vth0_15
++ vth0='pfet_03v3_vth0_15'
 + vtss=10
 + vtsswgs=10
 + vtssws=10
@@ -46331,11 +46331,11 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=0
 + wwl=0
 + wwn=1
-+ xj=pfet_03v3_xj
-+ xl=pfet_03v3_xl
++ xj='pfet_03v3_xj'
++ xl='pfet_03v3_xl'
 + xpart=0
 + xtis=3
-+ xw=pfet_03v3_xw
++ xw='pfet_03v3_xw'
 .subckt pplus_u_m1 1 2 3 lr=lr wr=wr dtemp=0 par=1 r_rsh0=rsh_pplus_u_m r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='lr-2*r_dl' r_w='wr-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
 .model pn_junction d 
 + cj=0.00094344
@@ -46354,7 +46354,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl pfet_03v3_stat
+.endl
 
 .lib nfet_06v0_nvt_stat
 .subckt nfet_06v0_nvt d g s b w=1e-5 l=1.8e-6 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
@@ -46513,9 +46513,9 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + njtssw=20
 + njtsswg=20
 + noff=1.5
-+ noia=nfet_06v0_nvt_noia
-+ noib=nfet_06v0_nvt_noib
-+ noic=nfet_06v0_nvt_noic
++ noia='nfet_06v0_nvt_noia'
++ noib='nfet_06v0_nvt_noib'
++ noic='nfet_06v0_nvt_noic'
 + nsd=1e+020
 + ntnoi=1
 + ntox=1
@@ -46577,7 +46577,7 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + rbsdbynf=0
 + rbsdbyw=0
 + rdsmod=0
-+ rdsw=nfet_06v0_nvt_rdsw
++ rdsw='nfet_06v0_nvt_rdsw'
 + rdswmin=0
 + rdw=100
 + rdwmin=0
@@ -46602,7 +46602,7 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + tnjtsswg=0
 + tnoimod=0
 + tnom=25
-+ toxe=nfet_06v0_nvt_tox
++ toxe='nfet_06v0_nvt_tox'
 + toxm=1.52e-008
 + toxp='8e-10+nfet_06v0_nvt_tox'
 + toxref=1.52e-008
@@ -46630,7 +46630,7 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + voffcv=0
 + voffl=0
 + vsat=106700
-+ vth0=nfet_06v0_nvt_vth0
++ vth0='nfet_06v0_nvt_vth0'
 + vtl=200000
 + vtsd=10
 + vtss=10
@@ -46661,10 +46661,10 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + wwn=1
 + xgl=0
 + xgw=0
-+ xj=nfet_06v0_nvt_xj
++ xj='nfet_06v0_nvt_xj'
 + xjbvd=1
 + xjbvs=1
-+ xl=nfet_06v0_nvt_xl
++ xl='nfet_06v0_nvt_xl'
 + xn=3
 + xpart=0
 + xrcrg1=12
@@ -46676,8 +46676,8 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + xtsswgd=0.02
 + xtsswgs=0.02
 + xtssws=0.02
-+ xw=nfet_06v0_nvt_xw
-.endl nfet_06v0_nvt_stat
++ xw='nfet_06v0_nvt_xw'
+.endl
 
 .lib pfet_06v0_stat
 .subckt pfet_06v0_dss d g s b w=10u l=0.5u nf=1 m=1 par=1 s_sab=0.28u d_sab=2.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -46689,9 +46689,9 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 xr1 d d1 b pplus_u_m2 wr='w' lr='(d_sab==0)?1e-15:d_sab'
 xr2 s s1 b pplus_u_m2 wr='w' lr='(s_sab==0)?1e-15:s_sab'
 m0 d1 g s1 b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=0 sb=0 sd=0 w='w'
@@ -46806,9 +46806,9 @@ m0 d1 g s1 b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + njd=1
 + njs=1
 + noff=1
-+ noia=pfet_06v0_noia
-+ noib=pfet_06v0_noib
-+ noic=pfet_06v0_noic
++ noia='pfet_06v0_noia'
++ noib='pfet_06v0_noib'
++ noic='pfet_06v0_noic'
 + nsd=6e16
 + paramchk=1
 + pat=-6.1e3
@@ -46846,7 +46846,7 @@ m0 d1 g s1 b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + pvth0=7.6e-3
 + rbodymod=0
 + rdsmod=0
-+ rdsw=pfet_06v0_rdsw
++ rdsw='pfet_06v0_rdsw'
 + rdswmin=100
 + rsh=7
 + rshg=0.1
@@ -46856,7 +46856,7 @@ m0 d1 g s1 b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + tempmod=0
 + tnoimod=0
 + tnom=25
-+ toxe=pfet_06v0_tox
++ toxe='pfet_06v0_tox'
 + tpb=0.0019314
 + tpbsw=0.0017642
 + tpbswg=0.0016588
@@ -46875,7 +46875,7 @@ m0 d1 g s1 b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + voffcv=0
 + voffl=2.19e-8
 + vsat=8.55e4
-+ vth0=pfet_06v0_vth0
++ vth0='pfet_06v0_vth0'
 + vtl=2e5
 + w0=3.1e-7
 + wbeta0=0.22
@@ -46892,15 +46892,15 @@ m0 d1 g s1 b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 + ww=-1.37e-14
 + wwl=3.04e-22
 + wwn=1
-+ xj=pfet_06v0_xj
++ xj='pfet_06v0_xj'
 + xjbvd=1
 + xjbvs=1
-+ xl=pfet_06v0_xl
++ xl='pfet_06v0_xl'
 + xn=3
 + xpart=1
 + xtid=3
 + xtis=3
-+ xw=pfet_06v0_xw
++ xw='pfet_06v0_xw'
 .subckt pplus_u_m2 1 2 3 lr=lr wr=wr dtemp=0 par=1 r_rsh0=rsh_pplus_u_m r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='lr-2*r_dl' r_w='wr-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
 .model pn_junction d 
 + cj=0.00094344
@@ -46919,13 +46919,13 @@ m0 d1 g s1 b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m2
-.endl pfet_06v0_stat
+.endl
 
 .lib efuse
 .subckt efuse in out pblow=0
 rfuse in out r='200*(1-pblow)+900*pblow'
 .ends efuse
-.endl efuse
+.endl
 
 .lib fets_mm
 .subckt nfet_03v3 d g s b w=1e-5 l=2.8e-7 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
@@ -46937,9 +46937,9 @@ rfuse in out r='200*(1-pblow)+900*pblow'
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 m0 d g s b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w=w
 .ends nfet_03v3
 .subckt pfet_03v3 d g s b w=1e-5 l=2.8e-7 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
@@ -46951,9 +46951,9 @@ m0 d g s b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 m0 d g s b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w=w
 .ends pfet_03v3
 .subckt nfet_05v0 d g s b w=1e-6 l=6e-7 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
@@ -46979,9 +46979,9 @@ m0 d g s b nfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 m0 d g s b nfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w=w
 .ends nfet_06v0
 .subckt pfet_05v0 d g s b w=1e-5 l=5e-7 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
@@ -47007,12 +47007,12 @@ m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param par_weff='par*(w-par_w)'
 .param p_sqrtarea='sqrt((par_leff)*(par_weff))'
 .param var_k='0.7071*par_k*1e-06/p_sqrtarea'
-.param mis_k=agauss(0,var_k,1)
+.param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
-.param mis_vth=agauss(0,var_vth,1)
+.param mis_vth='agauss(0,var_vth,1)'
 m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w=w
 .ends pfet_06v0
-.endl fets_mm
+.endl
 
 .lib res_statistical_par
 .param mc_rsh_nplus_u=0
@@ -47050,7 +47050,7 @@ m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param mc_rt_ppolyf_u_1k_6p0=0
 .param mc_rt_ppolyf_u_2k_6p0=0
 .param mc_rt_ppolyf_u_3k=0
-.endl res_statistical_par
+.endl
 
 .lib res_statistical
 .param rsh_nplus_u=60
@@ -47074,79 +47074,79 @@ m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param rsh_tm9k=40e-3
 .param rsh_tm11k=40e-3
 .param rsh_tm30k=9.5e-3
-.param mc_rsh_nplus_u_temp=agauss(0,3.8,3)
-.param mc_rsh_pplus_u_temp=agauss(0,10.055,3)
-.param mc_rsh_nplus_s_temp=agauss(0,1.33,3)
-.param mc_rsh_pplus_s_temp=agauss(0,1.4917,3)
-.param mc_rsh_npolyf_u_temp=agauss(0,15.135,3)
-.param mc_rsh_ppolyf_u_temp=agauss(0,18.116,3)
-.param mc_rsh_npolyf_s_temp=agauss(0,1.392,3)
-.param mc_rsh_ppolyf_s_temp=agauss(0,1.5852,3)
-.param mc_rsh_ppolyf_u_1k_temp=agauss(0,49.754,3)
-.param mc_rsh_ppolyf_u_2k_temp=agauss(0,101.518,3)
-.param mc_rsh_ppolyf_u_1k_6p0_temp=agauss(0,51.894,3)
-.param mc_rsh_ppolyf_u_2k_6p0_temp=agauss(0,99.242,3)
-.param mc_rsh_ppolyf_u_3k_temp=agauss(0,184.603,3)
-.param mc_dw_nplus_u_temp=agauss(0,0.0144,3)
-.param mc_dw_pplus_u_temp=agauss(0,0.0144,3)
-.param mc_dw_nplus_s_temp=agauss(0,0.012,3)
-.param mc_dw_pplus_s_temp=agauss(0,0.018,3)
-.param mc_dw_npolyf_u_temp=agauss(0,0.0167,3)
-.param mc_dw_ppolyf_u_temp=agauss(0,0.0167,3)
-.param mc_dw_npolyf_s_temp=agauss(0,0.006,3)
-.param mc_dw_ppolyf_s_temp=agauss(0,0.003,3)
-.param mc_dw_ppolyf_u_1k_temp=agauss(0,0.0167,3)
-.param mc_dw_ppolyf_u_2k_temp=agauss(0,0.0167,3)
-.param mc_dw_ppolyf_u_1k_6p0_temp=agauss(0,0.0167,3)
-.param mc_dw_ppolyf_u_2k_6p0_temp=agauss(0,0.0167,3)
-.param mc_dw_ppolyf_u_3k_temp=agauss(0,0.0167,3)
-.param mc_rt_nplus_u_temp=agauss(0,0.64,3)
-.param mc_rt_pplus_u_temp=agauss(0,7.2,3)
-.param mc_rt_npolyf_u_temp=agauss(0,4.8,3)
-.param mc_rt_ppolyf_u_temp=agauss(0,4.7,3)
-.param mc_rt_ppolyf_u_1k_temp=agauss(0,6.838,3)
-.param mc_rt_ppolyf_u_2k_temp=agauss(0,6.838,3)
-.param mc_rt_ppolyf_u_1k_6p0_temp=agauss(0,6.838,3)
-.param mc_rt_ppolyf_u_2k_6p0_temp=agauss(0,6.838,3)
-.param mc_rt_ppolyf_u_3k_temp=agauss(0,6.93,3)
-.param mc_rsh_nplus_u=mc_rsh_nplus_u_temp
-.param mc_rsh_pplus_u=mc_rsh_pplus_u_temp
-.param mc_rsh_nplus_s=mc_rsh_nplus_s_temp
-.param mc_rsh_pplus_s=mc_rsh_pplus_s_temp
-.param mc_rsh_npolyf_u=mc_rsh_npolyf_u_temp
-.param mc_rsh_ppolyf_u=mc_rsh_ppolyf_u_temp
-.param mc_rsh_npolyf_s=mc_rsh_npolyf_s_temp
-.param mc_rsh_ppolyf_s=mc_rsh_ppolyf_s_temp
-.param mc_rsh_ppolyf_u_1k=mc_rsh_ppolyf_u_1k_temp
-.param mc_rsh_ppolyf_u_2k=mc_rsh_ppolyf_u_2k_temp
-.param mc_rsh_ppolyf_u_1k_6p0=mc_rsh_ppolyf_u_1k_6p0_temp
-.param mc_rsh_ppolyf_u_2k_6p0=mc_rsh_ppolyf_u_2k_6p0_temp
-.param mc_rsh_ppolyf_u_3k=mc_rsh_ppolyf_u_3k_temp
-.param mc_dw_nplus_u=mc_dw_nplus_u_temp
-.param mc_dw_pplus_u=mc_dw_pplus_u_temp
-.param mc_dw_nplus_s=mc_dw_nplus_s_temp
-.param mc_dw_pplus_s=mc_dw_pplus_s_temp
-.param mc_dw_npolyf_u=mc_dw_npolyf_u_temp
-.param mc_dw_ppolyf_u=mc_dw_ppolyf_u_temp
-.param mc_dw_npolyf_s=mc_dw_npolyf_s_temp
-.param mc_dw_ppolyf_s=mc_dw_ppolyf_s_temp
-.param mc_dw_ppolyf_u_1k=mc_dw_ppolyf_u_1k_temp
-.param mc_dw_ppolyf_u_2k=mc_dw_ppolyf_u_2k_temp
-.param mc_dw_ppolyf_u_1k_6p0=mc_dw_ppolyf_u_1k_6p0_temp
-.param mc_dw_ppolyf_u_2k_6p0=mc_dw_ppolyf_u_2k_6p0_temp
-.param mc_dw_ppolyf_u_3k=mc_dw_ppolyf_u_3k_temp
-.param mc_rt_nplus_u=mc_rt_nplus_u_temp
-.param mc_rt_pplus_u=mc_rt_pplus_u_temp
-.param mc_rt_npolyf_u=mc_rt_npolyf_u_temp
-.param mc_rt_ppolyf_u=mc_rt_ppolyf_u_temp
-.param mc_rt_ppolyf_u_1k=mc_rt_ppolyf_u_1k_temp
-.param mc_rt_ppolyf_u_2k=mc_rt_ppolyf_u_2k_temp
-.param mc_rt_ppolyf_u_1k_6p0=mc_rt_ppolyf_u_1k_6p0_temp
-.param mc_rt_ppolyf_u_2k_6p0=mc_rt_ppolyf_u_2k_6p0_temp
-.param mc_rt_ppolyf_u_3k=mc_rt_ppolyf_u_3k_temp
+.param mc_rsh_nplus_u_temp='agauss(0,3.8,3)'
+.param mc_rsh_pplus_u_temp='agauss(0,10.055,3)'
+.param mc_rsh_nplus_s_temp='agauss(0,1.33,3)'
+.param mc_rsh_pplus_s_temp='agauss(0,1.4917,3)'
+.param mc_rsh_npolyf_u_temp='agauss(0,15.135,3)'
+.param mc_rsh_ppolyf_u_temp='agauss(0,18.116,3)'
+.param mc_rsh_npolyf_s_temp='agauss(0,1.392,3)'
+.param mc_rsh_ppolyf_s_temp='agauss(0,1.5852,3)'
+.param mc_rsh_ppolyf_u_1k_temp='agauss(0,49.754,3)'
+.param mc_rsh_ppolyf_u_2k_temp='agauss(0,101.518,3)'
+.param mc_rsh_ppolyf_u_1k_6p0_temp='agauss(0,51.894,3)'
+.param mc_rsh_ppolyf_u_2k_6p0_temp='agauss(0,99.242,3)'
+.param mc_rsh_ppolyf_u_3k_temp='agauss(0,184.603,3)'
+.param mc_dw_nplus_u_temp='agauss(0,0.0144,3)'
+.param mc_dw_pplus_u_temp='agauss(0,0.0144,3)'
+.param mc_dw_nplus_s_temp='agauss(0,0.012,3)'
+.param mc_dw_pplus_s_temp='agauss(0,0.018,3)'
+.param mc_dw_npolyf_u_temp='agauss(0,0.0167,3)'
+.param mc_dw_ppolyf_u_temp='agauss(0,0.0167,3)'
+.param mc_dw_npolyf_s_temp='agauss(0,0.006,3)'
+.param mc_dw_ppolyf_s_temp='agauss(0,0.003,3)'
+.param mc_dw_ppolyf_u_1k_temp='agauss(0,0.0167,3)'
+.param mc_dw_ppolyf_u_2k_temp='agauss(0,0.0167,3)'
+.param mc_dw_ppolyf_u_1k_6p0_temp='agauss(0,0.0167,3)'
+.param mc_dw_ppolyf_u_2k_6p0_temp='agauss(0,0.0167,3)'
+.param mc_dw_ppolyf_u_3k_temp='agauss(0,0.0167,3)'
+.param mc_rt_nplus_u_temp='agauss(0,0.64,3)'
+.param mc_rt_pplus_u_temp='agauss(0,7.2,3)'
+.param mc_rt_npolyf_u_temp='agauss(0,4.8,3)'
+.param mc_rt_ppolyf_u_temp='agauss(0,4.7,3)'
+.param mc_rt_ppolyf_u_1k_temp='agauss(0,6.838,3)'
+.param mc_rt_ppolyf_u_2k_temp='agauss(0,6.838,3)'
+.param mc_rt_ppolyf_u_1k_6p0_temp='agauss(0,6.838,3)'
+.param mc_rt_ppolyf_u_2k_6p0_temp='agauss(0,6.838,3)'
+.param mc_rt_ppolyf_u_3k_temp='agauss(0,6.93,3)'
+.param mc_rsh_nplus_u='mc_rsh_nplus_u_temp'
+.param mc_rsh_pplus_u='mc_rsh_pplus_u_temp'
+.param mc_rsh_nplus_s='mc_rsh_nplus_s_temp'
+.param mc_rsh_pplus_s='mc_rsh_pplus_s_temp'
+.param mc_rsh_npolyf_u='mc_rsh_npolyf_u_temp'
+.param mc_rsh_ppolyf_u='mc_rsh_ppolyf_u_temp'
+.param mc_rsh_npolyf_s='mc_rsh_npolyf_s_temp'
+.param mc_rsh_ppolyf_s='mc_rsh_ppolyf_s_temp'
+.param mc_rsh_ppolyf_u_1k='mc_rsh_ppolyf_u_1k_temp'
+.param mc_rsh_ppolyf_u_2k='mc_rsh_ppolyf_u_2k_temp'
+.param mc_rsh_ppolyf_u_1k_6p0='mc_rsh_ppolyf_u_1k_6p0_temp'
+.param mc_rsh_ppolyf_u_2k_6p0='mc_rsh_ppolyf_u_2k_6p0_temp'
+.param mc_rsh_ppolyf_u_3k='mc_rsh_ppolyf_u_3k_temp'
+.param mc_dw_nplus_u='mc_dw_nplus_u_temp'
+.param mc_dw_pplus_u='mc_dw_pplus_u_temp'
+.param mc_dw_nplus_s='mc_dw_nplus_s_temp'
+.param mc_dw_pplus_s='mc_dw_pplus_s_temp'
+.param mc_dw_npolyf_u='mc_dw_npolyf_u_temp'
+.param mc_dw_ppolyf_u='mc_dw_ppolyf_u_temp'
+.param mc_dw_npolyf_s='mc_dw_npolyf_s_temp'
+.param mc_dw_ppolyf_s='mc_dw_ppolyf_s_temp'
+.param mc_dw_ppolyf_u_1k='mc_dw_ppolyf_u_1k_temp'
+.param mc_dw_ppolyf_u_2k='mc_dw_ppolyf_u_2k_temp'
+.param mc_dw_ppolyf_u_1k_6p0='mc_dw_ppolyf_u_1k_6p0_temp'
+.param mc_dw_ppolyf_u_2k_6p0='mc_dw_ppolyf_u_2k_6p0_temp'
+.param mc_dw_ppolyf_u_3k='mc_dw_ppolyf_u_3k_temp'
+.param mc_rt_nplus_u='mc_rt_nplus_u_temp'
+.param mc_rt_pplus_u='mc_rt_pplus_u_temp'
+.param mc_rt_npolyf_u='mc_rt_npolyf_u_temp'
+.param mc_rt_ppolyf_u='mc_rt_ppolyf_u_temp'
+.param mc_rt_ppolyf_u_1k='mc_rt_ppolyf_u_1k_temp'
+.param mc_rt_ppolyf_u_2k='mc_rt_ppolyf_u_2k_temp'
+.param mc_rt_ppolyf_u_1k_6p0='mc_rt_ppolyf_u_1k_6p0_temp'
+.param mc_rt_ppolyf_u_2k_6p0='mc_rt_ppolyf_u_2k_6p0_temp'
+.param mc_rt_ppolyf_u_3k='mc_rt_ppolyf_u_3k_temp'
 .lib 'sm141064.sp' res
 .lib 'sm141064.sp' efuse
-.endl res_statistical
+.endl
 
 .lib bjt_statistical
 .param isa=1
@@ -47165,46 +47165,45 @@ m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param rbm_cor_npn=1
 .param cjc_cor_npn=1
 .param cje_cor_npn=1
-.param mc_xis_vnpn_temp=agauss(0,0.7,3)
-.param mc_xbf_vnpn_temp=agauss(0,0.48,3)
-.param mc_xrb_vnpn_temp=agauss(0,0.2,3)
-.param mc_xre_vnpn_temp=agauss(0,0.2,3)
-.param mc_xrc_vnpn_temp=agauss(0,0.2,3)
-.param mc_xcje_vnpn_temp=agauss(0,0.15,3)
-.param mc_xcjc_vnpn_temp=agauss(0,0.15,3)
-.param mc_xis_vpnp_temp=agauss(0,0.3,3)
-.param mc_xbf_vpnp_temp=agauss(0,0.2,3)
-.param mc_xrb_vpnp_temp=agauss(0,0.2,3)
-.param mc_xre_vpnp_temp=agauss(0,0.2,3)
-.param mc_xrc_vpnp_temp=agauss(0,0.2,3)
-.param mc_xcje_vpnp_temp=agauss(0,0.15,3)
-.param mc_xcjc_vpnp_temp=agauss(0,0.15,3)
-.param mc_xis_vnpn=mc_xis_vnpn_temp
-.param mc_xbf_vnpn=mc_xbf_vnpn_temp
-.param mc_xrb_vnpn=mc_xrb_vnpn_temp
-.param mc_xre_vnpn=mc_xre_vnpn_temp
-.param mc_xrc_vnpn=mc_xrc_vnpn_temp
-.param mc_xcje_vnpn=mc_xcje_vnpn_temp
-.param mc_xcjc_vnpn=mc_xcjc_vnpn_temp
-.param mc_xis_vpnp=mc_xis_vpnp_temp
-.param mc_xbf_vpnp=mc_xbf_vpnp_temp
-.param mc_xrb_vpnp=mc_xrb_vpnp_temp
-.param mc_xre_vpnp=mc_xre_vpnp_temp
-.param mc_xrc_vpnp=mc_xrc_vpnp_temp
-.param mc_xcje_vpnp=mc_xcje_vpnp_temp
-.param mc_xcjc_vpnp=mc_xcjc_vpnp_temp
+.param mc_xis_vnpn_temp='agauss(0,0.7,3)'
+.param mc_xbf_vnpn_temp='agauss(0,0.48,3)'
+.param mc_xrb_vnpn_temp='agauss(0,0.2,3)'
+.param mc_xre_vnpn_temp='agauss(0,0.2,3)'
+.param mc_xrc_vnpn_temp='agauss(0,0.2,3)'
+.param mc_xcje_vnpn_temp='agauss(0,0.15,3)'
+.param mc_xcjc_vnpn_temp='agauss(0,0.15,3)'
+.param mc_xis_vpnp_temp='agauss(0,0.3,3)'
+.param mc_xbf_vpnp_temp='agauss(0,0.2,3)'
+.param mc_xrb_vpnp_temp='agauss(0,0.2,3)'
+.param mc_xre_vpnp_temp='agauss(0,0.2,3)'
+.param mc_xrc_vpnp_temp='agauss(0,0.2,3)'
+.param mc_xcje_vpnp_temp='agauss(0,0.15,3)'
+.param mc_xcjc_vpnp_temp='agauss(0,0.15,3)'
+.param mc_xis_vnpn='mc_xis_vnpn_temp'
+.param mc_xbf_vnpn='mc_xbf_vnpn_temp'
+.param mc_xrb_vnpn='mc_xrb_vnpn_temp'
+.param mc_xre_vnpn='mc_xre_vnpn_temp'
+.param mc_xrc_vnpn='mc_xrc_vnpn_temp'
+.param mc_xcje_vnpn='mc_xcje_vnpn_temp'
+.param mc_xcjc_vnpn='mc_xcjc_vnpn_temp'
+.param mc_xis_vpnp='mc_xis_vpnp_temp'
+.param mc_xbf_vpnp='mc_xbf_vpnp_temp'
+.param mc_xrb_vpnp='mc_xrb_vpnp_temp'
+.param mc_xre_vpnp='mc_xre_vpnp_temp'
+.param mc_xrc_vpnp='mc_xrc_vpnp_temp'
+.param mc_xcje_vpnp='mc_xcje_vpnp_temp'
+.param mc_xcjc_vpnp='mc_xcjc_vpnp_temp'
 .lib 'sm141064.sp' bjt_mc
-.endl bjt_statistical
+.endl
 
 .lib bjt_mc
 .subckt pnp_10p00x00p42 c b e par=1 dtemp=0
-.param mis_is_pnp_10p00x00p42=agauss(0,0.0015,1)
-.param mis_bf_pnp_10p00x00p42=agauss(0,0.01088,1)
+.param mis_is_pnp_10p00x00p42='agauss(0,0.0015,1)'
+.param mis_bf_pnp_10p00x00p42='agauss(0,0.01088,1)'
 .param isa_mis_pnp_10p00x00p42='mis_is_pnp_10p00x00p42*sw_stat_mismatch/sqrt(par)'
 .param bf_mis_pnp_10p00x00p42='mis_bf_pnp_10p00x00p42*sw_stat_mismatch/sqrt(par)'
 q0 c b e pnp_10p00x00p42 dtemp=dtemp
 .model pnp_10p00x00p42 pnp 
-+ 
 + af=1
 + bf='1.69*bfa*(1+mc_xbf_vpnp*sw_stat_global)*(1+bf_mis_pnp_10p00x00p42)'
 + br=0.0036
@@ -47258,8 +47257,8 @@ q0 c b e pnp_10p00x00p42 dtemp=dtemp
 + xti=3
 .ends pnp_10p00x00p42
 .subckt pnp_05p00x00p42 c b e par=1 dtemp=0
-.param mis_is_pnp_05p00x00p42=agauss(0,0.0017,1)
-.param mis_bf_pnp_05p00x00p42=agauss(0,0.0119,1)
+.param mis_is_pnp_05p00x00p42='agauss(0,0.0017,1)'
+.param mis_bf_pnp_05p00x00p42='agauss(0,0.0119,1)'
 q0 c b e pnp_05p00x00p42 dtemp=dtemp
 .model pnp_05p00x00p42 pnp 
 + 
@@ -47316,8 +47315,8 @@ q0 c b e pnp_05p00x00p42 dtemp=dtemp
 + xti=3
 .ends pnp_05p00x00p42
 .subckt pnp_10p00x10p00 c b e par=1 dtemp=0
-.param mis_is_pnp_10p00x10p00=agauss(0,0.00077,1)
-.param mis_bf_pnp_10p00x10p00=agauss(0,0.0013,1)
+.param mis_is_pnp_10p00x10p00='agauss(0,0.00077,1)'
+.param mis_bf_pnp_10p00x10p00='agauss(0,0.0013,1)'
 q0 c b e pnp_10p00x10p00 dtemp=dtemp
 .model pnp_10p00x10p00 pnp 
 + 
@@ -47374,11 +47373,10 @@ q0 c b e pnp_10p00x10p00 dtemp=dtemp
 + xti=3
 .ends pnp_10p00x10p00
 .subckt pnp_05p00x05p00 c b e par=1 dtemp=0
-.param mis_is_pnp_05p00x05p00=agauss(0,0.00052,1)
-.param mis_bf_pnp_05p00x05p00=agauss(0,0.0031,1)
+.param mis_is_pnp_05p00x05p00='agauss(0,0.00052,1)'
+.param mis_bf_pnp_05p00x05p00='agauss(0,0.0031,1)'
 q0 c b e pnp_05p00x05p00 dtemp=dtemp
 .model pnp_05p00x05p00 pnp 
-+ 
 + af=1
 + bf='1.65*bfa*(1+mc_xbf_vpnp*sw_stat_global)*(1+mis_bf_pnp_05p00x05p00*sw_stat_mismatch/sqrt(par))'
 + br=8.372e-3
@@ -47727,17 +47725,17 @@ q0 c b e s npn_00p54x02p00 dtemp=dtemp
 + xtb=0
 + xti=3
 .ends npn_00p54x02p00
-.endl bjt_mc
+.endl
 
 .lib mimcap_statistical
 .param mim_corner_1p5ff=1
 .param mim_corner_1p0ff=1
 .param mim_corner_2p0ff=1
-.param mc_c_cox_1p0ff2=agauss(0,0.025,3)
-.param mc_c_cox_1p5ff2=agauss(0,0.03875,3)
-.param mc_c_cox_2p0ff2=agauss(0,0.025,3)
+.param mc_c_cox_1p0ff2='agauss(0,0.025,3)'
+.param mc_c_cox_1p5ff2='agauss(0,0.03875,3)'
+.param mc_c_cox_2p0ff2='agauss(0,0.025,3)'
 .param mc_c_cox_1p0ff='mc_c_cox_1p0ff2*sw_stat_global*cap_mc_skew'
 .param mc_c_cox_1p5ff='mc_c_cox_1p5ff2*sw_stat_global*cap_mc_skew'
 .param mc_c_cox_2p0ff='mc_c_cox_2p0ff2*sw_stat_global*cap_mc_skew'
 .lib 'sm141064_mim.sp' cap_mim_new
-.endl mimcap_statistical
+.endl
