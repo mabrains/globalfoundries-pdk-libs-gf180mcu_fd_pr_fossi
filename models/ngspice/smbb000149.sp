@@ -27,553 +27,768 @@
 *      nfet_10v0_asym     BSIM4 based HV subcircuit model for 10V LDNMOS (*)
 *      pfet_10v0_asym     BSIM4 based HV subcircuit model for 10V LDPMOS (*)
 ************************************************************************************************
-*
 
-***************************************************************************************************
-* Fixed-Corner Sections
-***************************************************************************************************
-.LIB typical
-.param
-*************10V************
+.lib typical
+.param nfet_10v0_asym_dtox=0
+.param nfet_10v0_asym_dxl=0
+.param nfet_10v0_asym_dxw=0
+.param nfet_10v0_asym_dvth0=0
+.param nfet_10v0_asym_drdsw=1
+.param nfet_10v0_asym_drdrift=1
+.param nfet_10v0_asym_dvsat=1
+.param nfet_10v0_asym_du0=1
+.param nfet_10v0_asym_dcgs=1
+.param nfet_10v0_asym_dcgd=1
+.param nfet_10v0_asym_dcjs=1
+.param nfet_10v0_asym_dcjd=1
+.param pfet_10v0_asym_dtox=0
+.param pfet_10v0_asym_dxl=0
+.param pfet_10v0_asym_dxw=0
+.param pfet_10v0_asym_dvth0=0
+.param pfet_10v0_asym_drdsw=1
+.param pfet_10v0_asym_drdrift=1
+.param pfet_10v0_asym_dvsat=1
+.param pfet_10v0_asym_du0=1
+.param pfet_10v0_asym_dcgs=1
+.param pfet_10v0_asym_dcgd=1
+.param pfet_10v0_asym_dcjs=1
+.param pfet_10v0_asym_dcjd=1
+.lib 'smbb000149.sp' nfet_10v0_asym_t
+.lib 'smbb000149.sp' pfet_10v0_asym_t
+.lib 'smbb000149.sp' noise_corner
+.endl
 
-+nfet_10v0_asym_dtox = 0
-+nfet_10v0_asym_dxl = 0
-+nfet_10v0_asym_dxw = 0 
-+nfet_10v0_asym_dvth0 = 0 
-+nfet_10v0_asym_drdsw = 1 
-+nfet_10v0_asym_drdrift = 1
-+nfet_10v0_asym_dvsat = 1 
-+nfet_10v0_asym_du0 = 1 
-+nfet_10v0_asym_dcgs = 1 
-+nfet_10v0_asym_dcgd = 1 
-+nfet_10v0_asym_dcjs = 1 
-+nfet_10v0_asym_dcjd = 1 
+.lib ss
+.param nfet_10v0_asym_dtox=8e-10
+.param nfet_10v0_asym_dxl=6e-008
+.param nfet_10v0_asym_dxw=-3.46e-8
+.param nfet_10v0_asym_dvth0=0.112
+.param nfet_10v0_asym_drdsw=1.2
+.param nfet_10v0_asym_drdrift=1.271
+.param nfet_10v0_asym_dvsat=0.926
+.param nfet_10v0_asym_du0=0.95
+.param nfet_10v0_asym_dcgs=1.1
+.param nfet_10v0_asym_dcgd=1.2
+.param nfet_10v0_asym_dcjs=1.1
+.param nfet_10v0_asym_dcjd=1.2
+.param pfet_10v0_asym_dtox=8e-10
+.param pfet_10v0_asym_dxl=9.914e-008
+.param pfet_10v0_asym_dxw=-1e-7
+.param pfet_10v0_asym_dvth0=-0.0936
+.param pfet_10v0_asym_drdsw=1.11
+.param pfet_10v0_asym_drdrift=1.144
+.param pfet_10v0_asym_dvsat=0.91
+.param pfet_10v0_asym_du0=0.964
+.param pfet_10v0_asym_dcgs=1.1
+.param pfet_10v0_asym_dcgd=1.2
+.param pfet_10v0_asym_dcjs=1.1
+.param pfet_10v0_asym_dcjd=1.2
+.lib 'smbb000149.sp' nfet_10v0_asym_t
+.lib 'smbb000149.sp' pfet_10v0_asym_t
+.lib 'smbb000149.sp' noise_corner
+.endl
 
-+pfet_10v0_asym_dtox = 0
-+pfet_10v0_asym_dxl = 0
-+pfet_10v0_asym_dxw = 0
-+pfet_10v0_asym_dvth0 = 0
-+pfet_10v0_asym_drdsw = 1 
-+pfet_10v0_asym_drdrift = 1 
-+pfet_10v0_asym_dvsat = 1 
-+pfet_10v0_asym_du0 = 1
-+pfet_10v0_asym_dcgs = 1
-+pfet_10v0_asym_dcgd = 1 
-+pfet_10v0_asym_dcjs = 1
-+pfet_10v0_asym_dcjd = 1 
+.lib ff
+.param nfet_10v0_asym_dtox=-8e-10
+.param nfet_10v0_asym_dxl=-6e-008
+.param nfet_10v0_asym_dxw=3.46e-8
+.param nfet_10v0_asym_dvth0=-0.10388
+.param nfet_10v0_asym_drdsw=0.868
+.param nfet_10v0_asym_drdrift=0.8245
+.param nfet_10v0_asym_dvsat=1.033
+.param nfet_10v0_asym_du0=1.04
+.param nfet_10v0_asym_dcgs=0.9
+.param nfet_10v0_asym_dcgd=0.8
+.param nfet_10v0_asym_dcjs=0.9
+.param nfet_10v0_asym_dcjd=0.8
+.param pfet_10v0_asym_dtox=-8e-10
+.param pfet_10v0_asym_dxl=-6.804e-008
+.param pfet_10v0_asym_dxw=8.46e-8
+.param pfet_10v0_asym_dvth0=0.099
+.param pfet_10v0_asym_drdsw=0.91
+.param pfet_10v0_asym_drdrift=0.89
+.param pfet_10v0_asym_dvsat=1.06
+.param pfet_10v0_asym_du0=1.03
+.param pfet_10v0_asym_dcgs=0.9
+.param pfet_10v0_asym_dcgd=0.8
+.param pfet_10v0_asym_dcjs=0.9
+.param pfet_10v0_asym_dcjd=0.8
+.lib 'smbb000149.sp' nfet_10v0_asym_t
+.lib 'smbb000149.sp' pfet_10v0_asym_t
+.lib 'smbb000149.sp' noise_corner
+.endl
 
+.lib sf
+.param nfet_10v0_asym_dtox=0
+.param nfet_10v0_asym_dxl=5.024e-008
+.param nfet_10v0_asym_dxw=0
+.param nfet_10v0_asym_dvth0=0.068
+.param nfet_10v0_asym_drdsw=1.2
+.param nfet_10v0_asym_drdrift=1.156
+.param nfet_10v0_asym_dvsat=0.928
+.param nfet_10v0_asym_du0=0.97
+.param nfet_10v0_asym_dcgs=1.07
+.param nfet_10v0_asym_dcgd=1.14
+.param nfet_10v0_asym_dcjs=1.07
+.param nfet_10v0_asym_dcjd=1.14
+.param pfet_10v0_asym_dtox=0
+.param pfet_10v0_asym_dxl=-7.004e-008
+.param pfet_10v0_asym_dxw=0
+.param pfet_10v0_asym_dvth0=0.057672
+.param pfet_10v0_asym_drdsw=0.91
+.param pfet_10v0_asym_drdrift=0.92
+.param pfet_10v0_asym_dvsat=1.012
+.param pfet_10v0_asym_du0=1.03
+.param pfet_10v0_asym_dcgs=0.93
+.param pfet_10v0_asym_dcgd=0.86
+.param pfet_10v0_asym_dcjs=0.93
+.param pfet_10v0_asym_dcjd=0.86
+.lib 'smbb000149.sp' nfet_10v0_asym_t
+.lib 'smbb000149.sp' pfet_10v0_asym_t
+.lib 'smbb000149.sp' noise_corner
+.endl
 
-.lib 'smbb000149.ngspice' nfet_10v0_asym_t
-.lib 'smbb000149.ngspice' pfet_10v0_asym_t
-.lib 'smbb000149.ngspice' noise_corner
+.lib fs
+.param nfet_10v0_asym_dtox=0
+.param nfet_10v0_asym_dxl=-5.02e-008
+.param nfet_10v0_asym_dxw=0
+.param nfet_10v0_asym_dvth0=-0.058169
+.param nfet_10v0_asym_drdsw=0.868
+.param nfet_10v0_asym_drdrift=0.89748
+.param nfet_10v0_asym_dvsat=1.045
+.param nfet_10v0_asym_du0=1.034
+.param nfet_10v0_asym_dcgs=0.93
+.param nfet_10v0_asym_dcgd=0.86
+.param nfet_10v0_asym_dcjs=0.93
+.param nfet_10v0_asym_dcjd=0.86
+.param pfet_10v0_asym_dtox=0
+.param pfet_10v0_asym_dxl=9.414e-008
+.param pfet_10v0_asym_dxw=0
+.param pfet_10v0_asym_dvth0=-0.056
+.param pfet_10v0_asym_drdsw=1.11
+.param pfet_10v0_asym_drdrift=1.06
+.param pfet_10v0_asym_dvsat=0.989
+.param pfet_10v0_asym_du0=0.97
+.param pfet_10v0_asym_dcgs=1.07
+.param pfet_10v0_asym_dcgd=1.14
+.param pfet_10v0_asym_dcjs=1.07
+.param pfet_10v0_asym_dcjd=1.14
+.lib 'smbb000149.sp' nfet_10v0_asym_t
+.lib 'smbb000149.sp' pfet_10v0_asym_t
+.lib 'smbb000149.sp' noise_corner
+.endl
 
+.lib statistical
+.param mc_vsat2_10v='agauss(0,1,3)'
+.param mc_rd_10v_2='agauss(0,1,3)'
+.param mc_u0_10v_2='agauss(0,1,3)'
+.param mc_cgol_10v_2='agauss(0,1,3)'
+.param mc_vsatn2_10v='agauss(0,1,3)'
+.param mc_rdn_10v_2='agauss(0,1,3)'
+.param mc_u0n_10v_2='agauss(0,1,3)'
+.param mc_cgoln_10v_2='agauss(0,1,3)'
+.param mc_vsatp2_10v='agauss(0,1,3)'
+.param mc_u0p2_10v='agauss(0,1,3)'
+.param mc_rdp_10v_2='agauss(0,1,3)'
+.param mc_cgolp_10v_2='agauss(0,1,3)'
+.param mc_vsat_10v='mc_vsat2_10v'
+.param mc_rd_10v='mc_rd_10v_2'
+.param mc_u0_10v='mc_u0_10v_2'
+.param mc_cgol_10v='mc_cgol_10v_2'
+.param mc_vsatn_10v='mc_vsatn2_10v'
+.param mc_rdn_10v='mc_rdn_10v_2'
+.param mc_u0n_10v='mc_u0n_10v_2'
+.param mc_cgoln_10v='mc_cgoln_10v_2'
+.param mc_vsatp_10v='mc_vsatp2_10v'
+.param mc_u0p_10v='mc_u0p2_10v'
+.param mc_rdp_10v='mc_rdp_10v_2'
+.param mc_cgolp_10v='mc_cgolp_10v_2'
+.param nfet_10v0_asym_sig_vth='0.01675*(0.7*mc_sig_vth+0.7*mc_sig_vthn)*sw_stat_global*mc_skew'
+.param nfet_10v0_asym_dtox='7.2e-11*(0.77*mc_toxe+0.63*mc_toxen)*sw_stat_global*mc_skew'
+.param nfet_10v0_asym_dxl='5.3e-9*(0.71*mc_xl+0.69*mc_xln)*sw_stat_global*mc_skew'
+.param nfet_10v0_asym_dxw='3.25e-8*(0.77*mc_xw+0.63*mc_xwn)*sw_stat_global*mc_skew'
+.param nfet_10v0_asym_dvth0='nfet_10v0_asym_sig_vth'
+.param nfet_10v0_asym_drdsw='(1+0.093*(0.77*mc_rd_10v+0.63*mc_rdn_10v)*sw_stat_global*mc_skew)'
+.param nfet_10v0_asym_drdrift='(1+0.037*(0.77*mc_rd_10v+0.63*mc_rdn_10v)*sw_stat_global*mc_skew)'
+.param nfet_10v0_asym_dvsat='(1+0.028*(0.77*mc_vsat_10v+0.63*mc_vsatn_10v)*sw_stat_global*mc_skew)'
+.param nfet_10v0_asym_du0='(1+0.0157*(0.7*mc_u0_10v+0.7*mc_u0n_10v)*sw_stat_global*mc_skew)'
+.param nfet_10v0_asym_dcgs='(1+(12e-3*mc_cgol_10v+12e-3*mc_cgoln_10v)*sw_stat_global*mc_skew)'
+.param nfet_10v0_asym_dcgd='(1+(24e-3*mc_cgol_10v+24e-3*mc_cgoln_10v)*sw_stat_global*mc_skew)'
+.param nfet_10v0_asym_dcjs='(1+(12e-3*mc_cgol_10v+12e-3*mc_cgoln_10v)*sw_stat_global*mc_skew)'
+.param nfet_10v0_asym_dcjd='(1+(24e-3*mc_cgol_10v+24e-3*mc_cgoln_10v)*sw_stat_global*mc_skew)'
+.param pfet_10v0_asym_sig_dvth1='0.01692*(-0.7*mc_sig_vth+0.7*mc_sig_vthp)*sw_stat_global*mc_skew'
+.param pfet_10v0_asym_dtox='7.143e-11*(0.77*mc_toxe+0.63*mc_toxep)*sw_stat_global*mc_skew'
+.param pfet_10v0_asym_dxl='1.7e-8*(0.71*mc_xl+0.69*mc_xlp)*sw_stat_global*mc_skew'
+.param pfet_10v0_asym_dxw='7.4e-8*(0.77*mc_xw+0.63*mc_xwp)*sw_stat_global*mc_skew'
+.param pfet_10v0_asym_dvth0='pfet_10v0_asym_sig_dvth1'
+.param pfet_10v0_asym_drdsw='(1+0.085*(0.77*mc_rd_10v+0.63*mc_rdp_10v)*sw_stat_global*mc_skew)'
+.param pfet_10v0_asym_drdrift='(1+0.032*(0.77*mc_rd_10v+0.63*mc_rdp_10v)*sw_stat_global*mc_skew)'
+.param pfet_10v0_asym_dvsat='(1+0.032*(0.77*mc_vsat_10v+0.63*mc_vsatp_10v)*sw_stat_global*mc_skew)'
+.param pfet_10v0_asym_du0='(1+0.0097*(0.7*mc_u0_10v+0.7*mc_u0p_10v)*sw_stat_global*mc_skew)'
+.param pfet_10v0_asym_dcgs='(1+(12e-3*mc_cgol_10v+12e-3*mc_cgolp_10v)*sw_stat_global*mc_skew)'
+.param pfet_10v0_asym_dcgd='(1+(24e-3*mc_cgol_10v+24e-3*mc_cgolp_10v)*sw_stat_global*mc_skew)'
+.param pfet_10v0_asym_dcjs='(1+(12e-3*mc_cgol_10v+12e-3*mc_cgolp_10v)*sw_stat_global*mc_skew)'
+.param pfet_10v0_asym_dcjd='(1+(24e-3*mc_cgol_10v+24e-3*mc_cgolp_10v)*sw_stat_global*mc_skew)'
+.lib 'smbb000149.sp' nfet_10v0_asym_t
+.lib 'smbb000149.sp' pfet_10v0_asym_t
+.lib 'smbb000149.sp' noise_corner
+.endl
 
-.ENDL
+.lib noise_corner
+.param nfet_10v0_asym_noia='(fnoicor==0)*1.1021e42+(fnoicor==1)*2.5852e42'
+.param nfet_10v0_asym_noib='(fnoicor==0)*2.8476e24+(fnoicor==1)*6.5096e+024'
+.param nfet_10v0_asym_noic='(fnoicor==0)*8.75+(fnoicor==1)*8.75'
+.param pfet_10v0_asym_noia='(fnoicor==0)*2.9073e+041+(fnoicor==1)*1.7073e+042'
+.param pfet_10v0_asym_noib='(fnoicor==0)*8.0736e+025+(fnoicor==1)*2.4523e+026'
+.param pfet_10v0_asym_noic='(fnoicor==0)*12780+(fnoicor==1)*12780'
+.endl
 
-.LIB ss
-.param
-
-+nfet_10v0_asym_dtox = 8E-10 
-+nfet_10v0_asym_dxl = 6e-008 
-+nfet_10v0_asym_dxw = -3.46E-8
-+nfet_10v0_asym_dvth0 = 0.112 
-+nfet_10v0_asym_drdsw = 1.2 
-+nfet_10v0_asym_drdrift = 1.271 
-+nfet_10v0_asym_dvsat = 0.926 
-+nfet_10v0_asym_du0 = 0.95  
-+nfet_10v0_asym_dcgs = 1.1
-+nfet_10v0_asym_dcgd = 1.2 
-+nfet_10v0_asym_dcjs = 1.1
-+nfet_10v0_asym_dcjd = 1.2 
-
-
-+pfet_10v0_asym_dtox = 8E-10
-+pfet_10v0_asym_dxl = 9.914e-008
-+pfet_10v0_asym_dxw = -1E-7
-+pfet_10v0_asym_dvth0 = -0.0936 
-+pfet_10v0_asym_drdsw = 1.11 
-+pfet_10v0_asym_drdrift = 1.144 
-+pfet_10v0_asym_dvsat = 0.91 
-+pfet_10v0_asym_du0 = 0.964 
-+pfet_10v0_asym_dcgs = 1.1
-+pfet_10v0_asym_dcgd = 1.2 
-+pfet_10v0_asym_dcjs = 1.1
-+pfet_10v0_asym_dcjd = 1.2 
-
-.lib 'smbb000149.ngspice' nfet_10v0_asym_t
-.lib 'smbb000149.ngspice' pfet_10v0_asym_t
-.lib 'smbb000149.ngspice' noise_corner
-
-
-.ENDL
-
-.LIB ff
-.param
-
-+nfet_10v0_asym_dtox = -8E-10
-+nfet_10v0_asym_dxl = -6e-008 
-+nfet_10v0_asym_dxw = 3.46E-8
-+nfet_10v0_asym_dvth0 = -0.10388 
-+nfet_10v0_asym_drdsw = 0.868 
-+nfet_10v0_asym_drdrift = 0.8245 
-+nfet_10v0_asym_dvsat = 1.033 
-+nfet_10v0_asym_du0 = 1.04  
-+nfet_10v0_asym_dcgs = 0.9
-+nfet_10v0_asym_dcgd = 0.8 
-+nfet_10v0_asym_dcjs = 0.9
-+nfet_10v0_asym_dcjd = 0.8 
-
-
-+pfet_10v0_asym_dtox = -8E-10
-+pfet_10v0_asym_dxl = -6.804e-008 
-+pfet_10v0_asym_dxw = 8.46E-8
-+pfet_10v0_asym_dvth0 = 0.099  
-+pfet_10v0_asym_drdsw = 0.91 
-+pfet_10v0_asym_drdrift = 0.89 
-+pfet_10v0_asym_dvsat = 1.06 
-+pfet_10v0_asym_du0 = 1.03 
-+pfet_10v0_asym_dcgs = 0.9
-+pfet_10v0_asym_dcgd = 0.8 
-+pfet_10v0_asym_dcjs = 0.9
-+pfet_10v0_asym_dcjd = 0.8 
-
-
-.lib 'smbb000149.ngspice' nfet_10v0_asym_t
-.lib 'smbb000149.ngspice' pfet_10v0_asym_t
-.lib 'smbb000149.ngspice' noise_corner
-
-.ENDL
-
-
-.LIB sf
-.param
-
-+nfet_10v0_asym_dtox = 0
-+nfet_10v0_asym_dxl = 5.024e-008 
-+nfet_10v0_asym_dxw = 0
-+nfet_10v0_asym_dvth0 = 0.068 
-+nfet_10v0_asym_drdsw = 1.2 
-+nfet_10v0_asym_drdrift = 1.156 
-+nfet_10v0_asym_dvsat = 0.928 
-+nfet_10v0_asym_du0 = 0.97  
-+nfet_10v0_asym_dcgs = 1.07
-+nfet_10v0_asym_dcgd = 1.14
-+nfet_10v0_asym_dcjs = 1.07
-+nfet_10v0_asym_dcjd = 1.14
-
-
-+pfet_10v0_asym_dtox = 0
-+pfet_10v0_asym_dxl = -7.004e-008 
-+pfet_10v0_asym_dxw = 0
-+pfet_10v0_asym_dvth0 = 0.057672 
-+pfet_10v0_asym_drdsw = 0.91 
-+pfet_10v0_asym_drdrift = 0.92 
-+pfet_10v0_asym_dvsat = 1.012 
-+pfet_10v0_asym_du0 = 1.03 
-+pfet_10v0_asym_dcgs = 0.93
-+pfet_10v0_asym_dcgd = 0.86 
-+pfet_10v0_asym_dcjs = 0.93
-+pfet_10v0_asym_dcjd = 0.86 
-
-
-.lib 'smbb000149.ngspice' nfet_10v0_asym_t
-.lib 'smbb000149.ngspice' pfet_10v0_asym_t
-.lib 'smbb000149.ngspice' noise_corner
-
-.ENDL
-
-.LIB fs
-.param
-
-+nfet_10v0_asym_dtox = 0
-+nfet_10v0_asym_dxl = -5.02e-008 
-+nfet_10v0_asym_dxw = 0
-+nfet_10v0_asym_dvth0 = -0.058169 
-+nfet_10v0_asym_drdsw = 0.868 
-+nfet_10v0_asym_drdrift = 0.89748 
-+nfet_10v0_asym_dvsat = 1.045 
-+nfet_10v0_asym_du0 = 1.034  
-+nfet_10v0_asym_dcgs = 0.93
-+nfet_10v0_asym_dcgd = 0.86 
-+nfet_10v0_asym_dcjs = 0.93
-+nfet_10v0_asym_dcjd = 0.86 
-
-+pfet_10v0_asym_dtox = 0
-+pfet_10v0_asym_dxl = 9.414e-008
-+pfet_10v0_asym_dxw = 0
-+pfet_10v0_asym_dvth0 = -0.056 
-+pfet_10v0_asym_drdsw = 1.11 
-+pfet_10v0_asym_drdrift = 1.06 
-+pfet_10v0_asym_dvsat = 0.989 
-+pfet_10v0_asym_du0 = 0.97 
-+pfet_10v0_asym_dcgs = 1.07
-+pfet_10v0_asym_dcgd = 1.14
-+pfet_10v0_asym_dcjs = 1.07
-+pfet_10v0_asym_dcjd = 1.14
-
-.lib 'smbb000149.ngspice' nfet_10v0_asym_t
-.lib 'smbb000149.ngspice' pfet_10v0_asym_t
-.lib 'smbb000149.ngspice' noise_corner
-
-
-.ENDL
-
-.LIB statistical
-
-
-
-
-.param
-+ mc_vsat2_10V=agauss(0, 1, 3)
-+ mc_rd_10V_2=agauss(0, 1, 3)
-+ mc_u0_10V_2=agauss(0, 1, 3)
-+ mc_cgol_10V_2=agauss(0, 1, 3)
-
-+ mc_vsatN2_10V=agauss(0, 1, 3)
-+ mc_rdn_10V_2=agauss(0, 1, 3)
-+ mc_u0n_10V_2=agauss(0, 1, 3)
-+ mc_cgolN_10V_2=agauss(0, 1, 3)
-
-
-+ mc_vsatP2_10V=agauss(0, 1, 3)
-+ mc_u0P2_10V=agauss(0, 1, 3)
-+ mc_rdP_10V_2=agauss(0, 1, 3)
-+ mc_cgolP_10V_2=agauss(0, 1, 3)
-
-+ mc_vsat_10V=mc_vsat2_10v
-+ mc_rd_10V=mc_rd_10V_2
-+ mc_u0_10V=mc_u0_10V_2
-+ mc_cgol_10V=mc_cgol_10V_2
-
-+ mc_vsatN_10V=mc_vsatN2_10v
-+ mc_rdn_10V=mc_rdn_10V_2
-+ mc_u0n_10v=mc_u0n_10v_2
-+ mc_cgolN_10V=mc_cgolN_10V_2
-
-+ mc_vsatP_10V=mc_vsatP2_10v
-+ mc_u0P_10V=mc_u0P2_10v
-+ mc_rdP_10V=mc_rdP_10V_2
-+ mc_cgolP_10V=mc_cgolP_10V_2
-
-.param
-+nfet_10v0_asym_sig_vth='0.01675*(0.7*mc_sig_vth+0.7*mc_sig_vthN)*sw_stat_global*mc_skew'
-+nfet_10v0_asym_dtox='7.2e-11*(0.77*mc_toxe+0.63*mc_toxeN)*sw_stat_global*mc_skew'
-+nfet_10v0_asym_dxl='5.3e-9*(0.71*mc_xl+0.69*mc_xlN)*sw_stat_global*mc_skew'
-+nfet_10v0_asym_dxw='3.25e-8*(0.77*mc_xw+0.63*mc_xwN)*sw_stat_global*mc_skew'
-+nfet_10v0_asym_dvth0='nfet_10v0_asym_sig_vth'
-+nfet_10v0_asym_drdsw='(1 + 0.093*(0.77* mc_rd_10V + 0.63* mc_rdn_10V)*sw_stat_global*mc_skew)'
-+nfet_10v0_asym_drdrift='(1 + 0.037*(0.77* mc_rd_10V + 0.63* mc_rdn_10V)*sw_stat_global*mc_skew)'
-+nfet_10v0_asym_dvsat='(1 + 0.028*(0.77*mc_vsat_10v+0.63*mc_vsatN_10v)*sw_stat_global*mc_skew)'
-+nfet_10v0_asym_du0= '(1 + 0.0157*(0.7*mc_u0_10v+0.7*mc_u0n_10v)*sw_stat_global*mc_skew)'
-+nfet_10v0_asym_dcgs='(1+(12e-3* mc_cgol_10V+12e-3* mc_cgolN_10V)*sw_stat_global*mc_skew)'
-+nfet_10v0_asym_dcgd='(1+(24e-3* mc_cgol_10V+24e-3* mc_cgolN_10V)*sw_stat_global*mc_skew)'
-+nfet_10v0_asym_dcjs='(1+(12e-3* mc_cgol_10V+12e-3* mc_cgolN_10V)*sw_stat_global*mc_skew)'
-+nfet_10v0_asym_dcjd='(1+(24e-3* mc_cgol_10V+24e-3* mc_cgolN_10V)*sw_stat_global*mc_skew)'
-
-
-.param
-+pfet_10v0_asym_sig_dvth1='0.01692*(-0.7*mc_sig_vth+0.7*mc_sig_vthp)*sw_stat_global*mc_skew'
-+pfet_10v0_asym_dtox = '7.143e-11*(0.77*mc_toxe+0.63*mc_toxep)*sw_stat_global*mc_skew'
-+pfet_10v0_asym_dxl = '1.7e-8*(0.71*mc_xl+0.69*mc_xlp)*sw_stat_global*mc_skew'
-+pfet_10v0_asym_dxw = '7.4e-8*(0.77*mc_xw+0.63*mc_xwp)*sw_stat_global*mc_skew' 
-+pfet_10v0_asym_dvth0 = 'pfet_10v0_asym_sig_dvth1'
-+pfet_10v0_asym_drdsw = '(1 + 0.085*(0.77* mc_rd_10V + 0.63* mc_rdp_10V)*sw_stat_global*mc_skew)' 
-+pfet_10v0_asym_drdrift ='(1 + 0.032*(0.77* mc_rd_10V + 0.63* mc_rdp_10V)*sw_stat_global*mc_skew)'
-+pfet_10v0_asym_dvsat = '(1 + 0.032*(0.77*mc_vsat_10v+0.63*mc_vsatP_10V)*sw_stat_global*mc_skew)'
-+pfet_10v0_asym_du0 = '(1 + 0.0097*(0.7*mc_u0_10v+0.7*mc_u0P_10V)*sw_stat_global*mc_skew)'
-+pfet_10v0_asym_dcgs = '(1+ (12e-3*mc_cgol_10V + 12e-3*mc_cgolp_10V)*sw_stat_global*mc_skew)'   
-+pfet_10v0_asym_dcgd = '(1+ (24e-3*mc_cgol_10V + 24e-3*mc_cgolp_10V)*sw_stat_global*mc_skew)'  
-+pfet_10v0_asym_dcjs ='(1+(12e-3*mc_cgol_10V + 12e-3*mc_cgolp_10V)*sw_stat_global*mc_skew)'   
-+pfet_10v0_asym_dcjd = '(1+(24e-3*mc_cgol_10V + 24e-3*mc_cgolp_10V)*sw_stat_global*mc_skew)'   
-
-
-.lib 'smbb000149.ngspice' nfet_10v0_asym_t
-.lib 'smbb000149.ngspice' pfet_10v0_asym_t
-.lib 'smbb000149.ngspice' noise_corner
-.ENDL
-
-*
-.LIB noise_corner
- .param
- +nfet_10v0_asym_noia='(fnoicor==0)*1.1021E42 + (fnoicor==1)*2.5852e42' 
- +nfet_10v0_asym_noib='(fnoicor==0)*2.8476E24 + (fnoicor==1)*6.5096e+024' 
- +nfet_10v0_asym_noic='(fnoicor==0)*8.75 + (fnoicor==1)*8.75'
-
- +pfet_10v0_asym_noia='(fnoicor==0)*2.9073e+041 + (fnoicor==1)*1.7073e+042' 
- +pfet_10v0_asym_noib='(fnoicor==0)*8.0736e+025 + (fnoicor==1)*2.4523e+026' 
- +pfet_10v0_asym_noic='(fnoicor==0)*12780 + (fnoicor==1)*12780'
-
-.ENDL
-*
-*
-***************************************************************************************************
-* 10V LDNMOS Asym Model
-***************************************************************************************************
-*
-
-.lib nfet_10v0_asym_t  
-
-.subckt nfet_10v0_asym d g s b w = 25E-6       l = 0.6E-6  nf = 1  m = 1   ad = 'w*1.48e-6' pd = '2*(1.48e-6+w)' as = 'w*0.48e-6' ps = '(w+0.48e-6)*2' nrd = 0        
-+nrs = 0         dtemp = 0      
-+sa = 0         sb = 0         sd = 0         
-+par = 1
-.param
-+rdrift1 = 1.5433E3            wa = -1.6705E-8               rd = 0.17322                  
-+ra = 4.631E-3                 rb = 1.1181                   lb = -1.0648E-6               
-+wb = -2.8512E-7               trx1 = 2.8643E-3              trx2 = 1.0098E-5              
-+trth1 = 5.5E-4                trth2 = 0                     cgdl_d2 = 5.0343E-10          
-+toxep = 1.376E-8              lcgd_d2 = 6.4774E-10          cgdv_d = 1.0253               
-+cgd_val = 0.20473             cgsl_s = 1.2929E-10           lcgs = 2.9695E-8              
-+cgs_slope = 4.0853            cgs_vth = 0.10612             cgs_factor = 0.9              
-+vthd = 4.18986E-2             cgd_vthd = 0.31232            cgb_slope = 1.0158            
-+cgb_vth = 0.82325             cgb_amp = 1.3591E-9           cgb_min = 7.4448E-10          
-+cgb_power = 2.5552            lcgd_d = 1.4497E-7            polar_d = -1.0276E-3          
-+polard_min = 7.05             polar_s = -0.35192            polars_min = 4.2              
-+cgs_factor2 = 1               cgdv_d2 = -2.1473             cgdl_d = 1.3222E-11           
-+cgs_vth1 = 0.20635            
-.param
-+cgds_fixed = '3.9*8.854e-12/toxep' 
-rdrift d d2 '(rdrift1*nfet_10v0_asym_drdrift)*1.2e-6/(w/nf-wa)' tc1=trx1 tc2=trx2 m=nf
-rd2 d2 d1 'max(1e-2, (rd*nfet_10v0_asym_drdsw*(1+trth1*(temper+dtemp-25)+trth2*(temper+dtemp-25)*(temper+dtemp-25)))/(w/nf-wb)*(tanh(ra*(v(d,s)-rb*(l-lb)/(0.6e-6-lb)))))' m=nf
-m0 d1 g s b nfet_10v0_asym_core w=w l=l as=as ad=ad ps=ps pd=pd nf=nf nrd=nrd nrs=nrs sa=sa sb=sb sd=sd m=m
+.lib nfet_10v0_asym_t
+.subckt nfet_10v0_asym d g s b w=25e-6 l=0.6e-6 nf=1 m=1 ad='w*1.48e-6' pd='2*(1.48e-6+w)' as='w*0.48e-6' ps='(w+0.48e-6)*2' nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0 par=1
+.param rdrift1=1.5433e3
+.param wa=-1.6705e-8
+.param rd=0.17322
+.param ra=4.631e-3
+.param rb=1.1181
+.param lb=-1.0648e-6
+.param wb=-2.8512e-7
+.param trx1=2.8643e-3
+.param trx2=1.0098e-5
+.param trth1=5.5e-4
+.param trth2=0
+.param cgdl_d2=5.0343e-10
+.param toxep=1.376e-8
+.param lcgd_d2=6.4774e-10
+.param cgdv_d=1.0253
+.param cgd_val=0.20473
+.param cgsl_s=1.2929e-10
+.param lcgs=2.9695e-8
+.param cgs_slope=4.0853
+.param cgs_vth=0.10612
+.param cgs_factor=0.9
+.param vthd=4.18986e-2
+.param cgd_vthd=0.31232
+.param cgb_slope=1.0158
+.param cgb_vth=0.82325
+.param cgb_amp=1.3591e-9
+.param cgb_min=7.4448e-10
+.param cgb_power=2.5552
+.param lcgd_d=1.4497e-7
+.param polar_d=-1.0276e-3
+.param polard_min=7.05
+.param polar_s=-0.35192
+.param polars_min=4.2
+.param cgs_factor2=1
+.param cgdv_d2=-2.1473
+.param cgdl_d=1.3222e-11
+.param cgs_vth1=0.20635
+.param cgds_fixed='3.9*8.854e-12/toxep'
+rdrift d d2 '(rdrift1*nfet_10v0_asym_drdrift)*1.2e-6/(w/nf-wa)' m=nf tc1=trx1 tc2=trx2
+rd2 d2 d1 'max(1e-2,(rd*nfet_10v0_asym_drdsw*(1+trth1*(temper+dtemp-25)+trth2*(temper+dtemp-25)*(temper+dtemp-25)))/(w/nf-wb)*(tanh(ra*(v(d,s)-rb*(l-lb)/(0.6e-6-lb)))))' m=nf
+m0 d1 g s b nfet_10v0_asym_core ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w=w
 c1_gd g d c='nfet_10v0_asym_dcgd*1.89e-14'
 c1_gd2 g d1 c='nfet_10v0_asym_dcgd*2.6e-14'
 c2_gs g s c='nfet_10v0_asym_dcgs*1.1e-14'
 c3_gb g b '1.284e-9*w'
-
-.model nfet_10v0_asym_core.1 nmos
-***** Flag Parameter ***
-+level = 54                    version = 4.6                 binunit = 1                   
-+paramchk = 1                  mobmod = 0                    capmod = 2                    
-+rdsmod = 0                    igcmod = 0                    igbmod = 0                    
-+rbodymod = 0                  trnqsmod = 0                  acnqsmod = 0                  
-+fnoimod = 1                   tnoimod = 0                   diomod = 2                    
-+tempmod = 0                   permod = 1                    geomod = 0                    
-***** Geometry Range Parameter ***
-+lmin = 6E-7                   lmax = 20.01E-6               wmin = 4E-6                   
-+wmax = 50.01E-6              
-***** Process Parameter ***
-+epsrox = 3.9                  toxe = '1.398E-8+nfet_10v0_asym_dtox'               xj = 1.5E-7                   
-+ndep = 1.7E17                 ngate = 2.9861E21             nsd = 1E20                    
-+rsh = 7                       phin = 0                      
-***** dW and dL Parameter ***
-+wint = 0                      wl = 0                        wln = 1                       
-+ww = 0                        wwn = 1                       wwl = 0                       
-+lint = 0                      ll = 0                        lln = 1                       
-+lw = 0                        lwn = 1                       lwl = 0                       
-+dwg = -2.9807E-8              dwb = -3.3647E-8              xl = '0+nfet_10v0_asym_dxl'                        
-+xw = '0+nfet_10v0_asym_dxw'                        
-***** Vth Related  Parameter ***
-+vth0 = '0.653 +nfet_10v0_asym_dvth0'                 lvth0 = 0                     wvth0 = 0                     
-+pvth0 = 0.19879               vfb = -0.55                   k1 = 0.9621                   
-+lk1 = 0                       k2 = -7.2357E-3               lk2 = 0                       
-+k3 = 13.237                   wk3 = 0                       k3b = 0.25485                 
-+w0 = 1E-6                     lpe0 = 1.0439E-6              lpeb = 6.2517E-7              
-+dvtp0 = 0                     dvtp1 = 0                     dvt0 = 0.09762                
-+dvt1 = 0.021131               dvt2 = -0.046683              dvt0w = 3.4488                
-+dvt1w = 9.5865E4              dvt2w = 0.034426              
-***** Mobility Related Parameter ***
-+u0 = '0.0486*nfet_10v0_asym_du0'                   lu0 = '5.2003E-3*nfet_10v0_asym_du0'               wu0 = '-0.020672*nfet_10v0_asym_du0'               
-+pu0 = '3.9064E-3*nfet_10v0_asym_du0'               ua = -1.05E-10                lua = 4.2194E-10              
-+pua = 0                       ub = 3.0678E-18               lub = -1.9302E-18             
-+pub = -6.8E-19                uc = 1.0312E-10               luc = -4.7702E-11             
-+puc = -6.8588E-11             vsat = '7.9784E4*nfet_10v0_asym_dvsat'               lvsat = '9844*nfet_10v0_asym_dvsat'                
-+wvsat = 0                     pvsat = -3.168E3              a0 = 1.0212                   
-+la0 = -0.55504                ags = 0.13804                 lags = 0                      
-+wags = -0.012                 b0 = 6.48E-6                  b1 = 5.9519E-5                
-+keta = -0.01362               lketa = -3.3807E-3            a1 = -0.065307                
-+a2 = 0.94                     rdsw = '200*nfet_10v0_asym_drdsw'                    prdsw = 0                     
-+rdswmin = 500                 prwb = 0.81                   pprwb = 0                     
-+prwg = 0.037838               pprwg = 0                     wr = 1                        
-***** Subthreshold Related Parameter ***
-+voff = -0.092552              voffl = -1.4059E-8            minv = 0                      
-+nfactor = 0.90694             lnfactor = 6.48E-7            eta0 = 0.039833               
-+etab = -1.2928                dsub = 0.56                   cit = 0                       
-+cdsc = 1.1424E-5              cdscb = 2.4894E-6             cdscd = 0                     
-***** Output Resistance Related Parameter ***
-+pclm = 0.02794                pdiblc1 = 0.46226             pdiblc2 = 1.092E-4            
-+pdiblcb = -5E-3               drout = 0.45                  pscbe1 = 4.9654E8             
-+pscbe2 = 1.6381E-7            pvag = 0.9                    delta = 0.01                  
-+alpha0 = -2.5481E-7           alpha1 = 0.59769              beta0 = 37.485                
-+lbeta0 = -11.164              wbeta0 = 2.034                pbeta0 = -0.645               
-***** GIDL Effect Parameters ***
-+agidl = 5.7877E-16            bgidl = 1.171E9               cgidl = 0.228                 
-+egidl = 0.0968                
-***** Flicker Noise Model Parameter ***
-+noia = 'nfet_10v0_asym_noia'               noib = 'nfet_10v0_asym_noib'            noic = 'nfet_10v0_asym_noic'               
-+em = 4.1E7                    ef = 1.0914                     
-***** Capacitance Parameter ***
-+xpart = 1                     cgso = 0                      cgdo = 0                      
-+cgbo = 1E-13                  ckappas = 0.6                 ckappad = 0.6                 
-+dlc = 1.723E-7                noff = 1.9257                 lnoff = 1                     
-+voffcv = -0.038               acde = 0.54775                moin = 16.92                  
-+cgsl = 0                      cgdl = 0                      
-***** Souce/Drain Junction Diode Model Parameter ***
-+xjbvs = 1                     xjbvd = 1                     bvs = 11                    
-+bvd = 14.5                      jss = 6.88E-7                 jsd = 1.6119E-6               
-+jsws = 4.88E-13               jswd = 4.824E-12              jswgs = 4.88E-13              
-+jswgd = 4.824E-12             jtsd = 1.4513E-4              xtsd = 0.63818                
-+vtsd = 2.16                   cjs = '9.5E-4*nfet_10v0_asym_dcjs'                  cjd = '1.4914E-4*nfet_10v0_asym_dcjd'               
-+mjs = 0.296                   mjd = 0.30525                 mjsws = 0.01                  
-+mjswd = 0.21757               cjsws = '1.33E-10*nfet_10v0_asym_dcjs'              cjswd = '5.8719E-10*nfet_10v0_asym_dcjd'            
-+cjswgs = '1.33E-10*nfet_10v0_asym_dcjs'             cjswgd = '5.8719E-10*nfet_10v0_asym_dcjd'           mjswgs = 0.01                 
-+mjswgd = 0.21757              pbs = 0.606                   pbd = 0.43905                 
-+pbsws = 0.48                  pbswd = 0.48991               pbswgs = 0.48                 
-+pbswgd = 0.48991              
-***** Temperature coefficient ***
-+tnom = 25                     ute = -1.3028                 lute = 0.045577               
-+pute = 0.17695                kt1 = -0.42425                wkt1 = 0                      
-+pkt1 = 0                      kt1l = -1.8892E-8             kt2 = -0.060553               
-+pkt2 = -0.09625               ua1 = 3.2446E-9               lua1 = 0                      
-+pua1 = 0                      ub1 = -4.2148E-18             lub1 = 0                      
-+pub1 = 0                      uc1 = -7.2993E-11             at = 3.3E4                    
-+lat = 0                       pat = -9E3                    prt = 200                     
-+pprt = 0                      njs = 1.0541                  njd = 1                       
-+xtis = 3                      xtid = 3                      tpb = 2.11E-3                 
-+tpbsw = 1.9E-3                tpbswg = 1.9E-3               tcj = 1.65E-3                 
-+tcjsw = 1.61E-3               tcjswg = 1.61E-3              
+.model nfet_10v0_asym_core.1 nmos 
++ a0=1.0212
++ a1=-0.065307
++ a2=0.94
++ acde=0.54775
++ acnqsmod=0
++ agidl=5.7877e-16
++ ags=0.13804
++ alpha0=-2.5481e-7
++ alpha1=0.59769
++ at=3.3e4
++ b0=6.48e-6
++ b1=5.9519e-5
++ beta0=37.485
++ bgidl=1.171e9
++ binunit=1
++ bvd=14.5
++ bvs=11
++ capmod=2
++ cdsc=1.1424e-5
++ cdscb=2.4894e-6
++ cdscd=0
++ cgbo=1e-13
++ cgdl=0
++ cgdo=0
++ cgidl=0.228
++ cgsl=0
++ cgso=0
++ cit=0
++ cjd='1.4914e-4*nfet_10v0_asym_dcjd'
++ cjs='9.5e-4*nfet_10v0_asym_dcjs'
++ cjswd='5.8719e-10*nfet_10v0_asym_dcjd'
++ cjswgd='5.8719e-10*nfet_10v0_asym_dcjd'
++ cjswgs='1.33e-10*nfet_10v0_asym_dcjs'
++ cjsws='1.33e-10*nfet_10v0_asym_dcjs'
++ ckappad=0.6
++ ckappas=0.6
++ delta=0.01
++ diomod=2
++ dlc=1.723e-7
++ drout=0.45
++ dsub=0.56
++ dvt0=0.09762
++ dvt0w=3.4488
++ dvt1=0.021131
++ dvt1w=9.5865e4
++ dvt2=-0.046683
++ dvt2w=0.034426
++ dvtp0=0
++ dvtp1=0
++ dwb=-3.3647e-8
++ dwg=-2.9807e-8
++ ef=1.0914
++ egidl=0.0968
++ em=4.1e7
++ epsrox=3.9
++ eta0=0.039833
++ etab=-1.2928
++ fnoimod=1
++ geomod=0
++ igbmod=0
++ igcmod=0
++ jsd=1.6119e-6
++ jss=6.88e-7
++ jswd=4.824e-12
++ jswgd=4.824e-12
++ jswgs=4.88e-13
++ jsws=4.88e-13
++ jtsd=1.4513e-4
++ k1=0.9621
++ k2=-7.2357e-3
++ k3=13.237
++ k3b=0.25485
++ keta=-0.01362
++ kt1=-0.42425
++ kt1l=-1.8892e-8
++ kt2=-0.060553
++ la0=-0.55504
++ lags=0
++ lat=0
++ lbeta0=-11.164
++ level=54
++ lint=0
++ lk1=0
++ lk2=0
++ lketa=-3.3807e-3
++ ll=0
++ lln=1
++ lmax=20.01e-6
++ lmin=6e-7
++ lnfactor=6.48e-7
++ lnoff=1
++ lpe0=1.0439e-6
++ lpeb=6.2517e-7
++ lu0='5.2003e-3*nfet_10v0_asym_du0'
++ lua=4.2194e-10
++ lua1=0
++ lub=-1.9302e-18
++ lub1=0
++ luc=-4.7702e-11
++ lute=0.045577
++ lvsat='9844*nfet_10v0_asym_dvsat'
++ lvth0=0
++ lw=0
++ lwl=0
++ lwn=1
++ minv=0
++ mjd=0.30525
++ mjs=0.296
++ mjswd=0.21757
++ mjswgd=0.21757
++ mjswgs=0.01
++ mjsws=0.01
++ mobmod=0
++ moin=16.92
++ ndep=1.7e17
++ nfactor=0.90694
++ ngate=2.9861e21
++ njd=1
++ njs=1.0541
++ noff=1.9257
++ noia='nfet_10v0_asym_noia'
++ noib='nfet_10v0_asym_noib'
++ noic='nfet_10v0_asym_noic'
++ nsd=1e20
++ paramchk=1
++ pat=-9e3
++ pbd=0.43905
++ pbeta0=-0.645
++ pbs=0.606
++ pbswd=0.48991
++ pbswgd=0.48991
++ pbswgs=0.48
++ pbsws=0.48
++ pclm=0.02794
++ pdiblc1=0.46226
++ pdiblc2=1.092e-4
++ pdiblcb=-5e-3
++ permod=1
++ phin=0
++ pkt1=0
++ pkt2=-0.09625
++ pprt=0
++ pprwb=0
++ pprwg=0
++ prdsw=0
++ prt=200
++ prwb=0.81
++ prwg=0.037838
++ pscbe1=4.9654e8
++ pscbe2=1.6381e-7
++ pu0='3.9064e-3*nfet_10v0_asym_du0'
++ pua=0
++ pua1=0
++ pub=-6.8e-19
++ pub1=0
++ puc=-6.8588e-11
++ pute=0.17695
++ pvag=0.9
++ pvsat=-3.168e3
++ pvth0=0.19879
++ rbodymod=0
++ rdsmod=0
++ rdsw='200*nfet_10v0_asym_drdsw'
++ rdswmin=500
++ rsh=7
++ tcj=1.65e-3
++ tcjsw=1.61e-3
++ tcjswg=1.61e-3
++ tempmod=0
++ tnoimod=0
++ tnom=25
++ toxe='1.398e-8+nfet_10v0_asym_dtox'
++ tpb=2.11e-3
++ tpbsw=1.9e-3
++ tpbswg=1.9e-3
++ trnqsmod=0
++ u0='0.0486*nfet_10v0_asym_du0'
++ ua=-1.05e-10
++ ua1=3.2446e-9
++ ub=3.0678e-18
++ ub1=-4.2148e-18
++ uc=1.0312e-10
++ uc1=-7.2993e-11
++ ute=-1.3028
++ version=4.6
++ vfb=-0.55
++ voff=-0.092552
++ voffcv=-0.038
++ voffl=-1.4059e-8
++ vsat='7.9784e4*nfet_10v0_asym_dvsat'
++ vth0='0.653+nfet_10v0_asym_dvth0'
++ vtsd=2.16
++ w0=1e-6
++ wags=-0.012
++ wbeta0=2.034
++ wint=0
++ wk3=0
++ wkt1=0
++ wl=0
++ wln=1
++ wmax=50.01e-6
++ wmin=4e-6
++ wr=1
++ wu0='-0.020672*nfet_10v0_asym_du0'
++ wvsat=0
++ wvth0=0
++ ww=0
++ wwl=0
++ wwn=1
++ xj=1.5e-7
++ xjbvd=1
++ xjbvs=1
++ xl='0+nfet_10v0_asym_dxl'
++ xpart=1
++ xtid=3
++ xtis=3
++ xtsd=0.63818
++ xw='0+nfet_10v0_asym_dxw'
 .ends nfet_10v0_asym
+.endl
 
-.endl nfet_10v0_asym_t 
-
-*
-***************************************************************************************************
-* 10V LDPMOS Asym Model
-***************************************************************************************************
-*
-
-.lib pfet_10v0_asym_t  
-
-.subckt pfet_10v0_asym d g s b w = 2.5E-5     l = 6E-7       dtemp = 0      nf = 1   m = 1     ad = '(w*1.78e-6)' pd = '2*(w+1.78e-6)' as = 'w*0.48e-6' 
-+ps = '(w+0.48e-6)*2' nrd = 0        nrs = 0        
-+sa = 0         sb = 0         sd = 0         
-+par = 1
-.param
-+rdrift = 5.751E-3             rd = 0.94645                  ra = 1.1954E-3                
-+rb = 1.5957                   lb = 6.78E-6                  wa = -6.5504E-7               
-+wb = 4.1955E-8                trx1 = 2.836E-3               trx2 = 7.4236E-6              
-+trd1 = -3.7522E-3             cgdl_d2 = 4.3795E-10          toxep = 1.568E-8              
-+lcgd_d2 = 6.4774E-10          cgdv_d = 1.0253               cgd_val = 0.20473             
-+cgsl_s = 1.2929E-11           lcgs = 6.4247E-9              cgs_slope = 0.81706           
-+cgs_vth = 0.021224            cgs_factor = 0.9              vthd = 4.18986E-2             
-+cgd_vthd = 0.31232            cgb_slope = 1.0219            cgb_vth = 0.89948             
-+cgb_amp = 9.9049E-10          cgb_min = 3.2564E-11          cgb_power = 2.5552            
-+lcgd_d = 1.4497E-7            polar_d = -4.1926E-4          polard_min = 7.05             
-+polar_s = -0.35192            polars_min = 4.2              cgs_factor2 = 1               
-+cgdv_d2 = -1.2197             cgdl_d = 1.6046E-11           cgs_vth1 = 0.13041            
-.param
-+cgds_fixed = '3.9*8.854e-12/toxep' 
-rd1 d d2 '(rdrift*pfet_10v0_asym_drdrift)/(w/nf-wa)' tc1=trx1 tc2=trx2 m=nf
-rd2 d2 d1 'max(0.1, (rd*pfet_10v0_asym_drdsw*(1+trd1*(temper+dtemp-25))/(w/nf-wb)*(tanh(ra*(v(s,d)-rb*(l-lb)/(0.6e-6-lb))))))' m=nf
-m0 d1 g s b pfet_10v0_asym_core w=w l=l ad=ad pd=pd as=as ps=ps nf=nf nrd=nrd nrs=nrs sa=sa sb=sb sd=sd m=m
+.lib pfet_10v0_asym_t
+.subckt pfet_10v0_asym d g s b w=2.5e-5 l=6e-7 dtemp=0 nf=1 m=1 ad='(w*1.78e-6)' pd='2*(w+1.78e-6)' as='w*0.48e-6' ps='(w+0.48e-6)*2' nrd=0 nrs=0 sa=0 sb=0 sd=0 par=1
+.param rdrift=5.751e-3
+.param rd=0.94645
+.param ra=1.1954e-3
+.param rb=1.5957
+.param lb=6.78e-6
+.param wa=-6.5504e-7
+.param wb=4.1955e-8
+.param trx1=2.836e-3
+.param trx2=7.4236e-6
+.param trd1=-3.7522e-3
+.param cgdl_d2=4.3795e-10
+.param toxep=1.568e-8
+.param lcgd_d2=6.4774e-10
+.param cgdv_d=1.0253
+.param cgd_val=0.20473
+.param cgsl_s=1.2929e-11
+.param lcgs=6.4247e-9
+.param cgs_slope=0.81706
+.param cgs_vth=0.021224
+.param cgs_factor=0.9
+.param vthd=4.18986e-2
+.param cgd_vthd=0.31232
+.param cgb_slope=1.0219
+.param cgb_vth=0.89948
+.param cgb_amp=9.9049e-10
+.param cgb_min=3.2564e-11
+.param cgb_power=2.5552
+.param lcgd_d=1.4497e-7
+.param polar_d=-4.1926e-4
+.param polard_min=7.05
+.param polar_s=-0.35192
+.param polars_min=4.2
+.param cgs_factor2=1
+.param cgdv_d2=-1.2197
+.param cgdl_d=1.6046e-11
+.param cgs_vth1=0.13041
+.param cgds_fixed='3.9*8.854e-12/toxep'
+rd1 d d2 '(rdrift*pfet_10v0_asym_drdrift)/(w/nf-wa)' m=nf tc1=trx1 tc2=trx2
+rd2 d2 d1 'max(0.1,(rd*pfet_10v0_asym_drdsw*(1+trd1*(temper+dtemp-25))/(w/nf-wb)*(tanh(ra*(v(s,d)-rb*(l-lb)/(0.6e-6-lb))))))' m=nf
+m0 d1 g s b pfet_10v0_asym_core ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w=w
 c1_gd g d c='pfet_10v0_asym_dcgd*1.89e-14'
 c1_gd2 g d1 c='pfet_10v0_asym_dcgd*2.6e-14'
 c2_gs g s c='pfet_10v0_asym_dcgs*1.1e-14'
 c3_gb g b '1.284e-9*w'
-
-.model pfet_10v0_asym_core.1 pmos
-***** Flag Parameter ***
-+level = 54                    version = 4.6                 binunit = 2                   
-+paramchk = 1                  mobmod = 0                    capmod = 2                    
-+rdsmod = 0                    igcmod = 0                    igbmod = 0                    
-+rbodymod = 0                  trnqsmod = 0                  acnqsmod = 0                  
-+fnoimod = 1                   tnoimod = 0                   diomod = 0                    
-+tempmod = 0                   permod = 1                    geomod = 0                    
-***** Geometry Range Parameter ***
-+lmin = 6E-7                   lmax = 20.01E-6                wmin = 4e-6                   
-+wmax = 50.01e-6                  xl = ' 0 + pfet_10v0_asym_dxl' xw = '0+ pfet_10v0_asym_dxw'
-***** Process Parameter ***
-+epsrox = 3.9                  toxe = '1.568E-8+pfet_10v0_asym_dtox'               xj = 1.5E-7                   
-+ndep = 1.7E17                 ngate = 1E20                  nsd = 1E20                    
-+rsh = 5.6                     rshg = 0.4                    phin = 0.061992               
-***** dW and dL Parameter ***
-+wint = 0                      ww = 0                        wwl = 0                       
-+lint = 0                      ll = 0                        lwl = 0                       
-+dwg = 1.0544E-8               dwb = 0                       
-***** Vth Related  Parameter ***
-+vth0 = '-0.888+pfet_10v0_asym_dvth0'                wvth0 = 0                     pvth0 = 1.44E-14              
-+vfb = -1                      k1 = 1.09                     k2 = -0.014623                
-+wk2 = 0                       pk2 = -9.04E-14               k3 = 5.4746                   
-+k3b = 3.8727                  w0 = 3.24E-6                  lpe0 = 2.814E-7               
-+llpe0 = 0                     wlpe0 = -3.5894E-13           plpe0 = 0                     
-+lpeb = 3.068E-7               vbm = -3                      dvtp0 = 0                     
-+dvtp1 = 0                     dvt0 = 4.0503                 wdvt0 = 0                     
-+pdvt0 = -2.3525E-12           dvt1 = 0.16044                wdvt1 = 0                     
-+pdvt1 = 0                     dvt2 = -0.038473              dvt0w = 0                     
-+dvt1w = 2.7518E4              dvt2w = -0.032                
-***** Mobility Related Parameter ***
-+u0 = '0.013723*pfet_10v0_asym_du0'                 lu0 = '2.7385E-9*pfet_10v0_asym_du0'               wu0 = '-7E-10*pfet_10v0_asym_du0'                  
-+pu0 = '-2E-15*pfet_10v0_asym_du0'                  ua = 1.26E-9                  lua = 1.2893E-16              
-+pua = 6.315E-22               ub = 7.2608E-19               lub = 0                       
-+uc = -4.5217E-11              luc = 5.88E-17                eu = 1.67                     
-+vsat = '71505*pfet_10v0_asym_dvsat'                  wvsat = 0                     pvsat = 0                     
-+a0 = 1.1348                   la0 = -3.8459E-7              ags = 0.0834                  
-+lags = 0                      wags = 6.5664E-9              pags = 6.4229E-13             
-+b0 = 0                        b1 = 0                        keta = -1.504E-3              
-+lketa = -2.0415E-8            wketa = 2.68e-008             pketa = -7.5094e-014            
-+a1 = -0.07052                 a2 = 1                        rdsw = '200*pfet_10v0_asym_drdsw'                    
-+rdswmin = 0                   rdw = 100                     rdwmin = 0                    
-+rsw = 100                     rswmin = 0                    prwb = 1.24                   
-+prwg = 1                      wr = 1                        
-***** Subthreshold Related Parameter ***
-+voff = -0.08768               voffl = 0                     minv = 0                      
-+nfactor = 1.096               eta0 = 0.08                   etab = -0.57865               
-+dsub = 0.56                   cit = 0                       cdsc = 4.248E-4               
-+cdscb = 6E-5                  cdscd = 0                     
-***** Output Resistance Related Parameter ***
-+pclm = 0.37315                pdiblc1 = 0.09466             pdiblc2 = 5.586E-8            
-+pdiblcb = 0                   drout = 0.56                  pscbe1 = 5.9843E8             
-+pscbe2 = 9.3757E-8            pvag = 1.2                    delta = 0.01                  
-+fprout = 0                    pdits = 0                     pditsl = 0                    
-+pditsd = 0                    alpha0 = 7.0634E-8            alpha1 = 0.14712              
-+beta0 = 66.68                 lbeta0 = -2.1875E-6           wbeta0 = 4.86E-6              
-+pbeta0 = 0                    
-***** Gate Dielectric Tunneling Current ***
-+aigbacc = 0.43                bigbacc = 0.054               cigbacc = 0.075               
-+nigbacc = 1                   aigbinv = 0.35                bigbinv = 0.03                
-+cigbinv = 6E-3                eigbinv = 1.1                 nigbinv = 3                   
-+aigc = 0.43                   bigc = 0.054                  cigc = 0.075                  
-+aigsd = 0.43                  bigsd = 0.054                 cigsd = 0.075                 
-+nigc = 1                      poxedge = 1                   pigcd = 1                     
-+ntox = 1                      
-***** GIDL Effect Parameters ***
-+agidl = 3.7498E-17            bgidl = 1.196E8               cgidl = 0.5                   
-+egidl = 0.8                   
-***** Flicker Noise Model Parameter ***
-+noia = 'pfet_10v0_asym_noia'             noib = 'pfet_10v0_asym_noib'              noic = 'pfet_10v0_asym_noic'                
-+em = 4.1E7                    ef = 1.1237                   
-***** Capacitance Parameter ***
-+cgso = 0                      cgdo = 0                      cgbo = 0                      
-+ckappas = 0.6                 ckappad = 0.6                 clc = 1E-7                    
-+cle = 0.6                     dlc = 5.0579E-8               vfbcv = -1                    
-+noff = 1.8144                 lnoff = 1.2657E-6             voffcv = -3.8635E-3           
-+acde = 1                      moin = 11.1                   cgsl = 0                      
-+cgdl = 0                      
-***** Souce/Drain Junction Diode Model Parameter ***
-+xjbvs = 1                     xjbvd = 1                     bvs = 10.5                    
-+bvd = 14.5                    jss = 2.0867E-7               jsd = 5.2139E-7               
-+jsws = 1.6088E-13             jswd = 1.5E-13                jswgs = 1.6088E-13            
-+jswgd = 1.5E-13               jtsd = 1.0891E-6              xtsd = 0.92538                
-+vtsd = 2.44                   cjs = '9.12E-4*pfet_10v0_asym_dcjs'                 cjd = '3.2124E-4*pfet_10v0_asym_dcjd'               
-+mjs = 0.32713                 mjd = 0.31113                 mjsws = 0.056777              
-+mjswd = 0.39816               cjsws = '1.4649E-10*pfet_10v0_asym_dcjs'            cjswd = '5.4659E-10*pfet_10v0_asym_dcjd'            
-+cjswgs = '1.4649E-10*pfet_10v0_asym_dcjs'           cjswgd = '5.4659E-10*pfet_10v0_asym_dcjd'           mjswgs = 0.056777             
-+mjswgd = 0.39816              pbs = 0.76836                 pbd = 0.63391                 
-+pbsws = 0.5                   pbswd = 0.77752               pbswgs = 0.5                  
-+pbswgd = 0.77752              
-***** Temperature coefficient ***
-+ute = -1.245                  lute = -1.1751E-7             wute = -4E-8                  
-+pute = 1.0911E-13             kt1 = -0.45028                wkt1 = 0                      
-+pkt1 = 0                      kt1l = -4.1552E-8             kt2 = -0.05137                
-+pkt2 = -1.1E-13               ua1 = 5E-10                   lua1 = 0                      
-+ub1 = -2.2324E-18             lub1 = -2.0019E-25            uc1 = -3.0912E-11             
-+luc1 = 0                      at = 3.96E3                   prt = 0                       
+.model pfet_10v0_asym_core.1 pmos 
++ a0=1.1348
++ a1=-0.07052
++ a2=1
++ acde=1
++ acnqsmod=0
++ agidl=3.7498e-17
++ ags=0.0834
++ aigbacc=0.43
++ aigbinv=0.35
++ aigc=0.43
++ aigsd=0.43
++ alpha0=7.0634e-8
++ alpha1=0.14712
++ at=3.96e3
++ b0=0
++ b1=0
++ beta0=66.68
++ bgidl=1.196e8
++ bigbacc=0.054
++ bigbinv=0.03
++ bigc=0.054
++ bigsd=0.054
++ binunit=2
++ bvd=14.5
++ bvs=10.5
++ capmod=2
++ cdsc=4.248e-4
++ cdscb=6e-5
++ cdscd=0
++ cgbo=0
++ cgdl=0
++ cgdo=0
++ cgidl=0.5
++ cgsl=0
++ cgso=0
++ cigbacc=0.075
++ cigbinv=6e-3
++ cigc=0.075
++ cigsd=0.075
++ cit=0
++ cjd='3.2124e-4*pfet_10v0_asym_dcjd'
++ cjs='9.12e-4*pfet_10v0_asym_dcjs'
++ cjswd='5.4659e-10*pfet_10v0_asym_dcjd'
++ cjswgd='5.4659e-10*pfet_10v0_asym_dcjd'
++ cjswgs='1.4649e-10*pfet_10v0_asym_dcjs'
++ cjsws='1.4649e-10*pfet_10v0_asym_dcjs'
++ ckappad=0.6
++ ckappas=0.6
++ clc=1e-7
++ cle=0.6
++ delta=0.01
++ diomod=0
++ dlc=5.0579e-8
++ drout=0.56
++ dsub=0.56
++ dvt0=4.0503
++ dvt0w=0
++ dvt1=0.16044
++ dvt1w=2.7518e4
++ dvt2=-0.038473
++ dvt2w=-0.032
++ dvtp0=0
++ dvtp1=0
++ dwb=0
++ dwg=1.0544e-8
++ ef=1.1237
++ egidl=0.8
++ eigbinv=1.1
++ em=4.1e7
++ epsrox=3.9
++ eta0=0.08
++ etab=-0.57865
++ eu=1.67
++ fnoimod=1
++ fprout=0
++ geomod=0
++ igbmod=0
++ igcmod=0
++ jsd=5.2139e-7
++ jss=2.0867e-7
++ jswd=1.5e-13
++ jswgd=1.5e-13
++ jswgs=1.6088e-13
++ jsws=1.6088e-13
++ jtsd=1.0891e-6
++ k1=1.09
++ k2=-0.014623
++ k3=5.4746
++ k3b=3.8727
++ keta=-1.504e-3
++ kt1=-0.45028
++ kt1l=-4.1552e-8
++ kt2=-0.05137
++ la0=-3.8459e-7
++ lags=0
++ lbeta0=-2.1875e-6
++ level=54
++ lint=0
++ lketa=-2.0415e-8
++ ll=0
++ llpe0=0
++ lmax=20.01e-6
++ lmin=6e-7
++ lnoff=1.2657e-6
++ lpe0=2.814e-7
++ lpeb=3.068e-7
++ lu0='2.7385e-9*pfet_10v0_asym_du0'
++ lua=1.2893e-16
++ lua1=0
++ lub=0
++ lub1=-2.0019e-25
++ luc=5.88e-17
++ luc1=0
++ lute=-1.1751e-7
++ lwl=0
++ minv=0
++ mjd=0.31113
++ mjs=0.32713
++ mjswd=0.39816
++ mjswgd=0.39816
++ mjswgs=0.056777
++ mjsws=0.056777
++ mobmod=0
++ moin=11.1
++ ndep=1.7e17
++ nfactor=1.096
++ ngate=1e20
++ nigbacc=1
++ nigbinv=3
++ nigc=1
++ noff=1.8144
++ noia='pfet_10v0_asym_noia'
++ noib='pfet_10v0_asym_noib'
++ noic='pfet_10v0_asym_noic'
++ nsd=1e20
++ ntox=1
++ pags=6.4229e-13
++ paramchk=1
++ pbd=0.63391
++ pbeta0=0
++ pbs=0.76836
++ pbswd=0.77752
++ pbswgd=0.77752
++ pbswgs=0.5
++ pbsws=0.5
++ pclm=0.37315
++ pdiblc1=0.09466
++ pdiblc2=5.586e-8
++ pdiblcb=0
++ pdits=0
++ pditsd=0
++ pditsl=0
++ pdvt0=-2.3525e-12
++ pdvt1=0
++ permod=1
++ phin=0.061992
++ pigcd=1
++ pk2=-9.04e-14
++ pketa=-7.5094e-014
++ pkt1=0
++ pkt2=-1.1e-13
++ plpe0=0
++ poxedge=1
++ prt=0
++ prwb=1.24
++ prwg=1
++ pscbe1=5.9843e8
++ pscbe2=9.3757e-8
++ pu0='-2e-15*pfet_10v0_asym_du0'
++ pua=6.315e-22
++ pute=1.0911e-13
++ pvag=1.2
++ pvsat=0
++ pvth0=1.44e-14
++ rbodymod=0
++ rdsmod=0
++ rdsw='200*pfet_10v0_asym_drdsw'
++ rdswmin=0
++ rdw=100
++ rdwmin=0
++ rsh=5.6
++ rshg=0.4
++ rsw=100
++ rswmin=0
++ tempmod=0
++ tnoimod=0
++ toxe='1.568e-8+pfet_10v0_asym_dtox'
++ trnqsmod=0
++ u0='0.013723*pfet_10v0_asym_du0'
++ ua=1.26e-9
++ ua1=5e-10
++ ub=7.2608e-19
++ ub1=-2.2324e-18
++ uc=-4.5217e-11
++ uc1=-3.0912e-11
++ ute=-1.245
++ vbm=-3
++ version=4.6
++ vfb=-1
++ vfbcv=-1
++ voff=-0.08768
++ voffcv=-3.8635e-3
++ voffl=0
++ vsat='71505*pfet_10v0_asym_dvsat'
++ vth0='-0.888+pfet_10v0_asym_dvth0'
++ vtsd=2.44
++ w0=3.24e-6
++ wags=6.5664e-9
++ wbeta0=4.86e-6
++ wdvt0=0
++ wdvt1=0
++ wint=0
++ wk2=0
++ wketa=2.68e-008
++ wkt1=0
++ wlpe0=-3.5894e-13
++ wmax=50.01e-6
++ wmin=4e-6
++ wr=1
++ wu0='-7e-10*pfet_10v0_asym_du0'
++ wute=-4e-8
++ wvsat=0
++ wvth0=0
++ ww=0
++ wwl=0
++ xj=1.5e-7
++ xjbvd=1
++ xjbvs=1
++ xl='0+pfet_10v0_asym_dxl'
++ xtsd=0.92538
++ xw='0+pfet_10v0_asym_dxw'
 .ends pfet_10v0_asym
-
-
-
-.endl pfet_10v0_asym_t 
-
-
-************************end of file*************************
-*
+.endl
