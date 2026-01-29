@@ -702,8 +702,8 @@
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b nplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b nplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b nplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b nplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model nfet_03v3.0 nmos 
@@ -4261,7 +4261,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xpart=0
 + xtis=3
 + xw=0
-.subckt nplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt nplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model np_junction d 
 + cj=0.00096797
 + level=2
@@ -4271,7 +4271,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib nfet_03v3_f
-.subckt nfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt nfet_03v3_dss d g s b w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
 .param par_vth=0.007148
 .param par_k=0.007008
 .param par_l=1.5e-7
@@ -4283,8 +4283,8 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b nplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b nplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b nplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b nplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model nfet_03v3.0 nmos 
@@ -7842,7 +7842,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xpart=0
 + xtis=3
 + xw=1e-008
-.subckt nplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt nplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model np_junction d 
 + cj=0.00096797
 + level=2
@@ -7864,8 +7864,8 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b nplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b nplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b nplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b nplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model nfet_03v3.0 nmos 
@@ -11423,7 +11423,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xpart=0
 + xtis=3
 + xw=-1e-008
-.subckt nplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt nplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model np_junction d 
 + cj=0.00096797
 + level=2
@@ -11445,8 +11445,8 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b nplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b nplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b nplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b nplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model nfet_03v3.0 nmos 
@@ -15004,7 +15004,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xpart=0
 + xtis=3
 + xw=5e-009
-.subckt nplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt nplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model np_junction d 
 + cj=0.00096797
 + level=2
@@ -15026,8 +15026,8 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b nplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b nplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b nplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b nplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model nfet_03v3.0 nmos 
@@ -18585,7 +18585,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xpart=0
 + xtis=3
 + xw=-5e-009
-.subckt nplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt nplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model np_junction d 
 + cj=0.00096797
 + level=2
@@ -18607,8 +18607,8 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b pplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b pplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model pfet_03v3.0 pmos 
@@ -22219,7 +22219,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xpart=0
 + xtis=3
 + xw=0
-.subckt pplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt pplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model pn_junction d 
 + cj=0.00094344
 + level=2
@@ -22241,8 +22241,8 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b pplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b pplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model pfet_03v3.0 pmos 
@@ -25853,7 +25853,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xpart=0
 + xtis=3
 + xw=1e-008
-.subckt pplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt pplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model pn_junction d 
 + cj=0.00094344
 + level=2
@@ -25875,8 +25875,8 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b pplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b pplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model pfet_03v3.0 pmos 
@@ -29487,7 +29487,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xpart=0
 + xtis=3
 + xw=-1e-008
-.subckt pplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt pplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model pn_junction d 
 + cj=0.00094344
 + level=2
@@ -29509,8 +29509,8 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b pplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b pplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model pfet_03v3.0 pmos 
@@ -33121,7 +33121,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xpart=0
 + xtis=3
 + xw=-5e-009
-.subckt pplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt pplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model pn_junction d 
 + cj=0.00094344
 + level=2
@@ -33143,8 +33143,8 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b pplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b pplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model pfet_03v3.0 pmos 
@@ -36755,7 +36755,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xpart=0
 + xtis=3
 + xw=5e-009
-.subckt pplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt pplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model pn_junction d 
 + cj=0.00094344
 + level=2
@@ -36777,8 +36777,8 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b nplus_u_m2 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b nplus_u_m2 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b nplus_u_m2 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b nplus_u_m2 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b nfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model nfet_06v0.0 nmos 
@@ -37453,7 +37453,7 @@ m0 d1 g s1 b nfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xtsswgs=0.02
 + xtssws=0.02
 + xw='0+nfet_06v0_xw'
-.subckt nplus_u_m2 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt nplus_u_m2 1 2 3 r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model np_junction d 
 + cj=0.00096797
 + level=2
@@ -37796,8 +37796,8 @@ m0 d g s b nfet_06v0_nvt ad='ad' as='as' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd'
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b pplus_u_m2 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b pplus_u_m2 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b pplus_u_m2 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b pplus_u_m2 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b pfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model pfet_06v0.0 pmos 
@@ -38008,7 +38008,7 @@ m0 d1 g s1 b pfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xtid=3
 + xtis=3
 + xw='0+pfet_06v0_dxw'
-.subckt pplus_u_m2 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt pplus_u_m2 1 2 3 r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model pn_junction d 
 + cj=0.00094344
 + level=2
@@ -38111,7 +38111,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib res
-.subckt nplus_u 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_nplus_u*(1+(mc_rsh_nplus_u/(rsh_nplus_u))*res_mc_skew*sw_stat_global)' r_dw='-5e-8*(1+mc_dw_nplus_u*res_mc_skew*sw_stat_global)' r_dl=2e-11 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)' par_r=0.012608 par_sqrtarea='sqrt(par*(r_l)*(r_w))' var_r='0.7071*par_r*1e-06/par_sqrtarea' mis_r='agauss(0,var_r,1)'
+.subckt nplus_u 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_nplus_u*(1+(mc_rsh_nplus_u/(rsh_nplus_u))*res_mc_skew*sw_stat_global)' r_dw='-5e-8*(1+mc_dw_nplus_u*res_mc_skew*sw_stat_global)' r_dl=2e-11 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)' par_r=0.012608 par_sqrtarea='sqrt(par*(r_l)*(r_w))' var_r='0.7071*par_r*1e-06/par_sqrtarea' mis_r='agauss(0,var_r,1)'
 .model nplus_u_t r 
 + level=1
 + rsh='18.5+mc_rt_nplus_u*res_mc_skew*sw_stat_global'
@@ -38126,7 +38126,7 @@ rb 11 21 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v
 rt2 21 2 nplus_u_t l='s*1u' w='r_w'
 d2 3 2 diode_nd2ps_03v3 area='r_w*r_l/2'
 .ends nplus_u
-.subckt pplus_u 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_pplus_u*(1+mc_rsh_pplus_u/(rsh_pplus_u)*res_mc_skew*sw_stat_global)' r_dw='2.75e-8*(1+mc_dw_pplus_u*res_mc_skew*sw_stat_global)' r_dl=5.0e-11 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)' par_r=0.0126 par_sqrtarea='sqrt(par*(r_l)*(r_w))' var_r='0.7071*par_r*1e-06/par_sqrtarea' mis_r='agauss(0,var_r,1)'
+.subckt pplus_u 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_pplus_u*(1+mc_rsh_pplus_u/(rsh_pplus_u)*res_mc_skew*sw_stat_global)' r_dw='2.75e-8*(1+mc_dw_pplus_u*res_mc_skew*sw_stat_global)' r_dl=5.0e-11 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)' par_r=0.0126 par_sqrtarea='sqrt(par*(r_l)*(r_w))' var_r='0.7071*par_r*1e-06/par_sqrtarea' mis_r='agauss(0,var_r,1)'
 .model pplus_u_t r 
 + level=1
 + rsh='50+mc_rt_pplus_u*res_mc_skew*sw_stat_global'
@@ -38141,7 +38141,7 @@ rb 11 21 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v
 rt2 21 2 pplus_u_t l='s*1u' w='r_w'
 d2 2 3 diode_pd2nw_03v3 area='r_w*r_l/2'
 .ends pplus_u
-.subckt nplus_s 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_nplus_s*(1+mc_rsh_nplus_s/(rsh_nplus_s)*res_mc_skew*sw_stat_global)' r_dw='-1.25e-8*(1+mc_dw_nplus_s*res_mc_skew*sw_stat_global)' r_dl=3.5e-11 r_vc1=0 r_vc2=0 r_tc1=3.3e-3 r_tc2=3e-7 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt nplus_s 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_nplus_s*(1+mc_rsh_nplus_s/(rsh_nplus_s)*res_mc_skew*sw_stat_global)' r_dw='-1.25e-8*(1+mc_dw_nplus_s*res_mc_skew*sw_stat_global)' r_dl=3.5e-11 r_vc1=0 r_vc2=0 r_tc1=3.3e-3 r_tc2=3e-7 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model nplus_s_t r 
 + level=1
 + rsh=6
@@ -38156,7 +38156,7 @@ rb 11 21 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v
 rt2 21 2 nplus_s_t l='s*1u' w='r_w'
 d2 3 2 diode_nd2ps_03v3 area='r_w*r_l/2'
 .ends nplus_s
-.subckt pplus_s 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_pplus_s*(1+mc_rsh_pplus_s/(rsh_pplus_s)*res_mc_skew*sw_stat_global)' r_dw='-5e-8*(1+mc_dw_pplus_s*res_mc_skew*sw_stat_global)' r_dl=3.5e-11 r_vc1=0 r_vc2=0 r_tc1=3.375e-3 r_tc2=0.45e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt pplus_s 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_pplus_s*(1+mc_rsh_pplus_s/(rsh_pplus_s)*res_mc_skew*sw_stat_global)' r_dw='-5e-8*(1+mc_dw_pplus_s*res_mc_skew*sw_stat_global)' r_dl=3.5e-11 r_vc1=0 r_vc2=0 r_tc1=3.375e-3 r_tc2=0.45e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model pplus_s_t r 
 + level=1
 + rsh=6.5
@@ -38171,7 +38171,7 @@ rb 11 21 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v
 rt2 21 2 pplus_s_t l='s*1u' w='r_w'
 d2 2 3 diode_pd2nw_03v3 area='r_w*r_l/2'
 .ends pplus_s
-.subckt nwell 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_nwell' r_dw=2.22e-7 r_dl=1.02e-8 r_vc1=0 r_vc2=0 r_tc1=2.285e-3 r_tc2=9.78e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt nwell 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_nwell' r_dw=2.22e-7 r_dl=1.02e-8 r_vc1=0 r_vc2=0 r_tc1=2.285e-3 r_tc2=9.78e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model nwell_t r 
 + level=1
 + rsh=250
@@ -38186,7 +38186,7 @@ rb 11 21 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v
 rt2 21 2 nwell_t l='s*1u' w='r_w'
 d2 3 2 nwp area='r_w*r_l/2'
 .ends nwell
-.subckt npolyf_u 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_npolyf_u*(1+mc_rsh_npolyf_u/(rsh_npolyf_u)*res_mc_skew*sw_stat_global)' r_dw='0.0265e-6*(1+mc_dw_npolyf_u*res_mc_skew*sw_stat_global)' r_dl=8.48e-11 r_vc1=0 r_vc2=0 r_tc1=-1.4e-3 r_tc2=2.2e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)' par_r=0.05808 par_sqrtarea='sqrt(par*(r_l)*(r_w))' var_r='0.7071*par_r*1e-06/par_sqrtarea' mis_r='agauss(0,var_r,1)'
+.subckt npolyf_u 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_npolyf_u*(1+mc_rsh_npolyf_u/(rsh_npolyf_u)*res_mc_skew*sw_stat_global)' r_dw='0.0265e-6*(1+mc_dw_npolyf_u*res_mc_skew*sw_stat_global)' r_dl=8.48e-11 r_vc1=0 r_vc2=0 r_tc1=-1.4e-3 r_tc2=2.2e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)' par_r=0.05808 par_sqrtarea='sqrt(par*(r_l)*(r_w))' var_r='0.7071*par_r*1e-06/par_sqrtarea' mis_r='agauss(0,var_r,1)'
 .model npolyf_u_body r 
 + level=1
 .model npolyf_u_t r 
@@ -38202,7 +38202,7 @@ rb 11 21 npolyf_u_body l='r_l' r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_v
 rt2 21 2 npolyf_u_t l='s*1u' w='r_w'
 c2 2 3 fox_sub l='r_l/2' w='r_w'
 .ends npolyf_u
-.subckt ppolyf_u 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_ppolyf_u*(1+mc_rsh_ppolyf_u/(rsh_ppolyf_u)*res_mc_skew*sw_stat_global)' r_dw='2.55e-8*(1+mc_dw_ppolyf_u*res_mc_skew*sw_stat_global)' r_dl=2e-11 r_vc1=0 r_vc2=0 r_tc1=-0.9e-4 r_tc2=7e-7 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)' par_r=0.021 par_sqrtarea='sqrt(par*(r_l)*(r_w))' var_r='0.7071*par_r*1e-06/par_sqrtarea' mis_r='agauss(0,var_r,1)'
+.subckt ppolyf_u 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_ppolyf_u*(1+mc_rsh_ppolyf_u/(rsh_ppolyf_u)*res_mc_skew*sw_stat_global)' r_dw='2.55e-8*(1+mc_dw_ppolyf_u*res_mc_skew*sw_stat_global)' r_dl=2e-11 r_vc1=0 r_vc2=0 r_tc1=-0.9e-4 r_tc2=7e-7 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)' par_r=0.021 par_sqrtarea='sqrt(par*(r_l)*(r_w))' var_r='0.7071*par_r*1e-06/par_sqrtarea' mis_r='agauss(0,var_r,1)'
 .model ppolyf_u_body r 
 + level=1
 .model ppolyf_u_t r 
@@ -38218,7 +38218,7 @@ rb 11 21 ppolyf_u_body l='r_l' r='(r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_
 rt2 21 2 ppolyf_u_t l='s*1u' w='r_w'
 c2 2 3 fox_sub l='r_l/2' w='r_w'
 .ends ppolyf_u
-.subckt npolyf_s 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_npolyf_s*(1+mc_rsh_npolyf_s/(rsh_npolyf_s)*res_mc_skew*sw_stat_global)' r_dw='6.5e-9*(1+mc_dw_npolyf_s*res_mc_skew*sw_stat_global)' r_dl=1.5e-11 r_vc1=0 r_vc2=0 r_tc1=3.26e-3 r_tc2=0.25e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt npolyf_s 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_npolyf_s*(1+mc_rsh_npolyf_s/(rsh_npolyf_s)*res_mc_skew*sw_stat_global)' r_dw='6.5e-9*(1+mc_dw_npolyf_s*res_mc_skew*sw_stat_global)' r_dl=1.5e-11 r_vc1=0 r_vc2=0 r_tc1=3.26e-3 r_tc2=0.25e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model npolyf_s_body r 
 + level=1
 .model npolyf_s_t r 
@@ -38234,7 +38234,7 @@ rb 11 21 npolyf_s_body l='r_l' r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_v
 rt2 21 2 npolyf_s_t l='s*1u' w='r_w'
 c2 2 3 fox_sub l='r_l/2' w='r_w'
 .ends npolyf_s
-.subckt ppolyf_s 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_ppolyf_s*(1+mc_rsh_ppolyf_s/(rsh_ppolyf_s)*res_mc_skew*sw_stat_global)' r_dw='7.5e-9*(1+mc_dw_ppolyf_s*res_mc_skew*sw_stat_global)' r_dl=1.5e-10 r_vc1=0 r_vc2=0 r_tc1=3.245e-3 r_tc2=3.6e-7 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt ppolyf_s 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_ppolyf_s*(1+mc_rsh_ppolyf_s/(rsh_ppolyf_s)*res_mc_skew*sw_stat_global)' r_dw='7.5e-9*(1+mc_dw_ppolyf_s*res_mc_skew*sw_stat_global)' r_dl=1.5e-10 r_vc1=0 r_vc2=0 r_tc1=3.245e-3 r_tc2=3.6e-7 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model ppolyf_s_body r 
 + level=1
 .model ppolyf_s_t r 
@@ -38250,7 +38250,7 @@ rb 11 21 ppolyf_s_body l='r_l' r='(r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_
 rt2 21 2 ppolyf_s_t l='s*1u' w='r_w'
 c2 2 3 fox_sub l='r_l/2' w='r_w'
 .ends ppolyf_s
-.subckt ppolyf_u_1k 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1
+.subckt ppolyf_u_1k 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1
 .param r_rsh0='rsh_ppolyf_u_1k*(1+mc_rsh_ppolyf_u_1k/(rsh_ppolyf_u_1k)*res_mc_skew*sw_stat_global)'
 .param r_dw='0.0148e-6*(1+mc_dw_ppolyf_u_1k*res_mc_skew*sw_stat_global)'
 .param r_dl=3.85e-11
@@ -38278,7 +38278,7 @@ rb 11 21 ppolyf_u_1k_body l='r_l' r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+
 rt2 21 2 ppolyf_u_1k_t l='s*1u' w='r_w'
 c2 2 3 fox_sub l='r_l/2' w='r_w'
 .ends ppolyf_u_1k
-.subckt ppolyf_u_2k 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1
+.subckt ppolyf_u_2k 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1
 .param r_rsh0='rsh_ppolyf_u_2k*(1+mc_rsh_ppolyf_u_2k/(rsh_ppolyf_u_2k)*res_mc_skew*sw_stat_global)'
 .param r_dw='0.02256e-6*(1+mc_dw_ppolyf_u_2k*res_mc_skew*sw_stat_global)'
 .param r_dl=-0.0932e-6
@@ -38306,7 +38306,7 @@ rb 11 21 ppolyf_u_2k_body l='r_l' r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+
 rt2 21 2 ppolyf_u_2k_t l='s*1u' w='r_w'
 c2 2 3 fox_sub l='r_l/2' w='r_w'
 .ends ppolyf_u_2k
-.subckt ppolyf_u_1k_6p0 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1
+.subckt ppolyf_u_1k_6p0 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1
 .param r_rsh0='rsh_ppolyf_u_1k_6p0*(1+mc_rsh_ppolyf_u_1k_6p0/(rsh_ppolyf_u_1k_6p0)*res_mc_skew*sw_stat_global)'
 .param r_dw='0.0148e-6*(1+mc_dw_ppolyf_u_1k_6p0*res_mc_skew*sw_stat_global)'
 .param r_dl=3.85e-11
@@ -38334,7 +38334,7 @@ rb 11 21 ppolyf_u_1k_body l='r_l' r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+
 rt2 21 2 ppolyf_u_1k_t l='s*1u' w='r_w'
 c2 2 3 fox_sub l='r_l/2' w='r_w'
 .ends ppolyf_u_1k_6p0
-.subckt ppolyf_u_2k_6p0 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1
+.subckt ppolyf_u_2k_6p0 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1
 .param r_rsh0='rsh_ppolyf_u_2k_6p0+mc_rsh_ppolyf_u_2k_6p0*res_mc_skew*sw_stat_global'
 .param r_dw='0.02256e-6*(1+mc_dw_ppolyf_u_2k_6p0*res_mc_skew*sw_stat_global)'
 .param r_dl=-0.0932e-6
@@ -38362,7 +38362,7 @@ rb 11 21 ppolyf_u_2k_body l='r_l' r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+
 rt2 21 2 ppolyf_u_2k_t l='s*1u' w='r_w'
 c2 2 3 fox_sub l='r_l/2' w='r_w'
 .ends ppolyf_u_2k_6p0
-.subckt ppolyf_u_3k 1 2 3 params: r_length='l' r_width='w' dtemp=0 par=1 s=1
+.subckt ppolyf_u_3k 1 2 3 r_length='l' r_width='w' dtemp=0 par=1 s=1
 .param r_rsh0='rsh_ppolyf_u_3k*(1+mc_rsh_ppolyf_u_3k/(rsh_ppolyf_u_3k)*res_mc_skew*sw_stat_global)'
 .param r_dw='0.02256e-6*(1+mc_dw_ppolyf_u_3k*res_mc_skew*sw_stat_global)'
 .param r_dl=-0.0932e-6
@@ -38390,34 +38390,34 @@ rb 11 21 ppolyf_u_3k_body l='r_l' r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+
 rt2 21 2 ppolyf_u_3k_t l='s*1u' w='r_w'
 c2 2 3 fox_sub l='r_l/2' w='r_w'
 .ends ppolyf_u_3k
-.subckt rm1 1 2 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_rm1' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.33e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt rm1 1 2 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_rm1' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.33e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends rm1
-.subckt rm2 1 2 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_rm2' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.33e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt rm2 1 2 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_rm2' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.33e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends rm2
-.subckt rm3 1 2 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_rm3' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.33e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt rm3 1 2 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_rm3' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.33e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends rm3
-.subckt rm4 1 2 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_rm4' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.33e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt rm4 1 2 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_rm4' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.33e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends rm4
-.subckt tm6k 1 2 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_tm6k' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.5e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt tm6k 1 2 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_tm6k' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.5e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends tm6k
-.subckt tm9k 1 2 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_tm9k' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.7e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt tm9k 1 2 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_tm9k' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.7e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends tm9k
-.subckt tm11k 1 2 params: r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_tm11k' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.7e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt tm11k 1 2 r_length='l' r_width='w' dtemp=0 par=1 s=1 r_rsh0='rsh_tm11k' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.7e-3 r_tc2=0 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends tm11k
-.subckt tm30k 1 2 params: r_length='l' r_width='w' par=1 s=1 dtemp=0 r_rsh0='rsh_tm30k' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.86e-3 r_tc2=1.51e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt tm30k 1 2 r_length='l' r_width='w' par=1 s=1 dtemp=0 r_rsh0='rsh_tm30k' r_dw=0 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=3.86e-3 r_tc2=1.51e-6 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends tm30k
 .endl
 
 .lib cap_mim
-.subckt cap_mim_1f5ff 1 2 params: c_length='l' c_width='w' dtemp=0 par=1
+.subckt cap_mim_1f5ff 1 2 c_length='l' c_width='w' dtemp=0 par=1
 .param c_cox='1.47e-3*mim_corner_1p5ff'
 .param c_capsw='3.79e-10*mim_corner_1p5ff'
 .param c_tnom=25
@@ -38430,7 +38430,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temp+dtemp-c_tnom)+c_tc2*(temp+dtemp-c_tnom)*(temp+dtemp-c_tnom))'
 c_cap 1 2 c='c_c0*(1+c_vcr1*v(1,2)+c_vcr2*v(1,2)*v(1,2))*(1+mc_c_cox_1p5ff)'
 .ends cap_mim_1f5
-.subckt cap_mim_1f0ff 1 2 params: c_length='l' c_width='w' dtemp=0 par=1
+.subckt cap_mim_1f0ff 1 2 c_length='l' c_width='w' dtemp=0 par=1
 .param c_cox='0.987e-3*mim_corner_1p0ff'
 .param c_capsw='3.3e-10*mim_corner_1p0ff'
 .param c_tnom=25
@@ -38443,7 +38443,7 @@ c_cap 1 2 c='c_c0*(1+c_vcr1*v(1,2)+c_vcr2*v(1,2)*v(1,2))*(1+mc_c_cox_1p5ff)'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temp+dtemp-c_tnom)+c_tc2*(temp+dtemp-c_tnom)*(temp+dtemp-c_tnom))'
 c_cap 1 2 c='c_c0*(1+c_vcr1*v(1,2)+c_vcr2*v(1,2)*v(1,2))*(1+mc_c_cox_1p0ff)'
 .ends cap_mim_1f0
-.subckt cap_mim_2f0ff 1 2 params: c_length='l' c_width='w' dtemp=0 par=1
+.subckt cap_mim_2f0ff 1 2 c_length='l' c_width='w' dtemp=0 par=1
 .param gleak='9.51e-10/5*10000'
 .param c_cox='1.99e-3*mim_corner_2p0ff'
 .param c_capsw='2.383e-10*mim_corner_2p0ff'
@@ -38461,56 +38461,56 @@ r_leak 1 2 r='1/(gleak*c_area)' tc1='c_tc1' tc2='c_tc2'
 .endl
 
 .lib moscap
-.subckt cap_nmos_03v3 1 2 params: c_length='l' c_width='w' dtemp=0
+.subckt cap_nmos_03v3 1 2 c_length='l' c_width='w' dtemp=0
 .param cvar1=0.002003
 .param cvar2=0.00198
 .param cvar3=6.25
 .param cvar4=-3.9375
 c_moscap 1 2 c='cap_nmos_03v3_corner*l*w*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))'
 .ends cap_nmos_03v3
-.subckt cap_pmos_03v3 1 2 params: c_length='l' c_width='w' dtemp=0
+.subckt cap_pmos_03v3 1 2 c_length='l' c_width='w' dtemp=0
 .param cvar1=0.001998
 .param cvar2=0.00196
 .param cvar3=-6.25
 .param cvar4=-4.9375
 c_moscap 1 2 c='cap_pmos_03v3_corner*l*w*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))'
 .ends cap_pmos_03v3
-.subckt cap_nmos_06v0 1 2 params: c_length='l' c_width='w' dtemp=0
+.subckt cap_nmos_06v0 1 2 c_length='l' c_width='w' dtemp=0
 .param cvar1=0.001107
 .param cvar2=0.00107
 .param cvar3=6.25
 .param cvar4=-4.1875
 c_moscap 1 2 c='cap_nmos_06v0_corner*l*w*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))'
 .ends cap_nmos_06v0
-.subckt cap_pmos_06v0 1 2 params: c_length='l' c_width='w' dtemp=0
+.subckt cap_pmos_06v0 1 2 c_length='l' c_width='w' dtemp=0
 .param cvar1=0.001107
 .param cvar2=0.00107
 .param cvar3=-6.25
 .param cvar4=-5.75
 c_moscap 1 2 c='cap_pmos_06v0_corner*l*w*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))'
 .ends cap_pmos_06v0
-.subckt cap_nmos_03v3_b 1 2 params: c_length='l' c_width='w' dtemp=0
+.subckt cap_nmos_03v3_b 1 2 c_length='l' c_width='w' dtemp=0
 .param cvar1=0.002458
 .param cvar2=0.001533
 .param cvar3=1.515152
 .param cvar4=0.560606
 c_moscap 1 2 c='cap_nmos_03v3_b_corner*l*w*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))'
 .ends cap_nmos_03v3_b
-.subckt cap_pmos_03v3_b 1 2 params: c_length='l' c_width='w' dtemp=0
+.subckt cap_pmos_03v3_b 1 2 c_length='l' c_width='w' dtemp=0
 .param cvar1=0.002435
 .param cvar2=0.00154
 .param cvar3=-1.66667
 .param cvar4=0.65
 c_moscap 1 2 c='cap_pmos_03v3_b_corner*l*w*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))'
 .ends cap_pmos_03v3_b
-.subckt cap_nmos_06v0_b 1 2 params: c_length='l' c_width='w' dtemp=0
+.subckt cap_nmos_06v0_b 1 2 c_length='l' c_width='w' dtemp=0
 .param cvar1=0.001293
 .param cvar2=0.000863
 .param cvar3=1.052632
 .param cvar4=0.736842
 c_moscap 1 2 c='cap_nmos_06v0_b_corner*l*w*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))'
 .ends cap_nmos_06v0_b
-.subckt cap_pmos_06v0_b 1 2 params: c_length='l' c_width='w' dtemp=0
+.subckt cap_pmos_06v0_b 1 2 c_length='l' c_width='w' dtemp=0
 .param cvar1=0.001325
 .param cvar2=0.000865
 .param cvar3=-1.42857
@@ -38520,7 +38520,7 @@ c_moscap 1 2 c='cap_pmos_06v0_b_corner*l*w*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4)
 .endl
 
 .lib nfet_03v3_stat
-.subckt nfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt nfet_03v3_dss d g s b w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
 .param par_vth=0.007148
 .param par_k=0.007008
 .param par_l=1.5e-7
@@ -38532,8 +38532,8 @@ c_moscap 1 2 c='cap_pmos_06v0_b_corner*l*w*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4)
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b nplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b nplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b nplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b nplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model nfet_03v3.0 nmos 
@@ -42091,7 +42091,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + xpart=0
 + xtis=3
 + xw='nfet_03v3_xw'
-.subckt nplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt nplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 r_rsh0='rsh_nplus_u_m' r_dw=-5e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model np_junction d 
 + cj=0.00096797
 + level=2
@@ -42101,7 +42101,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib pfet_03v3_stat
-.subckt pfet_03v3_dss d g s b params: w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.00666
 .param par_k=0.002833
 .param par_l=1.5e-7
@@ -42113,8 +42113,8 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b pplus_u_m1 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b pplus_u_m1 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b pplus_u_m1 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b pplus_u_m1 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model pfet_03v3.0 pmos 
@@ -45725,7 +45725,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xpart=0
 + xtis=3
 + xw='pfet_03v3_xw'
-.subckt pplus_u_m1 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt pplus_u_m1 1 2 3 r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model pn_junction d 
 + cj=0.00094344
 + level=2
@@ -45735,7 +45735,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib nfet_06v0_nvt_stat
-.subckt nfet_06v0_nvt d g s b params: w=1e-5 l=1.8e-6 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 nf=1 sd=0 m=1
+.subckt nfet_06v0_nvt d g s b w=1e-5 l=1.8e-6 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
 m0 d g s b nfet_06v0_nvt ad='ad' as='as' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends nfet_06v0_nvt
 .model nfet_06v0_nvt.0 nmos 
@@ -46056,7 +46056,7 @@ m0 d g s b nfet_06v0_nvt ad='ad' as='as' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd'
 .endl
 
 .lib pfet_06v0_stat
-.subckt pfet_06v0_dss d g s b params: w=10u l=0.5u par=1 s_sab=0.28u d_sab=2.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt pfet_06v0_dss d g s b w=10u l=0.5u par=1 s_sab=0.28u d_sab=2.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
 .param par_vth=0.01051
 .param par_k=0.00517
 .param par_l=3e-7
@@ -46068,8 +46068,8 @@ m0 d g s b nfet_06v0_nvt ad='ad' as='as' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd'
 .param mis_k='agauss(0,var_k,1)'
 .param var_vth='0.7071*par_vth*1e-06/p_sqrtarea'
 .param mis_vth='agauss(0,var_vth,1)'
-xr1 d d1 b pplus_u_m2 params: wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
-xr2 s s1 b pplus_u_m2 params: wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
+xr1 d d1 b pplus_u_m2 wr='w' lr='(d_sab==0)?1e-15:d_sab' dtemp='dtemp'
+xr2 s s1 b pplus_u_m2 wr='w' lr='(s_sab==0)?1e-15:s_sab' dtemp='dtemp'
 m0 d1 g s1 b pfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends
 .model pfet_06v0.0 pmos 
@@ -46276,7 +46276,7 @@ m0 d1 g s1 b pfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + xtid=3
 + xtis=3
 + xw='pfet_06v0_xw'
-.subckt pplus_u_m2 1 2 3 params: r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
+.subckt pplus_u_m2 1 2 3 r_length='lr' r_width='wr' dtemp=0 par=1 r_rsh0='rsh_pplus_u_m' r_dw=2.75e-8 r_dl=0 r_vc1=0 r_vc2=0 r_tc1=1.375e-3 r_tc2=1e-6 r_tnom=25 r_l='r_length-2*r_dl' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temp+dtemp-r_tnom)+r_tc2*(temp+dtemp-r_tnom)*(temp+dtemp-r_tnom)'
 .model pn_junction d 
 + cj=0.00094344
 + level=2
@@ -46286,13 +46286,13 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib efuse
-.subckt efuse in out params: pblow=0
+.subckt efuse in out pblow=0
 rfuse in out r='200*(1-pblow)+900*pblow'
 .ends efuse
 .endl
 
 .lib fets_mm
-.subckt nfet_03v3 d g s b params: w=1e-5 l=2.8e-7 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 nf=1 sd=0 m=1
+.subckt nfet_03v3 d g s b w=1e-5 l=2.8e-7 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.007148
 .param par_k=0.007008
 .param par_l=1.5e-7
@@ -46306,7 +46306,7 @@ rfuse in out r='200*(1-pblow)+900*pblow'
 .param mis_vth='agauss(0,var_vth,1)'
 m0 d g s b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends nfet_03v3
-.subckt pfet_03v3 d g s b params: w=1e-5 l=2.8e-7 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 nf=1 sd=0 m=1
+.subckt pfet_03v3 d g s b w=1e-5 l=2.8e-7 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.00666
 .param par_k=0.002833
 .param par_l=1.5e-7
@@ -46320,7 +46320,7 @@ m0 d g s b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='
 .param mis_vth='agauss(0,var_vth,1)'
 m0 d g s b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends pfet_03v3
-.subckt nfet_06v0 d g s b params: w=1e-5 l=7e-7 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 nf=1 sd=0 m=1
+.subckt nfet_06v0 d g s b w=1e-5 l=7e-7 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.01155
 .param par_k=0.0000
 .param par_l=4e-7
@@ -46334,7 +46334,7 @@ m0 d g s b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='
 .param mis_vth='agauss(0,var_vth,1)'
 m0 d g s b nfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd' ps='ps' w='w'
 .ends nfet_06v0
-.subckt pfet_06v0 d g s b params: w=1e-5 l=5e-7 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 nf=1 sd=0 m=1
+.subckt pfet_06v0 d g s b w=1e-5 l=5e-7 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.01051
 .param par_k=0.00517
 .param par_l=3e-7
@@ -46533,7 +46533,7 @@ m0 d g s b pfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m='
 .endl
 
 .lib bjt_mc
-.subckt pnp_10p00x00p42 c b e params: par=1 dtemp=0
+.subckt pnp_10p00x00p42 c b e par=1 dtemp=0
 .param mis_is_pnp_10p00x00p42='agauss(0,0.0015,1)'
 .param mis_bf_pnp_10p00x00p42='agauss(0,0.01088,1)'
 .param isa_mis_pnp_10p00x00p42='mis_is_pnp_10p00x00p42*sw_stat_mismatch/sqrt(par)'
@@ -46586,7 +46586,7 @@ q0 c b e pnp_10p00x00p42
 + xtf=1
 + xti=3
 .ends pnp_10p00x00p42
-.subckt pnp_05p00x00p42 c b e params: par=1 dtemp=0
+.subckt pnp_05p00x00p42 c b e par=1 dtemp=0
 .param mis_is_pnp_05p00x00p42='agauss(0,0.0017,1)'
 .param mis_bf_pnp_05p00x00p42='agauss(0,0.0119,1)'
 q0 c b e pnp_05p00x00p42
@@ -46637,7 +46637,7 @@ q0 c b e pnp_05p00x00p42
 + xtf=1
 + xti=3
 .ends pnp_05p00x00p42
-.subckt pnp_10p00x10p00 c b e params: par=1 dtemp=0
+.subckt pnp_10p00x10p00 c b e par=1 dtemp=0
 .param mis_is_pnp_10p00x10p00='agauss(0,0.00077,1)'
 .param mis_bf_pnp_10p00x10p00='agauss(0,0.0013,1)'
 q0 c b e pnp_10p00x10p00
@@ -46688,7 +46688,7 @@ q0 c b e pnp_10p00x10p00
 + xtf=1
 + xti=3
 .ends pnp_10p00x10p00
-.subckt pnp_05p00x05p00 c b e params: par=1 dtemp=0
+.subckt pnp_05p00x05p00 c b e par=1 dtemp=0
 .param mis_is_pnp_05p00x05p00='agauss(0,0.00052,1)'
 .param mis_bf_pnp_05p00x05p00='agauss(0,0.0031,1)'
 q0 c b e pnp_05p00x05p00
@@ -46739,7 +46739,7 @@ q0 c b e pnp_05p00x05p00
 + xtf=1
 + xti=3
 .ends pnp_05p00x05p00
-.subckt npn_10p00x10p00 c b e s params: par=1 dtemp=0
+.subckt npn_10p00x10p00 c b e s par=1 dtemp=0
 q0 c b e s npn_10p00x10p00
 .model npn_10p00x10p00 npn 
 + af=1
@@ -46779,7 +46779,7 @@ q0 c b e s npn_10p00x10p00
 + xtb=0
 + xti=3
 .ends npn_10p00x10p00
-.subckt npn_05p00x05p00 c b e s params: par=1 dtemp=0
+.subckt npn_05p00x05p00 c b e s par=1 dtemp=0
 q0 c b e s npn_05p00x05p00
 .model npn_05p00x05p00 npn 
 + af=1
@@ -46819,7 +46819,7 @@ q0 c b e s npn_05p00x05p00
 + xtb=0
 + xti=3
 .ends npn_05p00x05p00
-.subckt npn_00p54x16p00 c b e s params: par=1 dtemp=0
+.subckt npn_00p54x16p00 c b e s par=1 dtemp=0
 q0 c b e s npn_00p54x16p00
 .model npn_00p54x16p00 npn 
 + af=1
@@ -46859,7 +46859,7 @@ q0 c b e s npn_00p54x16p00
 + xtb=0
 + xti=3
 .ends npn_00p54x16p00
-.subckt npn_00p54x08p00 c b e s params: par=1 dtemp=0
+.subckt npn_00p54x08p00 c b e s par=1 dtemp=0
 q0 c b e s npn_00p54x08p00
 .model npn_00p54x08p00 npn 
 + af=1
@@ -46899,7 +46899,7 @@ q0 c b e s npn_00p54x08p00
 + xtb=0
 + xti=3
 .ends npn_00p54x08p00
-.subckt npn_00p54x04p00 c b e s params: par=1 dtemp=0
+.subckt npn_00p54x04p00 c b e s par=1 dtemp=0
 q0 c b e s npn_00p54x04p00
 .model npn_00p54x04p00 npn 
 + af=1
@@ -46939,7 +46939,7 @@ q0 c b e s npn_00p54x04p00
 + xtb=0
 + xti=3
 .ends npn_00p54x04p00
-.subckt npn_00p54x02p00 c b e s params: par=1 dtemp=0
+.subckt npn_00p54x02p00 c b e s par=1 dtemp=0
 q0 c b e s npn_00p54x02p00
 .model npn_00p54x02p00 npn 
 + af=1
