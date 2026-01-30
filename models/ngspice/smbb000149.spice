@@ -53,9 +53,9 @@
 .param pfet_10v0_asym_dcgd=1
 .param pfet_10v0_asym_dcjs=1
 .param pfet_10v0_asym_dcjd=1
-.lib 'smbb000149.sp' nfet_10v0_asym_t
-.lib 'smbb000149.sp' pfet_10v0_asym_t
-.lib 'smbb000149.sp' noise_corner
+.lib 'smbb000149.spice' nfet_10v0_asym_t
+.lib 'smbb000149.spice' pfet_10v0_asym_t
+.lib 'smbb000149.spice' noise_corner
 .endl
 
 .lib ss
@@ -83,9 +83,9 @@
 .param pfet_10v0_asym_dcgd=1.2
 .param pfet_10v0_asym_dcjs=1.1
 .param pfet_10v0_asym_dcjd=1.2
-.lib 'smbb000149.sp' nfet_10v0_asym_t
-.lib 'smbb000149.sp' pfet_10v0_asym_t
-.lib 'smbb000149.sp' noise_corner
+.lib 'smbb000149.spice' nfet_10v0_asym_t
+.lib 'smbb000149.spice' pfet_10v0_asym_t
+.lib 'smbb000149.spice' noise_corner
 .endl
 
 .lib ff
@@ -113,9 +113,9 @@
 .param pfet_10v0_asym_dcgd=0.8
 .param pfet_10v0_asym_dcjs=0.9
 .param pfet_10v0_asym_dcjd=0.8
-.lib 'smbb000149.sp' nfet_10v0_asym_t
-.lib 'smbb000149.sp' pfet_10v0_asym_t
-.lib 'smbb000149.sp' noise_corner
+.lib 'smbb000149.spice' nfet_10v0_asym_t
+.lib 'smbb000149.spice' pfet_10v0_asym_t
+.lib 'smbb000149.spice' noise_corner
 .endl
 
 .lib sf
@@ -143,9 +143,9 @@
 .param pfet_10v0_asym_dcgd=0.86
 .param pfet_10v0_asym_dcjs=0.93
 .param pfet_10v0_asym_dcjd=0.86
-.lib 'smbb000149.sp' nfet_10v0_asym_t
-.lib 'smbb000149.sp' pfet_10v0_asym_t
-.lib 'smbb000149.sp' noise_corner
+.lib 'smbb000149.spice' nfet_10v0_asym_t
+.lib 'smbb000149.spice' pfet_10v0_asym_t
+.lib 'smbb000149.spice' noise_corner
 .endl
 
 .lib fs
@@ -173,9 +173,9 @@
 .param pfet_10v0_asym_dcgd=1.14
 .param pfet_10v0_asym_dcjs=1.07
 .param pfet_10v0_asym_dcjd=1.14
-.lib 'smbb000149.sp' nfet_10v0_asym_t
-.lib 'smbb000149.sp' pfet_10v0_asym_t
-.lib 'smbb000149.sp' noise_corner
+.lib 'smbb000149.spice' nfet_10v0_asym_t
+.lib 'smbb000149.spice' pfet_10v0_asym_t
+.lib 'smbb000149.spice' noise_corner
 .endl
 
 .lib statistical
@@ -229,9 +229,9 @@
 .param pfet_10v0_asym_dcgd='(1+(24e-3*mc_cgol_10v+24e-3*mc_cgolp_10v)*sw_stat_global*mc_skew)'
 .param pfet_10v0_asym_dcjs='(1+(12e-3*mc_cgol_10v+12e-3*mc_cgolp_10v)*sw_stat_global*mc_skew)'
 .param pfet_10v0_asym_dcjd='(1+(24e-3*mc_cgol_10v+24e-3*mc_cgolp_10v)*sw_stat_global*mc_skew)'
-.lib 'smbb000149.sp' nfet_10v0_asym_t
-.lib 'smbb000149.sp' pfet_10v0_asym_t
-.lib 'smbb000149.sp' noise_corner
+.lib 'smbb000149.spice' nfet_10v0_asym_t
+.lib 'smbb000149.spice' pfet_10v0_asym_t
+.lib 'smbb000149.spice' noise_corner
 .endl
 
 .lib noise_corner

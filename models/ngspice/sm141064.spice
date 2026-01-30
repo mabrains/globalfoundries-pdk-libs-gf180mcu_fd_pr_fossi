@@ -103,8 +103,8 @@
 ************************************************************************************************
 
 .lib typical
-.lib 'sm141064.sp' nfet_03v3_t
-.lib 'sm141064.sp' pfet_03v3_t
+.lib 'sm141064.spice' nfet_03v3_t
+.lib 'sm141064.spice' pfet_03v3_t
 .param rsh_nplus_u_m=60
 .param rsh_pplus_u_m=185
 .param nfet_06v0_vsat=1
@@ -127,16 +127,16 @@
 .param pfet_06v0_dtox=0
 .param pfet_06v0_dcgdo=1
 .param pfet_06v0_dcgso=1
-.lib 'sm141064.sp' nfet_06v0_t
-.lib 'sm141064.sp' pfet_06v0_t
-.lib 'sm141064.sp' nfet_06v0_nvt_t
-.lib 'sm141064.sp' noise_corner
-.lib 'sm141064.sp' fets_mm
+.lib 'sm141064.spice' nfet_06v0_t
+.lib 'sm141064.spice' pfet_06v0_t
+.lib 'sm141064.spice' nfet_06v0_nvt_t
+.lib 'sm141064.spice' noise_corner
+.lib 'sm141064.spice' fets_mm
 .endl
 
 .lib ff
-.lib 'sm141064.sp' nfet_03v3_f
-.lib 'sm141064.sp' pfet_03v3_f
+.lib 'sm141064.spice' nfet_03v3_f
+.lib 'sm141064.spice' pfet_03v3_f
 .param rsh_nplus_u_m=45
 .param rsh_pplus_u_m=145
 .param nfet_06v0_vsat=1.0846
@@ -159,16 +159,16 @@
 .param pfet_06v0_dtox=-1e-9
 .param pfet_06v0_dcgdo=0.9
 .param pfet_06v0_dcgso=0.9
-.lib 'sm141064.sp' nfet_06v0_t
-.lib 'sm141064.sp' pfet_06v0_t
-.lib 'sm141064.sp' nfet_06v0_nvt_t
-.lib 'sm141064.sp' noise_corner
-.lib 'sm141064.sp' fets_mm
+.lib 'sm141064.spice' nfet_06v0_t
+.lib 'sm141064.spice' pfet_06v0_t
+.lib 'sm141064.spice' nfet_06v0_nvt_t
+.lib 'sm141064.spice' noise_corner
+.lib 'sm141064.spice' fets_mm
 .endl
 
 .lib ss
-.lib 'sm141064.sp' nfet_03v3_s
-.lib 'sm141064.sp' pfet_03v3_s
+.lib 'sm141064.spice' nfet_03v3_s
+.lib 'sm141064.spice' pfet_03v3_s
 .param rsh_nplus_u_m=75
 .param rsh_pplus_u_m=225
 .param nfet_06v0_vsat=0.899
@@ -191,16 +191,16 @@
 .param pfet_06v0_dtox=1e-9
 .param pfet_06v0_dcgdo=1.1
 .param pfet_06v0_dcgso=1.1
-.lib 'sm141064.sp' nfet_06v0_t
-.lib 'sm141064.sp' pfet_06v0_t
-.lib 'sm141064.sp' nfet_06v0_nvt_t
-.lib 'sm141064.sp' noise_corner
-.lib 'sm141064.sp' fets_mm
+.lib 'sm141064.spice' nfet_06v0_t
+.lib 'sm141064.spice' pfet_06v0_t
+.lib 'sm141064.spice' nfet_06v0_nvt_t
+.lib 'sm141064.spice' noise_corner
+.lib 'sm141064.spice' fets_mm
 .endl
 
 .lib fs
-.lib 'sm141064.sp' nfet_03v3_fs
-.lib 'sm141064.sp' pfet_03v3_fs
+.lib 'sm141064.spice' nfet_03v3_fs
+.lib 'sm141064.spice' pfet_03v3_fs
 .param rsh_nplus_u_m=48
 .param rsh_pplus_u_m=219
 .param nfet_06v0_vsat='0.0846*0.67+1'
@@ -223,16 +223,16 @@
 .param pfet_06v0_dtox=6.7e-10
 .param pfet_06v0_dcgdo=1.07
 .param pfet_06v0_dcgso=1.07
-.lib 'sm141064.sp' nfet_06v0_t
-.lib 'sm141064.sp' pfet_06v0_t
-.lib 'sm141064.sp' nfet_06v0_nvt_t
-.lib 'sm141064.sp' noise_corner
-.lib 'sm141064.sp' fets_mm
+.lib 'sm141064.spice' nfet_06v0_t
+.lib 'sm141064.spice' pfet_06v0_t
+.lib 'sm141064.spice' nfet_06v0_nvt_t
+.lib 'sm141064.spice' noise_corner
+.lib 'sm141064.spice' fets_mm
 .endl
 
 .lib sf
-.lib 'sm141064.sp' nfet_03v3_sf
-.lib 'sm141064.sp' pfet_03v3_sf
+.lib 'sm141064.spice' nfet_03v3_sf
+.lib 'sm141064.spice' pfet_03v3_sf
 .param rsh_nplus_u_m=72
 .param rsh_pplus_u_m=150
 .param nfet_06v0_vsat='1-(1-0.899)*0.67'
@@ -255,11 +255,11 @@
 .param pfet_06v0_dtox=-6.7e-10
 .param pfet_06v0_dcgdo=0.93
 .param pfet_06v0_dcgso=0.93
-.lib 'sm141064.sp' nfet_06v0_t
-.lib 'sm141064.sp' pfet_06v0_t
-.lib 'sm141064.sp' nfet_06v0_nvt_t
-.lib 'sm141064.sp' noise_corner
-.lib 'sm141064.sp' fets_mm
+.lib 'sm141064.spice' nfet_06v0_t
+.lib 'sm141064.spice' pfet_06v0_t
+.lib 'sm141064.spice' nfet_06v0_nvt_t
+.lib 'sm141064.spice' noise_corner
+.lib 'sm141064.spice' fets_mm
 .endl
 
 .lib bjt_typical
@@ -293,7 +293,7 @@
 .param mc_xrc_vpnp=0
 .param mc_xcje_vpnp=0
 .param mc_xcjc_vpnp=0
-.lib 'sm141064.sp' bjt_mc
+.lib 'sm141064.spice' bjt_mc
 .endl
 
 .lib bjt_ss
@@ -327,7 +327,7 @@
 .param mc_xrc_vpnp=0
 .param mc_xcje_vpnp=0
 .param mc_xcjc_vpnp=0
-.lib 'sm141064.sp' bjt_mc
+.lib 'sm141064.spice' bjt_mc
 .endl
 
 .lib bjt_ff
@@ -361,7 +361,7 @@
 .param mc_xrc_vpnp=0
 .param mc_xcje_vpnp=0
 .param mc_xcjc_vpnp=0
-.lib 'sm141064.sp' bjt_mc
+.lib 'sm141064.spice' bjt_mc
 .endl
 
 .lib diode_typical
@@ -374,7 +374,7 @@
 .param rs_sc=1
 .param jtuna_sc=0
 .param cja_sc=1
-.lib 'sm141064.sp' dio
+.lib 'sm141064.spice' dio
 .endl
 
 .lib diode_ss
@@ -387,7 +387,7 @@
 .param rs_sc=1.1
 .param jtuna_sc=-0.77
 .param cja_sc=1.1
-.lib 'sm141064.sp' dio
+.lib 'sm141064.spice' dio
 .endl
 
 .lib diode_ff
@@ -400,7 +400,7 @@
 .param rs_sc=0.9
 .param jtuna_sc=0.77
 .param cja_sc=0.9
-.lib 'sm141064.sp' dio
+.lib 'sm141064.spice' dio
 .endl
 
 .lib res_typical
@@ -426,9 +426,9 @@
 .param rsh_tm9k=40e-3
 .param rsh_tm11k=40e-3
 .param rsh_tm30k=9.5e-3
-.lib 'sm141064.sp' res
-.lib 'sm141064.sp' efuse
-.lib 'sm141064.sp' res_statistical_par
+.lib 'sm141064.spice' res
+.lib 'sm141064.spice' efuse
+.lib 'sm141064.spice' res_statistical_par
 .endl
 
 .lib res_ss
@@ -454,9 +454,9 @@
 .param rsh_tm9k='40e-3+9e-3'
 .param rsh_tm11k='40e-3+9e-3'
 .param rsh_tm30k='9.5e-3+4.5e-3'
-.lib 'sm141064.sp' res
-.lib 'sm141064.sp' efuse
-.lib 'sm141064.sp' res_statistical_par
+.lib 'sm141064.spice' res
+.lib 'sm141064.spice' efuse
+.lib 'sm141064.spice' res_statistical_par
 .endl
 
 .lib res_ff
@@ -482,9 +482,9 @@
 .param rsh_tm9k='40e-3-9e-3'
 .param rsh_tm11k='40e-3-9e-3'
 .param rsh_tm30k='9.5e-3-3.5e-3'
-.lib 'sm141064.sp' res
-.lib 'sm141064.sp' efuse
-.lib 'sm141064.sp' res_statistical_par
+.lib 'sm141064.spice' res
+.lib 'sm141064.spice' efuse
+.lib 'sm141064.spice' res_statistical_par
 .endl
 
 .lib mimcap_typical
@@ -494,7 +494,7 @@
 .param mc_c_cox_1p0ff=0
 .param mc_c_cox_1p5ff=0
 .param mc_c_cox_2p0ff=0
-.lib 'sm141064_mim.sp' cap_mim_new
+.lib 'sm141064_mim.spice' cap_mim_new
 .endl
 
 .lib mimcap_ss
@@ -504,7 +504,7 @@
 .param mc_c_cox_1p0ff=0
 .param mc_c_cox_1p5ff=0
 .param mc_c_cox_2p0ff=0
-.lib 'sm141064_mim.sp' cap_mim_new
+.lib 'sm141064_mim.spice' cap_mim_new
 .endl
 
 .lib mimcap_ff
@@ -514,7 +514,7 @@
 .param mc_c_cox_1p0ff=0
 .param mc_c_cox_1p5ff=0
 .param mc_c_cox_2p0ff=0
-.lib 'sm141064_mim.sp' cap_mim_new
+.lib 'sm141064_mim.spice' cap_mim_new
 .endl
 
 .lib moscap_typical
@@ -526,7 +526,7 @@
 .param cap_pmos_03v3_b_corner=1
 .param cap_nmos_06v0_b_corner=1
 .param cap_pmos_06v0_b_corner=1
-.lib 'sm141064.sp' moscap
+.lib 'sm141064.spice' moscap
 .endl
 
 .lib moscap_ff
@@ -538,7 +538,7 @@
 .param cap_pmos_03v3_b_corner=0.9
 .param cap_nmos_06v0_b_corner=0.9
 .param cap_pmos_06v0_b_corner=0.9
-.lib 'sm141064.sp' moscap
+.lib 'sm141064.spice' moscap
 .endl
 
 .lib moscap_ss
@@ -550,7 +550,7 @@
 .param cap_pmos_03v3_b_corner=1.1
 .param cap_nmos_06v0_b_corner=1.1
 .param cap_pmos_06v0_b_corner=1.1
-.lib 'sm141064.sp' moscap
+.lib 'sm141064.spice' moscap
 .endl
 
 .lib statistical
@@ -663,13 +663,13 @@
 .param rsh_pplus2_u=185
 .param rsh_nplus_u_m='rsh_nplus2_u*(1+(mc_rsh_nplus_u/(rsh_nplus2_u))*res_mc_skew*sw_stat_global)'
 .param rsh_pplus_u_m='rsh_pplus2_u*(1+(mc_rsh_pplus_u/(rsh_pplus2_u))*res_mc_skew*sw_stat_global)'
-.lib 'sm141064.sp' fets_mm
-.lib 'sm141064.sp' nfet_03v3_stat
-.lib 'sm141064.sp' pfet_03v3_stat
-.lib 'sm141064.sp' nfet_06v0_t
-.lib 'sm141064.sp' pfet_06v0_stat
-.lib 'sm141064.sp' nfet_06v0_nvt_stat
-.lib 'sm141064.sp' noise_corner
+.lib 'sm141064.spice' fets_mm
+.lib 'sm141064.spice' nfet_03v3_stat
+.lib 'sm141064.spice' pfet_03v3_stat
+.lib 'sm141064.spice' nfet_06v0_t
+.lib 'sm141064.spice' pfet_06v0_stat
+.lib 'sm141064.spice' nfet_06v0_nvt_stat
+.lib 'sm141064.spice' noise_corner
 .endl
 
 .lib noise_corner
@@ -47144,8 +47144,8 @@ m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param mc_rt_ppolyf_u_1k_6p0='mc_rt_ppolyf_u_1k_6p0_temp'
 .param mc_rt_ppolyf_u_2k_6p0='mc_rt_ppolyf_u_2k_6p0_temp'
 .param mc_rt_ppolyf_u_3k='mc_rt_ppolyf_u_3k_temp'
-.lib 'sm141064.sp' res
-.lib 'sm141064.sp' efuse
+.lib 'sm141064.spice' res
+.lib 'sm141064.spice' efuse
 .endl
 
 .lib bjt_statistical
@@ -47193,7 +47193,7 @@ m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param mc_xrc_vpnp='mc_xrc_vpnp_temp'
 .param mc_xcje_vpnp='mc_xcje_vpnp_temp'
 .param mc_xcjc_vpnp='mc_xcjc_vpnp_temp'
-.lib 'sm141064.sp' bjt_mc
+.lib 'sm141064.spice' bjt_mc
 .endl
 
 .lib bjt_mc
@@ -47737,5 +47737,5 @@ q0 c b e s npn_00p54x02p00 dtemp=dtemp
 .param mc_c_cox_1p0ff='mc_c_cox_1p0ff2*sw_stat_global*cap_mc_skew'
 .param mc_c_cox_1p5ff='mc_c_cox_1p5ff2*sw_stat_global*cap_mc_skew'
 .param mc_c_cox_2p0ff='mc_c_cox_2p0ff2*sw_stat_global*cap_mc_skew'
-.lib 'sm141064_mim.sp' cap_mim_new
+.lib 'sm141064_mim.spice' cap_mim_new
 .endl
