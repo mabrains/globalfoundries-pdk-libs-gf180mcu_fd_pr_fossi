@@ -38,8 +38,8 @@ X1 I1 I2 I3 ZN VDD VDD 0 0 gf180mcu_fd_sc_mcu7t5v0__or3_1
 
 
 * Libraries calling
-.include "../../../design.xyce"
-.lib "../../../sm141064.xyce" {{process}}
+.include "../../../design.spice"
+.lib "../../../sm141064.spice" {{process}}
 
 .SUBCKT gf180mcu_fd_sc_mcu7t5v0__or3_1 A1 A2 A3 Z VDD VNW VPW VSS
 M_i_2 VSS A1 Z_neg VPW nfet_06v0 W=4e-07 L=6e-07

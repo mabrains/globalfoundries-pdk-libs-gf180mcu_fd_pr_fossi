@@ -114,8 +114,8 @@ def run_sim(
     # Get model card path
     regression_dir = os.path.dirname(os.path.abspath(__file__))
     models_dir = os.path.dirname(os.path.dirname(os.path.dirname(regression_dir)))
-    model_card_path = os.path.join(models_dir, "smbb000149.ngspice")
-    model_design_path = os.path.join(models_dir, "design.ngspice")
+    model_card_path = os.path.join(models_dir, "smbb000149.spice")
+    model_design_path = os.path.join(models_dir, "design.spice")
 
     # Select desired nelist templete to be used in the current run
     device_group_netlist = "nfet" if "nfet" in device else "pfet"

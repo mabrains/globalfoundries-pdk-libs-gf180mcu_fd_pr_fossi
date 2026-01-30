@@ -36,8 +36,8 @@ wrdata nand2/nand2_simulated.csv {o0} {o1} {o2} {o3}
 .endc
 
 * Libraries calling
-.include "../../../../design.ngspice"
-.lib "../../../../sm141064.ngspice" typical
+.include "../../../../design.spice"
+.lib "../../../../sm141064.spice" typical
 
 .SUBCKT gf180mcu_fd_sc_mcu7t5v0__nand2_1 A1 A2 ZN VDD VNW VPW VSS
 xM_i_1 net_0 A2 VSS VPW nfet_06v0 W=8.2e-07 L=6e-07

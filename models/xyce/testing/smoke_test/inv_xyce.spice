@@ -12,8 +12,8 @@ X1 Vdd Vout Vin 0 INV
 .print tran FORMAT=CSV file={{run_path}}/simulation/inv_W{{width}}_L{{length}}_T{{temp}}_{{corner}}.csv {tpd}
 
 
-.include "../../design.xyce"
-.lib "../../sm141064.xyce" {{corner}}
+.include "../../design.spice"
+.lib "../../sm141064.spice" {{corner}}
 
 
 .subckt INV  VDD Vout Vin GND

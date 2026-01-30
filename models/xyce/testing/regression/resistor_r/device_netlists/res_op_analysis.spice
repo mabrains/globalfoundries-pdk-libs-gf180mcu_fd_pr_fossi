@@ -25,8 +25,8 @@ XR1 top {{terminals}} {{device}} r_width={{width}}u r_length={{length}}u m=1
 
 ** library calling
 
-.include "../../../design.xyce"
-.lib "../../../sm141064.xyce" res_{{corner}}
+.include "../../../design.spice"
+.lib "../../../sm141064.spice" res_{{corner}}
 
 .GLOBAL GND
 .end

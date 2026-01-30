@@ -18,7 +18,7 @@ xq1 c b 0 {{device}}
 .print DC FORMAT=CSV file=bjt_beta_reg/pnp/simulated_Ib/t{{temp}}_simulated_{{device}}.csv {I(Vbp)} v(b) v(c)
 
 
-.include "../../../design.xyce"
-.lib "../../../sm141064.xyce" bjt_typical
+.include "../../../design.spice"
+.lib "../../../sm141064.spice" bjt_typical
 
 .end

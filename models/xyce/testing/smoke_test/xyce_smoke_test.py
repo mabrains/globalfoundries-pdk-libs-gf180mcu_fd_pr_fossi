@@ -105,7 +105,7 @@ def main():
     pd.set_option("max_colwidth", None)
     pd.set_option("display.width", 1000)
 
-    models_path = "../../sm141064.xyce"
+    models_path = "../../sm141064.spice"
     temps = ["25", "-40", "125"]
     corners = ["typical", "ff", "ss", "fs", "sf"]  # ,"stat"]
 

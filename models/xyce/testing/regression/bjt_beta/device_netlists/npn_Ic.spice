@@ -20,7 +20,7 @@ xq1 c b 0 0 {{device}}
 
 
 
-.include "../../../design.xyce"
-.lib "../../../sm141064.xyce" bjt_typical
+.include "../../../design.spice"
+.lib "../../../sm141064.spice" bjt_typical
 
 .end
