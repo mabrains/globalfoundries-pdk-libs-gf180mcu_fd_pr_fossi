@@ -33,7 +33,7 @@
 .param c_peri='2*(c_length+c_width)'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_1p5ff)'
 * + c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temper+dtemp-c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
-.model cap_mim_1f5_m2m3_noshield_model c 
+.model cap_mim_1f5_m2m3_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2
@@ -57,7 +57,7 @@ c_cap 1 2 cap_mim_1f5_m2m3_noshield_model dtemp=dtemp
 .param c_peri='2*(c_length+c_width)'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_1p0ff)'
 * + c_c0='(c_cox*c_area+c_capsw*c_peri)*(1 + c_tc1*(temper+dtemp-c_tnom) + c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
-.model cap_mim_1f0_m2m3_noshield_model c 
+.model cap_mim_1f0_m2m3_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2
@@ -82,7 +82,7 @@ c_cap 1 2 cap_mim_1f0_m2m3_noshield_model dtemp=dtemp
 .param c_peri='2*(c_length+c_width)'
 * .param c_c0='(c_cox*c_AREA+c_capsw*c_PERI)*(1+c_tc1*(temper +dtemp -c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_2p0ff)'
-.model cap_mim_2f0_m2m3_noshield_model c 
+.model cap_mim_2f0_m2m3_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2
@@ -111,7 +111,7 @@ r_leak 1 2 r='1/(gleak*c_area)' dtemp=dtemp tc1=c_tc1 tc2=c_tc2
 .param c_peri='2*(c_length+c_width)'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_1p5ff)'
 * + c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temper+dtemp-c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
-.model cap_mim_1f5_m3m4_noshield_model c 
+.model cap_mim_1f5_m3m4_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2
@@ -135,7 +135,7 @@ c_cap 1 2 cap_mim_1f5_m3m4_noshield_model dtemp=dtemp
 .param c_peri='2*(c_length+c_width)'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_1p0ff)'
 * + c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temper+dtemp-c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
-.model cap_mim_1f0_m3m4_noshield_model c 
+.model cap_mim_1f0_m3m4_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2
@@ -145,7 +145,7 @@ c_cap 1 2 cap_mim_1f0_m3m4_noshield_model dtemp=dtemp
 .ends cap_mim_1f0_m3m4_noshield
 
 *--------------------------------------------------------------------------------
-* MIM Capacitor (2fF/um2) subcircuit model for GLOBALFOUNDRIES 0.18 Analog CMOS 
+* MIM Capacitor (2fF/um2) subcircuit model for GLOBALFOUNDRIES 0.18 Analog CMOS
 * process M2-M3
 *--------------------------------------------------------------------------------
 .subckt cap_mim_2f0_m3m4_noshield 1 2 c_length=l c_width=w dtemp=0 par=1
@@ -161,7 +161,7 @@ c_cap 1 2 cap_mim_1f0_m3m4_noshield_model dtemp=dtemp
 .param c_peri='2*(c_length+c_width)'
 * .param c_c0='(c_cox*c_AREA+c_capsw*c_PERI)*(1+c_tc1*(temper +dtemp -c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_2p0ff)'
-.model cap_mim_2f0_m3m4_noshield_model c 
+.model cap_mim_2f0_m3m4_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2
@@ -190,7 +190,7 @@ r_leak 1 2 r='1/(gleak*c_area)' dtemp=dtemp tc1=c_tc1 tc2=c_tc2
 .param c_peri='2*(c_length+c_width)'
 * + c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temper+dtemp-c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_1p5ff)'
-.model cap_mim_1f5_m4m5_noshield_model c 
+.model cap_mim_1f5_m4m5_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2
@@ -214,7 +214,7 @@ c_cap 1 2 cap_mim_1f5_m4m5_noshield_model dtemp=dtemp
 .param c_peri='2*(c_length+c_width)'
 * + c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temper+dtemp-c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_1p0ff)'
-.model cap_mim_1f0_m4m5_noshield_model c 
+.model cap_mim_1f0_m4m5_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2
@@ -239,7 +239,7 @@ c_cap 1 2 cap_mim_1f0_m4m5_noshield_model dtemp=dtemp
 .param c_peri='2*(c_length+c_width)'
 * .param c_c0='(c_cox*c_AREA+c_capsw*c_PERI)*(1+c_tc1*(temper +dtemp -c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_2p0ff)'
-.model cap_mim_2f0_m4m5_noshield_model c 
+.model cap_mim_2f0_m4m5_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2
@@ -268,7 +268,7 @@ r_leak 1 2 r='1/(gleak*c_area)' dtemp=dtemp tc1=c_tc1 tc2=c_tc2
 .param c_peri='2*(c_length+c_width)'
 * + c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temper+dtemp-c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_1p5ff)'
-.model cap_mim_1f5_m5m6_noshield_model c 
+.model cap_mim_1f5_m5m6_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2
@@ -292,7 +292,7 @@ c_cap 1 2 cap_mim_1f5_m5m6_noshield_model dtemp=dtemp
 .param c_peri='2*(c_length+c_width)'
 * + c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temper+dtemp-c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_1p0ff)'
-.model cap_mim_1f0_m5m6_noshield_model c 
+.model cap_mim_1f0_m5m6_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2
@@ -316,7 +316,7 @@ c_cap 1 2 cap_mim_1f0_m5m6_noshield_model dtemp=dtemp
 .param c_area='c_length*c_width'
 .param c_peri='2*(c_length+c_width)'
 .param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+mc_c_cox_2p0ff)'
-.model cap_mim_2f0_m5m6_noshield_model c 
+.model cap_mim_2f0_m5m6_noshield_model c
 + cap=c_c0
 + tc1=c_tc1
 + tc2=c_tc2

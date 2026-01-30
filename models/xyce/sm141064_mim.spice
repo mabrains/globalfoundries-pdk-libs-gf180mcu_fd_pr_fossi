@@ -109,7 +109,7 @@ c_cap 1 2 c='c_c0*(1+c_vcr1*v(1,2)+c_vcr2*v(1,2)*v(1,2))*(1+mc_c_cox_1p0ff)'
 .ends cap_mim_1f0_m3m4_noshield
 
 *--------------------------------------------------------------------------------
-* MIM Capacitor (2fF/um2) subcircuit model for GLOBALFOUNDRIES 0.18 Analog CMOS 
+* MIM Capacitor (2fF/um2) subcircuit model for GLOBALFOUNDRIES 0.18 Analog CMOS
 * process M2-M3
 *--------------------------------------------------------------------------------
 .subckt cap_mim_2f0_m3m4_noshield 1 2 c_length='l' c_width='w' dtemp=0 par=1
