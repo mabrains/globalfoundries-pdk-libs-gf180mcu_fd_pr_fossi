@@ -423,6 +423,7 @@
 .param rsh_rm1=0.09
 .param rsh_rm2=0.09
 .param rsh_rm3=0.09
+.param rsh_rm4=0.09
 .param rsh_tm6k=60e-3
 .param rsh_tm9k=40e-3
 .param rsh_tm11k=40e-3
@@ -450,6 +451,7 @@
 .param rsh_rm1='0.09+0.012'
 .param rsh_rm2='0.09+0.012'
 .param rsh_rm3='0.09+0.012'
+.param rsh_rm4='0.09+0.012'
 .param rsh_tm6k='60e-3+10e-3'
 .param rsh_tm9k='40e-3+9e-3'
 .param rsh_tm11k='40e-3+9e-3'
@@ -477,6 +479,7 @@
 .param rsh_rm1='0.09-0.012'
 .param rsh_rm2='0.09-0.012'
 .param rsh_rm3='0.09-0.012'
+.param rsh_rm4='0.09-0.012'
 .param rsh_tm6k='60e-3-10e-3'
 .param rsh_tm9k='40e-3-9e-3'
 .param rsh_tm11k='40e-3-9e-3'
