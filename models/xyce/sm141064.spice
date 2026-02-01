@@ -4287,7 +4287,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib nfet_03v3_f
-.subckt nfet_03v3_dss d g s b w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.007148
 .param par_k=0.007008
 .param par_l=1.5e-7
