@@ -8,9 +8,11 @@ top_cell_name: ''
 spice_comment: false
 scale: false
 verbose: true
-schematic_simple: true
+simplify: true
 net_only: false
 top_lvl_pins: true
 combine: true
 purge: true
 purge_nets: false
+implicit_connect: false
+schematic_translate: true
