@@ -57,8 +57,8 @@ if options["netlist"] == ""
       net_dir = "#{layout_path.split()[0]}/#{net_name}.spice"
     end
 else
-    net_dir = options["netlist"]
-
+    # Interpret schematic relative to layout file
+    net_dir = File.expand_path(File.dirname(layout_path), options["netlist"])
 end
 
 unless File.exist?net_dir
@@ -90,8 +90,8 @@ elsif options["variant"] == "C"
   $metal_level = "5LM"
   $mim_option = "B"
 elsif options["variant"] == "D"
-  $metal_top = "9K"
-  $metal_level = "6LM"
+  $metal_top = "11K"
+  $metal_level = "5LM"
   $mim_option = "B"
 end
 
@@ -107,7 +107,7 @@ $scale = options["scale"]
 
 $verbose = options["verbose"]
 
-$schematic_simplify = options["schematic_simple"]
+$simplify = options["simplify"]
 
 $net_only = options["net_only"]
 
@@ -118,6 +118,10 @@ $combine = options["combine"]
 $purge = options["purge"]
 
 $purge_nets = options["purge_nets"]
+
+$implicit_connect = options["implicit_connect"]
+
+$schematic_translate = options["schematic_translate"]
 
 ## include lvs run file
 #%include ../lvs/gf180mcu.lvs

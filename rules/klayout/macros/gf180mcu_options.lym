@@ -360,24 +360,24 @@ require 'fileutils'
   end
   mw.menu.insert_item("submenu.lvs_menu.end", "verbose", verbose_action)
 
-  #11 Setting schematic simplification
-  schematic_simple_action = RBA::Action::new
-  schematic_simple_action.title = "Schematic simplify"
-  schematic_simple_action.checkable=(true)
-  schematic_simple_action.checked=lvs_initial_options["schematic_simple"]
-  schematic_simple_action.on_triggered do
+  #11 Setting simplification
+  simplify_action = RBA::Action::new
+  simplify_action.title = "Simplify"
+  simplify_action.checkable=(true)
+  simplify_action.checked=lvs_initial_options["simplify"]
+  simplify_action.on_triggered do
 
       options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
-      if schematic_simple_action.is_checked?
-        options["schematic_simple"] = true
+      if simplify_action.is_checked?
+        options["simplify"] = true
         File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
       else
-        options["schematic_simple"] = false
+        options["simplify"] = false
         File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
       end
 
   end
-  mw.menu.insert_item("submenu.lvs_menu.end", "schematic_simple", schematic_simple_action)
+  mw.menu.insert_item("submenu.lvs_menu.end", "simplify", simplify_action)
 
   #12 Setting netlist only
   net_only_action = RBA::Action::new
@@ -475,6 +475,43 @@ require 'fileutils'
   end
   mw.menu.insert_item("submenu.lvs_menu.end", "purge_nets", purge_nets_action)
 
+  # Implicit connect net
+  # connects nets that have the same name. Useful for testing lvs extraction
+  # of multifinger devices, but can create short in actual designs. Interactions
+  # with flat lvs can also be spotty
+  implicit_connect_action = RBA::Action::new
+  implicit_connect_action.title = "Globally connect nets with identical name"
+  implicit_connect_action.checkable=(true)
+  implicit_connect_action.checked=lvs_initial_options["implicit_connect"]
+  implicit_connect_action.on_triggered do
+
+      options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
+      if implicit_connect_action.is_checked?
+        options["implicit_connect"] = true
+        File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
+      else
+        options["implicit_connect"] = false
+        File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
+      end
+
+  end
+  mw.menu.insert_item("submenu.lvs_menu.end", "implicit_connect", implicit_connect_action)
+
+
+  # Schematic translate
+  # Converts spice schematic netlist to a klayout compatible dialect (works on xschem)
+  schematic_translate_action = RBA::Action::new
+  schematic_translate_action.title = "Translate input spice schematic to klayout dialect"
+  schematic_translate_action.checkable=(true)
+  schematic_translate_action.checked=lvs_initial_options["schematic_translate"]
+  schematic_translate_action.on_triggered do
+
+      options = YAML.load(File.read(__dir__ + "/lvs_options.yml"))
+      options["schematic_translate"] = schematic_translate_action.is_checked?
+      File.open(__dir__ + "/lvs_options.yml", "w") { |file| file.write(options.to_yaml) }
+
+  end
+  mw.menu.insert_item("submenu.lvs_menu.end", "schematic_translate", schematic_translate_action)
 end
 
 
