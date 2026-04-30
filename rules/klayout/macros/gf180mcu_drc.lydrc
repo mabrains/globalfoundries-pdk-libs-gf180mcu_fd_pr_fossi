@@ -32,18 +32,19 @@
 
 require "yaml"
 
+# For some reason klayout messes with the __dir__ path, so it is necessary
+# to use this workaround instead of
+# require_relative "options_helper"
+require File.expand_path("options_helper", File.dirname(__FILE__))
+
 ## reading the loaded gds file path
 layout_path = Pathname.new(RBA::CellView.active.filename)
 layout_dir = layout_path.split()[0]
 
 ## read saved options from yaml file
+options = get_option_drc
+
 dir_path = File.dirname(File.expand_path(__FILE__))
-if File.exist?(__dir__ + "/drc_options.yml")
-  options = YAML.load(File.read(dir_path + "/drc_options.yml"))
-else
-  puts "drc_options.yml does not exist, using defaults"
-  options = YAML.load(File.read(dir_path + "/drc_defaults.yml"))
-end
 
 ## reading the parent directory of the current file
 run_dir = File.expand_path("..", dir_path)
