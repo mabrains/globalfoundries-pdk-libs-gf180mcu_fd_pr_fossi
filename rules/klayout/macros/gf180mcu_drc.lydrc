@@ -71,7 +71,7 @@ elsif options["variant"] == "D"
   $mim_option = "B"
 end
 
-$input=layout_path
+$input=layout_path.to_s
 $mim_option=$mim_option
 $metal_top=$metal_top
 $metal_level=$metal_level
