@@ -52,7 +52,7 @@ if options["netlist"] == ""
     end
 else
     # Interpret schematic relative to layout file
-    net_dir = File.expand_path(File.dirname(layout_path), options["netlist"])
+    net_dir = File.expand_path(options["netlist"], File.dirname(layout_path))
 end
 
 unless File.exist?net_dir
