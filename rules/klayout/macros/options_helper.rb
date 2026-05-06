@@ -9,7 +9,7 @@ def user_config_dir
   else
     base = ENV.fetch('XDG_CONFIG_HOME', File.join(File.expand_path('~'), '.config'))
   end
-  File.join(base, 'klayout_gf180')
+  File.join(base, 'klayout_gf180mcu')
 end
 
 def get_option_drc
