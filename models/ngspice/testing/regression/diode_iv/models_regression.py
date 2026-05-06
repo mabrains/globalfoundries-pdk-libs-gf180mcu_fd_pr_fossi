@@ -110,8 +110,8 @@ def run_sim(
     # Get model card path
     regression_dir = os.path.dirname(os.path.abspath(__file__))
     models_dir = os.path.dirname(os.path.dirname(os.path.dirname(regression_dir)))
-    model_card_path = os.path.join(models_dir, "sm141064.ngspice")
-    model_design_path = os.path.join(models_dir, "design.ngspice")
+    model_card_path = os.path.join(models_dir, "sm141064.spice")
+    model_design_path = os.path.join(models_dir, "design.spice")
 
     netlist_tmp = os.path.join("device_netlists", "diode_iv.spice")
 

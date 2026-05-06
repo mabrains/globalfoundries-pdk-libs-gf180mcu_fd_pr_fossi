@@ -96,8 +96,8 @@ def run_sim(dirpath: str, device: str, corner: float, temp: float, sweep: str) -
     # Get model card path
     regression_dir = os.path.dirname(os.path.abspath(__file__))
     models_dir = os.path.dirname(os.path.dirname(os.path.dirname(regression_dir)))
-    model_card_path = os.path.join(models_dir, "sm141064.ngspice")
-    model_design_path = os.path.join(models_dir, "design.ngspice")
+    model_card_path = os.path.join(models_dir, "sm141064.spice")
+    model_design_path = os.path.join(models_dir, "design.spice")
 
     # Select desired nelist templete to be used in the current run
     netlist_tmp = os.path.join("device_netlists", "bjt_iv.spice")

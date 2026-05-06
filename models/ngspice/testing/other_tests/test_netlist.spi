@@ -1,6 +1,6 @@
 * test case for finger parameterization
-.lib ./sm141064.ngspice typical
-.inc ./design.ngspice
+.lib ./sm141064.spice typical
+.inc ./design.spice
 .param lx=0.28e-6 wx=120e-6 nfx=12
 
 *** THIS WORKS

@@ -24,7 +24,7 @@ dn1 n 0 {{device}} AREA={{area}}p
 
 
 
-.include "../../../design.xyce"
-.lib "../../../sm141064.xyce" diode_{{corner}}
+.include "../../../design.spice"
+.lib "../../../sm141064.spice" diode_{{corner}}
 
 .end

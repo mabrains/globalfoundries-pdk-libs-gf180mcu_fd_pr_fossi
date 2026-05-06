@@ -27,7 +27,7 @@ xcn p 0 {{device}} c_length={{length}}u c_width={{width}}u l={{length}}u w={{wid
 
 ** library calling
 
-.include "../../../design.xyce"
-.lib "../../../sm141064.xyce" moscap_{{corner}}
+.include "../../../design.spice"
+.lib "../../../sm141064.spice" moscap_{{corner}}
 .end
 
