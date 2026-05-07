@@ -1,31 +1,33 @@
+# frozen_string_literal: true
+
 require 'yaml'
 require 'fileutils'
 
 def user_config_dir
-  if Gem.win_platform?
-    base = ENV['APPDATA'] || File.expand_path('~')
-  elsif RUBY_PLATFORM.include?('darwin')
-    base = File.join(File.expand_path('~'), 'Library', 'Application Support')
-  else
-    base = ENV.fetch('XDG_CONFIG_HOME', File.join(File.expand_path('~'), '.config'))
-  end
+  base = if Gem.win_platform?
+           ENV['APPDATA'] || File.expand_path('~')
+         elsif RUBY_PLATFORM.include?('darwin')
+           File.join(File.expand_path('~'), 'Library', 'Application Support')
+         else
+           ENV.fetch('XDG_CONFIG_HOME', File.join(File.expand_path('~'), '.config'))
+         end
   File.join(base, 'klayout_gf180mcu')
 end
 
-def get_option_drc
+def option_drc
   options_path  = File.join(user_config_dir, 'drc_options.yml')
   defaults_path = File.join(__dir__, 'drc_defaults.yml')
 
   read_path = File.exist?(options_path) ? options_path : defaults_path
-  YAML.load(File.read(read_path))
+  YAML.safe_load(File.read(read_path))
 end
 
-def get_option_lvs
+def option_lvs
   options_path  = File.join(user_config_dir, 'lvs_options.yml')
   defaults_path = File.join(__dir__, 'lvs_defaults.yml')
 
   read_path = File.exist?(options_path) ? options_path : defaults_path
-  YAML.load(File.read(read_path))
+  YAML.safe_load(File.read(read_path))
 end
 
 def save_option_drc(options)

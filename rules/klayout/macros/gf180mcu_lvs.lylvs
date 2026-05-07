@@ -40,7 +40,7 @@ require File.expand_path("options_helper", File.dirname(__FILE__))
 ## reading the loaded gds file path
 layout_path = Pathname.new(RBA::CellView.active.filename)
 
-options = get_option_lvs()
+options = option_lvs()
 
 ## reading netlist option to get netlist_path
 if options["netlist"] == ""
