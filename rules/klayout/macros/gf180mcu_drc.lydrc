@@ -42,7 +42,7 @@ layout_path = Pathname.new(RBA::CellView.active.filename)
 layout_dir = layout_path.split()[0]
 
 ## read saved options from yaml file
-options = get_option_drc
+options = option_drc
 
 dir_path = File.dirname(File.expand_path(__FILE__))
 

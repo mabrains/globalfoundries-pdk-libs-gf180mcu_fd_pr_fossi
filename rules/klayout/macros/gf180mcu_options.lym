@@ -88,15 +88,15 @@ mw.menu.insert_menu("submenu.end", "lvs_menu", "Klayout LVS Options")
 mw.menu.insert_separator("submenu.lvs_menu+", "name2")
 
 # Load initial options for checkbox states
-drc_initial = get_option_drc()
-lvs_initial = get_option_lvs()
+drc_initial = option_drc()
+lvs_initial = option_lvs()
 
 #####################################################################################
 # DRC Options
 #####################################################################################
 drc_builder = OptionMenuBuilder.new(
   mw,
-  -> { get_option_drc },
+  -> { option_drc },
   ->(opts) { save_option_drc(opts) },
   "submenu.drc_menu"
 )
@@ -118,7 +118,7 @@ drc_builder.add_checkbox("offgrid", "Antenna rules", drc_initial["antenna"])
 #####################################################################################
 lvs_builder = OptionMenuBuilder.new(
   mw,
-  -> { get_option_lvs },
+  -> { option_lvs },
   ->(opts) { save_option_lvs(opts) },
   "submenu.lvs_menu"
 )
