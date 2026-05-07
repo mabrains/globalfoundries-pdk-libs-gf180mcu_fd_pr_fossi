@@ -116,13 +116,13 @@
 .param nfet_06v0_tox=0
 .param nfet_06v0_cgso=1
 .param nfet_06v0_cgdo=1
-.param nfet_06v0_nvt_u0='0.070102'
-.param nfet_06v0_nvt_vth0='-0.039'
-.param nfet_06v0_nvt_xl='0'
-.param nfet_06v0_nvt_xw='0'
-.param nfet_06v0_nvt_tox='1.52e-008'
-.param nfet_06v0_nvt_cgso='1e-010'
-.param nfet_06v0_nvt_cgdo='1e-010'
+.param nfet_06v0_nvt_u0=0.070102
+.param nfet_06v0_nvt_vth0=-0.039
+.param nfet_06v0_nvt_xl=0
+.param nfet_06v0_nvt_xw=0
+.param nfet_06v0_nvt_tox=1.52e-008
+.param nfet_06v0_nvt_cgso=1e-010
+.param nfet_06v0_nvt_cgdo=1e-010
 .param pfet_06v0_dvth0=0
 .param pfet_06v0_dxl=0
 .param pfet_06v0_dxw=0
@@ -148,13 +148,13 @@
 .param nfet_06v0_tox=-1e-9
 .param nfet_06v0_cgso=0.9
 .param nfet_06v0_cgdo=0.9
-.param nfet_06v0_nvt_u0='0.118'
-.param nfet_06v0_nvt_vth0='-0.216'
-.param nfet_06v0_nvt_xl='-2e-7'
-.param nfet_06v0_nvt_xw='1e-7'
-.param nfet_06v0_nvt_tox='1.42e-008'
-.param nfet_06v0_nvt_cgso='9e-011'
-.param nfet_06v0_nvt_cgdo='9e-011'
+.param nfet_06v0_nvt_u0=0.118
+.param nfet_06v0_nvt_vth0=-0.216
+.param nfet_06v0_nvt_xl=-2e-7
+.param nfet_06v0_nvt_xw=1e-7
+.param nfet_06v0_nvt_tox=1.42e-008
+.param nfet_06v0_nvt_cgso=9e-011
+.param nfet_06v0_nvt_cgdo=9e-011
 .param pfet_06v0_dvth0=0.1245
 .param pfet_06v0_dxl=-4.65e-8
 .param pfet_06v0_dxw=5e-8
@@ -180,13 +180,13 @@
 .param nfet_06v0_tox=1e-9
 .param nfet_06v0_cgso=1.1
 .param nfet_06v0_cgdo=1.1
-.param nfet_06v0_nvt_u0='0.046'
-.param nfet_06v0_nvt_vth0='0.1417'
-.param nfet_06v0_nvt_xl='2e-7'
-.param nfet_06v0_nvt_xw='-1e-7'
-.param nfet_06v0_nvt_tox='1.62e-008'
-.param nfet_06v0_nvt_cgso='1.1e-010'
-.param nfet_06v0_nvt_cgdo='1.1e-010'
+.param nfet_06v0_nvt_u0=0.046
+.param nfet_06v0_nvt_vth0=0.1417
+.param nfet_06v0_nvt_xl=2e-7
+.param nfet_06v0_nvt_xw=-1e-7
+.param nfet_06v0_nvt_tox=1.62e-008
+.param nfet_06v0_nvt_cgso=1.1e-010
+.param nfet_06v0_nvt_cgdo=1.1e-010
 .param pfet_06v0_dvth0=-0.1225
 .param pfet_06v0_dxl=6.9e-8
 .param pfet_06v0_dxw=-5e-8
@@ -212,13 +212,13 @@
 .param nfet_06v0_tox='-1e-9*0.75'
 .param nfet_06v0_cgso=0.93
 .param nfet_06v0_cgdo=0.93
-.param nfet_06v0_nvt_u0='0.102034'
-.param nfet_06v0_nvt_vth0='-0.157'
-.param nfet_06v0_nvt_xl='-1.33e-7'
-.param nfet_06v0_nvt_xw='6.7e-8'
-.param nfet_06v0_nvt_tox='1.453e-008'
-.param nfet_06v0_nvt_cgso='9.33e-011'
-.param nfet_06v0_nvt_cgdo='9.33e-011'
+.param nfet_06v0_nvt_u0=0.102034
+.param nfet_06v0_nvt_vth0=-0.157
+.param nfet_06v0_nvt_xl=-1.33e-7
+.param nfet_06v0_nvt_xw=6.7e-8
+.param nfet_06v0_nvt_tox=1.453e-008
+.param nfet_06v0_nvt_cgso=9.33e-011
+.param nfet_06v0_nvt_cgdo=9.33e-011
 .param pfet_06v0_dvth0=-0.0829
 .param pfet_06v0_dxl=4.1e-8
 .param pfet_06v0_dxw=-3.35e-8
@@ -244,13 +244,13 @@
 .param nfet_06v0_tox='1e-9*0.75'
 .param nfet_06v0_cgso=1.07
 .param nfet_06v0_cgdo=1.07
-.param nfet_06v0_nvt_u0='0.054034'
-.param nfet_06v0_nvt_vth0='0.08147'
-.param nfet_06v0_nvt_xl='1.33e-7'
-.param nfet_06v0_nvt_xw='-6.7e-8'
-.param nfet_06v0_nvt_tox='1.587e-008'
-.param nfet_06v0_nvt_cgso='1.067e-010'
-.param nfet_06v0_nvt_cgdo='1.067e-010'
+.param nfet_06v0_nvt_u0=0.054034
+.param nfet_06v0_nvt_vth0=0.08147
+.param nfet_06v0_nvt_xl=1.33e-7
+.param nfet_06v0_nvt_xw=-6.7e-8
+.param nfet_06v0_nvt_tox=1.587e-008
+.param nfet_06v0_nvt_cgso=1.067e-010
+.param nfet_06v0_nvt_cgdo=1.067e-010
 .param pfet_06v0_dvth0=0.0827
 .param pfet_06v0_dxl=-3.22e-8
 .param pfet_06v0_dxw=3.35e-8
@@ -795,7 +795,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-3.0506364e-013
 + lbeta0=1.2863636e-007
 + ldelta=3.1818182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.9985454e-008
 + lk2=-4.1647636e-008
@@ -911,6 +911,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.2363636e-011
 + ute=-1.5675325
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.1262652
 + voffcv=0.005
@@ -1038,7 +1039,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.265098e-012
 + lbeta0=-1.2312245e-006
 + ldelta=4.2857143e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=6.5057143e-009
 + lk2=-2.6163257e-008
@@ -1153,6 +1154,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.0285714e-011
 + ute=-1.3857143
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.11273959
 + voffcv=0.005
@@ -1280,7 +1282,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-8.4670617e-011
 + lbeta0=-3.133052e-006
 + ldelta=2.7272727e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-5.2936364e-008
 + lk2=-4.4355584e-009
@@ -1389,6 +1391,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.3857143
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12631325
 + voffcv=0.005
@@ -1509,7 +1512,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -1590,6 +1593,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.3857143
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12496714
 + voffcv=0.005
@@ -1714,7 +1718,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.8170545e-013
 + lbeta0=-8.9454546e-008
 + ldelta=3.1818182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.9985454e-008
 + lk2=-3.7879164e-008
@@ -1826,6 +1830,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.4342857
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.079311948
 + voffcv=0.005
@@ -1952,7 +1957,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.3649037e-012
 + lbeta0=-1.1603265e-007
 + ldelta=4.2857143e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.4610612e-009
 + lk2=-2.1356464e-008
@@ -2067,6 +2072,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.1888774e-010
 + ute=-1.4342857
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12049225
 + voffcv=0.005
@@ -2194,7 +2200,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0329047e-010
 + lbeta0=-3.7206623e-006
 + ldelta=2.7272727e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.5489221e-008
 + lk2=-4.6356351e-009
@@ -2307,6 +2313,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.0997566e-011
 + ute=-1.7216234
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12197591
 + voffcv=0.005
@@ -2426,7 +2433,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -2507,6 +2514,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.6871429
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.005
@@ -2626,7 +2634,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=3.2753448e-008
 + lalpha0=-2.5435614e-013
 + ldelta=3.1818182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.5597554e-008
 + lk2=-3.0232209e-008
@@ -2743,6 +2751,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.2938539e-010
 + ute=-1.5701136
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12424632
 + voffcv=0.22872521
@@ -2872,7 +2881,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.3087143e-012
 + lbeta0=4.8502597e-008
 + ldelta=4.2857143e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-3.1837237e-008
 + lketa=-1.0255714e-008
@@ -2982,6 +2991,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.4511739e-010
 + ute=-1.5701136
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.10253679
 + voffcv=0.005
@@ -3106,7 +3116,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0337986e-010
 + lbeta0=-4.1139731e-006
 + ldelta=2.7272727e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.5679339e-008
 + lk2=-2.3431364e-009
@@ -3224,6 +3234,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.4711114e-011
 + ute=-1.5472572
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12197591
 + voffcv=-0.065880682
@@ -3345,7 +3356,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -3426,6 +3437,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.057375
@@ -3548,7 +3560,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-6.2750307e-008
 + lalpha0=-2.6008182e-013
 + ldelta=3.1818182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.6116364e-008
 + lk2=-3.0777727e-008
@@ -3647,6 +3659,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.0888491e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.20227273
@@ -3757,7 +3770,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-1.4038286e-007
 + lalpha0=-2.3087143e-012
 + ldelta=4.2857143e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-3.1102457e-008
 + lketa=-1.0255714e-008
@@ -3851,6 +3864,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.3899143e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.10411714
 + voffcv=0.005
@@ -3959,7 +3973,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0337986e-010
 + lbeta0=-4.0704545e-006
 + ldelta=2.7272727e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.5313636e-008
 + lk2=-2.3431364e-009
@@ -4058,6 +4072,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.5695e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12197591
 + voffcv=-0.0575
@@ -4161,7 +4176,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -4242,6 +4257,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.05
@@ -4274,7 +4290,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 .endl
 
 .lib nfet_03v3_f
-.subckt nfet_03v3_dss d g s b w=10u l=0.28u par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 nf=1 sa=0 sb=0 sd=0 m=1
+.subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
 .param par_vth=0.007148
 .param par_k=0.007008
 .param par_l=1.5e-7
@@ -4376,7 +4392,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.787532e-013
 + lbeta0=1.1800932e-007
 + ldelta=2.9210227e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.1790218e-008
 + lk2=-3.8749265e-008
@@ -4492,6 +4508,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.2111364e-011
 + ute=-1.5681818
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12637972
 + voffcv=0.005
@@ -4619,7 +4636,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.1715163e-012
 + lbeta0=-1.2038436e-006
 + ldelta=4.1051786e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=6.2316611e-009
 + lk2=-2.4789039e-008
@@ -4734,6 +4751,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.0365e-011
 + ute=-1.3875
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.11298759
 + voffcv=0.005
@@ -4861,7 +4879,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-8.2558005e-011
 + lbeta0=-3.0572184e-006
 + ldelta=2.689142e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-5.2196247e-008
 + lk2=-4.6415264e-009
@@ -4970,6 +4988,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.3875
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12651327
 + voffcv=0.005
@@ -5090,7 +5109,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -5171,6 +5190,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.3875
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.1251825
 + voffcv=0.005
@@ -5295,7 +5315,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.5821257e-013
 + lbeta0=-8.3833352e-008
 + ldelta=2.9210227e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.1790218e-008
 + lk2=-3.4832437e-008
@@ -5407,6 +5427,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.435
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.080003796
 + voffcv=0.005
@@ -5533,7 +5554,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.2664034e-012
 + lbeta0=-1.0624202e-007
 + ldelta=4.1051786e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.3621628e-009
 + lk2=-2.0371686e-008
@@ -5648,6 +5669,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.1862793e-010
 + ute=-1.435
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12030052
 + voffcv=0.005
@@ -5775,7 +5797,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.018445e-010
 + lbeta0=-3.6681242e-006
 + ldelta=2.689142e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.4847247e-008
 + lk2=-4.6179157e-009
@@ -5888,6 +5910,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.1018233e-011
 + ute=-1.7243381
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12195946
 + voffcv=0.005
@@ -6007,7 +6030,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -6088,6 +6111,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.69
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.005
@@ -6207,7 +6231,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=3.0120571e-008
 + lalpha0=-2.3346347e-013
 + ldelta=2.9210227e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-8.7757932e-008
 + lk2=-2.7750003e-008
@@ -6324,6 +6348,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.2422528e-010
 + ute=-1.5702841
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12420249
 + voffcv=0.21695209
@@ -6453,7 +6478,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.2114597e-012
 + lbeta0=4.6853149e-008
 + ldelta=4.1051786e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-3.0502058e-008
 + lketa=-9.8236923e-009
@@ -6563,6 +6588,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.4497962e-010
 + ute=-1.5702841
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.10277799
 + voffcv=0.005
@@ -6687,7 +6713,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0193448e-010
 + lbeta0=-4.0568183e-006
 + ldelta=2.689142e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.504374e-008
 + lk2=-2.3103764e-009
@@ -6805,6 +6831,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.4843991e-011
 + ute=-1.5472686
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12195946
 + voffcv=-0.065845277
@@ -6926,7 +6953,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -7007,6 +7034,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.0574375
@@ -7129,7 +7157,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-5.7615181e-008
 + lalpha0=-2.387644e-013
 + ldelta=2.9210227e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-8.8238255e-008
 + lk2=-2.8255053e-008
@@ -7228,6 +7256,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.0418643e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.19170454
@@ -7338,7 +7367,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-1.3446923e-007
 + lalpha0=-2.2114597e-012
 + ldelta=4.1051786e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-2.9792266e-008
 + lketa=-9.8236923e-009
@@ -7432,6 +7461,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.3876879e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.10432393
 + voffcv=0.005
@@ -7540,7 +7570,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0193448e-010
 + lbeta0=-4.0135445e-006
 + ldelta=2.689142e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.4680095e-008
 + lk2=-2.3103764e-009
@@ -7639,6 +7669,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.5823812e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12195946
 + voffcv=-0.05740625
@@ -7742,7 +7773,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -7823,6 +7854,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.05
@@ -7957,7 +7989,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-3.3259243e-013
 + lbeta0=1.3969208e-007
 + ldelta=3.4528409e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-1.0850207e-007
 + lk2=-4.4586066e-008
@@ -8073,6 +8105,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.2656818e-011
 + ute=-1.5659091
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12611751
 + voffcv=0.005
@@ -8200,7 +8233,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.3602156e-012
 + lbeta0=-1.2573561e-006
 + ldelta=4.4694643e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=6.7846468e-009
 + lk2=-2.7581243e-008
@@ -8315,6 +8348,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.0193571e-011
 + ute=-1.3839286
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.11249326
 + voffcv=0.005
@@ -8442,7 +8476,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-8.6812779e-011
 + lbeta0=-3.2099126e-006
 + ldelta=2.7655057e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-5.3678465e-008
 + lk2=-4.2221469e-009
@@ -8551,6 +8585,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.3839286
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12611319
 + voffcv=0.005
@@ -8671,7 +8706,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -8752,6 +8787,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.3839286
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12475179
 + voffcv=0.005
@@ -8876,7 +8912,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-3.0617722e-013
 + lbeta0=-9.5051778e-008
 + ldelta=3.4528409e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-1.0850207e-007
 + lk2=-4.1037083e-008
@@ -8988,6 +9024,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.4335714
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.078638354
 + voffcv=0.005
@@ -9114,7 +9151,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.4650781e-012
 + lbeta0=-1.2634537e-007
 + ldelta=4.4694643e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.5554057e-009
 + lk2=-2.2364814e-008
@@ -9229,6 +9266,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.1913423e-010
 + ute=-1.4335714
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12067823
 + voffcv=0.005
@@ -9356,7 +9394,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0474036e-010
 + lbeta0=-3.7733547e-006
 + ldelta=2.7655057e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.6136665e-008
 + lk2=-4.6521909e-009
@@ -9469,6 +9507,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.0977959e-011
 + ute=-1.7189014
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12199236
 + voffcv=0.005
@@ -9588,7 +9627,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -9669,6 +9708,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.6842857
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.005
@@ -9788,7 +9828,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=3.5482186e-008
 + lalpha0=-2.7607448e-013
 + ldelta=3.4528409e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-1.0374519e-007
 + lk2=-3.2812362e-008
@@ -9905,6 +9945,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.3453481e-010
 + ute=-1.5699432
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.1242889
 + voffcv=0.2404743
@@ -10034,7 +10075,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.4077004e-012
 + lbeta0=5.0153484e-008
 + ldelta=4.4694643e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-3.3195765e-008
 + lketa=-1.0695428e-008
@@ -10144,6 +10185,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.4525572e-010
 + ute=-1.5699432
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.10229638
 + voffcv=0.005
@@ -10268,7 +10310,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0482912e-010
 + lbeta0=-4.1712719e-006
 + ldelta=2.7655057e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.6316563e-008
 + lk2=-2.3759842e-009
@@ -10386,6 +10428,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.4578445e-011
 + ute=-1.5472465
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12199236
 + voffcv=-0.065915874
@@ -10507,7 +10550,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -10588,6 +10631,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.0573125
@@ -10710,7 +10754,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-6.8085644e-008
 + lalpha0=-2.8223522e-013
 + ldelta=3.4528409e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-1.0430342e-007
 + lk2=-3.339933e-008
@@ -10809,6 +10853,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.1358339e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.21284091
@@ -10919,7 +10964,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-1.4640177e-007
 + lalpha0=-2.4077004e-012
 + ldelta=4.4694643e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-3.2435975e-008
 + lketa=-1.0695428e-008
@@ -11013,6 +11058,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.3921407e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.10391036
 + voffcv=0.005
@@ -11121,7 +11167,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0482912e-010
 + lbeta0=-4.1275172e-006
 + ldelta=2.7655057e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.5948877e-008
 + lk2=-2.3759842e-009
@@ -11220,6 +11266,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.5566188e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12199236
 + voffcv=-0.05759375
@@ -11323,7 +11370,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -11404,6 +11451,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.05
@@ -11538,7 +11586,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.876129e-013
 + lbeta0=1.2151841e-007
 + ldelta=3.0068182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.4486255e-008
 + lk2=-3.9622207e-008
@@ -11654,6 +11702,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.2302273e-011
 + ute=-1.5663149
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12625494
 + voffcv=0.005
@@ -11781,7 +11830,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.2022289e-012
 + lbeta0=-1.2089656e-006
 + ldelta=4.165e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=6.32247e-009
 + lk2=-2.5288297e-008
@@ -11896,6 +11945,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.0305e-011
 + ute=-1.3866071
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.11287523
 + voffcv=0.005
@@ -12023,7 +12073,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-8.3414465e-011
 + lbeta0=-3.0877458e-006
 + ldelta=2.7018409e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-5.2442732e-008
 + lk2=-4.5288209e-009
@@ -12132,6 +12182,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.3866071
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12641046
 + voffcv=0.005
@@ -12252,7 +12303,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -12333,6 +12384,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.3866071
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12507482
 + voffcv=0.005
@@ -12457,7 +12509,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.6600418e-013
 + lbeta0=-8.5415114e-008
 + ldelta=3.0068182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.4486255e-008
 + lk2=-3.5825667e-008
@@ -12569,6 +12621,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.4346429
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.079820841
 + voffcv=0.005
@@ -12695,7 +12748,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.298861e-012
 + lbeta0=-1.102773e-007
 + ldelta=4.165e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.3805685e-009
 + lk2=-2.0711735e-008
@@ -12810,6 +12863,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.1862793e-010
 + ute=-1.4346429
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12034945
 + voffcv=0.005
@@ -12937,7 +12991,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0232637e-010
 + lbeta0=-3.6857066e-006
 + ldelta=2.7018409e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.5085045e-008
 + lk2=-4.6160653e-009
@@ -13050,6 +13104,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.1018233e-011
 + ute=-1.7229095
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12196494
 + voffcv=0.005
@@ -13169,7 +13224,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -13250,6 +13305,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.6885714
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.005
@@ -13369,7 +13425,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=3.0978636e-008
 + lalpha0=-2.4034362e-013
 + ldelta=3.0068182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.0337611e-008
 + lk2=-2.8567253e-008
@@ -13486,6 +13542,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.2591814e-010
 + ute=-1.5701989
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12421225
 + voffcv=0.2208431
@@ -13615,7 +13672,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.2436855e-012
 + lbeta0=4.7336172e-008
 + ldelta=4.165e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-3.0943514e-008
 + lketa=-9.966845e-009
@@ -13725,6 +13782,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.450168e-010
 + ute=-1.5701989
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.10269969
 + voffcv=0.005
@@ -13849,7 +13907,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0241585e-010
 + lbeta0=-4.075793e-006
 + ldelta=2.7018409e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.5254914e-008
 + lk2=-2.3212866e-009
@@ -13967,6 +14025,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.4801054e-011
 + ute=-1.5472686
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12196494
 + voffcv=-0.065845277
@@ -14088,7 +14147,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -14169,6 +14228,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.05740625
@@ -14291,7 +14351,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-5.9303239e-008
 + lalpha0=-2.4577732e-013
 + ldelta=3.0068182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.0829964e-008
 + lk2=-2.9084952e-008
@@ -14390,6 +14450,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.0575259e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.19522727
@@ -14500,7 +14561,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-1.3642874e-007
 + lalpha0=-2.2436855e-012
 + ldelta=4.165e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-3.0226405e-008
 + lketa=-9.966845e-009
@@ -14594,6 +14655,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.38843e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.104255
 + voffcv=0.005
@@ -14702,7 +14764,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0241585e-010
 + lbeta0=-4.0324976e-006
 + ldelta=2.7018409e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.4891087e-008
 + lk2=-2.3212866e-009
@@ -14801,6 +14863,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.5780875e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12196494
 + voffcv=-0.0574375
@@ -14904,7 +14967,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -14985,6 +15048,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.05
@@ -15119,7 +15183,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-3.2302945e-013
 + lbeta0=1.3594315e-007
 + ldelta=3.3613636e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-1.0562749e-007
 + lk2=-4.3701293e-008
@@ -15235,6 +15299,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.2438636e-011
 + ute=-1.5684253
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12626439
 + voffcv=0.005
@@ -15362,7 +15427,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.3286678e-012
 + lbeta0=-1.2531695e-006
 + ldelta=4.4078571e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=6.6911271e-009
 + lk2=-2.7054986e-008
@@ -15477,6 +15542,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.0262143e-011
 + ute=-1.3848214
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.11260451
 + voffcv=0.005
@@ -15604,7 +15670,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-8.5936972e-011
 + lbeta0=-3.1787135e-006
 + ldelta=2.75275e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-5.3430878e-008
 + lk2=-4.3398333e-009
@@ -15713,6 +15779,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.3848214
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12621602
 + voffcv=0.005
@@ -15833,7 +15900,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -15914,6 +15981,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.3848214
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12485946
 + voffcv=0.005
@@ -16038,7 +16106,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.9783362e-013
 + lbeta0=-9.3517938e-008
 + ldelta=3.3613636e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-1.0562749e-007
 + lk2=-3.9983252e-008
@@ -16150,6 +16218,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.4339286
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.07880914
 + voffcv=0.005
@@ -16276,7 +16345,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.4317014e-012
 + lbeta0=-1.219717e-007
 + ldelta=4.4078571e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.5404077e-009
 + lk2=-2.201083e-008
@@ -16391,6 +16460,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.1914311e-010
 + ute=-1.4339286
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12063313
 + voffcv=0.005
@@ -16518,7 +16588,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.0425632e-010
 + lbeta0=-3.755685e-006
 + ldelta=2.75275e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.5895368e-008
 + lk2=-4.6548363e-009
@@ -16631,6 +16701,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.0977253e-011
 + ute=-1.7203348
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12198688
 + voffcv=0.005
@@ -16750,7 +16821,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -16831,6 +16902,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.6857143
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.005
@@ -16950,7 +17022,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=3.4571911e-008
 + lalpha0=-2.6873472e-013
 + ldelta=3.3613636e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-1.0099431e-007
 + lk2=-3.1940611e-008
@@ -17067,6 +17139,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.3284907e-010
 + ute=-1.5700284
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12427998
 + voffcv=0.2365993
@@ -17196,7 +17269,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-2.3745126e-012
 + lbeta0=4.9673545e-008
 + ldelta=4.4078571e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-3.2741396e-008
 + lketa=-1.0548002e-008
@@ -17306,6 +17379,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.4521817e-010
 + ute=-1.5700284
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.10237415
 + voffcv=0.005
@@ -17430,7 +17504,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.043456e-010
 + lbeta0=-4.1522184e-006
 + ldelta=2.75275e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.6104496e-008
 + lk2=-2.3650252e-009
@@ -17548,6 +17622,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.4621244e-011
 + ute=-1.5472461
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12198688
 + voffcv=-0.065916016
@@ -17669,7 +17744,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -17750,6 +17825,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.05734375
@@ -17872,7 +17948,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-6.6286522e-008
 + lalpha0=-2.7475786e-013
 + ldelta=3.3613636e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-1.0154007e-007
 + lk2=-3.2514471e-008
@@ -17971,6 +18047,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.1201723e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.20931818
@@ -18081,7 +18158,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-1.4438377e-007
 + lalpha0=-2.3745126e-012
 + ldelta=4.4078571e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-3.1988877e-008
 + lketa=-1.0548002e-008
@@ -18175,6 +18252,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-1.3913986e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.10397929
 + voffcv=0.005
@@ -18283,7 +18361,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lalpha0=-1.043456e-010
 + lbeta0=-4.1084794e-006
 + ldelta=2.75275e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.5736941e-008
 + lk2=-2.3650252e-009
@@ -18382,6 +18460,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.5609125e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12198688
 + voffcv=-0.0575625
@@ -18485,7 +18564,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -18566,6 +18645,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.05
@@ -18702,7 +18782,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0492091e-007
 + lalpha0=-3.0054064e-012
 + lbeta0=-3.6237273e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=4.91e-009
 + lk2=-2.4890454e-008
@@ -18816,6 +18896,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.5418182e-010
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094658091
@@ -18947,7 +19028,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0521551e-007
 + lalpha0=-3.5014873e-011
 + lbeta0=-4.9484082e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.6117551e-008
 + lk2=-8.2285714e-010
@@ -19059,6 +19140,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-7.5563755e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12364214
@@ -19188,7 +19270,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.4470325e-007
 + lalpha0=-2.415082e-009
 + lbeta0=-7.3811688e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=1.9383117e-009
 + lk2=-1.0171558e-008
@@ -19303,6 +19385,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.5566519e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097716396
@@ -19429,7 +19512,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -19511,6 +19594,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.344e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.099538429
@@ -19639,7 +19723,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.9689636e-008
 + lalpha0=-3.0255502e-012
 + lbeta0=-2.7152909e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.5426364e-008
 + lk2=-2.0467636e-008
@@ -19750,6 +19834,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=6.432e-012
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -19879,7 +19964,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=7.5856163e-008
 + lalpha0=-5.8498663e-011
 + lbeta0=-5.2790449e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.46e-008
 + lk2=8.0987755e-011
@@ -19990,6 +20075,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-9.9154286e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12364214
@@ -20118,7 +20204,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0784299e-007
 + lalpha0=-2.519287e-009
 + lbeta0=-6.4651948e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.8659091e-008
 + lk2=8.0661039e-010
@@ -20232,6 +20318,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.2545455e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.095810227
@@ -20356,7 +20443,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -20438,6 +20525,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.752e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -20564,7 +20652,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-2.4436508e-009
 + lalpha0=-2.2830898e-012
 + lbeta0=-2.3737058e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.5426364e-008
 + lk2=-1.7691446e-008
@@ -20677,6 +20765,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.5778578e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -20807,7 +20896,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.0707474e-008
 + lalpha0=-5.296228e-011
 + lbeta0=-5.0643818e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.46e-008
 + lk2=-2.7545864e-009
@@ -20921,6 +21010,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.4810909e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094286796
@@ -21051,7 +21141,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0993971e-007
 + lalpha0=-2.4908914e-009
 + lbeta0=-6.233938e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.8659091e-008
 + lk2=3.8108709e-009
@@ -21165,6 +21255,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.6591694e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.098145312
@@ -21290,7 +21381,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -21372,6 +21463,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.5237455e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -21495,7 +21587,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.9618182e-009
 + lalpha0=-2.3660636e-012
 + lbeta0=-2.4506364e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.5426364e-008
 + lk2=-1.7918091e-008
@@ -21589,6 +21681,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.4e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -21702,7 +21795,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.102e-008
 + lalpha0=-5.2656171e-011
 + lbeta0=-5.0648571e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.46e-008
 + lk2=-3.0634286e-009
@@ -21797,6 +21890,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.08e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -21910,7 +22004,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.1011364e-007
 + lalpha0=-2.4912696e-009
 + lbeta0=-6.3163636e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.8659091e-008
 + lk2=3.7690909e-009
@@ -22006,6 +22100,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.4527273e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -22115,7 +22210,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -22197,6 +22292,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.384e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -22336,7 +22432,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=9.8918351e-008
 + lalpha0=-2.8123501e-012
 + lbeta0=-3.3940359e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=6.1568267e-009
 + lk2=-2.3507638e-008
@@ -22450,6 +22546,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.5233764e-010
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094667623
@@ -22581,7 +22678,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0403388e-007
 + lalpha0=-3.3647732e-011
 + lbeta0=-4.787946e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.5556919e-008
 + lk2=-3.2403549e-010
@@ -22693,6 +22790,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-7.6682222e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12338433
@@ -22822,7 +22920,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.4426221e-007
 + lalpha0=-2.3862134e-009
 + lbeta0=-7.2932429e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=4.8252741e-009
 + lk2=-1.0767296e-008
@@ -22937,6 +23035,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.4663323e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097813945
@@ -23063,7 +23162,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -23145,6 +23244,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.266e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.099608321
@@ -23273,7 +23373,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.5010179e-008
 + lalpha0=-2.8274782e-012
 + lbeta0=-2.5313328e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.3094297e-008
 + lk2=-1.9136714e-008
@@ -23384,6 +23484,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=4.9114909e-012
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -23513,7 +23614,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=7.352905e-008
 + lalpha0=-5.6673338e-011
 + lbeta0=-5.1047406e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.3769504e-008
 + lk2=1.7807606e-010
@@ -23624,6 +23725,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-9.9075017e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12338433
@@ -23752,7 +23854,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0656941e-007
 + lalpha0=-2.4915822e-009
 + lbeta0=-6.3843867e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.7890933e-008
 + lk2=7.4698326e-010
@@ -23866,6 +23968,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.2459e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.095830735
@@ -23990,7 +24093,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -24072,6 +24175,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.74e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -24198,7 +24302,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-2.3548078e-009
 + lalpha0=-2.1321619e-012
 + lbeta0=-2.2168591e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.3094297e-008
 + lk2=-1.6525108e-008
@@ -24311,6 +24415,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.5716307e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -24441,7 +24546,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=5.8655514e-008
 + lalpha0=-5.1176698e-011
 + lbeta0=-4.8934045e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.3769504e-008
 + lk2=-2.6591455e-009
@@ -24555,6 +24660,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.52542e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094293534
@@ -24685,7 +24791,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.087083e-007
 + lalpha0=-2.4630203e-009
 + lbeta0=-6.1635247e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.7890933e-008
 + lk2=3.7685735e-009
@@ -24799,6 +24905,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.6595019e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.098144776
@@ -24924,7 +25031,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -25006,6 +25113,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.5248909e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -25129,7 +25237,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.5035316e-009
 + lalpha0=-2.2103091e-012
 + lbeta0=-2.2893145e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.3094297e-008
 + lk2=-1.6738569e-008
@@ -25223,6 +25331,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.4e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -25336,7 +25445,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=5.8959965e-008
 + lalpha0=-5.0878499e-011
 + lbeta0=-4.8938676e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.3769504e-008
 + lk2=-2.9600072e-009
@@ -25431,6 +25540,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.1232e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -25544,7 +25654,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0888169e-007
 + lalpha0=-2.4633972e-009
 + lbeta0=-6.2456962e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.7890933e-008
 + lk2=3.7269223e-009
@@ -25640,6 +25750,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.45204e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -25749,7 +25860,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -25831,6 +25942,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.384e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -25970,7 +26082,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.1100987e-007
 + lalpha0=-3.2039603e-012
 + lbeta0=-3.8596059e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=3.4485427e-009
 + lk2=-2.6287876e-008
@@ -26084,6 +26196,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.5583291e-010
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094659997
@@ -26215,7 +26328,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0628082e-007
 + lalpha0=-3.6411844e-011
 + lbeta0=-5.1107814e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.6592286e-008
 + lk2=-1.3552238e-009
@@ -26327,6 +26440,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-7.4455718e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12389995
@@ -26456,7 +26570,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.4512107e-007
 + lalpha0=-2.4440505e-009
 + lbeta0=-7.4693929e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-1.0144952e-009
 + lk2=-9.5599917e-009
@@ -26571,6 +26685,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.6473795e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097618657
@@ -26697,7 +26812,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -26779,6 +26894,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.422e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.099468536
@@ -26907,7 +27023,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=7.4525608e-008
 + lalpha0=-3.2296894e-012
 + lbeta0=-2.9055811e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.7831308e-008
 + lk2=-2.1838311e-008
@@ -27018,6 +27134,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=7.8595636e-012
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -27147,7 +27264,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=7.8203234e-008
 + lalpha0=-6.0341539e-011
 + lbeta0=-5.4556076e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.5442304e-008
 + lk2=-2.308677e-011
@@ -27258,6 +27375,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-9.9219566e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12389995
@@ -27386,7 +27504,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0912068e-007
 + lalpha0=-2.5470415e-009
 + lbeta0=-6.5463501e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.9428897e-008
 + lk2=8.6740321e-010
@@ -27500,6 +27618,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.2632236e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.095789719
@@ -27624,7 +27743,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -27706,6 +27825,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.764e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -27832,7 +27952,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-2.5272122e-009
 + lalpha0=-2.4388052e-012
 + lbeta0=-2.5355199e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.7831308e-008
 + lk2=-1.8894426e-008
@@ -27945,6 +28065,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.58396e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -28075,7 +28196,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.2788747e-008
 + lalpha0=-5.4773114e-011
 + lbeta0=-5.2377903e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.5442304e-008
 + lk2=-2.8515216e-009
@@ -28189,6 +28310,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.43686e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094280644
@@ -28319,7 +28441,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.111738e-007
 + lalpha0=-2.5188225e-009
 + lbeta0=-6.3045161e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.9428897e-008
 + lk2=3.853252e-009
@@ -28433,6 +28555,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.658826e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.098145801
@@ -28558,7 +28681,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -28640,6 +28763,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.5226e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -28763,7 +28887,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=7.4344262e-009
 + lalpha0=-2.5266856e-012
 + lbeta0=-2.6169996e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.7831308e-008
 + lk2=-1.9134473e-008
@@ -28857,6 +28981,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.4e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -28970,7 +29095,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.3109325e-008
 + lalpha0=-5.4459119e-011
 + lbeta0=-5.2382779e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.5442304e-008
 + lk2=-3.1683204e-009
@@ -29065,6 +29190,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.0368e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -29178,7 +29304,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.1134823e-007
 + lalpha0=-2.5192017e-009
 + lbeta0=-6.3871827e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.9428897e-008
 + lk2=3.81135e-009
@@ -29274,6 +29400,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.4534145e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -29383,7 +29510,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -29465,6 +29592,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.384e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -29604,7 +29732,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0913958e-007
 + lalpha0=-3.1380589e-012
 + lbeta0=-3.7819465e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=4.25291e-009
 + lk2=-2.5868222e-008
@@ -29718,6 +29846,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.5586018e-010
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094635213
@@ -29849,7 +29978,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0635705e-007
 + lalpha0=-3.5910211e-011
 + lbeta0=-5.0576089e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.6738621e-008
 + lk2=-1.0908973e-009
@@ -29961,6 +30090,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-7.4906407e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12381402
@@ -30090,7 +30220,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.451844e-007
 + lalpha0=-2.4340693e-009
 + lbeta0=-7.439044e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=4.7102587e-010
 + lk2=-9.886097e-009
@@ -30205,6 +30335,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.6006695e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097664506
@@ -30331,7 +30462,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -30413,6 +30544,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.383e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.099503482
@@ -30541,7 +30673,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=7.2879057e-008
 + lalpha0=-3.1611736e-012
 + lbeta0=-2.8404732e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.7021562e-008
 + lk2=-2.1380073e-008
@@ -30652,6 +30784,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=7.6479273e-012
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -30781,7 +30914,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=7.7459926e-008
 + lalpha0=-5.9751701e-011
 + lbeta0=-5.3971937e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.5160224e-008
 + lk2=3.0000655e-011
@@ -30892,6 +31025,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-9.9248709e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12381402
@@ -31020,7 +31154,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0868294e-007
 + lalpha0=-2.5378662e-009
 + lbeta0=-6.5178205e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.9172112e-008
 + lk2=8.3841624e-010
@@ -31134,6 +31268,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.2580527e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.095796556
@@ -31258,7 +31393,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -31340,6 +31475,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.758e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -31466,7 +31602,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-2.5134022e-009
 + lalpha0=-2.3862494e-012
 + lbeta0=-2.4809199e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.7021562e-008
 + lk2=-1.8489037e-008
@@ -31579,6 +31715,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.5821897e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -31709,7 +31846,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.2091296e-008
 + lalpha0=-5.4167125e-011
 + lbeta0=-5.1797167e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.5160224e-008
 + lk2=-2.818612e-009
@@ -31823,6 +31960,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.4507691e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094277714
@@ -31953,7 +32091,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.107619e-007
 + lalpha0=-2.509505e-009
 + lbeta0=-6.2808583e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.9172112e-008
 + lk2=3.8391732e-009
@@ -32067,6 +32205,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.6592244e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.098146034
@@ -32192,7 +32331,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -32274,6 +32413,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.5231727e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -32397,7 +32537,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=7.2752989e-009
 + lalpha0=-2.4726041e-012
 + lbeta0=-2.560985e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.7021562e-008
 + lk2=-1.8724917e-008
@@ -32491,6 +32631,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.4e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -32604,7 +32745,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.2409629e-008
 + lalpha0=-5.3855328e-011
 + lbeta0=-5.1802008e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.5160224e-008
 + lk2=-3.133193e-009
@@ -32699,6 +32840,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.0512e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -32812,7 +32954,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.109364e-007
 + lalpha0=-2.5098843e-009
 + lbeta0=-6.3635595e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.9172112e-008
 + lk2=3.7972536e-009
@@ -32908,6 +33050,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.4531855e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -33017,7 +33160,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -33099,6 +33242,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.384e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -33238,7 +33382,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0075502e-007
 + lalpha0=-2.8752733e-012
 + lbeta0=-3.4683987e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=5.4966687e-009
 + lk2=-2.3923245e-008
@@ -33352,6 +33496,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.5243909e-010
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094684782
@@ -33483,7 +33628,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0404081e-007
 + lalpha0=-3.4131346e-011
 + lbeta0=-4.8401083e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.5471375e-008
 + lk2=-5.6604249e-010
@@ -33595,6 +33740,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-7.622458e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12347027
@@ -33724,7 +33870,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.4421474e-007
 + lalpha0=-2.3961345e-009
 + lbeta0=-7.3234127e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=3.3836545e-009
 + lk2=-1.045177e-008
@@ -33839,6 +33985,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.5127704e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097768223
@@ -33965,7 +34112,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -34047,6 +34194,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.305e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.099573375
@@ -34175,7 +34323,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.6568316e-008
 + lalpha0=-2.8926407e-012
 + lbeta0=-2.59284e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.3863555e-008
 + lk2=-1.9573129e-008
@@ -34286,6 +34434,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=5.1850909e-012
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -34415,7 +34564,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=7.4263098e-008
 + lalpha0=-5.7254595e-011
 + lbeta0=-5.1619305e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.4045024e-008
 + lk2=1.2965043e-010
@@ -34526,6 +34675,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-9.90552e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12347027
@@ -34654,7 +34804,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0700469e-007
 + lalpha0=-2.5007312e-009
 + lbeta0=-6.4127021e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.8146803e-008
 + lk2=7.7519526e-010
@@ -34768,6 +34918,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.2510491e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.095823899
@@ -34892,7 +35043,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -34974,6 +35125,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.746e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -35100,7 +35252,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-2.3726975e-009
 + lalpha0=-2.1820478e-012
 + lbeta0=-2.2686901e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.3863555e-008
 + lk2=-1.6910112e-008
@@ -35213,6 +35365,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.5734843e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -35343,7 +35496,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=5.9336662e-008
 + lalpha0=-5.1768678e-011
 + lbeta0=-4.9501275e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.4045024e-008
 + lk2=-2.6912057e-009
@@ -35457,6 +35610,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.5114455e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094296073
@@ -35587,7 +35741,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0911871e-007
 + lalpha0=-2.4723045e-009
 + lbeta0=-6.1870892e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.8146803e-008
 + lk2=3.7826066e-009
@@ -35701,6 +35855,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.6591108e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.098144574
@@ -35826,7 +35981,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -35908,6 +36063,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.5243182e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -36031,7 +36187,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.6547025e-009
 + lalpha0=-2.2616864e-012
 + lbeta0=-2.3425283e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.3863555e-008
 + lk2=-1.7127647e-008
@@ -36125,6 +36281,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.4e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -36238,7 +36395,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=5.9643389e-008
 + lalpha0=-5.1468248e-011
 + lbeta0=-4.950594e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.4045024e-008
 + lk2=-2.9943176e-009
@@ -36333,6 +36490,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.1088e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -36446,7 +36604,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0929204e-007
 + lalpha0=-2.4726813e-009
 + lbeta0=-6.2692351e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.8146803e-008
 + lk2=3.7409685e-009
@@ -36542,6 +36700,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.4522691e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -36651,7 +36810,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -36733,6 +36892,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.384e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -36894,7 +37054,7 @@ m0 d1 g s1 b nfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-0.068999933
 + lambda=0
 + lat=-75600.021
-+ level=14
++ level=54
 + lint=-3e-008
 + lintnoi=0
 + lketa=0.04140001
@@ -37058,6 +37218,7 @@ m0 d1 g s1 b nfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + up=0
 + ute=-1.5000005
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + vfbsdoff=0
 + voff=-0.08
@@ -37230,7 +37391,7 @@ m0 d1 g s1 b nfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-0.069000099
 + lambda=0
 + lat=85782.454
-+ level=14
++ level=54
 + lint=-3e-008
 + lintnoi=0
 + lketa=0.041400183
@@ -37394,6 +37555,7 @@ m0 d1 g s1 b nfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + up=0
 + ute=-1.5000008
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + vfbsdoff=0
 + voff=-0.08
@@ -37577,7 +37739,7 @@ m0 d g s b nfet_06v0_nvt ad='ad' as='as' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd'
 + kvth0we=0
 + lambda=0
 + lat=-30000
-+ level=14
++ level=54
 + lint=1e-007
 + lintnoi=0
 + lku0=0
@@ -37731,6 +37893,7 @@ m0 d g s b nfet_06v0_nvt ad='ad' as='as' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd'
 + up=0
 + ute=-1.5
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + vfbsdoff=0
 + voff=-0.06
@@ -37884,7 +38047,7 @@ m0 d1 g s1 b pfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + kt2=-0.09064
 + lambda=0
 + lc=0
-+ level=14
++ level=54
 + lint=6.7e-8
 + ll=-5.4e-15
 + lln=1
@@ -38625,7 +38788,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lalpha0=-3.0506364e-013
 + lbeta0=1.2863636e-007
 + ldelta=3.1818182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.9985454e-008
 + lk2=-4.1647636e-008
@@ -38741,6 +38904,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-4.2363636e-011
 + ute=-1.5675325
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.1262652
 + voffcv=0.005
@@ -38868,7 +39032,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lalpha0=-2.265098e-012
 + lbeta0=-1.2312245e-006
 + ldelta=4.2857143e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=6.5057143e-009
 + lk2=-2.6163257e-008
@@ -38983,6 +39147,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-6.0285714e-011
 + ute=-1.3857143
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.11273959
 + voffcv=0.005
@@ -39110,7 +39275,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lalpha0=-8.4670617e-011
 + lbeta0=-3.133052e-006
 + ldelta=2.7272727e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-5.2936364e-008
 + lk2=-4.4355584e-009
@@ -39219,6 +39384,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-5.6e-011
 + ute=-1.3857143
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12631325
 + voffcv=0.005
@@ -39339,7 +39505,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -39420,6 +39586,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-5.6e-011
 + ute=-1.3857143
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12496714
 + voffcv=0.005
@@ -39544,7 +39711,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lalpha0=-2.8170545e-013
 + lbeta0=-8.9454546e-008
 + ldelta=3.1818182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.9985454e-008
 + lk2=-3.7879164e-008
@@ -39656,6 +39823,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-5.6e-011
 + ute=-1.4342857
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.079311948
 + voffcv=0.005
@@ -39782,7 +39950,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lalpha0=-2.3649037e-012
 + lbeta0=-1.1603265e-007
 + ldelta=4.2857143e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.4610612e-009
 + lk2=-2.1356464e-008
@@ -39897,6 +40065,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-1.1888774e-010
 + ute=-1.4342857
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12049225
 + voffcv=0.005
@@ -40024,7 +40193,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lalpha0=-1.0329047e-010
 + lbeta0=-3.7206623e-006
 + ldelta=2.7272727e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.5489221e-008
 + lk2=-4.6356351e-009
@@ -40137,6 +40306,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-5.0997566e-011
 + ute=-1.7216234
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12197591
 + voffcv=0.005
@@ -40256,7 +40426,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -40337,6 +40507,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-5.6e-011
 + ute=-1.6871429
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.005
@@ -40456,7 +40627,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lags=3.2753448e-008
 + lalpha0=-2.5435614e-013
 + ldelta=3.1818182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.5597554e-008
 + lk2=-3.0232209e-008
@@ -40573,6 +40744,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-2.2938539e-010
 + ute=-1.5701136
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12424632
 + voffcv=0.22872521
@@ -40702,7 +40874,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lalpha0=-2.3087143e-012
 + lbeta0=4.8502597e-008
 + ldelta=4.2857143e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-3.1837237e-008
 + lketa=-1.0255714e-008
@@ -40812,6 +40984,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-1.4511739e-010
 + ute=-1.5701136
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.10253679
 + voffcv=0.005
@@ -40936,7 +41109,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lalpha0=-1.0337986e-010
 + lbeta0=-4.1139731e-006
 + ldelta=2.7272727e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.5679339e-008
 + lk2=-2.3431364e-009
@@ -41054,6 +41227,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-4.4711114e-011
 + ute=-1.5472572
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12197591
 + voffcv=-0.065880682
@@ -41175,7 +41349,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -41256,6 +41430,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.057375
@@ -41378,7 +41553,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lags=-6.2750307e-008
 + lalpha0=-2.6008182e-013
 + ldelta=3.1818182e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-9.6116364e-008
 + lk2=-3.0777727e-008
@@ -41477,6 +41652,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-2.0888491e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=0.20227273
@@ -41587,7 +41763,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lags=-1.4038286e-007
 + lalpha0=-2.3087143e-012
 + ldelta=4.2857143e-009
-+ level=14
++ level=54
 + lint=0
 + lk2=-3.1102457e-008
 + lketa=-1.0255714e-008
@@ -41681,6 +41857,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-1.3899143e-010
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.10411714
 + voffcv=0.005
@@ -41789,7 +41966,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + lalpha0=-1.0337986e-010
 + lbeta0=-4.0704545e-006
 + ldelta=2.7272727e-009
-+ level=14
++ level=54
 + lint=0
 + lk1=-4.5313636e-008
 + lk2=-2.3431364e-009
@@ -41888,6 +42065,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-4.5695e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12197591
 + voffcv=-0.0575
@@ -41991,7 +42169,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -42072,6 +42250,7 @@ m0 d1 g s1 b nfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' n
 + uc1=-5.6e-011
 + ute=-1.55
 + vbm=-3
++ version=4.5
 + vfbcv=-1
 + voff=-0.12066
 + voffcv=-0.05
@@ -42208,7 +42387,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0492091e-007
 + lalpha0=-3.0054064e-012
 + lbeta0=-3.6237273e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=4.91e-009
 + lk2=-2.4890454e-008
@@ -42322,6 +42501,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-2.5418182e-010
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094658091
@@ -42453,7 +42633,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0521551e-007
 + lalpha0=-3.5014873e-011
 + lbeta0=-4.9484082e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.6117551e-008
 + lk2=-8.2285714e-010
@@ -42565,6 +42745,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-7.5563755e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12364214
@@ -42694,7 +42875,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.4470325e-007
 + lalpha0=-2.415082e-009
 + lbeta0=-7.3811688e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=1.9383117e-009
 + lk2=-1.0171558e-008
@@ -42809,6 +42990,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.5566519e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097716396
@@ -42935,7 +43117,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -43017,6 +43199,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.344e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.099538429
@@ -43145,7 +43328,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.9689636e-008
 + lalpha0=-3.0255502e-012
 + lbeta0=-2.7152909e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.5426364e-008
 + lk2=-2.0467636e-008
@@ -43256,6 +43439,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=6.432e-012
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -43385,7 +43569,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=7.5856163e-008
 + lalpha0=-5.8498663e-011
 + lbeta0=-5.2790449e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.46e-008
 + lk2=8.0987755e-011
@@ -43496,6 +43680,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-9.9154286e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.12364214
@@ -43624,7 +43809,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0784299e-007
 + lalpha0=-2.519287e-009
 + lbeta0=-6.4651948e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.8659091e-008
 + lk2=8.0661039e-010
@@ -43738,6 +43923,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.2545455e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.095810227
@@ -43862,7 +44048,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -43944,6 +44130,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.752e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -44070,7 +44257,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=-2.4436508e-009
 + lalpha0=-2.2830898e-012
 + lbeta0=-2.3737058e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.5426364e-008
 + lk2=-1.7691446e-008
@@ -44183,6 +44370,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.5778578e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -44313,7 +44501,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.0707474e-008
 + lalpha0=-5.296228e-011
 + lbeta0=-5.0643818e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.46e-008
 + lk2=-2.7545864e-009
@@ -44427,6 +44615,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-3.4810909e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.094286796
@@ -44557,7 +44746,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.0993971e-007
 + lalpha0=-2.4908914e-009
 + lbeta0=-6.233938e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.8659091e-008
 + lk2=3.8108709e-009
@@ -44671,6 +44860,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.6591694e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.098145312
@@ -44796,7 +44986,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -44878,6 +45068,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.5237455e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -45001,7 +45192,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.9618182e-009
 + lalpha0=-2.3660636e-012
 + lbeta0=-2.4506364e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-3.5426364e-008
 + lk2=-1.7918091e-008
@@ -45095,6 +45286,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-8.4e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -45208,7 +45400,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=6.102e-008
 + lalpha0=-5.2656171e-011
 + lbeta0=-5.0648571e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-2.46e-008
 + lk2=-3.0634286e-009
@@ -45303,6 +45495,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-4.08e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -45416,7 +45609,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + lags=1.1011364e-007
 + lalpha0=-2.4912696e-009
 + lbeta0=-6.3163636e-006
-+ level=14
++ level=54
 + lint=0
 + lk1=-6.8659091e-008
 + lk2=3.7690909e-009
@@ -45512,6 +45705,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.4527273e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -45621,7 +45815,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + ku0=0
 + kvsat=0
 + kvth0=0
-+ level=14
++ level=54
 + lint=0
 + ll=0
 + lln=1
@@ -45703,6 +45897,7 @@ m0 d1 g s1 b pfet_03v3 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + uc1=-6.384e-011
 + ute=-1
 + vbm=-3
++ version=4.5
 + vfb=0
 + vfbcv=-1
 + voff=-0.097861
@@ -45849,7 +46044,7 @@ m0 d g s b nfet_06v0_nvt ad='ad' as='as' l='l' m='m' nrd='nrd' nrs='nrs' pd='pd'
 + kvth0we=0
 + lambda=0
 + lat=-30000
-+ level=14
++ level=54
 + lint=1e-007
 + lintnoi=0
 + lku0=0
@@ -46153,7 +46348,7 @@ m0 d1 g s1 b pfet_06v0 ad='ad' as='as' delvto='mis_vth*sw_stat_mismatch' l='l' m
 + kt2=-0.09064
 + lambda=0
 + lc=0
-+ level=14
++ level=54
 + lint=6.7e-8
 + ll=-5.4e-15
 + lln=1
