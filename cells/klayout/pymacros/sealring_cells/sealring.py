@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import pya
-from .draw_sealring import sealring_edge_width, draw_sealring
+from .draw_sealring import draw_sealring, sealring_edge_width
 
 default_width = 100
 default_height = 100
