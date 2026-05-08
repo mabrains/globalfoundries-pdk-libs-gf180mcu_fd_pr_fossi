@@ -89,11 +89,9 @@ unless options["top_cell_name"] == ""
   $topcell = options["top_cell_name"]
 end
 
-$spice_net_names = options["spice_net"]
+$spice_net_names = "true"
 
-$spice_comments = options["spice_comment"]
-
-$scale = options["scale"]
+$spice_comments = "true"
 
 $verbose = options["verbose"]
 
