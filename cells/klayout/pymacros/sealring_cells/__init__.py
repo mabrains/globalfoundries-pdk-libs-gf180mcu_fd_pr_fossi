@@ -13,7 +13,6 @@
 # limitations under the License.
 
 import pya
-
 from .sealring import sealring
 
 
