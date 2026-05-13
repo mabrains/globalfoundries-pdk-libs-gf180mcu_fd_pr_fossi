@@ -123,14 +123,10 @@ lvs_builder = OptionMenuBuilder.new(
   "submenu.lvs_menu"
 )
 
-lvs_builder.add_string("sub_name", "Substrate name", "Substrate name", "Please enter substrate name", menu_id: "SUB_name")
 lvs_builder.add_selection("run_mode", "Run mode", %w[tiling deep flat], "Run mode", "Select run mode:", 1)
 lvs_builder.add_selection("variant", "variant options", %w[A B C D], "Variant options", "Select variant option:", 1)
 lvs_builder.add_string("netlist", "Netlist Path", "Netlist Path", "Please enter Netlist Path", menu_id: "Netlist_path")
 lvs_builder.add_string("top_cell_name", "Top_cell name", "Top cell name", "Please enter Top_cell name. Empty means run on current cell.", menu_id: "TOP_cell_name")
-lvs_builder.add_checkbox("spice_net", "SPICE net name", lvs_initial["spice_net"], menu_id: "SPICE_net_name")
-lvs_builder.add_checkbox("spice_comment", "SPICE comments", lvs_initial["spice_comment"], menu_id: "SPICE_comments")
-lvs_builder.add_checkbox("scale", "Scaling x10^6", lvs_initial["scale"])
 lvs_builder.add_checkbox("verbose", "Verbose mode", lvs_initial["verbose"])
 lvs_builder.add_checkbox("simplify", "Simplify", lvs_initial["simplify"])
 lvs_builder.add_checkbox("net_only", "Netlist only", lvs_initial["net_only"])
