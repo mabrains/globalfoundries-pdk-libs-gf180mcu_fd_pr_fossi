@@ -132,7 +132,7 @@
 .lib 'sm141064.spice' nfet_06v0_nvt_t
 .lib 'sm141064.spice' noise_corner
 .lib 'sm141064.spice' fets_mm
-.endl
+.endl typical
 
 .lib ff
 .lib 'sm141064.spice' nfet_03v3_f
@@ -164,7 +164,7 @@
 .lib 'sm141064.spice' nfet_06v0_nvt_t
 .lib 'sm141064.spice' noise_corner
 .lib 'sm141064.spice' fets_mm
-.endl
+.endl ff
 
 .lib ss
 .lib 'sm141064.spice' nfet_03v3_s
@@ -196,7 +196,7 @@
 .lib 'sm141064.spice' nfet_06v0_nvt_t
 .lib 'sm141064.spice' noise_corner
 .lib 'sm141064.spice' fets_mm
-.endl
+.endl ss
 
 .lib fs
 .lib 'sm141064.spice' nfet_03v3_fs
@@ -228,7 +228,7 @@
 .lib 'sm141064.spice' nfet_06v0_nvt_t
 .lib 'sm141064.spice' noise_corner
 .lib 'sm141064.spice' fets_mm
-.endl
+.endl fs
 
 .lib sf
 .lib 'sm141064.spice' nfet_03v3_sf
@@ -260,7 +260,7 @@
 .lib 'sm141064.spice' nfet_06v0_nvt_t
 .lib 'sm141064.spice' noise_corner
 .lib 'sm141064.spice' fets_mm
-.endl
+.endl sf
 
 .lib bjt_typical
 .param isa=1
@@ -294,7 +294,7 @@
 .param mc_xcje_vpnp=0
 .param mc_xcjc_vpnp=0
 .lib 'sm141064.spice' bjt_mc
-.endl
+.endl bjt_typical
 
 .lib bjt_ss
 .param isa=0.65
@@ -328,7 +328,7 @@
 .param mc_xcje_vpnp=0
 .param mc_xcjc_vpnp=0
 .lib 'sm141064.spice' bjt_mc
-.endl
+.endl bjt_ss
 
 .lib bjt_ff
 .param isa=1.35
@@ -362,7 +362,7 @@
 .param mc_xcje_vpnp=0
 .param mc_xcjc_vpnp=0
 .lib 'sm141064.spice' bjt_mc
-.endl
+.endl bjt_ff
 
 .lib diode_typical
 .param jsa=1
@@ -375,7 +375,7 @@
 .param jtuna_sc=0
 .param cja_sc=1
 .lib 'sm141064.spice' dio
-.endl
+.endl diode_typical
 
 .lib diode_ss
 .param jsa=0.85
@@ -388,7 +388,7 @@
 .param jtuna_sc=-0.77
 .param cja_sc=1.1
 .lib 'sm141064.spice' dio
-.endl
+.endl diode_ss
 
 .lib diode_ff
 .param jsa=1.15
@@ -401,7 +401,7 @@
 .param jtuna_sc=0.77
 .param cja_sc=0.9
 .lib 'sm141064.spice' dio
-.endl
+.endl diode_ff
 
 .lib res_typical
 .param rsh_nplus_u=60
@@ -429,7 +429,7 @@
 .lib 'sm141064.spice' res
 .lib 'sm141064.spice' efuse
 .lib 'sm141064.spice' res_statistical_par
-.endl
+.endl res_typical
 
 .lib res_ss
 .param rsh_nplus_u=75
@@ -457,7 +457,7 @@
 .lib 'sm141064.spice' res
 .lib 'sm141064.spice' efuse
 .lib 'sm141064.spice' res_statistical_par
-.endl
+.endl res_ss
 
 .lib res_ff
 .param rsh_nplus_u=45
@@ -485,7 +485,7 @@
 .lib 'sm141064.spice' res
 .lib 'sm141064.spice' efuse
 .lib 'sm141064.spice' res_statistical_par
-.endl
+.endl res_ff
 
 .lib mimcap_typical
 .param mim_corner_1p5ff=1
@@ -495,7 +495,7 @@
 .param mc_c_cox_1p5ff=0
 .param mc_c_cox_2p0ff=0
 .lib 'sm141064_mim.spice' cap_mim_new
-.endl
+.endl mimcap_typical
 
 .lib mimcap_ss
 .param mim_corner_1p5ff=1.155
@@ -505,7 +505,7 @@
 .param mc_c_cox_1p5ff=0
 .param mc_c_cox_2p0ff=0
 .lib 'sm141064_mim.spice' cap_mim_new
-.endl
+.endl mimcap_ss
 
 .lib mimcap_ff
 .param mim_corner_1p5ff=0.845
@@ -515,7 +515,7 @@
 .param mc_c_cox_1p5ff=0
 .param mc_c_cox_2p0ff=0
 .lib 'sm141064_mim.spice' cap_mim_new
-.endl
+.endl mimcap_ff
 
 .lib moscap_typical
 .param cap_nmos_03v3_corner=1
@@ -527,7 +527,7 @@
 .param cap_nmos_06v0_b_corner=1
 .param cap_pmos_06v0_b_corner=1
 .lib 'sm141064.spice' moscap
-.endl
+.endl moscap_typical
 
 .lib moscap_ff
 .param cap_nmos_03v3_corner=0.9
@@ -539,7 +539,7 @@
 .param cap_nmos_06v0_b_corner=0.9
 .param cap_pmos_06v0_b_corner=0.9
 .lib 'sm141064.spice' moscap
-.endl
+.endl moscap_ff
 
 .lib moscap_ss
 .param cap_nmos_03v3_corner=1.1
@@ -551,7 +551,7 @@
 .param cap_nmos_06v0_b_corner=1.1
 .param cap_pmos_06v0_b_corner=1.1
 .lib 'sm141064.spice' moscap
-.endl
+.endl moscap_ss
 
 .lib statistical
 .param mc_sig_vth2='agauss(0,1,3)'
@@ -670,7 +670,7 @@
 .lib 'sm141064.spice' pfet_06v0_stat
 .lib 'sm141064.spice' nfet_06v0_nvt_stat
 .lib 'sm141064.spice' noise_corner
-.endl
+.endl statistical
 
 .lib noise_corner
 .param nfet_03v3_noia='(fnoicor==0)*3.2e+041+(fnoicor==1)*3.5e+042'
@@ -688,7 +688,7 @@
 .param nfet_06v0_nvt_noia='(fnoicor==0)*5.5e+040+(fnoicor==1)*1e+041'
 .param nfet_06v0_nvt_noib='(fnoicor==0)*2.5e+025+(fnoicor==1)*9.5e+025'
 .param nfet_06v0_nvt_noic='(fnoicor==0)*1e+007+(fnoicor==1)*2e+007'
-.endl
+.endl noise_corner
 
 .lib nfet_03v3_t
 .subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -4296,7 +4296,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m1
-.endl
+.endl nfet_03v3_t
 
 .lib nfet_03v3_f
 .subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -7904,7 +7904,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m1
-.endl
+.endl nfet_03v3_f
 
 .lib nfet_03v3_s
 .subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -11512,7 +11512,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m1
-.endl
+.endl nfet_03v3_s
 
 .lib nfet_03v3_fs
 .subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -15120,7 +15120,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m1
-.endl
+.endl nfet_03v3_fs
 
 .lib nfet_03v3_sf
 .subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -18728,7 +18728,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m1
-.endl
+.endl nfet_03v3_sf
 
 .lib pfet_03v3_t
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -22389,7 +22389,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl
+.endl pfet_03v3_t
 
 .lib pfet_03v3_f
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -26050,7 +26050,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl
+.endl pfet_03v3_f
 
 .lib pfet_03v3_s
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -29711,7 +29711,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl
+.endl pfet_03v3_s
 
 .lib pfet_03v3_fs
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -33372,7 +33372,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl
+.endl pfet_03v3_fs
 
 .lib pfet_03v3_sf
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -37033,7 +37033,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl
+.endl pfet_03v3_sf
 
 .lib nfet_06v0_t
 .subckt nfet_06v0_dss d g s b w=10u l=0.6u nf=1 m=1 par=1 s_sab=0.28u d_sab=3.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -37746,7 +37746,7 @@ m0 d1 g s1 b nfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m2
-.endl
+.endl nfet_06v0_t
 
 .lib nfet_06v0_nvt_t
 .subckt nfet_06v0_nvt d g s b w=1e-5 l=1.8e-6 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
@@ -38069,7 +38069,7 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + xtsswgs=0.02
 + xtssws=0.02
 + xw='nfet_06v0_nvt_xw'
-.endl
+.endl nfet_06v0_nvt_t
 
 .lib pfet_06v0_t
 .subckt pfet_06v0_dss d g s b w=10u l=0.5u nf=1 m=1 par=1 s_sab=0.28u d_sab=2.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -38315,7 +38315,7 @@ m0 d1 g s1 b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m2
-.endl
+.endl pfet_06v0_t
 
 .lib dio
 .model diode_nd2ps_03v3 d
@@ -38566,7 +38566,7 @@ rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))
 + trs=0.0022143
 + xti=3
 + xtitun=-12.347
-.endl
+.endl dio
 
 .lib res
 .subckt nplus_u 1 2 3 r_length=l r_width=w dtemp=0 par=1 s=1 r_rsh0='rsh_nplus_u*(1+(mc_rsh_nplus_u/(rsh_nplus_u))*res_mc_skew*sw_stat_global)' r_dw='-5e-8*(1+mc_dw_nplus_u*res_mc_skew*sw_stat_global)' r_dl=2e-11 r_vc1=0 r_vc2=0 r_tc1=1.36e-3 r_tc2=6.5e-7 r_tnom=25 r_l='s*(r_length-2*r_dl)' r_w='r_width-2*r_dw' r_n='r_l/r_w' r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)' mis_r=0
@@ -39026,7 +39026,7 @@ c_cap 1 2 cap_mim_1f0_model dtemp=dtemp
 c_cap 1 2 cap_mim_2f0_model dtemp=dtemp
 r_leak 1 2 r='1/(gleak*c_area)' dtemp=dtemp tc1=c_tc1 tc2=c_tc2
 .ends cap_mim_2f0
-.endl
+.endl cap_mim
 
 .lib moscap
 .subckt cap_nmos_03v3 1 2 c_length=l c_width=w dtemp=0
@@ -39085,7 +39085,7 @@ c_moscap 1 2 c='cap_nmos_06v0_b_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*
 .param cvar4=0.642857
 c_moscap 1 2 c='cap_pmos_06v0_b_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))' dtemp=dtemp
 .ends cap_pmos_06v0_b
-.endl
+.endl moscap
 
 .lib nfet_03v3_stat
 .subckt nfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -42693,7 +42693,7 @@ m0 d1 g s1 b nfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 3 1 np_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends nplus_u_m1
-.endl
+.endl nfet_03v3_stat
 
 .lib pfet_03v3_stat
 .subckt pfet_03v3_dss d g s b w=10u l=0.28u nf=1 m=1 par=1 s_sab=0.48u d_sab=1.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -46354,7 +46354,7 @@ m0 d1 g s1 b pfet_03v3 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m1
-.endl
+.endl pfet_03v3_stat
 
 .lib nfet_06v0_nvt_stat
 .subckt nfet_06v0_nvt d g s b w=1e-5 l=1.8e-6 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
@@ -46677,7 +46677,7 @@ m0 d g s b nfet_06v0_nvt ad=ad as=as l=l m=m nf=nf nrd=nrd nrs=nrs pd=pd ps=ps s
 + xtsswgs=0.02
 + xtssws=0.02
 + xw='nfet_06v0_nvt_xw'
-.endl
+.endl nfet_06v0_nvt_stat
 
 .lib pfet_06v0_stat
 .subckt pfet_06v0_dss d g s b w=10u l=0.5u nf=1 m=1 par=1 s_sab=0.28u d_sab=2.78u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0
@@ -46919,13 +46919,13 @@ m0 d1 g s1 b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l='l' m=m m
 d1 1 3 pn_junction area='r_w*r_l' pj='2*(r_w+r_l)'
 rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
 .ends pplus_u_m2
-.endl
+.endl pfet_06v0_stat
 
 .lib efuse
 .subckt efuse in out pblow=0
 rfuse in out r='200*(1-pblow)+900*pblow'
 .ends efuse
-.endl
+.endl efuse
 
 .lib fets_mm
 .subckt nfet_03v3 d g s b w=1e-5 l=2.8e-7 nf=1 m=1 as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0 sa=0 sb=0 sd=0
@@ -47012,7 +47012,7 @@ m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param mis_vth='agauss(0,var_vth,1)'
 m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0='1-mis_k*sw_stat_mismatch' nf=nf nrd=nrd nrs=nrs pd=pd ps=ps sa=sa sb=sb sd=sd w=w
 .ends pfet_06v0
-.endl
+.endl fets_mm
 
 .lib res_statistical_par
 .param mc_rsh_nplus_u=0
@@ -47050,7 +47050,7 @@ m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param mc_rt_ppolyf_u_1k_6p0=0
 .param mc_rt_ppolyf_u_2k_6p0=0
 .param mc_rt_ppolyf_u_3k=0
-.endl
+.endl res_statistical_par
 
 .lib res_statistical
 .param rsh_nplus_u=60
@@ -47146,7 +47146,7 @@ m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param mc_rt_ppolyf_u_3k='mc_rt_ppolyf_u_3k_temp'
 .lib 'sm141064.spice' res
 .lib 'sm141064.spice' efuse
-.endl
+.endl res_statistical
 
 .lib bjt_statistical
 .param isa=1
@@ -47194,7 +47194,7 @@ m0 d g s b pfet_06v0 ad=ad as=as delvto='mis_vth*sw_stat_mismatch' l=l m=m mulu0
 .param mc_xcje_vpnp='mc_xcje_vpnp_temp'
 .param mc_xcjc_vpnp='mc_xcjc_vpnp_temp'
 .lib 'sm141064.spice' bjt_mc
-.endl
+.endl bjt_statistical
 
 .lib bjt_mc
 .subckt pnp_10p00x00p42 c b e par=1 dtemp=0
@@ -47725,7 +47725,7 @@ q0 c b e s npn_00p54x02p00 dtemp=dtemp
 + xtb=0
 + xti=3
 .ends npn_00p54x02p00
-.endl
+.endl bjt_mc
 
 .lib mimcap_statistical
 .param mim_corner_1p5ff=1
@@ -47738,4 +47738,4 @@ q0 c b e s npn_00p54x02p00 dtemp=dtemp
 .param mc_c_cox_1p5ff='mc_c_cox_1p5ff2*sw_stat_global*cap_mc_skew'
 .param mc_c_cox_2p0ff='mc_c_cox_2p0ff2*sw_stat_global*cap_mc_skew'
 .lib 'sm141064_mim.spice' cap_mim_new
-.endl
+.endl mimcap_statistical
