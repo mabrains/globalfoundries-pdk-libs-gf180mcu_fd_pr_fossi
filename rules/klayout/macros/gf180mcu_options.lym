@@ -15,483 +15,127 @@
  <menu-path>submenu&gt;end("gf180mcu PDK").end</menu-path>
  <interpreter>ruby</interpreter>
  <dsl-interpreter-name/>
- <text>module MyMacro
+ <text>
 require 'yaml'
 require 'fileutils'
-
 require_relative 'options_helper'
 
-  include RBA
+include RBA
 
-  #####################################################################################
-  # Loading options
-  #####################################################################################
-  mw = RBA::MainWindow::instance
+class OptionMenuBuilder
+  def initialize(mw, get_opts, save_opts, menu_path)
+    @mw = mw
+    @get_opts = get_opts   # Lambda that returns the options hash
+    @save_opts = save_opts # Lambda that accepts the options hash and saves it
+    @menu_path = menu_path
+  end
 
-  # create a toolbar submenu
-  mw.menu.insert_menu("submenu.end", "drc_menu", "Klayout DRC Options")
-  mw.menu.insert_menu("submenu.end", "lvs_menu", "Klayout LVS Options")
-  #mw.menu.insert_separator("submenu.drc_menu.end", "name1")
-  mw.menu.insert_separator("submenu.lvs_menu+", "name2")
-
-
-  #####################################################################################
-  # Adding DRC options
-  #####################################################################################
-  drc_initial_options = get_option_drc()
-
-  #1 Setting run mode
-  run_mode_drc_action = RBA::Action::new
-  run_mode_drc_action.title = "Run mode"
-  run_mode_drc_action.on_triggered do
-    run_mode_array = [ "tiling", "deep", "flat" ]
-    options = get_option_drc()
-    idx = run_mode_array.index(options["run_mode"])
-    if idx.nil?
-      warn "Error: '#{options["run_mode"]}' not found, initial selection will not match currently selected option for run mode."
-      idx = 1
+  def add_string(key, title, prompt_title, prompt_msg, menu_id: nil)
+    action = RBA::Action.new
+    action.title = title
+    action.on_triggered do
+      opts = @get_opts.call
+      new_val = RBA::InputDialog::ask_string(prompt_title, prompt_msg, opts[key])
+      if new_val
+        opts[key] = new_val
+        @save_opts.call(opts)
+      end
     end
+    @mw.menu.insert_item("#{@menu_path}.end", menu_id || key, action)
+  end
 
-    run_mode_select = RBA::InputDialog::ask_item("Run mode", "Select run mode:", run_mode_array, idx)
-    if run_mode_select
-        options["run_mode"]= run_mode_select
-        save_option_drc(options)
+  def add_selection(key, title, options, prompt_title, prompt_msg, default_idx = 1, menu_id: nil)
+    action = RBA::Action.new
+    action.title = title
+    action.on_triggered do
+      opts = @get_opts.call
+      idx = options.index(opts[key])
+      if idx.nil?
+        warn "Error: '#{opts[key]}' not found in selection options. Initial selection will not match."
+        idx = default_idx
+      end
+      selected = RBA::InputDialog::ask_item(prompt_title, prompt_msg, options, idx)
+      if selected
+        opts[key] = selected
+        @save_opts.call(opts)
+      end
     end
-
+    @mw.menu.insert_item("#{@menu_path}.end", menu_id || key, action)
   end
-  mw.menu.insert_item("submenu.drc_menu.end", "run_mode", run_mode_drc_action)
 
-  #2 Setting variant
-  variant_drc_action = RBA::Action::new
-  variant_drc_action.title = "Variant options"
-  variant_drc_action.on_triggered do
-    options = get_option_drc()
-    variant_array = [ "A", "B", "C", "D" ]
-    idx = variant_array.index(options["variant"])
-    if idx.nil?
-      warn "Error: '#{options["variant"]}' not found, initial selection will not match currently selected option for variant."
-      idx = 1
+  def add_checkbox(key, title, initial_checked, menu_id: nil)
+    action = RBA::Action.new
+    action.title = title
+    action.checkable = true
+    action.checked = initial_checked
+    action.on_triggered do
+      opts = @get_opts.call
+      opts[key] = action.checked?
+      @save_opts.call(opts)
     end
-
-    variant_select = RBA::InputDialog::ask_item("Variant options", "Select variant option:", variant_array, idx)
-
-    options = get_option_drc()
-    if variant_select
-      options["variant"] = variant_select
-      save_option_drc(options)
-    end
-
+    @mw.menu.insert_item("#{@menu_path}.end", menu_id || key, action)
   end
-  mw.menu.insert_item("submenu.drc_menu.end", "variant", variant_drc_action)
-
-  #3 Adding Top cell name
-  top_cell_action = RBA::Action::new
-  top_cell_action.title = "Top_cell name"
-  top_cell_action.on_triggered do
-    options = get_option_drc()
-    top_cell_name = RBA::InputDialog::ask_string("Top cell name", "Please enter Top_cell name. Empty means run on current cell.", options["top_cell_name"])
-    if top_cell_name
-      options["top_cell_name"] = top_cell_name
-      save_option_drc(options)
-    end
-
-  end
-  mw.menu.insert_item("submenu.drc_menu.end", "TOP_cell_name", top_cell_action)
-
-  #5 Setting verbose mode
-  verbose_drc_action = RBA::Action::new
-  verbose_drc_action.title = "Verbose mode"
-  verbose_drc_action.checkable=(true)
-  verbose_drc_action.checked=drc_initial_options["verbose"]
-  verbose_drc_action.on_triggered do
-
-      options = get_option_drc()
-      if verbose_drc_action.is_checked?
-        options["verbose"] = true
-      else
-        options["verbose"] = false
-      end
-      save_option_drc(options)
-
-  end
-  mw.menu.insert_item("submenu.drc_menu.end", "verbose", verbose_drc_action)
-
-  #4 Setting FEOL rules
-  feol_action = RBA::Action::new
-  feol_action.title = "FEOL rules"
-  feol_action.checkable=(true)
-  feol_action.checked=drc_initial_options["feol"]
-  feol_action.on_triggered do
-      options = get_option_drc()
-      if feol_action.is_checked?
-        options["feol"] = true
-      else
-        options["feol"] = false
-      end
-      save_option_drc(options)
-
-  end
-  mw.menu.insert_item("submenu.drc_menu.end", "feol", feol_action)
-
-  #6 Setting BEOL rules
-  beol_action = RBA::Action::new
-  beol_action.title = "BEOL rules"
-  beol_action.checkable=(true)
-  beol_action.checked=drc_initial_options["beol"]
-  beol_action.on_triggered do
-    options = get_option_drc()
-      if beol_action.is_checked?
-        options["beol"] = true
-      else
-        options["beol"] = false
-      end
-      save_option_drc(options)
-
-  end
-  mw.menu.insert_item("submenu.drc_menu.end", "beol", beol_action)
-
-  #7 Setting offgrid rules
-  offgrid_action = RBA::Action::new
-  offgrid_action.title = "Offgrid rules"
-  offgrid_action.checkable=(true)
-  offgrid_action.checked=drc_initial_options["offgrid"]
-  offgrid_action.on_triggered do
-    options = get_option_drc()
-      if offgrid_action.is_checked?
-        options["offgrid"] = true
-      else
-        options["offgrid"] = false
-      end
-      save_option_drc(options)
-
-  end
-  mw.menu.insert_item("submenu.drc_menu.end", "offgrid", offgrid_action)
-
-  #8 Setting connectivity rules
-  connectivity_action = RBA::Action::new
-  connectivity_action.title = "Connectivity rules"
-  connectivity_action.checkable=(true)
-  connectivity_action.checked=drc_initial_options["connectivity"]
-  connectivity_action.on_triggered do
-    options = get_option_drc()
-      if connectivity_action.is_checked?
-        options["connectivity"] = true
-      else
-        options["connectivity"] = false
-      end
-      save_option_drc(options)
-
-  end
-  mw.menu.insert_item("submenu.drc_menu.end", "connectivity", connectivity_action)
-  
-  #####################################################################################
-  # Adding LVS options
-  #####################################################################################
-  lvs_initial_options = get_option_lvs()
-
-  #1 Adding substrate name
-  run_action = RBA::Action::new
-  run_action.title = "Substrate name"
-  run_action.on_triggered do
-    options = get_option_lvs()
-    sub_name = RBA::InputDialog::ask_string("Substrate name", "Please enter substrate name", options["sub_name"])
-    if sub_name
-      options["sub_name"] = sub_name
-      save_option_lvs(options)
-    end
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "SUB_name", run_action)
-
-  #2 Setting run mode
-  run_mode_action = RBA::Action::new
-  run_mode_action.title = "Run mode"
-  run_mode_action.on_triggered do
-    options = get_option_lvs()
-    run_mode_array = [ "tiling", "deep", "flat" ]
-    idx = run_mode_array.index(options["run_mode"])
-    if idx.nil?
-      warn "Error: '#{options["run_mode"]}' not found, initial selection will not match currently selected option for run mode."
-      idx = 1
-    end
-
-    run_mode_select = RBA::InputDialog::ask_item("Run mode", "Select run mode:", run_mode_array, idx)
-    if run_mode_select
-      options["run_mode"] = run_mode_select
-      save_option_lvs(options)
-    end
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "run_mode", run_mode_action)
-
-  #3 Setting stack
-  variant_action = RBA::Action::new
-  variant_action.title = "variant options"
-  variant_action.on_triggered do
-    options = get_option_lvs()
-    variant_array = [ "A", "B", "C", "D" ]
-    idx = variant_array.index(options["variant"])
-    if idx.nil?
-      warn "Error: '#{options["variant"]}' not found, initial selection will not match currently selected option for variant."
-      idx = 1
-    end
-
-    variant_select = RBA::InputDialog::ask_item("Variant options", "Select variant option:", variant_array, idx)
-    if variant_select
-      options["variant"] = variant_select
-      save_option_lvs(options)
-    end
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "variant", variant_action)
-
-  #4 Adding netlist path
-  netlist_action = RBA::Action::new
-  netlist_action.title = "Netlist Path"
-  netlist_action.on_triggered do
-    options = get_option_lvs()
-    netlist_path = RBA::InputDialog::ask_string("Netlist Path", "Please enter Netlist Path", options["netlist"])
-    if netlist_path
-      options["netlist"] = netlist_path
-      save_option_lvs(options)
-    end
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "Netlist_path", netlist_action)
-
-  #5 Adding Top cell name
-  top_cell_action = RBA::Action::new
-  top_cell_action.title = "Top_cell name"
-  top_cell_action.on_triggered do
-    options = get_option_lvs()
-    top_cell_name = RBA::InputDialog::ask_string("Top cell name", "Please enter Top_cell name. Empty means run on current cell.", options["top_cell_name"])
-    if top_cell_name
-      options["top_cell_name"] = top_cell_name
-      save_option_lvs(options)
-    end
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "TOP_cell_name", top_cell_action)
-
-  #7 Setting spice net names
-  spice_net_action = RBA::Action::new
-  spice_net_action.title = "SPICE net name"
-  spice_net_action.checkable=(true)
-  spice_net_action.checked=lvs_initial_options["spice_net"]
-  spice_net_action.on_triggered do
-
-      options = get_option_lvs()
-      if spice_net_action.is_checked?
-        options["spice_net"] = true
-      else
-        options["spice_net"] = false
-      end
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "SPICE_net_name", spice_net_action)
-
-  #8 Setting spice comments
-  spice_comment_action = RBA::Action::new
-  spice_comment_action.title = "SPICE comments"
-  spice_comment_action.checkable=(true)
-  spice_comment_action.checked=lvs_initial_options["spice_comment"]
-  spice_comment_action.on_triggered do
-
-      options = get_option_lvs()
-      if spice_comment_action.is_checked?
-        options["spice_comment"] = true
-      else
-        options["spice_comment"] = false
-      end
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "SPICE_comments", spice_comment_action)
-
-  #9 Setting scaling
-  scale_action = RBA::Action::new
-  scale_action.title = "Scaling x10^6"
-  scale_action.checkable=(true)
-  scale_action.checked=lvs_initial_options["scale"]
-  scale_action.on_triggered do
-
-      options = get_option_lvs()
-      if scale_action.is_checked?
-        options["scale"] = true
-      else
-        options["scale"] = false
-      end
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "scale", scale_action)
-
-  #10 Setting verbose mode
-  verbose_action = RBA::Action::new
-  verbose_action.title = "Verbose mode"
-  verbose_action.checkable=(true)
-  verbose_action.checked=lvs_initial_options["verbose"]
-  verbose_action.on_triggered do
-
-      options = get_option_lvs()
-      if verbose_action.is_checked?
-        options["verbose"] = true
-      else
-        options["verbose"] = false
-      end
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "verbose", verbose_action)
-
-  #11 Setting simplification
-  simplify_action = RBA::Action::new
-  simplify_action.title = "Simplify"
-  simplify_action.checkable=(true)
-  simplify_action.checked=lvs_initial_options["simplify"]
-  simplify_action.on_triggered do
-
-      options = get_option_lvs()
-      if simplify_action.is_checked?
-        options["simplify"] = true
-      else
-        options["simplify"] = false
-      end
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "simplify", simplify_action)
-
-  #12 Setting netlist only
-  net_only_action = RBA::Action::new
-  net_only_action.title = "Netlist only"
-  net_only_action.checkable=(true)
-  net_only_action.checked=lvs_initial_options["net_only"]
-  net_only_action.on_triggered do
-
-      options = get_option_lvs()
-      if net_only_action.is_checked?
-        options["net_only"] = true
-      else
-        options["net_only"] = false
-      end
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "net_only", net_only_action)
-
-  #13 Setting top level pins
-  top_lvl_pins_action = RBA::Action::new
-  top_lvl_pins_action.title = "Top level pins"
-  top_lvl_pins_action.checkable=(true)
-  top_lvl_pins_action.checked=lvs_initial_options["top_lvl_pins"]
-  top_lvl_pins_action.on_triggered do
-
-      options = get_option_lvs()
-      if top_lvl_pins_action.is_checked?
-        options["top_lvl_pins"] = true
-      else
-        options["top_lvl_pins"] = false
-      end
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "top_lvl_pins", top_lvl_pins_action)
-
-  #14 Setting device combine
-  combine_action = RBA::Action::new
-  combine_action.title = "Devices combine"
-  combine_action.checkable=(true)
-  combine_action.checked=lvs_initial_options["combine"]
-  combine_action.on_triggered do
-
-      options = get_option_lvs()
-      if combine_action.is_checked?
-        options["combine"] = true
-      else
-        options["combine"] = false
-      end
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "combine", combine_action)
-
-  #15 Setting purge
-  purge_action = RBA::Action::new
-  purge_action.title = "Purge"
-  purge_action.checkable=(true)
-  purge_action.checked=lvs_initial_options["purge"]
-  purge_action.on_triggered do
-
-      options = get_option_lvs()
-
-      if purge_action.is_checked?
-        options["purge"] = true
-      else
-        options["purge"] = false
-      end
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "purge", purge_action)
-
-  #16 Setting purge nets
-  purge_nets_action = RBA::Action::new
-  purge_nets_action.title = "Purge nets"
-  purge_nets_action.checkable=(true)
-  purge_nets_action.checked=lvs_initial_options["purge_nets"]
-  purge_nets_action.on_triggered do
-
-      options = get_option_lvs()
-      if purge_nets_action.is_checked?
-        options["purge_nets"] = true
-      else
-        options["purge_nets"] = false
-      end
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "purge_nets", purge_nets_action)
-
-  # Implicit connect net
-  # connects nets that have the same name. Useful for testing lvs extraction
-  # of multifinger devices, but can create short in actual designs. Interactions
-  # with flat lvs can also be spotty
-  implicit_connect_action = RBA::Action::new
-  implicit_connect_action.title = "Globally connect nets with identical name"
-  implicit_connect_action.checkable=(true)
-  implicit_connect_action.checked=lvs_initial_options["implicit_connect"]
-  implicit_connect_action.on_triggered do
-
-      options = get_option_lvs()
-      if implicit_connect_action.is_checked?
-        options["implicit_connect"] = true
-      else
-        options["implicit_connect"] = false
-      end
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "implicit_connect", implicit_connect_action)
-
-
-  # Schematic translate
-  # Converts spice schematic netlist to a klayout compatible dialect (works on xschem)
-  schematic_translate_action = RBA::Action::new
-  schematic_translate_action.title = "Translate input spice schematic to klayout dialect"
-  schematic_translate_action.checkable=(true)
-  schematic_translate_action.checked=lvs_initial_options["schematic_translate"]
-  schematic_translate_action.on_triggered do
-
-      options = get_option_lvs()
-      options["schematic_translate"] = schematic_translate_action.is_checked?
-      save_option_lvs(options)
-
-  end
-  mw.menu.insert_item("submenu.lvs_menu.end", "schematic_translate", schematic_translate_action)
 end
 
+#####################################################################################
+# Main Plugin Setup
+#####################################################################################
+mw = RBA::MainWindow.instance
+
+# Create menu submenus
+mw.menu.insert_menu("submenu.end", "drc_menu", "Klayout DRC Options")
+mw.menu.insert_menu("submenu.end", "lvs_menu", "Klayout LVS Options")
+mw.menu.insert_separator("submenu.lvs_menu+", "name2")
+
+# Load initial options for checkbox states
+drc_initial = option_drc()
+lvs_initial = option_lvs()
+
+#####################################################################################
+# DRC Options
+#####################################################################################
+drc_builder = OptionMenuBuilder.new(
+  mw,
+  -> { option_drc },
+  ->(opts) { save_option_drc(opts) },
+  "submenu.drc_menu"
+)
+
+drc_builder.add_selection("run_mode", "Run mode", %w[tiling deep flat], "Run mode", "Select run mode:", 1)
+drc_builder.add_selection("variant", "Variant options", %w[A B C D E F], "Variant options", "Select variant option:", 1)
+drc_builder.add_string("top_cell_name", "Top cell name", "Top cell name", "Please enter Top_cell name. Empty means run on current cell.", menu_id: "TOP_cell_name")
+drc_builder.add_checkbox("verbose", "Verbose mode", drc_initial["verbose"])
+drc_builder.add_string("threads", "Number of threads for DRC operations", "Number of threads for DRC operations", "Please enter number of threads to use in klayout DRC functions. 'max' for all available cores.", menu_id: "threads")
+drc_builder.add_string("workers", "Number of parallel DRC rule runs", "Number of parallel DRC rule runs", "Please enter number of parallel DRC workers. More workers mean more required RAM. 'max' for all available cores. For klayout version prior to 0.30.9, please set it to 1.", menu_id: "workers")
+drc_builder.add_checkbox("feol", "FEOL rules", drc_initial["feol"])
+drc_builder.add_checkbox("beol", "BEOL rules", drc_initial["beol"])
+drc_builder.add_checkbox("offgrid", "Offgrid rules", drc_initial["offgrid"])
+drc_builder.add_checkbox("density", "Density rules", drc_initial["density"])
+drc_builder.add_checkbox("offgrid", "Antenna rules", drc_initial["antenna"])
+
+#####################################################################################
+# LVS Options
+#####################################################################################
+lvs_builder = OptionMenuBuilder.new(
+  mw,
+  -> { option_lvs },
+  ->(opts) { save_option_lvs(opts) },
+  "submenu.lvs_menu"
+)
+
+lvs_builder.add_selection("run_mode", "Run mode", %w[tiling deep flat], "Run mode", "Select run mode:", 1)
+lvs_builder.add_selection("variant", "variant options", %w[A B C D], "Variant options", "Select variant option:", 1)
+lvs_builder.add_string("netlist", "Netlist Path", "Netlist Path", "Please enter Netlist Path", menu_id: "Netlist_path")
+lvs_builder.add_string("top_cell_name", "Top_cell name", "Top cell name", "Please enter Top_cell name. Empty means run on current cell.", menu_id: "TOP_cell_name")
+lvs_builder.add_checkbox("verbose", "Verbose mode", lvs_initial["verbose"])
+lvs_builder.add_checkbox("simplify", "Simplify", lvs_initial["simplify"])
+lvs_builder.add_checkbox("net_only", "Netlist only", lvs_initial["net_only"])
+lvs_builder.add_checkbox("top_lvl_pins", "Top level pins", lvs_initial["top_lvl_pins"])
+lvs_builder.add_checkbox("combine", "Devices combine", lvs_initial["combine"])
+lvs_builder.add_checkbox("purge", "Purge", lvs_initial["purge"])
+lvs_builder.add_checkbox("purge_nets", "Purge nets", lvs_initial["purge_nets"])
+lvs_builder.add_checkbox("implicit_connect", "Globally connect nets with identical name", lvs_initial["implicit_connect"])
+lvs_builder.add_checkbox("schematic_translate", "Translate input spice schematic to klayout dialect", lvs_initial["schematic_translate"])
 
 </text>
 </klayout-macro>
