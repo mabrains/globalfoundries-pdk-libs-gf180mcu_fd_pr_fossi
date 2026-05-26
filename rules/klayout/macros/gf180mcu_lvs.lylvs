@@ -11,7 +11,7 @@
  <priority>0</priority>
  <shortcut/>
  <show-in-menu>true</show-in-menu>
- <group-name/>
+ <group-name>DRC and LVS</group-name>
  <menu-path>submenu&gt;end("gf180mcu PDK").end</menu-path>
  <interpreter>dsl</interpreter>
  <dsl-interpreter-name>lvs-dsl-xml</dsl-interpreter-name>
