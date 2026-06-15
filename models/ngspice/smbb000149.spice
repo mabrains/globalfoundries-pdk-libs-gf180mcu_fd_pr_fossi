@@ -56,7 +56,7 @@
 .lib 'smbb000149.spice' nfet_10v0_asym_t
 .lib 'smbb000149.spice' pfet_10v0_asym_t
 .lib 'smbb000149.spice' noise_corner
-.endl
+.endl typical
 
 .lib ss
 .param nfet_10v0_asym_dtox=8e-10
@@ -86,7 +86,7 @@
 .lib 'smbb000149.spice' nfet_10v0_asym_t
 .lib 'smbb000149.spice' pfet_10v0_asym_t
 .lib 'smbb000149.spice' noise_corner
-.endl
+.endl ss
 
 .lib ff
 .param nfet_10v0_asym_dtox=-8e-10
@@ -116,7 +116,7 @@
 .lib 'smbb000149.spice' nfet_10v0_asym_t
 .lib 'smbb000149.spice' pfet_10v0_asym_t
 .lib 'smbb000149.spice' noise_corner
-.endl
+.endl ff
 
 .lib sf
 .param nfet_10v0_asym_dtox=0
@@ -146,7 +146,7 @@
 .lib 'smbb000149.spice' nfet_10v0_asym_t
 .lib 'smbb000149.spice' pfet_10v0_asym_t
 .lib 'smbb000149.spice' noise_corner
-.endl
+.endl sf
 
 .lib fs
 .param nfet_10v0_asym_dtox=0
@@ -176,7 +176,7 @@
 .lib 'smbb000149.spice' nfet_10v0_asym_t
 .lib 'smbb000149.spice' pfet_10v0_asym_t
 .lib 'smbb000149.spice' noise_corner
-.endl
+.endl fs
 
 .lib statistical
 .param mc_vsat2_10v='agauss(0,1,3)'
@@ -232,7 +232,7 @@
 .lib 'smbb000149.spice' nfet_10v0_asym_t
 .lib 'smbb000149.spice' pfet_10v0_asym_t
 .lib 'smbb000149.spice' noise_corner
-.endl
+.endl statistical
 
 .lib noise_corner
 .param nfet_10v0_asym_noia='(fnoicor==0)*1.1021e42+(fnoicor==1)*2.5852e42'
@@ -241,7 +241,7 @@
 .param pfet_10v0_asym_noia='(fnoicor==0)*2.9073e+041+(fnoicor==1)*1.7073e+042'
 .param pfet_10v0_asym_noib='(fnoicor==0)*8.0736e+025+(fnoicor==1)*2.4523e+026'
 .param pfet_10v0_asym_noic='(fnoicor==0)*12780+(fnoicor==1)*12780'
-.endl
+.endl noise_corner
 
 .lib nfet_10v0_asym_t
 .subckt nfet_10v0_asym d g s b w=25e-6 l=0.6e-6 nf=1 m=1 ad='w*1.48e-6' pd='2*(1.48e-6+w)' as='w*0.48e-6' ps='(w+0.48e-6)*2' nrd=0 nrs=0 dtemp=0 sa=0 sb=0 sd=0 par=1
@@ -510,7 +510,7 @@ c3_gb g b '1.284e-9*w'
 + xtsd=0.63818
 + xw='0+nfet_10v0_asym_dxw'
 .ends nfet_10v0_asym
-.endl
+.endl nfet_10v0_asym_t
 
 .lib pfet_10v0_asym_t
 .subckt pfet_10v0_asym d g s b w=2.5e-5 l=6e-7 dtemp=0 nf=1 m=1 ad='(w*1.78e-6)' pd='2*(w+1.78e-6)' as='w*0.48e-6' ps='(w+0.48e-6)*2' nrd=0 nrs=0 sa=0 sb=0 sd=0 par=1
@@ -791,4 +791,4 @@ c3_gb g b '1.284e-9*w'
 + xtsd=0.92538
 + xw='0+pfet_10v0_asym_dxw'
 .ends pfet_10v0_asym
-.endl
+.endl pfet_10v0_asym_t
